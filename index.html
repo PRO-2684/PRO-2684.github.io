@@ -1,38 +1,200 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-    <title>          PRO</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PRO's blog</title>
+	<script src="js/modernizr.custom.js"></script>
+	<style type="text/css">
+		/* 通用样式 */
+		*,
+		*:after,
+		*:before {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		body,
+		html {
+			font-size: 100%;
+			padding: 0;
+			margin: 0;
+		}
+
+		body {
+			font-family: 'Lato', Calibri, Arial, sans-serif;
+			color: #b3b9bf;
+			background: #f9f9f9;
+		}
+
+		a {
+			color: #888;
+			text-decoration: none;
+		}
+
+		a:hover,
+		a:active {
+			color: rgb(0, 95, 204);
+		}
+
+		.grid {
+			padding: 20px 20px 100px 20px;
+			max-width: 1300px;
+			margin: 0 auto;
+			list-style: none;
+			text-align: center;
+		}
+
+		.grid li {
+			display: inline-block;
+			width: 440px;
+			margin: 0;
+			padding: 20px;
+			text-align: left;
+			position: relative;
+		}
+
+		.grid figure {
+			margin: 0;
+			position: relative;
+		}
+
+		.grid figure img {
+			max-width: 100%;
+			display: block;
+			position: relative;
+		}
+
+		.grid figcaption {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 20px;
+			background: #2c3f52;
+			color: #ed4e6e;
+		}
+
+		.grid figcaption h3 {
+			margin: 0;
+			padding: 0;
+			color: #fff;
+		}
+
+		.grid figcaption span:before {
+			content: 'by ';
+		}
+
+		.grid figcaption a {
+			text-align: center;
+			padding: 5px 10px;
+			border-radius: 2px;
+			display: inline-block;
+			background: #ed4e6e;
+			color: #fff;
+		}
+
+		/* 说明文字样式 2 */
+
+		.cs-style-2 figure img {
+			z-index: 10;
+			-webkit-transition: -webkit-transform 0.4s;
+			-moz-transition: -moz-transform 0.4s;
+			transition: transform 0.4s;
+		}
+
+		.no-touch .cs-style-2 figure:hover img,
+		.cs-style-2 figure.cs-hover img {
+			-webkit-transform: translateY(-90px);
+			-moz-transform: translateY(-90px);
+			-ms-transform: translateY(-90px);
+			transform: translateY(-90px);
+		}
+
+		.cs-style-2 figcaption {
+			height: 90px;
+			width: 100%;
+			top: auto;
+			bottom: 0;
+		}
+
+		.cs-style-2 figcaption a {
+			position: absolute;
+			right: 20px;
+			top: 30px;
+		}
+	</style>
 </head>
-<body>
-<div id="tp-weather-widget"></div>
-<script>
-  (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
-  window.SeniverseWeatherWidget('show', {
-    flavor: "slim",
-    location: "WX4FBXXFKE4F",
-    geolocation: true,
-    language: "auto",
-    unit: "c",
-    theme: "auto",
-    token: "ce533b86-eeae-4d11-8557-32fc71afee1a",
-    hover: "enabled",
-    container: "tp-weather-widget"
-  })
-</script>
-    <h1><font color='black'>PRO</h1></font>
-    <p><a href='https://pro-2684.github.io/clock/clock.html'><font color='cyan'>CLOCK</font></a></p>
-    <p><a href='https://pro-2684.github.io/clock/desktop.html'><font color='cyan'>DESKTOP</font></a></p>
-    <p><img alt="welcome" scr="https://www.ipip5.com/ipimg"></p>
-    <p><font color='orange'>random pic</font>
-       <br/><a href='https://picsum.photos'><font color='grey'>from picsum</font></a>
-       <br/><img src=https://picsum.photos/200/100></img></p>
-    <p><font size=10><a href=https://pro-2684.github.io/websites.html>interesting but useless websites</a>    <a href=https://pro-2684.github.io/engines.html>search engines</a></font></p>
-    <p><a href=https://pro-2684.github.io/recent.html>What's going on?</a></p>
-    <p>联系方式:
-        <br/>    Github:<a href='https://github.com/PRO-2684'>@PRO_2684</a>
-        <br/>    Twitter:@PRO_JWD
-        <br/>    Instagram:@pro_2684
-        <br/>    QQ:<a href='https://qm.qq.com/cgi-bin/qm/qr?k=nwpjBr7W7mwEUuv0bkoU_8PVbxb_pcnA'>364105900</a>
-    </p>
-    <p><a href='https://github.com/PRO-2684/PRO-2684.github.io'><font size='2' color='grey'>此网页的源码</font></a></p>
+
+<body style="background-color: #00161f">
+	<header>
+		<h1>PRO's blog</h1>
+		<p>Style from <a href="http://www.webkaka.com/tutorial/js/2019/090671/Caption-Hover-Effects/index02.html">www.webkaka.com Effect 2</a></p>
+	</header>
+	<ul class="grid cs-style-2">
+		<li>
+			<figure>
+				<img src="images/clock.png" alt="clock">
+				<figcaption>
+					<h3>A clock</h3>
+					<span>PRO</span>
+					<a href="clock/clock.html">Take a look</a>
+				</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<img src="images/desktop.png" alt="desktop">
+				<figcaption>
+					<h3>A desktop</h3>
+					<span>PRO</span>
+					<a href="clock/desktop.html">Take a look</a>
+				</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<img src="images/website.png" alt="website">
+				<figcaption>
+					<h3>Some useless websites</h3>
+					<span>PRO</span>
+					<a href="websites.html">Take a look</a>
+				</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<img src="images/search.png" alt="search">
+				<figcaption>
+					<h3>Some search engines</h3>
+					<span>PRO</span>
+					<a href="engines.html">Take a look</a>
+				</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<img src="images/news.png" alt="recent">
+				<figcaption>
+					<h3>What's going on?</h3>
+					<span>PRO</span>
+					<a href="recent.html">Take a look</a>
+				</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<img src="images/contact.png" alt="contact">
+				<figcaption>
+					<h3>Contact me</h3>
+					<span>PRO</span>
+					<a href="contact.html">Take a look</a>
+				</figcaption>
+			</figure>
+		</li>
+	</ul>
 </body>
+
 </html>
