@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            background-color: #00161f;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* -------------------------------------------- */
+        /* 外层容器 */
+        /* -------------------------------------------- */
+        .wrap {
+            position: relative;
+            width: 330px;
+            height: 280px;
+            background-color: #005da8dc;
+            box-shadow: 10px 10px 10px rgb(0, 0, 0, .5);
+            overflow: hidden;
+            border-radius: 20px 20px 20px 20px;
+        }
+
+        /* -------------------------------------------- */
+        /* 上部分的块 */
+        /* -------------------------------------------- */
+        .box-top {
+            position: relative;
+            width: 330px;
+            height: 130px;
+            background-color: rgb(0, 153, 255);
+            display: flex;
+            justify-content: center;
+            transition: .5s;
+        }
+
+        .box-top::after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            clip-path: polygon(50% 40%, 0 0, 100% 0);
+            background-color: rgb(0, 153, 255);
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            bottom: -38px;
+            z-index: 999;
+        }
+
+        .image {
+            position: absolute;
+            top: 20px;
+            width: 90px;
+            height: 90px;
+            background-image: url("PRO.png");
+            background-size: cover;
+            /* border: 5px solid rgb(0, 118, 214); */
+            transition: .5s;
+        }
+
+        /* -------------------------------------------- */
+        /* 下部分的两个大块 */
+        /* -------------------------------------------- */
+        .box-bottom,
+        .box-bottom2 {
+            position: absolute;
+            top: 130px;
+            width: 330px;
+            height: 130px;
+            text-align: center;
+            transition: .5s;
+        }
+
+        .box-bottom h2 {
+            display: block;
+            margin: 30px 0 10px 0;
+            font: 800 28px 'Hobo Std';
+        }
+
+        .box-bottom span {
+            font: 400 24px 'Giddyup Std';
+        }
+
+        .box-bottom h2::after {
+            content: '';
+            display: block;
+            width: 200px;
+            height: 2px;
+            background-color: #000;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 4px);
+        }
+
+        /* -------------------------------------------- */
+        /* 下部分的第二个大块 */
+        /* -------------------------------------------- */
+        .box-bottom2 {
+            top: 300px;
+            height: 220px;
+        }
+
+        .box-bottom2 li {
+            margin: 25px;
+            font: 800 20px 'OCR A Std';
+            transition: .2s;
+        }
+
+        /* -------------------------------------------- */
+        /* 鼠标移入的效果 */
+        /* -------------------------------------------- */
+        .wrap:hover .box-top {
+            height: 50px;
+        }
+
+        .wrap:hover .image {
+            width: 35px;
+            height: 35px;
+            border-width: 3px;
+            transform: translate(-140px, -15px);
+        }
+
+        .wrap:hover .box-bottom {
+            top: 300px;
+        }
+
+        .wrap:hover .box-bottom2 {
+            top: 50px;
+        }
+
+        li:hover {
+            color: rgb(0, 143, 226)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box-top">
+            <div class="image"></div>
+        </div>
+        <div class="box-bottom">
+            <h2>PRO_2684</h2>
+            <span>🎓Doing nothing...</span>
+        </div>
+        <div class="box-bottom2">
+            <ul>
+                <li>Gitee: pro_2684</li>
+                <li>QQ: 364105900</li>
+                <li>WX: PRO_2684</li>
+                <li>Hobby: Python, HTML etc.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
