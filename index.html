@@ -1,205 +1,57 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>PRO's blog</title>
-	<link rel="icon" href="PRO.png">
-	<script src="js/modernizr.custom.js"></script>
-	<style type="text/css">
-		/* 通用样式 */
-		*,
-		*:after,
-		*:before {
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
-		}
-
-		body,
-		html {
-			font-size: 100%;
-			padding: 0;
-			margin: 0;
-		}
-
-		body {
-			font-family: 'Lato', Calibri, Arial, sans-serif;
-			color: #b3b9bf;
-			background: #00161f;
-			text-align: center;
-		}
-
-		a {
-			color: #888;
-			text-decoration: none;
-		}
-
-		a:hover,
-		a:active {
-			color: rgb(0, 95, 204);
-		}
-
-		.grid {
-			padding: 20px 20px 100px 20px;
-			max-width: 1300px;
-			margin: 0 auto;
-			list-style: none;
-			text-align: center;
-		}
-
-		.grid li {
-			display: inline-block;
-			width: 440px;
-			margin: 0;
-			padding: 20px;
-			text-align: left;
-			position: relative;
-		}
-
-		.grid figure {
-			margin: 0;
-			position: relative;
-		}
-
-		.grid figure img {
-			max-width: 100%;
-			display: block;
-			position: relative;
-		}
-
-		.grid figcaption {
-			position: absolute;
-			top: 0;
-			left: 0;
-			padding: 20px;
-			background: #2c3f52;
-			color: #ed4e6e;
-		}
-
-		.grid figcaption h3 {
-			margin: 0;
-			padding: 0;
-			color: #fff;
-		}
-
-		.grid figcaption span:before {
-			content: 'by ';
-		}
-
-		.grid figcaption a {
-			text-align: center;
-			padding: 5px 10px;
-			border-radius: 2px;
-			display: inline-block;
-			background: #ed4e6e;
-			color: #fff;
-		}
-
-		/* 说明文字样式 2 */
-
-		.cs-style-2 figure img {
-			z-index: 10;
-			-webkit-transition: -webkit-transform 0.4s;
-			-moz-transition: -moz-transform 0.4s;
-			transition: transform 0.4s;
-		}
-
-		.no-touch .cs-style-2 figure:hover img,
-		.cs-style-2 figure.cs-hover img {
-			-webkit-transform: translateY(-90px);
-			-moz-transform: translateY(-90px);
-			-ms-transform: translateY(-90px);
-			transform: translateY(-90px);
-		}
-
-		.cs-style-2 figcaption {
-			height: 90px;
-			width: 100%;
-			top: auto;
-			bottom: 0;
-		}
-
-		.cs-style-2 figcaption a {
-			position: absolute;
-			right: 20px;
-			top: 30px;
-		}
-	</style>
-	<script src="js/jquery.min.js"></script>
-    <script src="js/click.js"></script>
-</head>
-
-<body>
-	<header>
-		<h1>PRO's blog</h1>
-		<p>Style from <a href="http://www.webkaka.com/tutorial/js/2019/090671/Caption-Hover-Effects/index02.html">www.webkaka.com Effect 2</a>.
-		<br/><a href="index_m.html">Mobile version</a></p>
-	</header>
-	<ul class="grid cs-style-2">
-		<li>
-			<figure>
-				<img src="images/clock.png" alt="clock">
-				<figcaption>
-					<h3>A clock</h3>
-					<span>PRO</span>
-					<a href="clock/clock.html">Take a look</a>
-				</figcaption>
-			</figure>
-		</li>
-		<li>
-			<figure>
-				<img src="images/desktop.png" alt="desktop">
-				<figcaption>
-					<h3>A desktop</h3>
-					<span>PRO</span>
-					<a href="clock/desktop.html">Take a look</a>
-				</figcaption>
-			</figure>
-		</li>
-		<li>
-			<figure>
-				<img src="images/website.png" alt="website">
-				<figcaption>
-					<h3>Some useless websites</h3>
-					<span>PRO<font color="orange">(🚧under construction)</font></span>
-					<a href="websites.html">Take a look</a>
-				</figcaption>
-			</figure>
-		</li>
-		<li>
-			<figure>
-				<img src="images/search.png" alt="search">
-				<figcaption>
-					<h3>Some search engines</h3>
-					<span>PRO<font color="orange">(🚧under construction)</font></span>
-					<a href="engines.html">Take a look</a>
-				</figcaption>
-			</figure>
-		</li>
-		<li>
-			<figure>
-				<img src="images/picture.png" alt="recent">
-				<figcaption>
-					<h3>Picture tools</h3>
-					<span>PRO</span>
-					<a href="picture.html">Take a look</a>
-				</figcaption>
-			</figure>
-		</li>
-		<li>
-			<figure>
-				<img src="images/contact.png" alt="contact">
-				<figcaption>
-					<h3>About me</h3>
-					<span>PRO</span>
-					<a href="about.html">Take a look</a>
-				</figcaption>
-			</figure>
-		</li>
-	</ul>
-</body>
-
+<html lang="en">
+    <head>
+        <title>PRO's blog</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="icon" href="./favicon.ico">
+        <link rel="stylesheet" href="./css/katex.min.css">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/prism_light.css" media="(prefers-color-scheme: light)">
+        <link rel="stylesheet" href="./css/prism_dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="./css/nprogress.css">
+        <script src="./js/nprogress.js"></script>
+        <script src="./js/showdown.min.js"></script>
+        <script src="./js/katex.min.js"></script>
+        <script src="./js/katex-auto-render.min.js"></script>
+        <script src="./js/prism.js" data-manual></script>
+    </head>
+    <body>
+        <header>
+            <h1>PRO's blog</h1>
+        </header>
+        <div id="main-content">
+            <aside class="panel left-panel">
+                <div>
+                    Title: <span id="title">none</span><br/>
+                    Created: <span id="created">none</span><br/>
+                    Modified: <span id="modified">none</span><br/>
+                    Source code: <a href="./notes/index.md" id="source_code" target="_blank">index.md</a><br>
+                    Tags: <div id="tags">none</div>
+                </div>
+                <div>
+                    ⭐ Bookmarks:<br>
+                    <ul id="bookmarks">
+                        <li>
+                            <a>index</a><a href='javascript:addBookmark("index");' class="bookmark-op"><b>+</b></a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="panel right-panel">
+                <div>
+                    <ul class="outline">
+                        <li class="outline-item">Nothing to show.</li>
+                    </ul>
+                </div>
+            </aside>
+            <article id="markdown" class="line-numbers match-braces language-plain">Please enable javascript.</article>
+        </div>
+        <div id="float-buttons">
+            <a href="javascript:menu();" class="button" id="show-sidebar">☰</a>
+            <a href="#top" class="button">↑</a>
+        </div>
+        <div id="overlay" onclick="menu();"></div>
+        <script src="./js/main.js?v=3"></script>
+    </body>
 </html>

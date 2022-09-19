@@ -1,0 +1,434 @@
+/* Light mode */
+:root {
+    --background: #FFFFFF;
+    --text: #15141A;
+    --text-dim: #5B5B66;
+    --formula: #15141A;
+    --link: #1870F0;
+    --formula: #15141a;
+    --scrollbar-bg: transparant;
+    --scrollbar-color: rgba(0, 0, 0, 0.25);
+    --input-bg: #dddddd;
+    --input-text: #5b5b66;
+    --elem-radius: 0.25em;
+    --quote-bg: #d6d6d6;
+    --quote-text: #5B5B66;
+    --quote-left: #464646;
+    --code-text: #616161;
+    --code-bg: #d3d3d3;
+    --border: #0f0f0f;
+    --border-dim: #8d8d8d;
+    --selected-text: #15141A;
+    --selected-bg: #73a5f0bf;
+    --panel-bg: #d2f3ffbd;
+}
+
+.external-link::after {
+    background-image: url(./web-light.svg);
+    background-size: 0.7em 0.7em;
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    content: "";
+    margin-inline-start: 0.2em;
+    margin-inline-end: 0.1em;
+}
+
+.external-link[href^="mailto:"]::after {
+    background-image: url(./email-light.svg);
+}
+
+.external-link[href^="./attachments/"]::after {
+    background-image: url(./attachment-light.svg);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #15141A;
+        --text: #FBFBFE;
+        --text-dim: #CFCFD8;
+        --link: #74A9f6;
+        --formula: #FBFBFE;
+        --scrollbar-bg: transparant;
+        --scrollbar-color: rgba(255, 255, 255, 0.25);
+        --input-bg: #171a1f;
+        --input-text: #CFCFD8;
+        --quote-bg: #1f242c;
+        --quote-text: #CFCFD8;
+        --quote-left: #d3d3d3;
+        --code-text: #abb2bf;
+        --code-bg: #282c34;
+        --border: #fbfbfe;
+        --border-dim: #52525e;
+        --selected-text: #FBFBFE;
+        --selected-bg: #2a76e9a1;
+        --panel-bg: #1d263cbd;
+    }
+
+    .external-link::after {
+        background-image: url(./web-dark.svg);
+    }
+
+    .external-link[href^="mailto:"]::after {
+        background-image: url(./email-dark.svg);
+    }
+    
+    .external-link[href^="./attachments/"]::after {
+        background-image: url(./attachment-dark.svg);
+    }
+}
+
+/* Set the attributes */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text);
+    background: var(--background);
+    scrollbar-color: var(--scrollbar-color) var(--scrollbar-bg);
+    margin: 0;
+}
+
+::-moz-selection {
+    color: var(--selected-text);
+    background: var(--selected-bg);
+}
+
+::selection {
+    color: var(--selected-text);
+    background: var(--selected-bg);
+}
+
+div {
+    padding: 1em;
+}
+
+div#overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    z-index: 3;
+    display: block;
+    filter: alpha(opacity=60);
+    background-color: #323232;
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+}
+
+body>div>h1 {
+    display: inline;
+}
+
+header {
+    text-align: center;
+}
+
+article {
+    display: block;
+    padding: 0em 1em 1em 1em;
+    line-height: 1.5;
+}
+
+article img {
+    max-width: 100%;
+}
+
+aside.panel {
+    transition: all 0.2s ease-in-out;
+    line-height: 1.5;
+    padding: 0;
+}
+
+aside.right-panel {
+    position: fixed;
+    top: -100%;
+    background-color: var(--panel-bg);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 0 0 1em 1em;
+    max-height: 50%;
+    overflow-y: scroll;
+    z-index: 4;
+}
+
+div#tags {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div#main-content {
+    margin: 0;
+    padding: 0;
+}
+
+blockquote {
+    border-radius: 0.25em;
+    border-radius: var(--elem-radius);
+    border-left: 0.3em solid var(--quote-left);
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    margin: 0.2em;
+    background: var(--quote-bg);
+    color: var(--quote-text);
+}
+
+table {
+    border: 1px solid var(--border-dim);
+    border-collapse: collapse;
+    margin: 0.5rem 0;
+    width: auto;
+    font-size: .875em;
+}
+
+table td,
+table th {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border-dim);
+    vertical-align: middle;
+}
+
+input {
+    color: var(--input-text);
+    background: var(--input-bg);
+    border: none;
+    border-bottom: 0.1em solid var(--border-dim);
+}
+
+a {
+    color: var(--text-dim);
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--link);
+    transition: all 0.2s ease-in-out;
+}
+
+a.anchor::before {
+    content: "#";
+}
+
+a.anchor {
+    opacity: 0;
+    color: var(--link);
+    text-decoration: none;
+    padding: 0px 0.5em;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+ul.outline {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: var(--quote-text);
+}
+
+ul#bookmarks {
+    list-style-type: none;
+    padding-inline-start: 1em;
+    margin: 0.5em 0 0 0;
+}
+
+ul#bookmarks > li {
+    display: flex;
+    justify-content: space-between;
+}
+
+a.outline-link {
+    text-decoration: none;
+    white-space: pre;
+}
+
+div#float-buttons {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    z-index: 2;
+}
+
+a.button {
+    margin: 0.5em 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--quote-text);
+    background-color: var(--quote-bg);
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    font-size: 1.5em;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+a.bookmark-op {
+    text-decoration: none;
+    text-align: center;
+    width: 1em;
+}
+
+.katex {
+    font-size: 1em;
+    color: var(--formula);
+}
+
+tag {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 1em;
+    padding: 0px 0.5em;
+    margin: 0.2em 0.2em;
+    width: fit-content;
+    height: fit-content;
+}
+
+#main-content > aside.panel.left-panel > div:nth-child(2) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/* Anchor display on hover */
+h1:hover>a.anchor,
+h2:hover>a.anchor,
+h3:hover>a.anchor,
+h4:hover>a.anchor,
+h5:hover>a.anchor,
+h6:hover>a.anchor {
+    opacity: 1;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+/* Webkit scrollbar hidden */
+::-webkit-scrollbar-track {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+/* Widescreen */
+@media screen and (min-width: 767px) {
+    div#main-content {
+        display: flex;
+    }
+
+    blockquote {
+        padding: 0.5em 1em 0.5em 1em;
+    }
+
+    article {
+        flex: 6;
+        width: 60%;
+    }
+
+    aside.panel {
+        display: unset;
+        position: sticky;
+        top: 0;
+        flex: 2;
+        align-self: flex-start;
+    }
+
+    aside.right-panel {
+        justify-content: unset;
+        transition: none;
+        order: 1;
+        background-color: unset;
+        backdrop-filter: none;
+        border-radius: unset;
+    }
+
+    ul.outline {
+        padding: 0 0 0 1em;
+        border-left: 2px solid var(--border-dim);
+    }
+
+    a.button {
+        font-size: 1.8em;
+        color: var(--quote-text);
+        background-color: var(--quote-bg);
+    }
+
+    a.button#show-sidebar {
+        display: none;
+    }
+
+    /* Webkit scrollbar (from MDN) */
+    ::-webkit-scrollbar-track {
+        border-radius: 10px
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+        background-color: auto;
+        background-color: var(--scrollbar-bg, auto)
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        border: 2px auto;
+        border: 2px solid var(--scrollbar-bg, auto);
+        background: var(--scrollbar-color)
+    }
+}
+
+/* Can't perform hover action */
+@media (any-hover: none) {
+    a.anchor {
+        opacity: 1;
+    }
+}
+
+/* User prefers no animation */
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    a.anchor,
+    h1:hover>a.anchor,
+    h2:hover>a.anchor,
+    h3:hover>a.anchor,
+    h4:hover>a.anchor,
+    h5:hover>a.anchor,
+    h6:hover>a.anchor {
+        transition: none;
+    }
+
+    a {
+        transition: none;
+    }
+
+    a:hover {
+        transition: none;
+    }
+
+    aside.panel {
+        transition: none;
+    }
+}
