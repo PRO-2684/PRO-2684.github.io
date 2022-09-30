@@ -3,12 +3,12 @@ title: about
 title_custom: true
 tags: [Index]
 created: 2022-08-23T14:34:35.551Z
-modified: 2022-09-19T01:20:25.609Z
+modified: 2022-09-20T07:06:58.193Z
 ---
 
 # About me
 一只普普通通的大二🐶。
-<img align="right" src="http://q2.qlogo.cn/headimg_dl?dst_uin=364105900&spec=100" alt="头像" style="width: 30%;">
+<img align="right" src="http://q2.qlogo.cn/headimg_dl?dst_uin=364105900&spec=100" alt="头像" style="width: 20%;">
 
 ## 😊 喜欢的事
 * 水群

@@ -4,7 +4,7 @@ title_custom: true
 tags: [Useful]
 favorited: true
 created: 2022-05-28T07:58:30.128Z
-modified: 2022-09-19T01:20:47.384Z
+modified: 2022-09-29T07:17:31.659Z
 ---
 
 # 🔗 常用链接
@@ -58,6 +58,8 @@ modified: 2022-09-19T01:20:47.384Z
 [毕业论文模板](https://www.teach.ustc.edu.cn/notice/notice-teaching/14496.html/attachment/%E4%B8%AD%E5%9B%BD%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF%E5%A4%A7%E5%AD%A6%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%EF%BC%88%E8%AE%BE%E8%AE%A1%EF%BC%89%E6%A0%BC%E5%BC%8F)
 
 [USTC flyer](https://www.ustcflyer.com/welcome)
+
+[Verilog](https://vlab.ustc.edu.cn/guide/doc_verilog.html)
 
 ## 🛠️ 工具
 [校园地图](https://www.ustc.edu.cn/__local/7/CA/83/51C921501F45CC7F22C3E32B9C3_85DD6C3B_196F20.jpg)
