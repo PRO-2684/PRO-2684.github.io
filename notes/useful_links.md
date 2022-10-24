@@ -59,7 +59,9 @@ modified: 2022-09-29T07:17:31.659Z
 
 [USTC flyer](https://www.ustcflyer.com/welcome)
 
-[Verilog](https://vlab.ustc.edu.cn/guide/doc_verilog.html)
+[Verilog 教程](https://vlab.ustc.edu.cn/guide/doc_verilog.html)
+
+[$\LaTeX$ 符号识别](https://detexify.kirelabs.org/classify.html)
 
 ## 🛠️ 工具
 [校园地图](https://www.ustc.edu.cn/__local/7/CA/83/51C921501F45CC7F22C3E32B9C3_85DD6C3B_196F20.jpg)
