@@ -4,7 +4,7 @@ title_custom: true
 attachments: [Harry_Potter_The_Complete_Collection.epub]
 tags: [Index]
 created: 2022-05-24T14:22:05.844Z
-modified: 2022-09-19T01:20:25.609Z
+modified: 2022-11-02T00:49:53.503Z
 ---
 
 # 👋 欢迎!
@@ -43,6 +43,10 @@ modified: 2022-09-19T01:20:25.609Z
 [思想者](@note/the_thinker)
 
 [银河帝国全套(15册)](@note/Galactic_Empire)
+
+## 🎓 学业
+
+[推免相关信息](@note/graduate_admisson)
 
 ## 🧶 其他
 [博客时间线](@note/timeline)
