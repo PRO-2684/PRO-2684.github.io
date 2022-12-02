@@ -47,7 +47,7 @@ modified: 2022-09-29T07:17:31.659Z
 
 [大雾实验视频](https://www.icourses.cn/sCourse/course_3059.html)
 
-[USTC 学习资料](http://home.ustc.edu.cn/~yx3x/USTCdata.html)(含大雾模板)
+[USTC 学习资料](http://home.ustc.edu.cn/~yx3x/USTCdata.html) (含大雾模板)
 
 [跨校资源认证中心](https://idp.ustc.edu.cn/idp/)
 
@@ -63,10 +63,14 @@ modified: 2022-09-29T07:17:31.659Z
 
 [$\LaTeX$ 符号识别](https://detexify.kirelabs.org/classify.html)
 
+[数据结构可视化](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+
+[Missing Semester](https://missing.csail.mit.edu/2020/)
+
 ## 🛠️ 工具
 [校园地图](https://www.ustc.edu.cn/__local/7/CA/83/51C921501F45CC7F22C3E32B9C3_85DD6C3B_196F20.jpg)
 
-[VPN](https://wvpn.ustc.edu.cn/)
+[校内 VPN](https://wvpn.ustc.edu.cn/)
 
 [网络通](http://wlt.ustc.edu.cn/)
 
@@ -93,6 +97,8 @@ modified: 2022-09-29T07:17:31.659Z
 [手绘风格流程图](https://excalidraw.com/)
 
 [USTC 全景](https://720yun.com/t/96vkbw7q77w?scene_id=91152512)
+
+[打字练习](https://www.typingtom.com/lessons)
 
 [ADB 工具下载](https://developer.android.google.cn/studio/releases/platform-tools)
 
@@ -139,5 +145,4 @@ modified: 2022-09-29T07:17:31.659Z
 [接口流量统计](https://linux.ustc.edu.cn/mymrtg/)
 
 [夜宵黑白名单](https://docs.qq.com/sheet/DZHJqRXZESER2aWJM)
-
 
