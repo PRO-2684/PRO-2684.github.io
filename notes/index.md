@@ -4,7 +4,7 @@ title_custom: true
 attachments: [Harry_Potter_The_Complete_Collection.epub]
 tags: [Index]
 created: 2022-05-24T14:22:05.844Z
-modified: 2022-11-02T00:49:53.503Z
+modified: 2022-12-08T16:13:53.503Z
 ---
 
 # 👋 欢迎!
@@ -49,6 +49,10 @@ modified: 2022-11-02T00:49:53.503Z
 [百分制、五等级制、GPA 转换表](@note/score_to_gpa)
 
 [推免相关信息](@note/graduate_admisson)
+
+[课后习题答案汇总](https://mp.weixin.qq.com/s?__biz=MzI4MzQzNDE4Mw==&mid=2247548256&idx=1&sn=6977fdb586b040eb216068a4b04832d3)
+
+[电子技术基础 模拟部分 - 部分习题答案 (来源: 教材二维码)](@attachment/analog_ans.zip)
 
 ## 🧶 其他
 [博客时间线](@note/timeline)
