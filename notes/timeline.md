@@ -115,3 +115,6 @@ Not documented.
 1. Bookmarks.
 2. Icons for external links.
 
+### 12.10
+
+1. Tags made clickable.
