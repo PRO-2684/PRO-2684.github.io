@@ -100,7 +100,7 @@ modified: 2022-09-29T07:17:31.659Z
 
 [打字练习](https://www.typingtom.com/lessons)
 
-[ADB 工具下载](https://developer.android.google.cn/studio/releases/platform-tools)
+[ADB 工具下载](https://developer.android.google.cn/studio/releases/platform-tools#downloads)
 
 ## 🌐 国际视野
 [联合国](https://www.un.org/zh/)

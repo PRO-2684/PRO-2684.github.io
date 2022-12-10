@@ -4,12 +4,16 @@ title_custom: true
 attachments: [Harry_Potter_The_Complete_Collection.epub]
 tags: [Index]
 created: 2022-05-24T14:22:05.844Z
-modified: 2022-12-08T16:13:53.503Z
+modified: 2022-12-10T20:17:53.503Z
 ---
 
 # 👋 欢迎!
 欢迎来到我的个人博客! 😊
 [About me](@note/about)
+
+## ⬆️ 最近更新
+
+[Android 使用体验提升](@note/android)
 
 ## 🛠️ 实用
 [USTC 网址导航](@note/useful_links)
@@ -22,6 +26,8 @@ modified: 2022-12-08T16:13:53.503Z
 [自搭建 qq 定时推送](@note/qq_push)
 
 [USB QQ 机器人](@note/USTC_qqbot)
+
+[Android 使用体验提升](@note/android)
 
 ## 📖 电子书
 [The last question](@note/the_last_question)
