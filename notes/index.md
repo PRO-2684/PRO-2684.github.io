@@ -11,7 +11,7 @@ modified: 2022-12-10T20:17:53.503Z
 欢迎来到我的个人博客! 😊
 [About me](@note/about)
 
-## ⬆️ 最近更新
+## 🔥 最近更新
 
 [Android 使用体验提升](@note/android)
 
