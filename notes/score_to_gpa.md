@@ -1,3 +1,11 @@
+---
+title: score to gpa
+title_custom: true
+tags: [Academic]
+created: 2022-11-02T00:41:42.216Z
+modified: 2022-11-02T00:57:01.133Z
+---
+
 # 百分制、五等级制、GPA 转换表
 
 > 数据来源: [中国科学技术大学本科生学籍管理实施细则](https://xxgk.ustc.edu.cn/2017/1024/c13949a204980/page.htm)

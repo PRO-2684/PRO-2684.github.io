@@ -17,6 +17,16 @@ let menu_element = document.querySelector("#main-content > aside.panel.right-pan
 let menu_button = document.querySelector("#show-sidebar");
 let overlay = document.getElementById('overlay');
 let bookmark_element = document.getElementById("bookmarks");
+let tag_trans = {
+    Index: "top",
+    Latest: "最近更新",
+    Useful: "实用",
+    Technical: "技术",
+    Ebook: "电子书",
+    Academic: "学业",
+    Other: "其他",
+    Test: "测试用"
+};
 
 // formula renderer - katex
 let katex_config = {
@@ -74,7 +84,20 @@ function parseMetadata() {
             tags[i] = tags[i].trim();
         }
         if (tags.length) {
-            document.getElementById('tags').innerHTML = '<tag>' + tags.join('</tag><tag>') + '</tag>';
+            // .innerHTML = '<a class="tag">' + tags.join('</a><a class="tag">') + '</a>';
+            let tag_container = document.getElementById('tags');
+            if (tags.length >= 1) {
+                tag_container.innerHTML = '';
+                tags.forEach(tag_name => {
+                    let new_tag = document.createElement('a');
+                    new_tag.classList.add('tag');
+                    new_tag.href = '?page=index#' + tag_trans[tag_name];
+                    new_tag.innerText = tag_name;
+                    tag_container.appendChild(new_tag);
+                });
+            } else {
+                tag_container.innerHTML = 'none';
+            }
             return;
         }
     }
@@ -144,7 +167,7 @@ function render(markdown) {
     link_element.href = './notes/' + current_page + '.md';
     link_element.textContent = current_page + '.md';
     generateOutline();  // outline
-    let target = document.getElementById(window.location.hash.slice(1));
+    let target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
     if (target) target.scrollIntoView();
 }
 function load(name) {

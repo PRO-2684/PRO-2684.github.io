@@ -288,7 +288,7 @@ a.bookmark-op {
     color: var(--formula);
 }
 
-tag {
+a.tag {
     display: block;
     border: 1px solid var(--border);
     border-radius: 1em;
@@ -296,6 +296,7 @@ tag {
     margin: 0.2em 0.2em;
     width: fit-content;
     height: fit-content;
+    text-decoration: none;
 }
 
 #main-content > aside.panel.left-panel > div:nth-child(2) {
