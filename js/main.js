@@ -92,6 +92,11 @@ function parseMetadata() {
                     let new_tag = document.createElement('a');
                     new_tag.classList.add('tag');
                     new_tag.href = '?page=index#' + tag_trans[tag_name];
+                    new_tag.onclick = function (e) {
+                        history.pushState(null, null, '?page=index#' + tag_trans[tag_name]);
+                        load('index');
+                        e.preventDefault();
+                    }
                     new_tag.innerText = tag_name;
                     tag_container.appendChild(new_tag);
                 });
