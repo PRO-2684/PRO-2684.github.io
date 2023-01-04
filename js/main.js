@@ -172,8 +172,13 @@ function render(markdown) {
     link_element.href = './notes/' + current_page + '.md';
     link_element.textContent = current_page + '.md';
     generateOutline();  // outline
-    let target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
-    if (target) target.scrollIntoView();
+    let s = decodeURIComponent(window.location.hash.slice(1));
+    let target = document.getElementById(s);
+    if (target) {
+        target.scrollIntoView();
+    } else if (s === "top") {
+        window.scrollTo({ top: 0 });
+    }
 }
 function load(name) {
     NProgress.start();
