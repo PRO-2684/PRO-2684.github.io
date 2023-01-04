@@ -179,6 +179,7 @@ blockquote {
     margin: 0.2em;
     background: var(--quote-bg);
     color: var(--quote-text);
+    overflow: scroll;
 }
 
 table {
