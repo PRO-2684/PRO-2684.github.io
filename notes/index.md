@@ -13,7 +13,9 @@ modified: 2022-12-10T20:17:53.503Z
 
 ## 🔥 最近更新
 
-[Android 使用体验提升](@note/android)
+[一些我写的油猴脚本](@note/tampermonkey)
+
+[记一次电视剧批量下载](@note/meijuwo)
 
 ## 🛠️ 实用
 [USTC 网址导航](@note/useful_links)
@@ -23,11 +25,19 @@ modified: 2022-12-10T20:17:53.503Z
 ## 💻 技术
 [相同 hash 的图片](@note/same_hash)
 
+[Android 使用体验提升](@note/android)
+
+### 🐍 Python
+
 [自搭建 qq 定时推送](@note/qq_push)
 
 [USB QQ 机器人](@note/USTC_qqbot)
 
-[Android 使用体验提升](@note/android)
+[记一次电视剧批量下载](@note/meijuwo)
+
+### 🌐 Web
+
+[一些我写的油猴脚本](@note/tampermonkey)
 
 ## 📖 电子书
 [The last question](@note/the_last_question)

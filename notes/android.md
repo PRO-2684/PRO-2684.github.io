@@ -1,7 +1,7 @@
 ---
 title: android
 title_custom: false
-tags: [Technical, Latest]
+tags: [Technical]
 created: 2022-12-10T20:19:00.551Z
 modified: 2022-12-10T20:19:00.551Z
 ---

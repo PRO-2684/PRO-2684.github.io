@@ -1,7 +1,7 @@
 ---
 title: USTC qqbot
 title_custom: true
-tags: [Technical]
+tags: [Technical, Python]
 created: 2022-07-03T12:56:07.670Z
 modified: 2022-09-19T01:20:36.872Z
 ---
@@ -59,5 +59,4 @@ $\LaTeX$ 代码渲染、 ISBN 查询、提问的智慧。
 ### 🤔 常见问题
 Q: 所给链接 (https://github.com/Mrs4s/go-cqhttp/releases) 进不去？
 A: 网络问题，考虑打开代理/使用 [fastgithub](https://pro-2684.lanzouf.com/b011o8t7g) (密码 `9867`) 改善连接。
-
 

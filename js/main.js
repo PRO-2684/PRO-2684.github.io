@@ -22,6 +22,8 @@ let tag_trans = {
     Latest: "最近更新",
     Useful: "实用",
     Technical: "技术",
+    Python: "python",
+    Web: "web",
     Ebook: "电子书",
     Academic: "学业",
     Other: "其他",
