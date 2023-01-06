@@ -3,7 +3,7 @@ title: meijuwo
 title_custom: true
 tags: [Technical, Python, Latest]
 created: 2023-01-04T21:44:06.230Z
-modified: 2023-01-04T22:45:36.872Z
+modified: 2023-01-06T10:15:36.872Z
 ---
 
 # 📺 记一次电视剧批量下载
@@ -102,3 +102,5 @@ if __name__ == '__main__':
 ## 📖 开源地址
 
 [Github gist](https://gist.github.com/PRO-2684/5d73aa01526fe1e5e994d1459349c436)
+
+若无法访问，可尝试访问 [Pastebin](https://pastbin.net/meijuwo-68)
