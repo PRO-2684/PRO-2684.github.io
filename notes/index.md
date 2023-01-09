@@ -39,6 +39,10 @@ modified: 2022-12-10T20:17:53.503Z
 
 [一些我写的油猴脚本](@note/tampermonkey)
 
+### 🚩 CTF
+
+[Hackergame 2022 个人题解（部分）](@note/hg2022)
+
 ## 📖 电子书
 [The last question](@note/the_last_question)
 

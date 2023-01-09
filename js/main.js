@@ -157,7 +157,7 @@ function generateOutline() {
         let link = document.createElement('a');
         link.className = 'outline-link';
         link.href = '#' + nodes[i].id;
-        link.innerText = '  '.repeat(nodes[i].tagName.slice(1) - 1) + nodes[i].firstChild.textContent;
+        link.innerText = '  '.repeat(nodes[i].tagName.slice(1) - 1) + nodes[i].textContent;
         outline_item.appendChild(link);
         outline.appendChild(outline_item);
     }
