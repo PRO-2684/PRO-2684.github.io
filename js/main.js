@@ -164,16 +164,16 @@ function generateOutline() {
 }
 function render(markdown) {
     main_article.innerHTML = showdown_converter.makeHtml(markdown);  // render markdown
-    renderMathInElement(main_article, katex_config);  // render formula
-    Prism.highlightAllUnder(main_article, true);  // code highlight
     modifyLinks();  // link modifying
     addAnchors();  // add anchor to headers
     parseMetadata();  // metadata parsing
+    generateOutline();  // outline
+    renderMathInElement(main_article, katex_config);  // render formula
+    Prism.highlightAllUnder(main_article, true);  // code highlight
     // source code link
     let link_element = document.getElementById('source_code');
     link_element.href = './notes/' + current_page + '.md';
     link_element.textContent = current_page + '.md';
-    generateOutline();  // outline
     let s = decodeURIComponent(window.location.hash.slice(1));
     let target = document.getElementById(s);
     if (target) {
