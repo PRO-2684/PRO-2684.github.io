@@ -10,15 +10,35 @@ modified: 2023-01-04T21:33:36.872Z
 
 ## USTC 助手
 
-功能：
+### 功能
 
-1. [统一身份认证](https://passport.ustc.edu.cn/): 绕过验证码，将焦点置于登录按钮（以便按下回车直接登录），提示服务域名及其可信度
-2. [USTC 邮箱](https://mail.ustc.edu.cn/): 自动切换邮箱域名，将焦点置于登录按钮
-3. [睿客网](https://rec.ustc.edu.cn/): 自动点入统一身份认证系统以便登录；部分链接设为当前标签页打开（可显著提高加载速度）
-4. [BB 系统(网络教学平台)](https://www.bb.ustc.edu.cn/): 自动点击登录以及校园网外访问时的登录
-5. [综合教务系统](https://jw.ustc.edu.cn/): 自动聚焦或点击登录按钮
+1. [统一身份认证](https://passport.ustc.edu.cn/)
+    - 绕过验证码
+    - 将焦点置于登录按钮（以便按下回车直接登录）
+    - 提示服务域名、网址及其可信度（若为学生/老师的服务，点击 "Student" 或 "Staff" 即可邮件联系）
 
-链接：[GreasyFork](https://greasyfork.org/zh-CN/scripts/453530-ustc-helper)
+2. [USTC 邮箱](https://mail.ustc.edu.cn/)
+    - 自动切换邮箱域名
+    - 将焦点置于登录按钮
+
+3. [睿客网](https://rec.ustc.edu.cn/)
+    - 自动点入统一身份认证系统以便登录
+    - 部分链接设为当前标签页打开（可显著提高加载速度）
+
+4. [BB 系统(网络教学平台)](https://www.bb.ustc.edu.cn/)
+    - 自动点击登录以及校园网外访问时的登录
+    - 检查作业状态（已提交、未提交、查询错误）
+
+5. [综合教务系统](https://jw.ustc.edu.cn)
+    - 自动聚焦或点击登录按钮
+
+### 链接
+
+[GreasyFork](https://greasyfork.org/zh-CN/scripts/453530-ustc-helper)
+
+### 截图
+
+![BB 作业状态检查](@attachment/bb.png)
 
 ## Auto Grading
 
