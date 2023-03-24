@@ -116,5 +116,21 @@ Not documented.
 2. Icons for external links.
 
 ### 12.10
-
 1. Tags made clickable.
+
+## 2023
+### 1.4
+1. Css fix.
+
+### 1.9
+1. Fix $\LaTex$ in outline.
+
+### 1.11
+1. Render order fix.
+2. Css fix.
+
+### 3.21
+1. Use async functions to improve performance.
+
+### 3.24
+1. Loading animation.

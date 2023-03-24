@@ -171,6 +171,21 @@ function generateOutline() {
         outline.appendChild(outline_item);
     }
 }
+let animate;
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    animate = render;
+} else {
+    animate = (markdown) => {
+        main_article.style.opacity = 0;
+        window.setTimeout(() => {
+            render(markdown);
+        }, 200);
+        window.setTimeout(() => {
+            main_article.style.opacity = 1;
+        }, 200);
+    }
+}
+
 function render(markdown) {
     main_article.innerHTML = showdown_converter.makeHtml(markdown);  // render markdown
     modifyLinks();  // link modifying
@@ -196,7 +211,7 @@ function load(name) {
     current_page = name;
     refreshBookmark();
     if (sessionStorage.getItem(current_page)) {
-        render(sessionStorage.getItem(current_page));
+        animate(sessionStorage.getItem(current_page));
         NProgress.done();
         return;
     }
@@ -214,9 +229,8 @@ function load(name) {
             case 4:
                 NProgress.inc();
                 if (request.status == 200) {
-                    main_article.innerHTML = request.responseText;
                     sessionStorage.setItem(current_page, request.responseText);
-                    render(request.responseText);
+                    animate(request.responseText);
                 } else {
                     current_page = '';
                     document.title = request.status.toString() + ' ' + request.statusText + " - PRO's blog";

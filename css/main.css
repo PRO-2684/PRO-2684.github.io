@@ -134,6 +134,7 @@ article {
     padding: 0em 1em 1em 1em;
     line-height: 1.5;
     word-break: break-word;
+    transition: opacity 0.2s ease-in-out;
 }
 
 article img {
@@ -432,6 +433,10 @@ h6:hover>a.anchor {
     }
 
     aside.panel {
+        transition: none;
+    }
+
+    article {
         transition: none;
     }
 }
