@@ -46,11 +46,10 @@ let katex_config = {
 };
 // custom functions
 function getQueryString(name) {
-    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-    let r = window.location.search.slice(1).match(reg);
-    if (r != null) {
-        return decodeURIComponent(r[2]);
-    }
+    let params = new URL(window.location.href).searchParams;
+    let result = params.get(name);
+    if (result)
+        return decodeURIComponent(result);
     return null;
 }
 function removeEmoji(s) {
