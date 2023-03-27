@@ -244,8 +244,9 @@ function load(name) {
     );
 }
 function onPopState(e) {
-    if (current_page === getQueryString('page')) return;
-    current_page = getQueryString('page');
+    let target_page = getQueryString('page');
+    if (current_page === target_page) return;
+    current_page = target_page;
     load(current_page);
 }
 function menu() {

@@ -134,3 +134,7 @@ Not documented.
 
 ### 3.24
 1. Loading animation.
+
+### 3.27
+1. Using `fetch` instead of `XMLHttpRequest`.
+2. Using built-in `searchParams`.

@@ -5,7 +5,6 @@
     --text-dim: #5B5B66;
     --formula: #15141A;
     --link: #1870F0;
-    --formula: #15141a;
     --scrollbar-bg: transparant;
     --scrollbar-color: rgba(0, 0, 0, 0.25);
     --input-bg: #dddddd;
@@ -118,6 +117,33 @@ div#overlay {
     background-color: #323232;
     opacity: 0.5;
     -moz-opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+}
+
+div#settings {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    z-index: 8;
+    background-color: #323232;
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#settings-box {
+    padding: 0;
+    z-index: 9;
+    filter: none;
+    background-color: var(--panel-bg);
+    -moz-opacity: 0.5;
+    opacity: 1;
     transition: opacity 0.2s ease-in-out;
 }
 
