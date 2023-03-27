@@ -215,38 +215,34 @@ function load(name) {
         NProgress.done();
         return;
     }
-    var request = new XMLHttpRequest();
-    request.open('GET', './notes/' + name + '.md?t=' + Date.now());
-    request.send();
-    request.onreadystatechange = function () {
-        switch (request.readyState) {
-            case 2:
+    fetch('./notes/' + name + '.md', { cache: "reload" }).then(
+        (r) => {
+            if (r.status == 200) {
                 NProgress.inc();
-                break;
-            case 3:
-                NProgress.inc();
-                break;
-            case 4:
-                NProgress.inc();
-                if (request.status == 200) {
-                    sessionStorage.setItem(current_page, request.responseText);
-                    animate(request.responseText);
-                } else {
-                    current_page = '';
-                    document.title = request.status.toString() + ' ' + request.statusText + " - PRO's blog";
-                    main_article.innerHTML = '<p><font color="red">Failed to load "'
-                        + name + '.md": <b>'
-                        + request.status.toString() + ' ' + request.statusText + '</b>.</font><br/>Maybe you want to <a href="@note/index">return to the main page</a>?</p><img src="./cat/'
-                        + request.status.toString() + '.jpg"></img>';
-                    modifyLinks();
-                }
+                r.text().then(
+                    (text) => {
+                        NProgress.inc();
+                        sessionStorage.setItem(current_page, text);
+                        animate(text);
+                        NProgress.done();
+                    }
+                );
+            } else {
+                current_page = '';
+                document.title = r.status.toString() + ' ' + r.statusText + " - PRO's blog";
+                main_article.innerHTML = '<p><font color="red">Failed to load "'
+                    + name + '.md": <b>'
+                    + r.status.toString() + ' ' + r.statusText + '</b>.</font><br/>Maybe you want to <a href="@note/index">return to the main page</a>?</p><img src="./cat/'
+                    + r.status.toString() + '.jpg"></img>';
+                modifyLinks();
                 NProgress.done();
-                break;
-            default:
-                main_article.innerHTML = '<font color="red"><strong>Unexpected error!</strong></font>';
-                NProgress.done();
+            }
+        },
+        (r) => {
+            main_article.innerHTML = '<font color="red"><strong>⚠️ Network error!</strong></font>';
+            NProgress.done();
         }
-    }
+    );
 }
 function onPopState(e) {
     if (current_page === getQueryString('page')) return;
