@@ -3,10 +3,13 @@ title: about
 title_custom: true
 tags: [Index]
 created: 2022-08-23T14:34:35.551Z
-modified: 2022-09-20T07:06:58.193Z
+modified: 2023-03-29T10:47:55.193Z
 ---
 
 # About me
+
+[![](https://img.shields.io/badge/Crazy%20Thur.-V%20me%2050-red?logo=kfc)](http://home.ustc.edu.cn/~pro/images/out/appreciate_wechat.jpg)
+
 一只普普通通的大二🐶。
 <img align="right" src="http://q2.qlogo.cn/headimg_dl?dst_uin=364105900&spec=100" alt="头像" style="width: 20%;">
 
