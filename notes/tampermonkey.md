@@ -10,7 +10,7 @@ modified: 2023-03-28T09:24:30.872Z
 
 ## USTC 助手
 
-[![Greasy Fork version](https://img.shields.io/greasyfork/v/453530)![Greasy Fork installs](https://img.shields.io/greasyfork/dt/453530)](https://greasyfork.org/zh-CN/scripts/453530)
+[![Greasy Fork version](https://img.shields.io/greasyfork/v/453530) ![Greasy Fork installs](https://img.shields.io/greasyfork/dt/453530)](https://greasyfork.org/zh-CN/scripts/453530)
 
 ### 功能
 
@@ -44,7 +44,7 @@ modified: 2023-03-28T09:24:30.872Z
 
 ## Auto Grading
 
-[![Greasy Fork version](https://img.shields.io/greasyfork/v/457282)![Greasy Fork installs](https://img.shields.io/greasyfork/dt/457282)](https://greasyfork.org/zh-CN/scripts/457282)
+[![Greasy Fork version](https://img.shields.io/greasyfork/v/457282) ![Greasy Fork installs](https://img.shields.io/greasyfork/dt/457282)](https://greasyfork.org/zh-CN/scripts/457282)
 
 功能：半自动评教
 
@@ -52,7 +52,7 @@ modified: 2023-03-28T09:24:30.872Z
 
 ## 去你妈的秒懂
 
-[![Greasy Fork version](https://img.shields.io/greasyfork/v/430869)![Greasy Fork installs](https://img.shields.io/greasyfork/dt/430869)](https://greasyfork.org/zh-CN/scripts/430869)
+[![Greasy Fork version](https://img.shields.io/greasyfork/v/430869) ![Greasy Fork installs](https://img.shields.io/greasyfork/dt/430869)](https://greasyfork.org/zh-CN/scripts/430869)
 
 功能：去除百度系的秒懂百科视频
 
