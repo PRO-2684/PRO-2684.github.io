@@ -1,7 +1,7 @@
 ---
 title: meijuwo
 title_custom: true
-tags: [Technical, Python, Latest]
+tags: [Technical, Python]
 created: 2023-01-04T21:44:06.230Z
 modified: 2023-01-06T10:15:36.872Z
 ---
