@@ -4,7 +4,7 @@ title_custom: true
 tags: [Useful]
 favorited: true
 created: 2022-05-28T07:58:30.128Z
-modified: 2022-09-29T07:17:31.659Z
+modified: 2023-04-15T19:06:31.659Z
 ---
 
 # 🔗 常用链接
@@ -51,7 +51,9 @@ modified: 2022-09-29T07:17:31.659Z
 
 [跨校资源认证中心](https://idp.ustc.edu.cn/idp/)
 
-[BlackBoard](https://www.bb.ustc.edu.cn/)
+[BlackBoard (bb 系统)](https://www.bb.ustc.edu.cn/)
+
+[瀚海教学网](https://course.ustc.edu.cn/)
 
 [睿客网](https://rec.ustc.edu.cn/)
 
