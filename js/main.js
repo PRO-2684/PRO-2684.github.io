@@ -11,7 +11,7 @@ for (i in enabled_features) {
     showdown.setOption(enabled_features[i], true);
 }
 let main_article = document.getElementById("markdown");
-let showdown_converter = new showdown.Converter();
+let showdown_converter = new showdown.Converter({extensions: ["footnotes"]});
 let current_page = 'index';
 let menu_element = document.querySelector("#main-content > aside.panel.right-panel");
 let menu_button = document.querySelector("#show-sidebar");
@@ -130,7 +130,7 @@ async function modifyLink(node) {
         node.removeAttribute("target");
         node.removeAttribute("rel");
         node.classList.add('external-link');
-    } else {
+    } else if (!dst.startsWith("#")) {
         node.classList.add('external-link');
     }
 }
