@@ -13,6 +13,8 @@ modified: 2022-12-10T20:17:53.503Z
 
 ## 🔥 最近更新
 
+[Survive USTC](@note/survive_ustc)
+
 [如何查找老师邮箱](@note/email)
 
 [一些我写的油猴脚本](@note/tampermonkey)
@@ -67,6 +69,8 @@ modified: 2022-12-10T20:17:53.503Z
 [银河帝国全套(15册)](@note/Galactic_Empire)
 
 ## 🎓 学业
+
+[Survive USTC](@note/survive_ustc)
 
 [百分制、五等级制、GPA 转换表](@note/score_to_gpa)
 
