@@ -3,7 +3,7 @@ title: tampermonkey
 title_custom: true
 tags: [Technical, Web, Latest]
 created: 2023-01-04T21:11:28.782Z
-modified: 2023-03-28T09:24:30.872Z
+modified: 2023-04-24T20:16:30.872Z
 ---
 
 # 🐵 一些油猴脚本
@@ -34,6 +34,18 @@ modified: 2023-03-28T09:24:30.872Z
 5. [综合教务系统](https://jw.ustc.edu.cn)
     - 自动聚焦或点击登录按钮
 
+6. [第二课堂](https://young.ustc.edu.cn/login/)
+    - 自定义进入时打开的标签页
+    - 点击主菜单时自动进入常用的子菜单
+    - 移除牛皮癣一般的数据展示中心图片
+    - 快捷键支持
+        - 左右箭头：切换 tab
+        - 数字键 (1-9)：切换至指定的 tab
+        - x：关闭当前 tab
+
+7. [Web VPN](https://wvpn.ustc.edu.cn/)
+    - 支持自定义收藏夹
+
 ### 链接
 
 [GreasyFork](https://greasyfork.org/zh-CN/scripts/453530-ustc-helper)
@@ -41,6 +53,8 @@ modified: 2023-03-28T09:24:30.872Z
 ### 截图
 
 ![BB 作业状态检查](@attachment/bb.png)
+
+![自定义收藏夹](@attachment/wvpn.jpg)
 
 ## Auto Grading
 

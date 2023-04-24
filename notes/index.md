@@ -4,7 +4,7 @@ title_custom: true
 attachments: [Harry_Potter_The_Complete_Collection.epub]
 tags: [Index]
 created: 2022-05-24T14:22:05.844Z
-modified: 2022-12-10T20:17:53.503Z
+modified: 2023-4-24T20:14:53.503Z
 ---
 
 # 👋 欢迎!
@@ -13,11 +13,11 @@ modified: 2022-12-10T20:17:53.503Z
 
 ## 🔥 最近更新
 
+[一些我写的油猴脚本](@note/tampermonkey)
+
 [Survive USTC](@note/survive_ustc)
 
 [如何查找老师邮箱](@note/email)
-
-[一些我写的油猴脚本](@note/tampermonkey)
 
 ## 🛠️ 实用
 [USTC 网址导航](@note/useful_links)
