@@ -3,10 +3,12 @@ title: tampermonkey
 title_custom: true
 tags: [Technical, Web, Latest]
 created: 2023-01-04T21:11:28.782Z
-modified: 2023-04-24T20:16:30.872Z
+modified: 2023-05-08T21:35:27.091Z
 ---
 
 # 🐵 一些油猴脚本
+
+USTC 相关的脚本集：[USTC collection (greasyfork.org)](https://greasyfork.org/zh-CN/scripts?set=586574)
 
 ## USTC 助手
 
@@ -33,18 +35,22 @@ modified: 2023-04-24T20:16:30.872Z
 
 5. [综合教务系统](https://jw.ustc.edu.cn)
     - 自动聚焦或点击登录按钮
-
+    - 快捷键支持
+    
 6. [第二课堂](https://young.ustc.edu.cn/login/)
     - 自定义进入时打开的标签页
     - 点击主菜单时自动进入常用的子菜单
     - 移除牛皮癣一般的数据展示中心图片
     - 快捷键支持
-        - 左右箭头：切换 tab
-        - 数字键 (1-9)：切换至指定的 tab
-        - x：关闭当前 tab
-
+    
 7. [Web VPN](https://wvpn.ustc.edu.cn/)
     - 支持自定义收藏夹
+
+### 快捷键
+
+- 左右箭头：切换 tab
+- 数字键 (1-9)：切换至指定的 tab
+- x：关闭当前 tab
 
 ### 链接
 
@@ -55,6 +61,23 @@ modified: 2023-04-24T20:16:30.872Z
 ![BB 作业状态检查](@attachment/bb.png)
 
 ![自定义收藏夹](@attachment/wvpn.jpg)
+
+## FPGA-Plus
+
+[![Greasy Fork version](https://img.shields.io/greasyfork/v/465711) ![Greasy Fork installs](https://img.shields.io/greasyfork/dt/465711)](https://greasyfork.org/zh-CN/scripts/465711)
+
+### 功能
+
+针对 [FPGA-Online](https://fpgaol.ustc.edu.cn/) 平台的优化脚本。
+
+- 快速复制：便捷复制常用芯片型号 "xc7a100tcsg324-1" (点击即可复制)
+- 信息显示：Led 显示转二进制、十六进制、十进制（无符号）
+- 即时反馈：点击 "Program!" 后立即更新显示文本为 "Waiting..."，避免误认为没有开始 program。
+- 文件上传：使用默认的上传对话框，支持拖放上传
+
+### 链接
+
+[GreasyFork](https://greasyfork.org/zh-CN/scripts/465711-fpga-plus)
 
 ## Auto Grading
 
