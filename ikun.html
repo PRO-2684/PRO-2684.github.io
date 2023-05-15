@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>只因你太美网页版</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .box {
+            width: 1280px;
+            height: 720px;
+            /* border: 1px solid #ff00ff; */
+        }
+        .bg {
+            position: relative;
+            height: 588px;
+            background-color: #e4e4f6;
+        }
+        .floor {
+            height: 132px;
+            background-color: #cec3c1;
+        }
+        .bar1 {
+            position: absolute;
+            width: 374px;
+            top: 24px;
+            left: -154px;
+            border-bottom: 110px solid #7f83db;
+            border-right: 110px solid transparent;
+            transform: rotate(45deg);
+        }
+        .bar2 {
+            position: absolute;
+            width: 673px;
+            top: 295px;
+            left: -187px;
+            border-top: 110px solid #93cae4;
+            border-right: 110px solid transparent;
+            transform: rotate(45deg);
+        }
+        .logo {
+            position: absolute;
+            top: 32px;
+            left: 983px;
+            width: 152px;
+            height: auto;
+            max-width: 100%;
+        }
+        .kunkun {
+            position: absolute;
+            top: 173px;
+            left: 420px;
+            width: 300px;
+            height: 500px;
+            border-radius: 10px;
+            background-color: #666666;
+            transform: skew(-20deg, 0) scale(1.1, 0.9);
+            animation: TieShanKao 1s infinite;
+        }
+        /* 动画 */
+        @keyframes TieShanKao {
+            0% {
+                transform: skew(-5deg, 0) scale(1, 1);
+            }
+            25% {
+                transform: skew(-20deg, -5deg) scale(1, 1.1);
+            }
+            50% {
+                transform: skew(-5deg, 0) scale(1, 1);
+            }
+            75% {
+                transform: skew(-20deg, 0) scale(1.1, 0.9);
+            }
+            100% {
+                transform: skew(-5deg, 0) scale(1, 1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="bg">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <img class="logo" src=""/> <!--图片可替换 -->
+            <div class="kunkun"></div>
+        </div>
+        <div class="floor"></div>
+    </div>
+</body>
+</html>
