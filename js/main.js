@@ -344,7 +344,7 @@ document.onkeydown = function (e) {
     }
 }
 refreshBookmark();
-if (invoke_toastify) {
+if (invoke_toastify && Math.random() < 1e-2) {
     invoke_toastify();
     let script = document.createElement("script");
     script.src = "./js/easter_egg.js";
