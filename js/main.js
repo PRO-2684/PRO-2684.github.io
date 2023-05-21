@@ -344,3 +344,9 @@ document.onkeydown = function (e) {
     }
 }
 refreshBookmark();
+if (invoke_toastify) {
+    invoke_toastify();
+    let script = document.createElement("script");
+    script.src = "./js/easter_egg.js";
+    document.querySelector("body").appendChild(script);
+}
