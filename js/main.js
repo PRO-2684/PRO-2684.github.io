@@ -53,7 +53,7 @@ function getQueryString(name) {
     return null;
 }
 function removeEmoji(s) {
-    return s.replace(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2580-\u27BF]|\uD83E[\uDD10-\uDDFF]|\uFE0F| )+-/g, '');
+    return s.replace(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2580-\u27BF]|\uD83E[\uDD10-\uDEFF]|\uFE0F| )+-/g, '');
 }
 async function addAnchor(node) {
     node.id = removeEmoji(node.id); // remove emojis in id to prevent weired hashes
