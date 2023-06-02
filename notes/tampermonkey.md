@@ -3,7 +3,7 @@ title: tampermonkey
 title_custom: true
 tags: [Technical, Web, Latest]
 created: 2023-01-04T21:11:28.782Z
-modified: 2023-05-08T21:35:27.091Z
+modified: 2023-06-02T20:40:55.061Z
 ---
 
 # 🐵 一些油猴脚本
@@ -54,7 +54,7 @@ USTC 相关的脚本集：[USTC collection (greasyfork.org)](https://greasyfork.
 
 ### 链接
 
-[GreasyFork](https://greasyfork.org/zh-CN/scripts/453530-ustc-helper)
+[GreasyFork](https://greasyfork.org/scripts/453530)
 
 ### 截图
 
@@ -70,14 +70,14 @@ USTC 相关的脚本集：[USTC collection (greasyfork.org)](https://greasyfork.
 
 针对 [FPGA-Online](https://fpgaol.ustc.edu.cn/) 平台的优化脚本。
 
-- 快速复制：便捷复制常用芯片型号 "xc7a100tcsg324-1" (点击即可复制)
+- 快速复制：便捷复制常用芯片型号 `xc7a100tcsg324-1` (点击即可复制)
 - 信息显示：Led 显示转二进制、十六进制、十进制（无符号）
 - 即时反馈：点击 "Program!" 后立即更新显示文本为 "Waiting..."，避免误认为没有开始 program。
 - 文件上传：使用默认的上传对话框，支持拖放上传
 
 ### 链接
 
-[GreasyFork](https://greasyfork.org/zh-CN/scripts/465711-fpga-plus)
+[GreasyFork](https://greasyfork.org/scripts/465711)
 
 ## Auto Grading
 
@@ -85,7 +85,7 @@ USTC 相关的脚本集：[USTC collection (greasyfork.org)](https://greasyfork.
 
 功能：半自动评教
 
-链接：[GreasyFork](https://greasyfork.org/zh-CN/scripts/457282-auto-grading)
+链接：[GreasyFork](https://greasyfork.org/scripts/457282)
 
 ## 去你妈的秒懂
 
@@ -93,4 +93,12 @@ USTC 相关的脚本集：[USTC collection (greasyfork.org)](https://greasyfork.
 
 功能：去除百度系的秒懂百科视频
 
-链接：[GreasyFork](https://greasyfork.org/zh-CN/scripts/430869-%E5%8E%BB%E4%BD%A0%E5%A6%88%E7%9A%84%E7%A7%92%E6%87%82)
+链接：[GreasyFork](https://greasyfork.org/scripts/430869)
+
+## 禁用搜索框
+
+[![Greasy Fork version](https://img.shields.io/greasyfork/v/466779) ![Greasy Fork installs](https://img.shields.io/greasyfork/dt/466779)](https://greasyfork.org/zh-CN/scripts/430869)
+
+功能：（理论上）根除 ***所有*** 网站的悬浮搜索框。
+
+链接：[GreasyFork](https://greasyfork.org/scripts/466779)

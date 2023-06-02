@@ -13,11 +13,11 @@ modified: 2023-4-24T20:14:53.503Z
 
 ## 🔥 最近更新
 
+[常用快捷键](@note/shortcuts)
+
 [一些我写的油猴脚本](@note/tampermonkey)
 
 [Survive USTC](@note/survive_ustc)
-
-[如何查找老师邮箱](@note/email)
 
 ## 🛠️ 实用
 [USTC 网址导航](@note/useful_links)
@@ -30,6 +30,8 @@ modified: 2023-4-24T20:14:53.503Z
 [相同 hash 的图片](@note/same_hash)
 
 [Android 使用体验提升](@note/android)
+
+[常用快捷键](@note/shortcuts)
 
 ### 🐍 Python
 
