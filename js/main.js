@@ -344,9 +344,11 @@ document.onkeydown = function (e) {
     }
 }
 refreshBookmark();
-if (invoke_toastify && Math.random() < 1e-2) {
-    invoke_toastify();
-    let script = document.createElement("script");
-    script.src = "./js/easter_egg.js";
-    document.querySelector("body").appendChild(script);
-}
+// Double click to get to top
+let div = document.getElementById("main-content");
+let button = document.querySelector("#float-buttons > a[href='#top']");
+div.addEventListener("dblclick", (e) => {
+    if (e.target == div) {
+        button.click();
+    }
+});
