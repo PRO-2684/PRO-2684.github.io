@@ -4,7 +4,7 @@ title_custom: true
 tags: [Useful]
 favorited: true
 created: 2022-05-28T07:58:30.128Z
-modified: 2023-04-15T19:06:31.659Z
+modified: 2023-07-17T17:27:31.659Z
 ---
 
 # 🔗 常用链接
@@ -42,6 +42,8 @@ modified: 2023-04-15T19:06:31.659Z
 [预约系统 - 中区](http://roombooking.cmet.ustc.edu.cn/#/index)
 
 [预约系统 - 西区](http://ic.lib.ustc.edu.cn/clientweb/xcus/ic2/Default.aspx?page=center)
+
+[预约系统 - 高新区](https://hs.lib.ustc.edu.cn/)
 
 [大雾系统](http://pems.ustc.edu.cn/)
 
