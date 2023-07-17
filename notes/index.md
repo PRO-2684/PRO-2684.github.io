@@ -17,7 +17,7 @@ modified: 2023-4-24T20:14:53.503Z
 
 [一些我写的油猴脚本](@note/tampermonkey)
 
-[Survive USTC](@note/survive_ustc)
+[科大学号格式及说明](@note/student_id)
 
 ## 🛠️ 实用
 [USTC 网址导航](@note/useful_links)
@@ -83,6 +83,8 @@ modified: 2023-4-24T20:14:53.503Z
 [电子技术基础 模拟部分 - 部分习题答案 (来源: 教材二维码)](@attachment/analog_ans.zip)
 
 [如何查找老师邮箱](@note/email)
+
+[科大学号格式及说明](@note/student_id)
 
 ## 🧶 其他
 [博客时间线](@note/timeline)

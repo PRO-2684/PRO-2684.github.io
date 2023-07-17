@@ -1,7 +1,7 @@
 ---
 title: Survive USTC
 title_custom: true
-tags: [Latest, Academic]
+tags: [Academic]
 created: 2023-04-17T14:54:32.216Z
 modified: 2023-04-18T10:04:32.216Z
 ---
