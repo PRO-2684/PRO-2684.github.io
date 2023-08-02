@@ -1,0 +1,121 @@
+const version = "v3";
+const note = "note";
+const other = "other";
+const base = location.origin + location.pathname.slice(0, -5); // remove last "sw.js"
+const note_url = base + "notes/";
+
+const addResourcesToCache = async (resources, cahce_name) => {
+    const cache = await caches.open(cahce_name);
+    await cache.addAll(resources);
+};
+
+const putInCache = async (request, response, cache_name) => {
+    const cache = await caches.open(cache_name);
+    console.debug(`Put ${request.url} in ${cache_name}`);
+    await cache.put(request, response);
+};
+
+const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
+    const responseFromCache = await caches.match(request, {
+        // If same origin, ignore search params
+        ignoreSearch: request.url.startsWith(base),
+    });
+    if (responseFromCache) {
+        console.debug(`Get ${request.url} from cache`);
+        return responseFromCache;
+    }
+    let cache_name = other;
+    let parts = request.url.slice(base.length).split("/");
+    console.debug(parts);
+    if (request.url.startsWith(base)) {
+        // Everything directly under base, `/js`, `/css` is in version cache; `/notes` is in note cache; else in other cache
+        if (parts.length <= 1) {
+            cache_name = version;
+        } else if (parts[0] === "notes") {
+            cache_name = note;
+        } else if (parts[0] === "js" || parts[0] === "css") {
+            cache_name = version;
+        }
+    }
+    const preloadResponse = await preloadResponsePromise;
+    if (preloadResponse) {
+        putInCache(request, preloadResponse.clone(), cache_name);
+        console.debug(`Get ${request.url} from preload, saved in cache ${cache_name}`);
+        return preloadResponse;
+    }
+    try {
+        const responseFromNetwork = await fetch(request);
+        putInCache(request, responseFromNetwork.clone(), cache_name);
+        console.debug(`Get ${request.url} from network, saved in cache ${cache_name}`);
+        return responseFromNetwork;
+    } catch (error) {
+        const fallbackResponse = await caches.match(fallbackUrl);
+        if (fallbackResponse) {
+            console.debug(`Get fallback for ${request.url} from url ${fallbackUrl} in cache`);
+            return fallbackResponse;
+        }
+        console.debug(`Constructed fallback response for ${request.url}`);
+        return new Response("Network error", {
+            status: 408,
+            headers: { "Content-Type": "text/plain" },
+        });
+    }
+};
+
+const enableNavigationPreload = async () => {
+    if (self.registration.navigationPreload) {
+        await self.registration.navigationPreload.enable();
+    }
+};
+
+self.addEventListener("install", (event) => {
+    event.waitUntil(
+        addResourcesToCache([
+            "/",
+            "/index.html",
+            "/favicon.ico",
+            "/css/main.css",
+            // "/css/katex.min.css",
+            "/css/nprogress.css",
+            // "/css/prism_dark.css",
+            // "/css/prism_light.css",
+            // "/css/secret.css",
+            "/js/main.js",
+            "/js/showdown.js",
+            "/js/showdown-footnotes.js",
+            "/js/katex.min.js",
+            "/js/katex-auto-render.min.js",
+            "/js/nprogress.js",
+            // "/js/md5.js",
+            "/js/prism.js",
+        ], version),
+    );
+});
+
+self.addEventListener("fetch", (event) => {
+    event.respondWith(
+        cacheFirst({
+            request: event.request,
+            preloadResponsePromise: event.preloadResponse,
+            fallbackUrl: "/cat/404.jpg",
+        }),
+    );
+});
+
+const deleteCache = async (key) => {
+    await caches.delete(key);
+};
+
+const deleteOldCaches = async () => {
+    const cacheKeepList = [version, other, note];
+    const keyList = await caches.keys();
+    const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
+    await Promise.all(cachesToDelete.map(deleteCache));
+};
+
+self.addEventListener("activate", (event) => {
+    event.waitUntil(Promise.all([
+        enableNavigationPreload(),
+        deleteOldCaches(),
+    ]));
+});

@@ -29,6 +29,7 @@ let tag_trans = {
     Other: "其他",
     Test: "测试用"
 };
+let sw_supported = 'serviceWorker' in navigator;
 
 // formula renderer - katex
 let katex_config = {
@@ -209,7 +210,7 @@ function load(name) {
     NProgress.start();
     current_page = name;
     refreshBookmark();
-    if (sessionStorage.getItem(current_page)) {
+    if (!sw_supported && sessionStorage.getItem(current_page)) {
         animate(sessionStorage.getItem(current_page));
         NProgress.done();
         return;
@@ -221,7 +222,7 @@ function load(name) {
                 r.text().then(
                     (text) => {
                         NProgress.inc();
-                        sessionStorage.setItem(current_page, text);
+                        if (!sw_supported) sessionStorage.setItem(current_page, text);
                         animate(text);
                         NProgress.done();
                     }
@@ -320,6 +321,32 @@ function removeBookmark(index) {
     window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     refreshBookmark();
 }
+function clearCache(cache_name) {
+    let cache = window.caches.open(cache_name);
+    cache.then(cache => {
+        cache.keys().then(keys => {
+            for (let i = 0; i < keys.length; i++) {
+                cache.delete(keys[i]);
+            }
+        });
+    });
+}
+// Service worker
+const registerServiceWorker = async () => {
+    try {
+        await navigator.serviceWorker.register("/sw.js", {
+            scope: "/",
+        });
+    } catch (error) {
+        console.error(`Registration failed: ${error}`);
+    }
+}
+if ("serviceWorker" in navigator) {
+    registerServiceWorker();
+} else {
+    console.log("Service workers are not supported in this environment.");
+}
+
 // initialize
 let page = getQueryString('page');
 if (!page) {
@@ -339,7 +366,12 @@ document.onkeydown = function (e) {
         } else {
             e.preventDefault();
         }
-        window.sessionStorage.clear();
+        if (!sw_supported) {
+            window.sessionStorage.clear();
+        } else {
+            clearCache("note");
+            clearCache("other");
+        }
         location.reload(true);
     }
 }
