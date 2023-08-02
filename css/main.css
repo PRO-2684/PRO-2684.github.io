@@ -72,7 +72,7 @@
     .external-link[href^="mailto:"]::after {
         background-image: url(./email-dark.svg);
     }
-    
+
     .external-link[href^="./attachments/"]::after {
         background-image: url(./attachment-dark.svg);
     }
