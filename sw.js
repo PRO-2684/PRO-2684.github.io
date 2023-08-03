@@ -1,8 +1,10 @@
-const version = "v3";
+const version = "1691026660";
 const note = "note";
 const other = "other";
 const base = location.origin + location.pathname.slice(0, -5); // remove last "sw.js"
 const note_url = base + "notes/";
+const expiration = 60 * 60 * 24; // 1 day
+// const expiration = 60; // debug: 1 min
 
 const addResourcesToCache = async (resources, cahce_name) => {
     const cache = await caches.open(cahce_name);
@@ -16,25 +18,28 @@ const putInCache = async (request, response, cache_name) => {
 };
 
 const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
+    let cache_name = other;
+    let parts = request.url.slice(base.length).split("/");
+    // Everything directly under base, `/js`, `/css` is in version cache; `/notes` is in note cache; else in other cache
+    if (parts.length <= 1) {
+        cache_name = version;
+    } else if (parts[0] === "notes") {
+        cache_name = note;
+    } else if (parts[0] === "js" || parts[0] === "css") {
+        cache_name = version;
+    }
     const responseFromCache = await caches.match(request, {
         // If same origin, ignore search params
         ignoreSearch: request.url.startsWith(base),
     });
     if (responseFromCache) {
-        console.debug(`Get ${request.url} from cache`);
-        return responseFromCache;
-    }
-    let cache_name = other;
-    let parts = request.url.slice(base.length).split("/");
-    console.debug(parts);
-    if (request.url.startsWith(base)) {
-        // Everything directly under base, `/js`, `/css` is in version cache; `/notes` is in note cache; else in other cache
-        if (parts.length <= 1) {
-            cache_name = version;
-        } else if (parts[0] === "notes") {
-            cache_name = note;
-        } else if (parts[0] === "js" || parts[0] === "css") {
-            cache_name = version;
+        const time_span = Date.now() - new Date(responseFromCache.headers.get("date")).getTime();
+        const is_expired = (time_span > expiration * 1000) && (cache_name !== version);
+        if (is_expired) {
+            console.debug(`Get ${request.url} from cache, but expired`);
+        } else {
+            console.debug(`Get ${request.url} from cache`);
+            return responseFromCache;
         }
     }
     const preloadResponse = await preloadResponsePromise;
@@ -93,13 +98,15 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-    event.respondWith(
-        cacheFirst({
-            request: event.request,
-            preloadResponsePromise: event.preloadResponse,
-            fallbackUrl: "/cat/404.jpg",
-        }),
-    );
+    if (event.request.url.startsWith(base)) { // Only cache resources under my website
+        event.respondWith(
+            cacheFirst({
+                request: event.request,
+                preloadResponsePromise: event.preloadResponse,
+                fallbackUrl: "/cat/404.jpg",
+            }),
+        );
+    }
 });
 
 const deleteCache = async (key) => {
@@ -111,6 +118,11 @@ const deleteOldCaches = async () => {
     const keyList = await caches.keys();
     const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
     await Promise.all(cachesToDelete.map(deleteCache));
+    // Delete caches from other that are not under base
+    const cache = await caches.open(other);
+    const requests = await cache.keys();
+    const requestsToDelete = requests.filter((request) => !request.url.startsWith(base));
+    await Promise.all(requestsToDelete.map((request) => cache.delete(request)));
 };
 
 self.addEventListener("activate", (event) => {

@@ -322,14 +322,7 @@ function removeBookmark(index) {
     refreshBookmark();
 }
 function clearCache(cache_name) {
-    let cache = window.caches.open(cache_name);
-    cache.then(cache => {
-        cache.keys().then(keys => {
-            for (let i = 0; i < keys.length; i++) {
-                cache.delete(keys[i]);
-            }
-        });
-    });
+    caches.delete(cache_name);
 }
 // Service worker
 const registerServiceWorker = async () => {
