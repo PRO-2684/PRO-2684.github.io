@@ -3,7 +3,7 @@ title: timeline
 title_custom: true
 tags: [Other]
 created: 2022-03-24T13:35:41.920Z
-modified: 2022-12-10T22:01:31.577Z
+modified: 2023-08-03T10:40:31.577Z
 ---
 
 # 🗓️ Timeline
@@ -138,3 +138,7 @@ Not documented.
 ### 3.27
 1. Using `fetch` instead of `XMLHttpRequest`.
 2. Using built-in `searchParams`.
+
+### 8.2
+
+Introduce **Service Worker**!
