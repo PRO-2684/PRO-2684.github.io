@@ -144,6 +144,7 @@ aside.panel {
     transition: all 0.2s ease-in-out;
     line-height: 1.5;
     padding: 0;
+    overflow-y: scroll;
 }
 
 aside.right-panel {
@@ -155,8 +156,7 @@ aside.right-panel {
     justify-content: center;
     width: 100%;
     border-radius: 0 0 1em 1em;
-    max-height: 50%;
-    overflow-y: scroll;
+    max-height: 70%;
     z-index: 4;
 }
 
@@ -354,6 +354,7 @@ h6:hover>a.anchor {
         top: 0;
         flex: 2;
         align-self: flex-start;
+        max-height: 100vh;
     }
 
     aside.right-panel {
