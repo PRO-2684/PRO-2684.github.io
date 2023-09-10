@@ -100,6 +100,10 @@ body {
     background: var(--selected-bg);
 }
 
+ul {
+    padding-inline-start: 1em;
+}
+
 div {
     padding: 1em;
 }
