@@ -4,6 +4,7 @@ title_custom: false
 tags: [Technical]
 created: 2022-12-10T20:19:00.551Z
 modified: 2022-12-10T20:19:00.551Z
+description: 提升 Android 使用体验：第三方软件、自定义快捷方式、ADB、Root
 ---
 
 # 🤖 Android 使用体验提升

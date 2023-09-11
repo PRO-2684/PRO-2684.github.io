@@ -5,6 +5,7 @@ attachments: [mirror.txt]
 tags: [Ebook]
 created: 2022-07-04T14:33:21.993Z
 modified: 2022-09-19T01:20:15.346Z
+description: 刘慈欣编写的《镜子》
 ---
 
 # 镜子

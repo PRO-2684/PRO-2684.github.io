@@ -1,4 +1,4 @@
-const version = "1694426123";
+const version = "1694430022";
 const note = "note";
 const other = "other";
 const base = location.origin + location.pathname.slice(0, -5); // remove last "sw.js"
@@ -47,6 +47,9 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
         putInCache(request, preloadResponse.clone(), cache_name);
         console.debug(`Get ${request.url} from preload, saved in cache ${cache_name}`);
         return preloadResponse;
+    }
+    if (cache_name !== other) {
+        request.cache = "no-store";
     }
     try {
         const responseFromNetwork = await fetch(request);

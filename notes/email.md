@@ -4,6 +4,7 @@ title_custom: true
 tags: [Useful, Academic]
 created: 2023-04-09T16:07:28.227Z
 modified: 2023-04-09T16:21:34.239Z
+description: 如何查找科大老师邮箱 USTC
 ---
 
 # 📧 查找老师邮箱

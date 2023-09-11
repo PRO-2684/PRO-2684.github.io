@@ -4,6 +4,7 @@ title_custom: true
 tags: [Technical]
 created: 2023-06-02T20:48:37.362Z
 modified: 2023-09-07T14:33:21.322Z
+description: 一些常用的快捷键
 ---
 
 # ⌨️ 常用快捷键

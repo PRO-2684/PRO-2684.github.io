@@ -3,6 +3,7 @@ title: USTC qqs
 tags: [Useful]
 created: 2022-07-01T11:41:25.971Z
 modified: 2022-09-19T01:20:47.384Z
+description: USTC QQ / QQ 群汇总
 ---
 
 # USTC qqs

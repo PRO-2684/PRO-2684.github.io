@@ -4,6 +4,7 @@ title_custom: true
 tags: [Technical, Python]
 created: 2022-05-31T01:16:28.782Z
 modified: 2022-09-19T01:20:36.872Z
+description: 通过 go-cqhttp 自搭建 qq 定时推送
 ---
 
 # 🐧 QQ push
@@ -33,11 +34,11 @@ modified: 2022-09-19T01:20:36.872Z
 8. 推送消息的示例 Python 脚本（自行修改 `<PORT>` 为前文提到的端口， `<qq>` 为要推送到的 qq 号）：
     ```python
     from requests import post
-    
+
     def report(msg: str) -> bool:
         r = post('http://127.0.0.1:<PORT>/send_private_msg', data={'user_id': <qq>, 'message': msg})
         return r.json().get('status') == 'ok'
-    
+
     report('Hello world!')
     ```
 9. 一切无误后即可自行编写推送脚本，并使用 `crontab` 定时执行。

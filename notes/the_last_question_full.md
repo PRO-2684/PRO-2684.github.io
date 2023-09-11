@@ -4,6 +4,7 @@ title_custom: true
 tags: [Ebook]
 created: 2022-06-05T00:16:36.355Z
 modified: 2022-09-19T01:20:15.347Z
+description: 阿西莫夫的短篇小说《The Last Question》全文
 ---
 
 # The Last Question - By Isaac Asimov

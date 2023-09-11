@@ -5,6 +5,7 @@ tags: [Useful]
 favorited: true
 created: 2022-05-28T07:58:30.128Z
 modified: 2023-07-17T17:27:31.659Z
+description: USTC 常用链接
 ---
 
 # 🔗 常用链接

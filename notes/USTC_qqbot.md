@@ -4,6 +4,7 @@ title_custom: true
 tags: [Technical, Python]
 created: 2022-07-03T12:56:07.670Z
 modified: 2022-09-19T01:20:36.872Z
+description: 针对 USTC 学生的 QQ 机器人
 ---
 
 # 🐧 USTC qqbot

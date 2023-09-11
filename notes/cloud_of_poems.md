@@ -5,6 +5,7 @@ attachments: [cloud of poems.txt]
 tags: [Ebook]
 created: 2022-07-04T14:44:29.092Z
 modified: 2022-09-19T01:20:15.346Z
+description: 刘慈欣编写的《诗云》
 ---
 
 # 诗云

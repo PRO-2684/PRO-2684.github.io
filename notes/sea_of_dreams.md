@@ -5,6 +5,7 @@ attachments: [sea of dreams.txt]
 tags: [Ebook]
 created: 2022-07-04T14:42:13.183Z
 modified: 2022-09-19T01:20:15.346Z
+description: 刘慈欣编写的《梦之海》：低温艺术家、取冰、两名艺术家的对话、梦之海、纪念碑和导光管、回收海洋、冰流星
 ---
 
 # 梦之海

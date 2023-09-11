@@ -83,6 +83,8 @@ function parseMetadata() {
     else document.getElementById('created').innerHTML = 'none';
     if (metadata['modified']) document.getElementById('modified').innerHTML = metadata['modified'].slice(0, 10) + ' ' + metadata['modified'].slice(11, 19);
     else document.getElementById('modified').innerHTML = 'none';
+    if (metadata['description']) document.querySelector("meta[name='description']").setAttribute('content', metadata['description']);
+    else document.querySelector("meta[name='description']").setAttribute('content', 'PRO 的个人博客');
     if (metadata['tags']) {
         let tags = metadata['tags'].slice(1, -1).split(',');
         for (let i = 0; i < tags.length; i++) {

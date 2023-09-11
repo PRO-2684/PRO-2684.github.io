@@ -4,6 +4,7 @@ title_custom: true
 tags: [Academic]
 created: 2022-11-02T00:41:42.216Z
 modified: 2022-11-02T00:57:01.133Z
+description: 本科生推免，研究生招生相关信息
 ---
 
 # 😎 推免

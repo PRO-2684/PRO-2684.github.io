@@ -5,6 +5,7 @@ attachments: [hearing the truth.txt]
 tags: [Ebook]
 created: 2022-07-04T14:39:44.388Z
 modified: 2022-09-19T01:20:15.346Z
+description: 刘慈欣编写的《朝闻道》
 ---
 
 # 朝闻道

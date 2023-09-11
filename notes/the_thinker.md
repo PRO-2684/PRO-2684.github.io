@@ -5,6 +5,7 @@ attachments: [the thinker.txt]
 tags: [Ebook]
 created: 2022-07-04T14:50:30.572Z
 modified: 2022-09-19T01:20:15.347Z
+description: 刘慈欣编写的《思想者》：太阳、人马座α星、天狼星、河鼓二星、思想者
 ---
 
 # 思想者
