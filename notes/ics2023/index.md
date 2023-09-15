@@ -2,12 +2,14 @@
 title: ICS 2023
 title_custom: true
 created: 2023-09-10T16:19:11.844Z
-modified: 2023-09-10T17:01:50.844Z
+modified: 2023-09-15T22:14:50.844Z
 ---
 
 # ICS 2023 Miao
 
 > 此网站使用了**缓存**。若您想访问最新内容，请使用 `Ctrl+F5` 刷新此页面。
+>
+> 此页面的制作很多方面上~~抄袭~~参考了去年 [lly 的课程主页](https://ics.liuly.moe/)。
 
 这里是 CS1002A.02 (2023 Fall) 班课程主页，作为课程组首页的补充。
 
@@ -42,4 +44,17 @@ modified: 2023-09-10T17:01:50.844Z
     - [Mac 版本下载](http://acsa.ustc.edu.cn/ics/download/lc3/LC3Tools-2.0.2.dmg)
     - [Linux 版本下载](http://acsa.ustc.edu.cn/ics/download/lc3/lc3tools-2.0.2.tar.gz)
     - [GitHub release](https://github.com/chiragsakhuja/lc3tools/releases)
+    - [Mac 下的常见问题 (来自去年主页)](https://ics.liuly.moe/faq/lc3tools.html)
+- [LC-3 Web](https://wchargin.com/lc3web/)：网页版 LC-3 模拟器
 - [LC-3 手册](http://acsa.ustc.edu.cn/ics/download/lc3/lc3-handbook.pdf) (英文，快速方便查找 LC-3 的汇编代码)
+- Patt 主页：[Yale N. Patt (utexas.edu)](https://users.ece.utexas.edu/~patt/)
+    - 点击主页里的 `EE306` 链接可以获取往年 Patt 教授这门课的课程资源（作业，考试，实验等）
+
+## 其它补充
+
+> 这里的内容与课程无关，但是可能会对你有所帮助 😉
+
+- [VSCode 配置各类环境（C/C++, LaTeX, Python...）](https://vscode.iw17.cc/tutorials)
+- [学校 Vlab 虚拟机平台](https://vlab.ustc.edu.cn/)
+- [Linux 101 入门教程](https://101.ustclug.org/)
+- Todo...
