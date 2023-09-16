@@ -1,4 +1,4 @@
-const version = "1694790141";
+const version = "1694850433";
 const note = "note";
 const other = "other";
 const base = location.origin + location.pathname.slice(0, -5); // remove last "sw.js"
@@ -57,10 +57,9 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
         console.debug(`Get ${request.url} from network, saved in cache ${cache_name}`);
         return responseFromNetwork;
     } catch (error) {
-        const tryCacheAgain = await caches.match(request);
-        if (tryCacheAgain) {
-            console.debug(`Get ${request.url} from cache (fallback)`);
-            return tryCacheAgain;
+        if (responseFromCache) {
+            console.debug(`Network error, ${request.url} fall back to cache`);
+            return responseFromCache;
         }
         const fallbackResponse = await caches.match(fallbackUrl);
         if (fallbackResponse) {
