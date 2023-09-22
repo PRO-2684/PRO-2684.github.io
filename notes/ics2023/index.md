@@ -27,7 +27,7 @@ modified: 2023-09-22T16:45:11.844Z
 
 | 序号 | 链接 | DDL       |
 | ---- | ---- | --------- |
-| Hw1  | 暂无 | 2023.9.29 |
+| Hw1  | [hw1.pdf](@attachment/hw1.pdf) or [hw1.md](@attachment/hw1.md) | 2023.9.28 |
 
 ## 实验
 
