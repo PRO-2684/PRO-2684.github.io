@@ -15,6 +15,7 @@ let showdown_converter = new showdown.Converter({extensions: ["footnotes"]});
 let current_page = 'index';
 let menu_element = document.querySelector("#main-content > aside.panel.right-panel");
 let menu_button = document.querySelector("#show-sidebar");
+const from_span = document.querySelector("#from");
 let overlay = document.getElementById('overlay');
 let bookmark_element = document.getElementById("bookmarks");
 let tag_trans = {
@@ -28,6 +29,14 @@ let tag_trans = {
     Academic: "学业",
     Other: "其他",
     Test: "测试用"
+};
+const from_trans = {
+    "loading": { color: "gray", text: "Loading..." },
+    "cache": { color: "green", text: "Cache" },
+    "network": { color: "green", text: "Network" },
+    "outdated-cache": { color: "orange", text: "Outdated cache" },
+    "fallback": { color: "red", text: "Fallback" },
+    "failed": { color: "red", text: "Failed" },
 };
 let sw_supported = 'serviceWorker' in navigator;
 
@@ -52,6 +61,11 @@ function getQueryString(name) {
     if (result)
         return decodeURIComponent(result);
     return null;
+}
+function setFrom(from) {
+    const attr = from_trans[from];
+    from_span.style.color = attr.color;
+    from_span.textContent = attr.text;
 }
 function removeEmoji(s) {
     return s.replaceAll(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2580-\u27BF]|\uD83E[\uDD10-\uDEFF]|\uFE0F| )+-/g, '');
@@ -211,10 +225,12 @@ function render(markdown) {
 function load(name) {
     NProgress.start();
     current_page = name;
+    setFrom("loading");
     refreshBookmark();
     if (!sw_supported && sessionStorage.getItem(current_page)) {
         animate(sessionStorage.getItem(current_page));
         NProgress.done();
+        setFrom("cache");
         return;
     }
     fetch('./notes/' + name + '.md', { cache: "reload" }).then(
@@ -227,6 +243,8 @@ function load(name) {
                         if (!sw_supported) sessionStorage.setItem(current_page, text);
                         animate(text);
                         NProgress.done();
+                        const from = r.headers.get("x-sw-from");
+                        setFrom(from ? from : "network");
                     }
                 );
             } else {
@@ -238,11 +256,13 @@ function load(name) {
                     + r.status.toString() + '.jpg"></img>';
                 modifyLinks();
                 NProgress.done();
+                setFrom("failed");
             }
         },
         (r) => {
             main_article.innerHTML = '<font color="red"><strong>⚠️ Network error!</strong></font>';
             NProgress.done();
+            setFrom("failed");
         }
     );
 }
@@ -336,7 +356,7 @@ const registerServiceWorker = async () => {
         console.error(`Registration failed: ${error}`);
     }
 }
-if ("serviceWorker" in navigator) {
+if (sw_supported) {
     registerServiceWorker();
 } else {
     console.log("Service workers are not supported in this environment.");

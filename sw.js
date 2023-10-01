@@ -1,4 +1,4 @@
-const version = "1694850433";
+const version = "1696170419";
 const note = "note";
 const other = "other";
 const base = location.origin + location.pathname.slice(0, -5); // remove last "sw.js"
@@ -39,14 +39,14 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
             console.debug(`Get ${request.url} from cache, but expired`);
         } else {
             console.debug(`Get ${request.url} from cache`);
-            return responseFromCache;
+            return new Response(responseFromCache.body, {headers: {"x-sw-from": "cache"}});
         }
     }
     const preloadResponse = await preloadResponsePromise;
     if (preloadResponse) {
         putInCache(request, preloadResponse.clone(), cache_name);
         console.debug(`Get ${request.url} from preload, saved in cache ${cache_name}`);
-        return preloadResponse;
+        return new Response(preloadResponse.body, {headers: {"x-sw-from": "network"}});
     }
     if (cache_name !== other) {
         request.cache = "no-store";
@@ -55,21 +55,24 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
         const responseFromNetwork = await fetch(request);
         putInCache(request, responseFromNetwork.clone(), cache_name);
         console.debug(`Get ${request.url} from network, saved in cache ${cache_name}`);
-        return responseFromNetwork;
+        return new Response(responseFromNetwork.body, {headers: {"x-sw-from": "network"}});
     } catch (error) {
         if (responseFromCache) {
             console.debug(`Network error, ${request.url} fall back to cache`);
-            return responseFromCache;
+            return new Response(responseFromCache.body, {headers: {"x-sw-from": "outdated-cache"}});
         }
         const fallbackResponse = await caches.match(fallbackUrl);
         if (fallbackResponse) {
             console.debug(`Get fallback for ${request.url} from url ${fallbackUrl} in cache`);
-            return fallbackResponse;
+            return new Response(fallbackResponse.body, {headers: {"x-sw-from": "fallback"}});
         }
         console.debug(`Constructed fallback response for ${request.url}`);
         return new Response("Network error", {
             status: 408,
-            headers: { "Content-Type": "text/plain" },
+            headers: {
+                "Content-Type": "text/plain",
+                "x-sw-from": "failed",
+            },
         });
     }
 };
@@ -87,18 +90,13 @@ self.addEventListener("install", (event) => {
             "/index.html",
             "/favicon.ico",
             "/css/main.css",
-            // "/css/katex.min.css",
             "/css/nprogress.css",
-            // "/css/prism_dark.css",
-            // "/css/prism_light.css",
-            // "/css/secret.css",
             "/js/main.js",
             "/js/showdown.js",
             "/js/showdown-footnotes.js",
             "/js/katex.min.js",
             "/js/katex-auto-render.min.js",
             "/js/nprogress.js",
-            // "/js/md5.js",
             "/js/prism.js",
         ], version),
     );
