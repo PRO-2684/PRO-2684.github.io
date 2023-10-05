@@ -4,12 +4,15 @@ title_custom: true
 tags: [Useful]
 favorited: true
 created: 2022-05-28T07:58:30.128Z
-modified: 2023-07-17T17:27:31.659Z
+modified: 2023-10-05T17:31:15.659Z
 description: USTC 常用链接
 ---
 
 # 🔗 常用链接
 ## 🎓 学业
+
+[教学日历](https://www.teach.ustc.edu.cn/category/calendar)
+
 [教务系统](https://jw.ustc.edu.cn/)
 
 [校图书馆](http://lib.ustc.edu.cn/)
@@ -81,9 +84,7 @@ description: USTC 常用链接
 
 [大屏课表](http://bigscreen.cmet.ustc.edu.cn/)
 
-[校园班车运行时刻表](https://www.ustc.edu.cn/info/1029/16689.htm)
-
-[高新区班车运行时刻表](https://www.ustc.edu.cn/info/1029/15841.htm)
+[校园班车运行时刻表](https://www.ustc.edu.cn/ggfw/xxcx.htm)
 
 [一卡通](https://ecard.ustc.edu.cn/)
 
