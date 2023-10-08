@@ -4,7 +4,7 @@ title_custom: true
 attachments: [Harry_Potter_The_Complete_Collection.epub]
 tags: [Index]
 created: 2022-05-24T14:22:05.844Z
-modified: 2023-4-24T20:14:53.503Z
+modified: 2023-10-08T09:10:40.128Z
 description: PRO 的个人博客索引
 ---
 
@@ -70,6 +70,8 @@ description: PRO 的个人博客索引
 [思想者](@note/the_thinker)
 
 [银河帝国全套(15册)](@note/Galactic_Empire)
+
+[结绳记事](@note/knot)
 
 ## 🎓 学业
 
