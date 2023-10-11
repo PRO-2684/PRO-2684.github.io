@@ -17,6 +17,12 @@ const putInCache = async (request, response, cache_name) => {
     await cache.put(request, response);
 };
 
+const modHeader = (response, from) => {
+    const headers = new Headers(response.headers);
+    headers.set("x-sw-from", from);
+    return new Response(response.body, {headers});
+}
+
 const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
     let cache_name = other;
     let parts = request.url.slice(base.length).split("/");
@@ -39,14 +45,14 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
             console.debug(`Get ${request.url} from cache, but expired`);
         } else {
             console.debug(`Get ${request.url} from cache`);
-            return new Response(responseFromCache.body, {headers: {"x-sw-from": "cache"}});
+            return modHeader(responseFromCache, "cache");
         }
     }
     const preloadResponse = await preloadResponsePromise;
     if (preloadResponse) {
         putInCache(request, preloadResponse.clone(), cache_name);
         console.debug(`Get ${request.url} from preload, saved in cache ${cache_name}`);
-        return new Response(preloadResponse.body, {headers: {"x-sw-from": "network"}});
+        return modHeader(preloadResponse, "network");
     }
     if (cache_name !== other) {
         request.cache = "no-store";
@@ -55,16 +61,16 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
         const responseFromNetwork = await fetch(request);
         putInCache(request, responseFromNetwork.clone(), cache_name);
         console.debug(`Get ${request.url} from network, saved in cache ${cache_name}`);
-        return new Response(responseFromNetwork.body, {headers: {"x-sw-from": "network"}});
+        return modHeader(responseFromNetwork, "network");
     } catch (error) {
         if (responseFromCache) {
             console.debug(`Network error, ${request.url} fall back to cache`);
-            return new Response(responseFromCache.body, {headers: {"x-sw-from": "outdated-cache"}});
+            return modHeader(responseFromCache, "outdated-cache");
         }
         const fallbackResponse = await caches.match(fallbackUrl);
         if (fallbackResponse) {
             console.debug(`Get fallback for ${request.url} from url ${fallbackUrl} in cache`);
-            return new Response(fallbackResponse.body, {headers: {"x-sw-from": "fallback"}});
+            return modHeader(fallbackResponse, "fallback");
         }
         console.debug(`Constructed fallback response for ${request.url}`);
         return new Response("Network error", {
