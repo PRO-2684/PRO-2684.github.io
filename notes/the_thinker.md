@@ -1,10 +1,7 @@
 ---
-title: the thinker
-title_custom: true
-attachments: [the thinker.txt]
+title: The thinker
 tags: [Ebook]
-created: 2022-07-04T14:50:30.572Z
-modified: 2022-09-19T01:20:15.347Z
+keywords: [The thinker, Novel, txt, 思想者, 刘慈欣, 电子书, 小说, 下载]
 description: 刘慈欣编写的《思想者》：太阳、人马座α星、天狼星、河鼓二星、思想者
 ---
 

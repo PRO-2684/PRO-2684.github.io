@@ -1,14 +1,12 @@
 ---
 title: index
-title_custom: true
-attachments: [Harry_Potter_The_Complete_Collection.epub]
 tags: [Index]
-created: 2022-05-24T14:22:05.844Z
-modified: 2023-10-08T09:10:40.128Z
+keywords: [Index, PRO, Blog, 首页, 博客, 索引]
 description: PRO 的个人博客索引
 ---
 
 # 👋 欢迎!
+
 欢迎来到我的个人博客! 😊
 [About me](@note/about)
 
@@ -21,6 +19,7 @@ description: PRO 的个人博客索引
 [科大学号格式及说明](@note/student_id)
 
 ## 🛠️ 实用
+
 [USTC 网址导航](@note/useful_links)
 
 [USTC QQ号/群聊汇总](@note/USTC_qqs)
@@ -51,6 +50,7 @@ description: PRO 的个人博客索引
 [Hackergame 2022 个人题解（部分）](@note/hg2022)
 
 ## 📖 电子书
+
 [The last question](@note/the_last_question)
 
 [Harry Potter (全集, .epub)](@attachment/Harry_Potter_The_Complete_Collection.epub)
@@ -90,11 +90,13 @@ description: PRO 的个人博客索引
 [科大学号格式及说明](@note/student_id)
 
 ## 🧶 其他
+
 [博客时间线](@note/timeline)
 
 [有、意思的命令](@note/interesting_commands)
 
 ## 🧪 测试用
+
 [katex 渲染测试](@note/katex)
 
 [Lorem](@note/lorem)
@@ -102,6 +104,7 @@ description: PRO 的个人博客索引
 [markdown 测试](@note/test)
 
 ## 🔗 友链
+
 [Jason Hall's blog](https://jasonhall.cn/)
 
 [Lstar's blog](https://lstarnana7mi.com/)

@@ -1,10 +1,7 @@
 ---
 title: useful links
-title_custom: true
 tags: [Useful]
-favorited: true
-created: 2022-05-28T07:58:30.128Z
-modified: 2023-10-13T22:05:15.659Z
+keywords: [USTC, 中科大, 中国科学技术大学, 常用链接, 链接, 书签, 教学日历, 大物实验, 校园班车, 科大文化网, 成绩画像, 预约系统, LUG]
 description: USTC 常用链接
 ---
 

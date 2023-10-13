@@ -1,9 +1,7 @@
 ---
 title: android
-title_custom: false
 tags: [Technical]
-created: 2022-12-10T20:19:00.551Z
-modified: 2022-12-10T20:19:00.551Z
+keywords: [Android, adb, root, Magisk, bootloader, url scheme, 第三方软件, 自定义快捷方式]
 description: 提升 Android 使用体验：第三方软件、自定义快捷方式、ADB、Root
 ---
 

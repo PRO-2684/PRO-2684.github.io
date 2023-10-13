@@ -1,10 +1,7 @@
 ---
 title: mirror
-title_custom: true
-attachments: [mirror.txt]
 tags: [Ebook]
-created: 2022-07-04T14:33:21.993Z
-modified: 2022-09-19T01:20:15.346Z
+keywords: [mirror, Novel, txt, 镜子, 刘慈欣, 电子书, 小说, 下载]
 description: 刘慈欣编写的《镜子》
 ---
 

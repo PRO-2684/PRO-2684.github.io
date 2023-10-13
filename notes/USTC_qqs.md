@@ -1,8 +1,7 @@
 ---
 title: USTC qqs
 tags: [Useful]
-created: 2022-07-01T11:41:25.971Z
-modified: 2022-09-19T01:20:47.384Z
+keywords: [USTC, 中国科学技术大学, QQ, 群, 汇总, 南七集市, 科考协会, 夜宵群, 羊毛群, 家教群, Python, 原神, Minecraft, 猫咪群, 表白墙]
 description: USTC QQ / QQ 群汇总
 ---
 

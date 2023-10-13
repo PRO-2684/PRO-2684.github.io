@@ -1,10 +1,7 @@
 ---
-title: the ode to joy
-title_custom: true
-attachments: [the ode to joy.txt]
+title: The ode to joy
 tags: [Ebook]
-created: 2022-07-04T14:28:29.433Z
-modified: 2022-09-19T01:20:15.347Z
+keywords: [The ode to joy, Novel, txt, 欢乐颂, 刘慈欣, 电子书, 小说, 下载]
 description: 刘慈欣编写的《欢乐颂》：音乐会、镜子、音乐家、节拍、太阳音乐、欢乐颂
 ---
 

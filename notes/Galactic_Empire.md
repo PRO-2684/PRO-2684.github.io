@@ -1,10 +1,7 @@
 ---
 title: Galactic Empire
-title_custom: true
-attachments: [Galactic_Empire.epub]
 tags: [Ebook]
-created: 2022-07-19T06:55:27.425Z
-modified: 2022-09-19T01:20:15.346Z
+keywords: [Galactic Empire, Isaac Asimov, Novel, epub, 银河帝国, 阿西莫夫, 基地, 第二基地, 电子书, 小说, 下载]
 description: 阿西莫夫的银河帝国系列小说：基地、基地与帝国、第二基地、基地前奏、迈向基地、基地边缘、基地与地球、我，机器人、钢穴、裸阳、曙光中的机器人、机器人与帝国、繁星若尘、星空暗流、苍穹一粟
 ---
 

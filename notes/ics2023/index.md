@@ -1,8 +1,6 @@
 ---
 title: ICS 2023
-title_custom: true
-created: 2023-09-10T16:19:11.844Z
-modified: 2023-10-13T13:50:23.844Z
+keywords: [CS1002A, CS1002A.02, USTC, ICS, 2023, 中国科学技术大学, 计算系统概论]
 description: ICS 2023 助教维护的课程主页
 ---
 

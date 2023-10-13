@@ -1,10 +1,7 @@
 ---
-title: juggles of the devil
-title_custom: true
-attachments: [juggles of the devil.txt]
+title: Juggles of the devil
 tags: [Ebook]
-created: 2022-07-04T14:47:06.025Z
-modified: 2022-09-19T01:20:15.346Z
+keywords: [juggles of the devil, Novel, txt, 魔鬼积木, 刘慈欣, 电子书, 小说, 下载]
 description: 刘慈欣编写的《魔鬼积木》
 ---
 

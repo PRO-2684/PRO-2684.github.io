@@ -1,9 +1,7 @@
 ---
-title: the last question full
-title_custom: true
+title: The last question (full)
 tags: [Ebook]
-created: 2022-06-05T00:16:36.355Z
-modified: 2022-09-19T01:20:15.347Z
+keywords: [The last question, Novel, txt, Isaac Asimov, 最后一个问题, 电子书, 小说, 阿西莫夫, 下载]
 description: 阿西莫夫的短篇小说《The Last Question》全文
 ---
 

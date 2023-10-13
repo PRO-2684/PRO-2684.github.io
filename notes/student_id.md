@@ -1,9 +1,7 @@
 ---
 title: 学号格式及说明
-title_custom: true
 tags: [Latest, Academic]
-created: 2023-04-17T14:54:32.216Z
-modified: 2023-04-18T10:04:32.216Z
+keywords: [学号, 学号格式, USTC, 中国科学技术大学, 中科大, 本科生, 研究生, 正则表达式, PB, PL, BA, SA]
 description: 科大学号格式及说明
 ---
 

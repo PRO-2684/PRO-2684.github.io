@@ -1,9 +1,7 @@
 ---
 title: shortcuts
-title_custom: true
 tags: [Technical]
-created: 2023-06-02T20:48:37.362Z
-modified: 2023-09-07T14:33:21.322Z
+keywords: [shortcuts, 快捷键, 编辑, Windows, 导航, VS Code]
 description: 一些常用的快捷键
 ---
 

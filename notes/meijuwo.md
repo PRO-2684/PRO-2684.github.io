@@ -1,9 +1,7 @@
 ---
-title: meijuwo
-title_custom: true
+title: Meijuwo
 tags: [Technical, Python]
-created: 2023-01-04T21:44:06.230Z
-modified: 2023-01-06T10:15:36.872Z
+keywords: [meijuwo, m3u8, m3u8下载, 批量下载, python, requests, bs4, BeautifulSoup4, 正则表达式, re, m3u8下载器, N_m3u8DL-RE]
 description: 记一次电视剧批量下载：通过分析网页源码，编写 Python 脚本批量得到 m3u8 链接，再通过 m3u8 下载器下载
 ---
 

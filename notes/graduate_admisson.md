@@ -1,9 +1,7 @@
 ---
-title: graduate admisson
-title_custom: true
+title: Graduate Admisson
 tags: [Academic]
-created: 2022-11-02T00:41:42.216Z
-modified: 2022-11-02T00:57:01.133Z
+keywords: [Graduate Admisson, USTC, 中国科学技术大学, 研究生, 推免, 招生, 夏令营]
 description: 本科生推免，研究生招生相关信息
 ---
 

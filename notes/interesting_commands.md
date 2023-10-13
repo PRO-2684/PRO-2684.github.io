@@ -1,10 +1,7 @@
 ---
 title: interesting commands
-title_custom: true
-attachments: [parrot.png]
 tags: [Other]
-created: 2022-06-06T14:22:58.785Z
-modified: 2022-09-19T01:20:31.577Z
+keywords: [Parrot dancing, parrot.live, Zen of Python]
 description: 一些有趣的命令
 ---
 

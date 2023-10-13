@@ -1,9 +1,7 @@
 ---
 title: email
-title_custom: true
 tags: [Useful, Academic]
-created: 2023-04-09T16:07:28.227Z
-modified: 2023-04-09T16:21:34.239Z
+keywords: [email, USTC, 中国科学技术大学, 邮箱, 电子邮箱, 查找]
 description: 如何查找科大老师邮箱 USTC
 ---
 

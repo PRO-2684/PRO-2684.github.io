@@ -1,17 +1,14 @@
 ---
 title: 结绳记事
-title_custom: true
 tags: [Ebook]
-favorited: false
-created: 2023-10-08T09:10:40.128Z
-modified: 2023-10-08T09:10:40.128Z
+keywords: [Novel, txt, 结绳记事, 刘宇昆, 张博然, 电子书, 小说, 下载]
 description: 结绳记事
 ---
 
 # 结绳记事
 
 - ** 作者 **: 刘宇昆
-- 译者：张博然
+- 译者: 张博然
 
 古者无文字，其为约誓之事，事大大其绳，事小小其绳。结之多少随物众寡，各执以相考，亦足以相治也。
 

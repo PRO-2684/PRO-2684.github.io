@@ -1,10 +1,7 @@
 ---
-title: cloud of poems
-title_custom: true
-attachments: [cloud of poems.txt]
+title: Cloud of poems
 tags: [Ebook]
-created: 2022-07-04T14:44:29.092Z
-modified: 2022-09-19T01:20:15.346Z
+keywords: [cloud of poems, Novel, txt, 诗云, 刘慈欣, 电子书, 小说, 下载]
 description: 刘慈欣编写的《诗云》
 ---
 

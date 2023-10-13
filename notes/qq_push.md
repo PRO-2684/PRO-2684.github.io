@@ -1,16 +1,16 @@
 ---
 title: qq push
-title_custom: true
 tags: [Technical, Python]
-created: 2022-05-31T01:16:28.782Z
-modified: 2022-09-19T01:20:36.872Z
+keywords: [Python, QQ, go-cqhttp, QQ bot, QQ 机器人]
 description: 通过 go-cqhttp 自搭建 qq 定时推送
 ---
 
 # 🐧 QQ push
+
 简洁而详尽的自搭建 qq 定时推送教程。
 
 ## ☑️ 前提
+
 * 一台云服务器或者 24h 开机的联网电脑（以 ubuntu 为例）。
 * 一台电脑/一部手机，用于连接服务器。
 * 一个 QQ 号（废话）。
@@ -18,6 +18,7 @@ description: 通过 go-cqhttp 自搭建 qq 定时推送
 * 一个脑子。
 
 ## 🚩 步骤
+
 1. 前往 [go-cqhttp 的 release 界面](https://github.com/Mrs4s/go-cqhttp/releases) 下载对应系统版本的可执行文件/压缩包。本文中以 `go-cqhttp_linux_amd64.tar.gz` 为例。
 2. 把文件移至一个方便的地方，解压 (`tar -xf go-cqhttp_linux_amd64.tar.gz`) ，得到以下文件：
     * README.md
@@ -44,9 +45,7 @@ description: 通过 go-cqhttp 自搭建 qq 定时推送
 9. 一切无误后即可自行编写推送脚本，并使用 `crontab` 定时执行。
 
 ## 🤔 常见问题
+
 Q: 所给链接 (https://github.com/Mrs4s/go-cqhttp/releases) 进不去？
 A: 网络问题，考虑打开代理/使用 [fastgithub](https://pro-2684.lanzouf.com/b011o8t7g)(密码 `9867`) 改善连接。
 待补充...
-
-
-

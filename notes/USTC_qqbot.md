@@ -1,9 +1,7 @@
 ---
 title: USTC qqbot
-title_custom: true
 tags: [Technical, Python]
-created: 2022-07-03T12:56:07.670Z
-modified: 2022-09-19T01:20:36.872Z
+keywords: [qqbot, qq, QQ 机器人, USTC, 中科大, 中国科学技术大学, python, requests, bs4, BeautifulSoup4]
 description: 针对 USTC 学生的 QQ 机器人
 ---
 

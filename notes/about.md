@@ -1,9 +1,7 @@
 ---
 title: about
-title_custom: true
 tags: [Index]
-created: 2022-08-23T14:34:35.551Z
-modified: 2023-03-29T10:47:55.193Z
+keywords: [about, PRO, PRO-2684, PRO_2684, 中国科学技术大学, USTC]
 description: 关于 PRO
 ---
 

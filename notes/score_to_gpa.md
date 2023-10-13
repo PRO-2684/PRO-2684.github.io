@@ -1,9 +1,7 @@
 ---
 title: score to gpa
-title_custom: true
 tags: [Academic]
-created: 2022-11-02T00:41:42.216Z
-modified: 2022-11-02T00:57:01.133Z
+keywords: [score, gpa, USTC, 中国科学技术大学, 百分制, 五等级制, GPA, 转换表, 本科生, 本科生学籍管理实施细则]
 description: 百分制、五等级制、GPA 转换表，参考中国科学技术大学本科生学籍管理实施细则
 ---
 
