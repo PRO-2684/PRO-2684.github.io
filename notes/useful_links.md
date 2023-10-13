@@ -4,7 +4,7 @@ title_custom: true
 tags: [Useful]
 favorited: true
 created: 2022-05-28T07:58:30.128Z
-modified: 2023-10-05T17:31:15.659Z
+modified: 2023-10-13T22:05:15.659Z
 description: USTC 常用链接
 ---
 
@@ -53,7 +53,7 @@ description: USTC 常用链接
 
 [大雾实验视频](https://www.icourses.cn/sCourse/course_3059.html)
 
-[USTC 学习资料](http://home.ustc.edu.cn/~yx3x/USTCdata.html) (含大雾模板)
+[USTC 学习资料](https://www.zhangjy9610.me/USTCdata.html) (含大雾模板)
 
 [跨校资源认证中心](https://idp.ustc.edu.cn/idp/)
 
