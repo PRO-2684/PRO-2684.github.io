@@ -27,9 +27,10 @@ description: ICS 2023 助教维护的课程主页
     - 关于 Markdown 编辑器的推荐与使用可私聊助教 (常见的有 Typora, VSCode, Obsidian 等)
 - 最后提交***要求 PDF 格式***
 
-| 序号 | 链接 | DDL       |
-| ---- | ---- | --------- |
-| Hw1  | [hw1.pdf](@attachment/hw1.pdf) or [hw1.zip](@attachment/hw1.zip) | 2023.9.28 |
+| 序号 | 链接                                                         | DDL        |
+| ---- | ------------------------------------------------------------ | ---------- |
+| Hw1  | [hw1.pdf](@attachment/hw1.pdf) or [hw1.zip](@attachment/hw1.zip) | 2023.9.28  |
+| Hw2  | [hw2.pdf](@attachment/hw2.pdf)                               | 2023.10.20 |
 
 ### Hw1 补充说明
 
