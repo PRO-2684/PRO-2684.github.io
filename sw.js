@@ -1,10 +1,9 @@
-const version = "1697208108";
+const version = "1697240386";
 const note = "note";
 const other = "other";
 const base = location.origin + location.pathname.slice(0, -5); // remove last "sw.js"
 const note_url = base + "notes/";
 const expiration = 60 * 60 * 24; // 1 day
-// const expiration = 60; // debug: 1 min
 
 const addResourcesToCache = async (resources, cahce_name) => {
     const cache = await caches.open(cahce_name);
@@ -104,7 +103,7 @@ self.addEventListener("install", (event) => {
             "/js/katex-auto-render.min.js",
             "/js/nprogress.js",
             "/js/prism.js",
-        ], version),
+        ].map(i => i + `?v=${version}`), version),
     );
 });
 
