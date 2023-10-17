@@ -28,7 +28,7 @@ description: ICS 2023 助教维护的课程主页
 | 序号 | 链接                                                         | DDL        |
 | ---- | ------------------------------------------------------------ | ---------- |
 | Hw1  | [hw1.pdf](@attachment/hw1.pdf) or [hw1.zip](@attachment/hw1.zip) | 2023.9.28  |
-| Hw2  | [hw2.pdf](@attachment/hw2.pdf)                               | 2023.10.20 |
+| Hw2  | [hw2.pdf](@attachment/hw2.pdf) or [hw2.zip](@attachment/hw2.zip) | 2023.10.20 |
 
 ### Hw1 补充说明
 
