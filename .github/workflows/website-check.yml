@@ -11,9 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: |
-      git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
-      git config user.email "github-actions@github.com"
-      git config user.name "GitHub Actions"
+        git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+        git config user.email "github-actions@github.com"
+        git config user.name "GitHub Actions"
     - name: Setup Python
       uses: actions/setup-python@v4.7.1
       with:
