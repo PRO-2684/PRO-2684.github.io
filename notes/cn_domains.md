@@ -22,6 +22,7 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [世界负二流大学.com](https://世界负二流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界负一流大学.com](https://世界负一流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界一流大学.com](https://世界一流大学.com) | 🔴 | 网站无法正常访问，状态码为 522 |
+| 未知 | [世界一流大学.com](https://世界一流大学.com) | 🔴 | 网站无法正常访问，状态码为 522 |
 | 未知 | [世界三流大学.com](https://世界三流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界四流大学.com](https://世界四流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界超二流大学.com](https://世界超二流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
