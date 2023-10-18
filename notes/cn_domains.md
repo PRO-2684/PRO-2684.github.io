@@ -14,14 +14,14 @@ description: 此文章收集了部分国内大学的中文域名
 | [广西大学](https://www.gxu.edu.cn/) | [世界超一流大学.com](https://世界超一流大学.com) | 🟢 | 网站正常重定向到 https://www.gxu.edu.cn/ |
 | [山东理工大学](https://www.sdut.edu.cn/) | [山东.拖拉机学院.com](https://山东.拖拉机学院.com) | 🟢 | 网站正常重定向到 https://www.sdut.edu.cn/ |
 | [中国科学技术大学](https://www.ustc.edu.cn/) | [世界一流退学.com](https://世界一流退学.com) | 🟢 | 网站正常重定向到 https://www.ustc.edu.cn/ |
-| [](https://xn--4gq14lt3ezrc7w9a.com/) | [双一流大学.com](https://双一流大学.com) | 🟢 | 网站可能使用了 js 实现重定向 |
+| [未知](https://xn--4gq14lt3ezrc7w9a.com/) | [双一流大学.com](https://双一流大学.com) | 🟢 | 网站可能使用了 js 实现重定向 |
 | 未知 | [世界末流大学.com](https://世界末流大学.com) | 🔴 | 网站重定向到非教育网站 http://ww38.世界末流大学.com/ |
 | 未知 | [隔壁.世界末流大学.com](https://隔壁.世界末流大学.com) | 🔴 | 网站重定向到非教育网站 http://ww38.隔壁.世界末流大学.com/ |
-| 未知 | [中国第一大学.com](https://中国第一大学.com) | 🔴 | 网站重定向到非教育网站 http://ww25.中国第一大学.com/?subid1=20231019-0021-1615-80fe-c81363fa602b |
+| 未知 | [中国第一大学.com](https://中国第一大学.com) | 🔴 | 网站重定向到非教育网站 http://ww25.中国第一大学.com/?subid1=20231019-0053-179c-a408-6044b37ec0ea |
 | 未知 | [世界顶流大学.com](https://世界顶流大学.com) | 🔴 | 网站无法正常访问，状态码为 403 |
 | 未知 | [世界负二流大学.com](https://世界负二流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界负一流大学.com](https://世界负一流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [世界一流大学.com](https://世界一流大学.com) | 🔴 | 网站无法正常访问，状态码为 523 |
+| 未知 | [世界一流大学.com](https://世界一流大学.com) | 🔴 | 网站无法正常访问，状态码为 522 |
 | 未知 | [世界三流大学.com](https://世界三流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界四流大学.com](https://世界四流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界超二流大学.com](https://世界超二流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
