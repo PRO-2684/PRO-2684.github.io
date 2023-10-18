@@ -1,7 +1,7 @@
 ---
 title: 部分国内大学的中文域名
 tags: []
-keywords: [中文域名, 大学, 中科大, USTC, 中国科学技术大学]
+keywords: [中文域名, 大学, 中科大, USTC, 中国科学技术大学, 世界一流退学, 世界一流大学]
 description: 此文章收集了部分国内大学的中文域名
 ---
 
@@ -14,14 +14,14 @@ description: 此文章收集了部分国内大学的中文域名
 | [广西大学](https://www.gxu.edu.cn/) | [世界超一流大学.com](https://世界超一流大学.com) | 🟢 | 网站正常重定向到 https://www.gxu.edu.cn/ |
 | [山东理工大学](https://www.sdut.edu.cn/) | [山东.拖拉机学院.com](https://山东.拖拉机学院.com) | 🟢 | 网站正常重定向到 https://www.sdut.edu.cn/ |
 | [中国科学技术大学](https://www.ustc.edu.cn/) | [世界一流退学.com](https://世界一流退学.com) | 🟢 | 网站正常重定向到 https://www.ustc.edu.cn/ |
-| [](https://xn--4gq14lt3ezrc7w9a.com/) | [双一流大学.com](https://双一流大学.com) | 🟢 | 网站可能使用了 js 实现重定向 |
-| 未知 | [世界末流大学.com](https://世界末流大学.com) | 🔴 | 网站重定向到非教育网站 http://ww38.世界末流大学.com/ |
-| 未知 | [隔壁.世界末流大学.com](https://隔壁.世界末流大学.com) | 🔴 | 网站重定向到非教育网站 http://ww38.隔壁.世界末流大学.com/ |
-| 未知 | [中国第一大学.com](https://中国第一大学.com) | 🔴 | 网站重定向到非教育网站 http://ww25.中国第一大学.com/?subid1=20231019-0021-1615-80fe-c81363fa602b |
+| [未知](https://xn--4gq14lt3ezrc7w9a.com/) | [双一流大学.com](https://双一流大学.com) | 🟢 | 网站可能使用了 js 实现重定向 |
+| 未知 | [世界末流大学.com](https://世界末流大学.com) | 🔴 | 网站重定向到疑似垃圾网站 `http://ww38.世界末流大学.com/` |
+| 未知 | [隔壁.世界末流大学.com](https://隔壁.世界末流大学.com) | 🔴 | 网站重定向到疑似垃圾网站 `http://ww38.隔壁.世界末流大学.com/` |
+| 未知 | [中国第一大学.com](https://中国第一大学.com) | 🔴 | 网站重定向到疑似垃圾网站 `http://ww25.中国第一大学.com/` |
 | 未知 | [世界顶流大学.com](https://世界顶流大学.com) | 🔴 | 网站无法正常访问，状态码为 403 |
 | 未知 | [世界负二流大学.com](https://世界负二流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界负一流大学.com](https://世界负一流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [世界一流大学.com](https://世界一流大学.com) | 🔴 | 网站无法正常访问，状态码为 523 |
+| 未知 | [世界一流大学.com](https://世界一流大学.com) | 🔴 | 网站无法正常访问，状态码为 522 |
 | 未知 | [世界三流大学.com](https://世界三流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界四流大学.com](https://世界四流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界超二流大学.com](https://世界超二流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
@@ -95,3 +95,13 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [世界一流大学.love](https://世界一流大学.love) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界顶级大学.com](https://世界顶级大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [玩原神玩的.com](https://玩原神玩的.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
+
+## 统计信息
+
+- 本页面共收录 84 个中文域名，其中 4 个域名 (疑似) 存活
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：32.4953852 s
+- 根据模板生成上述表格：23.1476 ms
+
+## 关于
+
+此页面的内容使用模板由 GitHub Action 自动生成，每日 0 点自动更新。若您想添加/移除中文域名，请修改 [此文件]() 并提交 PR；若您认为此模板有错误，请审计 [`template.md`](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/website-check/template.md)；若您认为自动化构建有问题，请审计 [自动构建脚本](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/website-check/update.py) 以及 [Action 配置文件](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/workflows/website-check.yml)。

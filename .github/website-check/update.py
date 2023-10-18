@@ -1,17 +1,16 @@
-from aiohttp import ClientSession, ClientTimeout, TCPConnector
+from aiohttp import ClientSession, TCPConnector
 from aiohttp import client_exceptions
 from re import search
 from datetime import datetime
+from time import time_ns as time
 
 import asyncio
 
-# PREFIX = "./.github/website-check/"
-PREFIX = ""
-WEBSITES = PREFIX + "./websites.txt"
-TEMPLATE = PREFIX + "./template.md"
-DESTINATION = PREFIX + "../../notes/cn_domains.md"
+WEBSITES = "./websites.txt"
+TEMPLATE = "./template.md"
+DESTINATION = "../../notes/cn_domains.md"
 
-async def test_url(session, cn_host):
+async def test_url(session: ClientSession, cn_host: str):
     """测试网站的状态
 
     :param cn_host: 中文域名
@@ -31,7 +30,8 @@ async def test_url(session, cn_host):
         elif url.host == cn_host:
             return {"status": True, "cn_host": cn_host, "host": cn_host, "location": url, "title": "未知", "info": "网站可能使用了 js 实现重定向"}
         else:
-            return {"status": False, "cn_host": cn_host, "host": "danger", "location": "", "title": "", "info": f"网站重定向到非教育网站 {location}"}
+            location = location.split("?")[0] # 移除 URL 参数，避免跟踪
+            return {"status": False, "cn_host": cn_host, "host": "danger", "location": "", "title": "", "info": f"网站重定向到疑似垃圾网站 `{location}`"}
     except client_exceptions.ServerTimeoutError:
         return {"status": False, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": "网站连接超时 (ConnectTimeout)"}
     except client_exceptions.ClientConnectorError:
@@ -57,7 +57,22 @@ def key(result):
     else:
         return "1" + host
 
+def proper_time(t: int):
+    """将时间转换为人类可读的格式
+
+    :param t: 时间 (ns)
+    :return: 人类可读的格式"""
+    if t < 1000:
+        return f"{t} ns"
+    elif t < 1000000:
+        return f"{t / 1000} μs"
+    elif t < 1000000000:
+        return f"{t / 1000000} ms"
+    else:
+        return f"{t / 1000000000} s"
+
 async def main():
+    t1 = time()
     connector = TCPConnector(limit=10)
     with open(WEBSITES, "r", encoding="utf-8") as f:
         websites = f.readlines()
@@ -69,25 +84,28 @@ async def main():
                 continue # 空行或注释
             task = test_url(session, website)
             tasks.append(task)
-    # loop = asyncio.new_event_loop()
-    # asyncio.set_event_loop(loop)
-    # results = loop.run_until_complete(asyncio.gather(*tasks))
-    # results = asyncio.run(asyncio.gather(*tasks))
         results = await asyncio.gather(*tasks)
+    t2 = time()
     results.sort(key=key)
     with open(TEMPLATE, "r", encoding="utf-8") as f:
         template = f.read()
     md = template.replace("{{updated}}", datetime.now().strftime("%Y-%m-%d"))
     content = ""
+    total = len(results)
+    alive = 0
     for result in results:
         # | 学校 | 中文域名 | 状态 | 备注 |
         if result["status"]:
             line = f"| [{result['title']}]({result['location']}) | {make_link(result['cn_host'])} | 🟢 | {result['info']} |\n"
+            alive += 1
         else:
             line = f"| 未知 | {make_link(result['cn_host'])} | 🔴 | {result['info']} |\n"
         content += line
         print(line.strip())
-    md = md.replace("{{content}}", content)
+    t3 = time()
+    md = md.replace("{{total}}", str(total)).replace("{{alive}}", str(alive)) # 替换统计数据
+    md = md.replace("{{g1}}", proper_time(t2 - t1)).replace("{{g2}}", proper_time(t3 - t2)) # 替换统计时间
+    md = md.replace("{{content}}", content) # 替换表格
     with open(DESTINATION, "w", encoding="utf-8") as f:
         f.write(md)
 
