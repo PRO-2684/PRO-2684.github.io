@@ -20,4 +20,4 @@ description: 此文章收集了部分国内大学的中文域名
 
 ## 关于
 
-此页面的内容使用模板由 GitHub Action 自动生成，每日 0 点自动更新。若您想添加/移除中文域名，请修改 [此文件]() 并提交 PR；若您认为此模板有错误，请审计 [`template.md`](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/website-check/template.md)；若您认为自动化构建有问题，请审计 [自动构建脚本](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/website-check/update.py) 以及 [Action 配置文件](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/workflows/website-check.yml)。
+此页面的内容使用模板由 GitHub Action 自动构建，每日 0 点自动更新。若您想添加/移除中文域名，请修改 [`websites.txt`](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/website-check/websites.txt) 并提交 PR；若您认为此模板有错误，请审计 [`template.md`](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/website-check/template.md)；若您认为自动化构建有问题，请审计 [自动构建脚本](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/website-check/update.py) 以及 [Action 配置文件](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/workflows/website-check.yml)。

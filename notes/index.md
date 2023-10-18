@@ -12,7 +12,7 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
-[常用快捷键](@note/shortcuts)
+[部分国内大学的中文域名收集](@note/cn_domains)
 
 [一些我写的油猴脚本](@note/tampermonkey)
 
