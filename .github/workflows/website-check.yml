@@ -1,0 +1,35 @@
+name: "Website Check"
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+
+jobs:
+  website-check:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: |
+        git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+        git config user.email "github-actions@github.com"
+        git config user.name "GitHub Actions"
+    - name: Setup Python
+      uses: actions/setup-python@v4.7.1
+      with:
+        python-version: '3.10'
+    - name: Check websites
+      run: |
+        pip install -r requirements.txt
+        python3 update.py
+      working-directory: ./.github/website-check
+    - run: |
+        git add -A
+        if [ -z "$(git status --porcelain)" ]; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update \`cn_domains.md\` ($(date -I))"
+        fi
+    - run: git push
