@@ -6,16 +6,17 @@ from time import time_ns as time
 
 import asyncio
 
-WEBSITES = "./websites.txt"
-TEMPLATE = "./template.md"
-DESTINATION = "../../notes/cn_domains.md"
+PREFIX = ".github/website-check/"
+WEBSITES = PREFIX + "./websites.txt"
+TEMPLATE = PREFIX + "./template.md"
+DESTINATION = PREFIX + "../../notes/cn_domains.md"
 
-async def test_url(session: ClientSession, cn_host: str):
+async def test_url(session: ClientSession, cn_host: str, https: bool = True):
     """测试网站的状态
 
     :param cn_host: 中文域名
     :return: 网站状态、学校 host、Markdown、网站状态信息"""
-    url = f"https://{cn_host}/"
+    url = f"https://{cn_host}/" if https else f"http://{cn_host}/"
     try:
         async with session.get(url) as r:
             if r.status != 200:
@@ -35,6 +36,8 @@ async def test_url(session: ClientSession, cn_host: str):
     except client_exceptions.ServerTimeoutError:
         return {"status": False, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": "网站连接超时 (ConnectTimeout)"}
     except client_exceptions.ClientConnectorError:
+        if https: # 尝试使用 http 连接
+            return await test_url(session, cn_host, https=False)
         return {"status": False, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": "网站连接错误，可能是域名已过期 (ConnectionError)"}
     except Exception as e:
         return {"status": False, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": f"未知异常 ({e})!!!"}
