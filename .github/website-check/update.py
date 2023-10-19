@@ -6,7 +6,8 @@ from time import time_ns as time
 
 import asyncio
 
-PREFIX = ".github/website-check/"
+DEBUG = False
+PREFIX = ".github/website-check/" if DEBUG else ""
 WEBSITES = PREFIX + "./websites.txt"
 TEMPLATE = PREFIX + "./template.md"
 DESTINATION = PREFIX + "../../notes/cn_domains.md"
