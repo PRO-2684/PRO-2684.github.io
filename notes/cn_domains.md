@@ -27,7 +27,6 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [世界超二流大学.com](https://世界超二流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [国际一流大学.com](https://国际一流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界一流高校.top](https://世界一流高校.top) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [世界第一大学.com](https://世界第一大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [对面.世界一流初中.com](https://对面.世界一流初中.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界114514流大学.com](https://世界114514流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [隔壁.世界114514流大学.com](https://隔壁.世界114514流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
@@ -45,8 +44,6 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [世界一流食堂.com](https://世界一流食堂.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界二流食堂.com](https://世界二流食堂.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [北大二分校.com](https://北大二分校.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [pku.世界中学.top](https://pku.世界中学.top) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [thu.世界中学.top](https://thu.世界中学.top) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [隔壁.世界中学.top](https://隔壁.世界中学.top) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [gebi.世界中学.top](https://gebi.世界中学.top) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [南方野鸡大学.com](https://南方野鸡大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
@@ -58,7 +55,9 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [末流985.com](https://末流985.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [双不入流大学.com](https://双不入流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [双流一大学.com](https://双流一大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
+| 未知 | [专科南波湾.com](https://专科南波湾.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界五百本大学.club](https://世界五百本大学.club) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
+| 未知 | [土豆.世界五百本大学.club](https://土豆.世界五百本大学.club) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界一流军事化管理高中.wtf](https://世界一流军事化管理高中.wtf) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [附属大学.中国人民中学.com](https://附属大学.中国人民中学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [市一大.com](https://市一大.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
@@ -98,10 +97,12 @@ description: 此文章收集了部分国内大学的中文域名
 
 ## 统计信息
 
-- 本页面共收录 84 个中文域名，其中 4 个域名 (疑似) 存活
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：165.977112612 s
-- 根据模板生成上述表格：520.214 μs
+- 本页面共收录 83 个中文域名，其中 4 个域名 (疑似) 存活
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：31.444805 s
+- 根据模板生成上述表格：15.0906 ms
 
 ## 关于
 
 此页面的内容使用模板由 GitHub Action 自动构建，每日 0 点自动更新。若您想添加/移除中文域名，请修改 [`websites.txt`](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/website-check/websites.txt) 并提交 PR；若您认为此模板有错误，请审计 [`template.md`](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/website-check/template.md)；若您认为自动化构建有问题，请审计 [自动构建脚本](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/website-check/update.py) 以及 [Action 配置文件](https://github.com/PRO-2684/PRO-2684.github.io/tree/master/.github/workflows/website-check.yml)。
+
+目前，此页面的大部分数据源于 [世界大学.top](https://世界大学.top/)，这是 [@zsh2517](https://github.com/zsh2517/) 做的一个 [项目](https://github.com/zsh2517/Shijiedaxue.top)。若您想知道失效域名之前对应的学校，可以前往此网站查看。
