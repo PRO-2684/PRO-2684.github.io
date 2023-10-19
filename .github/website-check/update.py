@@ -77,7 +77,7 @@ async def main():
     with open(WEBSITES, "r", encoding="utf-8") as f:
         websites = f.readlines()
     tasks = []
-    async with ClientSession(connector=connector) as session:
+    async with ClientSession(connector=connector, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.46"}) as session:
         for website in websites:
             website = website.strip()
             if not website or website.startswith("#"):
