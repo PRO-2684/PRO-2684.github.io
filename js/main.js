@@ -83,6 +83,9 @@ function addAnchors() {
         addAnchor(nodes[i]);
     }
 }
+function hasModifier(e) { // Check if ctrl/alt/shift is pressed, in order to be none-intrusive
+    return e.ctrlKey || e.altKey || e.shiftKey;
+}
 function parseMetadata() {
     let metadata = showdown_converter.getMetadata();
     if (metadata['title']) {
@@ -115,11 +118,12 @@ function parseMetadata() {
                     let new_tag = document.createElement('a');
                     new_tag.classList.add('tag');
                     new_tag.href = '?page=index#' + tag_trans[tag_name];
-                    new_tag.onclick = function (e) {
+                    new_tag.addEventListener("click", (e) => {
+                        if (hasModifier(e)) return;
                         history.pushState(null, null, '?page=index#' + tag_trans[tag_name]);
                         load('index');
                         e.preventDefault();
-                    }
+                    });
                     new_tag.innerText = tag_name;
                     tag_container.appendChild(new_tag);
                 });
@@ -138,11 +142,12 @@ async function modifyLink(node) {
         node.href = "?page=" + filename;
         node.removeAttribute("target");
         node.removeAttribute("rel");
-        node.onclick = function (e) {
+        node.addEventListener("click", (e) => {
+            if (hasModifier(e)) return;
             history.pushState(null, null, '?page=' + filename);
             load(filename.split('#')[0]);
             e.preventDefault();
-        }
+        });
     } else if (dst.startsWith('@attachment/')) {
         let filename = dst.slice(12);
         node.href = "./attachments/" + filename;
@@ -304,11 +309,12 @@ function refreshBookmark() {
         link_1.href = "?page=" + bookmarks[i];
         link_1.setAttribute("one-link-mark", "yes");
         link_1.innerText = bookmarks[i];
-        link_1.onclick = function (e) {
+        link_1.addEventListener("click", (e) => {
+            if (hasModifier(e)) return;
             history.pushState(null, null, '?page=' + bookmarks[i]);
             load(bookmarks[i].split('#')[0]);
             e.preventDefault();
-        }
+        });
         link_2.href = `javascript:removeBookmark(${i});`;
         link_2.classList.add("bookmark-op");
         link_2.setAttribute("one-link-mark", "yes");
