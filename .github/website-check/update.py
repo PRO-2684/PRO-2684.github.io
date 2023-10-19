@@ -20,34 +20,35 @@ async def test_url(session: ClientSession, cn_host: str, https: bool = True):
     try:
         async with session.get(url) as r:
             if r.status != 200:
-                return {"status": False, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": f"网站无法正常访问，状态码为 {r.status}"}
+                return {"status": False, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": f"网站无法正常访问，状态码为 {r.status}", "https": https}
             url = r.url
             location = url.human_repr()
             text = await r.text()
         if url.host.endswith(".edu.cn"):
             title = search(r"<title>(.*)</title>", text)
             title = title.group(1) if title else "无标题"
-            return {"status": True, "cn_host": cn_host, "host": url.host, "location": location, "title": title, "info": f"网站正常重定向到 {location}"}
+            return {"status": True, "cn_host": cn_host, "host": url.host, "location": location, "title": title, "info": f"网站正常重定向到 {location}", "https": https}
         elif url.host == cn_host:
-            return {"status": True, "cn_host": cn_host, "host": cn_host, "location": url, "title": "未知", "info": "网站可能使用了 js 实现重定向"}
+            return {"status": True, "cn_host": cn_host, "host": cn_host, "location": url, "title": "未知", "info": "网站可能使用了 js 实现重定向", "https": https}
         else:
             location = location.split("?")[0] # 移除 URL 参数，避免跟踪
-            return {"status": False, "cn_host": cn_host, "host": "danger", "location": "", "title": "", "info": f"网站重定向到疑似垃圾网站 `{location}`"}
+            return {"status": False, "cn_host": cn_host, "host": "danger", "location": "", "title": "", "info": f"网站重定向到疑似垃圾网站 `{location}`", "https": https}
     except client_exceptions.ServerTimeoutError:
-        return {"status": False, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": "网站连接超时 (ConnectTimeout)"}
+        return {"status": False, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": "网站连接超时 (ConnectTimeout)", "https": https}
     except client_exceptions.ClientConnectorError:
         if https: # 尝试使用 http 连接
             return await test_url(session, cn_host, https=False)
-        return {"status": False, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": "网站连接错误，可能是域名已过期 (ConnectionError)"}
+        return {"status": False, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": "网站连接错误，可能是域名已过期 (ConnectionError)", "https": https}
     except Exception as e:
-        return {"status": False, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": f"未知异常 ({e})!!!"}
+        return {"status": False, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": f"未知异常 ({e})!!!", "https": https}
 
-def make_link(host):
+def make_link(host: str, https: bool = True):
     """生成链接
 
     :param host: 域名
     :return: Markdown 链接"""
-    return f"[{host}](https://{host})"
+    return f"[{host}]({'https' if https else 'http'}://{host})"
+    # return f"[{host}](https://{host})" if https else f"[{host}](http://{host})"
 
 def key(result):
     """排序用的 key
@@ -99,10 +100,10 @@ async def main():
     for result in results:
         # | 学校 | 中文域名 | 状态 | 备注 |
         if result["status"]:
-            line = f"| [{result['title']}]({result['location']}) | {make_link(result['cn_host'])} | 🟢 | {result['info']} |\n"
+            line = f"| [{result['title']}]({result['location']}) | {make_link(result['cn_host'], result['https'])} | 🟢 | {result['info']} |\n"
             alive += 1
         else:
-            line = f"| 未知 | {make_link(result['cn_host'])} | 🔴 | {result['info']} |\n"
+            line = f"| 未知 | {make_link(result['cn_host'], result['https'])} | 🔴 | {result['info']} |\n"
         content += line
         print(line.strip())
     t3 = time()
