@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2023-10-19
+> 🕗 最近更新时间：2023-10-20
 
 | 学校 | 中文域名 | 状态 | 备注 |
 | --- | --- | --- | --- |
@@ -22,8 +22,8 @@ description: 此文章收集了部分国内大学的中文域名
 | [清华大学](https://www.tsinghua.edu.cn/) | [世界三流大学.com](http://世界三流大学.com) | 🟢 | 网站正常重定向到 https://www.tsinghua.edu.cn/ |
 | [中国石油大学](https://www.upc.edu.cn/) | [世界地沟油大学.com](http://世界地沟油大学.com) | 🟢 | 网站正常重定向到 https://www.upc.edu.cn/ |
 | [中国科学技术大学](https://www.ustc.edu.cn/) | [世界一流退学.com](https://世界一流退学.com) | 🟢 | 网站正常重定向到 https://www.ustc.edu.cn/ |
-| [浙江大学](https://www.zju.edu.cn/) | [世界末流网吧.com](http://世界末流网吧.com) | 🟢 | 网站正常重定向到 https://www.zju.edu.cn/ |
 | [未知](http://xn--4gqwbu44c.com/) | [世一大.com](http://世一大.com) | 🟢 | 网站可能使用了 js 实现重定向 |
+| [未知](http://xn--4gqwb826j6vedtl3x0d.top/) | [世界一流高校.top](http://世界一流高校.top) | 🟢 | 网站可能使用了 js 实现重定向 |
 | [未知](https://xn--4gq14lt3ezrc7w9a.com/) | [双一流大学.com](https://双一流大学.com) | 🟢 | 网站可能使用了 js 实现重定向 |
 | 未知 | [世界末流大学.com](https://世界末流大学.com) | 🔴 | 网站重定向到疑似垃圾网站 `http://ww38.世界末流大学.com/` |
 | 未知 | [隔壁.世界末流大学.com](https://隔壁.世界末流大学.com) | 🔴 | 网站重定向到疑似垃圾网站 `http://ww38.隔壁.世界末流大学.com/` |
@@ -34,7 +34,6 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [世界四流大学.com](http://世界四流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界超二流大学.com](http://世界超二流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [国际一流大学.com](http://国际一流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [世界一流高校.top](http://世界一流高校.top) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [对面.世界一流初中.com](http://对面.世界一流初中.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界114514流大学.com](http://世界114514流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [隔壁.世界114514流大学.com](http://隔壁.世界114514流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
@@ -58,6 +57,7 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [霍格沃茨.com](http://霍格沃茨.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [湖北小蓝翔.xyz](http://湖北小蓝翔.xyz) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [宇宙审计大学.com](http://宇宙审计大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
+| 未知 | [世界末流网吧.com](http://世界末流网吧.com) | 🔴 | 网站无法正常访问，状态码为 504 |
 | 未知 | [世界人口假期双一流大学.网址](http://世界人口假期双一流大学.网址) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [末流985.com](http://末流985.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [双不入流大学.com](http://双不入流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
@@ -98,8 +98,8 @@ description: 此文章收集了部分国内大学的中文域名
 ## 统计信息
 
 - 本页面共收录 83 个中文域名，其中 14 个域名 (疑似) 存活
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：31.0517667 s
-- 根据模板生成上述表格：7.9986 ms
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：146.362794114 s
+- 根据模板生成上述表格：590.606 μs
 
 ## 关于
 
