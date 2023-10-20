@@ -21,7 +21,7 @@ async def test_url(session: ClientSession, cn_host: str, https: bool = True):
     try:
         async with session.get(url) as r:
             if r.status != 200:
-                return {"status": -1, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": f"网站无法正常访问，状态码为 {r.status}", "https": https}
+                return {"status": -2, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": f"网站无法正常访问，状态码为 {r.status}", "https": https}
             url = r.url
             location = url.human_repr()
             text = await r.text()
@@ -35,13 +35,13 @@ async def test_url(session: ClientSession, cn_host: str, https: bool = True):
             location = location.split("?")[0] # 移除 URL 参数，避免跟踪
             return {"status": -1, "cn_host": cn_host, "host": "danger", "location": "", "title": "", "info": f"网站重定向到疑似垃圾网站 `{location}`", "https": https}
     except client_exceptions.ServerTimeoutError:
-        return {"status": -1, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": "网站连接超时 (ConnectTimeout)", "https": https}
+        return {"status": -2, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": "网站连接超时 (ConnectTimeout)", "https": https}
     except client_exceptions.ClientConnectorError:
         if https: # 尝试使用 http 连接
             return await test_url(session, cn_host, https=False)
-        return {"status": -1, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": "网站连接错误，可能是域名已过期 (ConnectionError)", "https": https}
+        return {"status": -2, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": "网站连接错误，可能是域名已过期 (ConnectionError)", "https": https}
     except Exception as e:
-        return {"status": -1, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": f"未知异常 ({e})!!!", "https": https}
+        return {"status": -2, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": f"未知异常 ({e})!!!", "https": https}
 
 def make_link(host: str, https: bool = True):
     """生成链接
@@ -57,12 +57,15 @@ def key(result):
     :return: 排序用的 key"""
     title = result["title"]
     cn_host = result["cn_host"]
-    if title == "":
-        return "3" + cn_host
-    elif title == "未知":
-        return "2" + cn_host
+    status = result["status"]
+    if status == 1:
+        return f"1{title}{cn_host}"
+    elif status == 0:
+        return f"2{cn_host}"
+    elif status == -1:
+        return f"3{cn_host}"
     else:
-        return "1" + title
+        return f"4{cn_host}"
 
 def proper_time(t: int):
     """将时间转换为人类可读的格式
@@ -106,11 +109,11 @@ async def main():
         if result["status"] == 1:
             line = f"| [{result['title']}]({result['location']}) | {make_link(result['cn_host'], result['https'])} | 🟢 | {result['info']} |\n"
             alive += 1
-        elif result["status"] == -1:
-            line = f"| 未知 | {make_link(result['cn_host'], result['https'])} | 🔴 | {result['info']} |\n"
-        else:
+        elif result["status"] == 0:
             line = f"| 未知 | {make_link(result['cn_host'], result['https'])} | 🟡 | {result['info']} |\n"
             sus += 1
+        else:
+            line = f"| 未知 | {make_link(result['cn_host'], result['https'])} | 🔴 | {result['info']} |\n"
         content += line
         print(line.strip())
     t3 = time()
