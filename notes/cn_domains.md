@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2023-10-21
+> 🕗 最近更新时间：2023-10-22
 
 | 学校 | 中文域名 | 状态 | 备注 |
 | --- | --- | --- | --- |
@@ -16,7 +16,6 @@ description: 此文章收集了部分国内大学的中文域名
 | [中国石油大学(北京)](https://www.cup.edu.cn/) | [隔壁.光速退学.com](http://隔壁.光速退学.com) | 🟢 | 网站正常重定向到 https://www.cup.edu.cn/ |
 | [中国石油大学](https://www.upc.edu.cn/) | [世界地沟油大学.com](http://世界地沟油大学.com) | 🟢 | 网站正常重定向到 https://www.upc.edu.cn/ |
 | [中国科学技术大学](https://www.ustc.edu.cn/) | [世界一流退学.com](https://世界一流退学.com) | 🟢 | 网站正常重定向到 https://www.ustc.edu.cn/ |
-| [中国科学技术大学](https://ustc.edu.cn/) | [玩原神玩的.com](http://玩原神玩的.com) | 🟢 | 网站正常重定向到 https://ustc.edu.cn/ |
 | [大连交通大学](http://www.djtu.edu.cn/) | [宇宙一流大学.com](http://宇宙一流大学.com) | 🟢 | 网站正常重定向到 http://www.djtu.edu.cn/ |
 | [山东理工大学](https://www.sdut.edu.cn/) | [山东.拖拉机学院.com](https://山东.拖拉机学院.com) | 🟢 | 网站正常重定向到 https://www.sdut.edu.cn/ |
 | [广西大学](https://www.gxu.edu.cn/) | [世界超一流大学.com](https://世界超一流大学.com) | 🟢 | 网站正常重定向到 https://www.gxu.edu.cn/ |
@@ -82,6 +81,7 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [求仕创薪.top](http://求仕创薪.top) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [海底捞大学.网址](http://海底捞大学.网址) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [湖北小蓝翔.xyz](http://湖北小蓝翔.xyz) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
+| 未知 | [玩原神玩的.com](http://玩原神玩的.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [考不上清华.com](http://考不上清华.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [野鸡大学.网址](http://野鸡大学.网址) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [附属大学.中国人民中学.com](http://附属大学.中国人民中学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
@@ -97,9 +97,9 @@ description: 此文章收集了部分国内大学的中文域名
 
 ## 统计信息
 
-- 本页面共收录 $83$ 个中文域名，其中 $11$ 个域名确认存活，$3$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：148.304078689 s
-- 根据模板生成上述表格：537.808 μs
+- 本页面共收录 $83$ 个中文域名，其中 $10$ 个域名确认存活，$3$ 个域名暂时无法确认。
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：263.640400028 s
+- 根据模板生成上述表格：607.613 μs
 
 ## 关于
 
