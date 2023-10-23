@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2023-10-22
+> 🕗 最近更新时间：2023-10-23
 
 | 学校 | 中文域名 | 状态 | 备注 |
 | --- | --- | --- | --- |
@@ -16,9 +16,11 @@ description: 此文章收集了部分国内大学的中文域名
 | [中国石油大学(北京)](https://www.cup.edu.cn/) | [隔壁.光速退学.com](http://隔壁.光速退学.com) | 🟢 | 网站正常重定向到 https://www.cup.edu.cn/ |
 | [中国石油大学](https://www.upc.edu.cn/) | [世界地沟油大学.com](http://世界地沟油大学.com) | 🟢 | 网站正常重定向到 https://www.upc.edu.cn/ |
 | [中国科学技术大学](https://www.ustc.edu.cn/) | [世界一流退学.com](https://世界一流退学.com) | 🟢 | 网站正常重定向到 https://www.ustc.edu.cn/ |
+| [中国科学技术大学](https://ustc.edu.cn/) | [玩原神玩的.com](http://玩原神玩的.com) | 🟢 | 网站正常重定向到 https://ustc.edu.cn/ |
 | [大连交通大学](http://www.djtu.edu.cn/) | [宇宙一流大学.com](http://宇宙一流大学.com) | 🟢 | 网站正常重定向到 http://www.djtu.edu.cn/ |
 | [山东理工大学](https://www.sdut.edu.cn/) | [山东.拖拉机学院.com](https://山东.拖拉机学院.com) | 🟢 | 网站正常重定向到 https://www.sdut.edu.cn/ |
 | [广西大学](https://www.gxu.edu.cn/) | [世界超一流大学.com](https://世界超一流大学.com) | 🟢 | 网站正常重定向到 https://www.gxu.edu.cn/ |
+| [浙江大学](https://www.zju.edu.cn/) | [世界末流网吧.com](http://世界末流网吧.com) | 🟢 | 网站正常重定向到 https://www.zju.edu.cn/ |
 | [清华大学](https://www.tsinghua.edu.cn/) | [世界三流大学.com](http://世界三流大学.com) | 🟢 | 网站正常重定向到 https://www.tsinghua.edu.cn/ |
 | [西北工业大学](https://www.nwpu.edu.cn/) | [世界顶流大学.com](https://世界顶流大学.com) | 🟢 | 网站正常重定向到 https://www.nwpu.edu.cn/ |
 | 未知 | [世一大.com](http://世一大.com) | 🟡 | 网站可能被盗用，也可能使用了 js 实现重定向 |
@@ -36,7 +38,7 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [世界114514流大学.com](http://世界114514流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界一流军事化管理高中.wtf](http://世界一流军事化管理高中.wtf) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界一流军火.top](http://世界一流军火.top) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [世界一流大学.com](https://世界一流大学.com) | 🔴 | 网站无法正常访问，状态码为 523 |
+| 未知 | [世界一流大学.com](https://世界一流大学.com) | 🔴 | 网站无法正常访问，状态码为 522 |
 | 未知 | [世界一流大学.love](http://世界一流大学.love) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界一流学府.com](http://世界一流学府.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界一流赌场.com](http://世界一流赌场.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
@@ -47,7 +49,6 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [世界吃饭大学.com](http://世界吃饭大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界四流大学.com](http://世界四流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界四非大学.com](http://世界四非大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [世界末流网吧.com](http://世界末流网吧.com) | 🔴 | 网站无法正常访问，状态码为 504 |
 | 未知 | [世界知名土豆.xyz](http://世界知名土豆.xyz) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界第一名校.com](http://世界第一名校.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [世界负一流大学.com](http://世界负一流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
@@ -81,7 +82,6 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [求仕创薪.top](http://求仕创薪.top) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [海底捞大学.网址](http://海底捞大学.网址) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [湖北小蓝翔.xyz](http://湖北小蓝翔.xyz) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [玩原神玩的.com](http://玩原神玩的.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [考不上清华.com](http://考不上清华.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [野鸡大学.网址](http://野鸡大学.网址) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [附属大学.中国人民中学.com](http://附属大学.中国人民中学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
@@ -95,11 +95,17 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [韩庄乡男子技校.top](http://韩庄乡男子技校.top) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 | 未知 | [高等退学.com](http://高等退学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
 
+## 补充
+
+以下是一些不指向大学的中文域名，但是也是好活。
+
+- [中国科学技术大学.com](http://中国科学技术大学.com/) 指向[原神官网](https://ys.mihoyo.com/)（什么双向奔赴）
+
 ## 统计信息
 
-- 本页面共收录 $83$ 个中文域名，其中 $10$ 个域名确认存活，$3$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：263.640400028 s
-- 根据模板生成上述表格：607.613 μs
+- 本页面共收录 $83$ 个中文域名，其中 $12$ 个域名确认存活，$3$ 个域名暂时无法确认。
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：147.090022914 s
+- 根据模板生成上述表格：496.407 μs
 
 ## 关于
 
