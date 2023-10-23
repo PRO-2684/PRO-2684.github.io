@@ -1,4 +1,4 @@
-const version = "1697726386";
+const version = "1698073912";
 const note = "note";
 const other = "other";
 const base = location.origin + location.pathname.slice(0, -5); // remove last "sw.js"

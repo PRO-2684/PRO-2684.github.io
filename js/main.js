@@ -1,3 +1,4 @@
+const $ = document.querySelector.bind(document);
 // Progress bar
 NProgress.configure({
     trickleSpeed: 100,
@@ -6,19 +7,19 @@ NProgress.configure({
 });
 NProgress.start();
 // md converter - showdown
-let enabled_features = ['tables', 'strikethrough', 'tasklists', 'openLinksInNewWindow', 'metadata', 'ghCompatibleHeaderId', 'simpleLineBreaks'];
+const enabled_features = ['tables', 'strikethrough', 'tasklists', 'openLinksInNewWindow', 'metadata', 'ghCompatibleHeaderId', 'simpleLineBreaks'];
 for (i in enabled_features) {
     showdown.setOption(enabled_features[i], true);
 }
-let main_article = document.getElementById("markdown");
-let showdown_converter = new showdown.Converter({extensions: ["footnotes"]});
+const main_article = $("#markdown");
+const showdown_converter = new showdown.Converter({extensions: ["footnotes"]});
 let current_page = 'index';
-let menu_element = document.querySelector("#main-content > aside.panel.right-panel");
-let menu_button = document.querySelector("#show-sidebar");
-const from_span = document.querySelector("#from");
-let overlay = document.getElementById('overlay');
-let bookmark_element = document.getElementById("bookmarks");
-let tag_trans = {
+const menu_element = $("#main-content > aside.panel.right-panel");
+const menu_button = $("#show-sidebar");
+const from_span = $("#from");
+const overlay = $('#overlay');
+const bookmark_element = $("#bookmarks");
+const tag_trans = {
     Index: "top",
     Latest: "最近更新",
     Useful: "实用",
@@ -38,10 +39,9 @@ const from_trans = {
     "fallback": { color: "red", text: "Fallback" },
     "failed": { color: "red", text: "Failed" },
 };
-let sw_supported = 'serviceWorker' in navigator;
-
+const sw_supported = 'serviceWorker' in navigator;
 // formula renderer - katex
-let katex_config = {
+const katex_config = {
     delimiters:
         [
             { left: "$$", right: "$$", display: true },
@@ -54,10 +54,10 @@ let katex_config = {
         "\\leq": "\\leqslant"
     }
 };
-// custom functions
+// Custom functions
 function getQueryString(name) {
-    let params = new URL(window.location.href).searchParams;
-    let result = params.get(name);
+    const params = new URL(window.location.href).searchParams;
+    const result = params.get(name);
     if (result)
         return decodeURIComponent(result);
     return null;
@@ -72,13 +72,13 @@ function removeEmoji(s) {
 }
 async function addAnchor(node) {
     node.id = removeEmoji(node.id); // remove emojis in id to prevent weired hashes
-    let node_ = document.createElement('a');
+    const node_ = document.createElement('a');
     node_.className = 'anchor';
     node_.href = '#' + node.id;
     node.appendChild(node_);
 }
 function addAnchors() {
-    let nodes = main_article.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    const nodes = main_article.querySelectorAll("h1, h2, h3, h4, h5, h6");
     for (let i = 0; i < nodes.length; i++) {
         addAnchor(nodes[i]);
     }
@@ -87,23 +87,22 @@ function hasModifier(e) { // Check if ctrl/alt/shift is pressed, in order to be 
     return e.ctrlKey || e.altKey || e.shiftKey;
 }
 function parseMetadata() {
-    let metadata = showdown_converter.getMetadata();
+    const metadata = showdown_converter.getMetadata();
     if (metadata['title']) {
         document.title = metadata['title'] + " - PRO's blog";
-        document.getElementById('title').innerHTML = metadata['title'];
-    }
-    else {
+        $('#title').innerHTML = metadata['title'];
+    } else {
         document.title = current_page + ".md - PRO's blog";
-        document.getElementById('title').innerHTML = 'none';
+        $('#title').innerHTML = 'none';
     }
     if (metadata['keywords']) {
-        let keywords = metadata['keywords'].slice(1, -1);
-        document.querySelector("meta[name='keywords']").setAttribute('content', keywords);
+        const keywords = metadata['keywords'].slice(1, -1);
+        $("meta[name='keywords']").setAttribute('content', keywords);
     } else {
-        document.querySelector("meta[name='keywords']").setAttribute('content', 'PRO, blog, notes, ' + current_page);
+        $("meta[name='keywords']").setAttribute('content', 'PRO, blog, notes, ' + current_page);
     }
-    if (metadata['description']) document.querySelector("meta[name='description']").setAttribute('content', metadata['description']);
-    else document.querySelector("meta[name='description']").setAttribute('content', 'PRO 的个人博客');
+    if (metadata['description']) $("meta[name='description']").setAttribute('content', metadata['description']);
+    else $("meta[name='description']").setAttribute('content', 'PRO 的个人博客');
     if (metadata['tags']) {
         let tags = metadata['tags'].slice(1, -1).split(',');
         for (let i = 0; i < tags.length; i++) {
@@ -111,7 +110,7 @@ function parseMetadata() {
         }
         if (tags.length) {
             // .innerHTML = '<a class="tag">' + tags.join('</a><a class="tag">') + '</a>';
-            let tag_container = document.getElementById('tags');
+            const tag_container = $('#tags');
             if (tags.length >= 1) {
                 tag_container.innerHTML = '';
                 tags.forEach(tag_name => {
@@ -133,12 +132,12 @@ function parseMetadata() {
             return;
         }
     }
-    document.getElementById('tags').innerHTML = 'none';
+    $('#tags').innerHTML = 'none';
 }
 async function modifyLink(node) {
-    let dst = node.attributes.href.value;
+    const dst = node.attributes.href.value;
     if (dst.startsWith('@note/')) {
-        let filename = dst.slice(6);
+        const filename = dst.slice(6);
         node.href = "?page=" + filename;
         node.removeAttribute("target");
         node.removeAttribute("rel");
@@ -149,7 +148,7 @@ async function modifyLink(node) {
             e.preventDefault();
         });
     } else if (dst.startsWith('@attachment/')) {
-        let filename = dst.slice(12);
+        const filename = dst.slice(12);
         node.href = "./attachments/" + filename;
         node.removeAttribute("target");
         node.removeAttribute("rel");
@@ -159,34 +158,32 @@ async function modifyLink(node) {
     }
 }
 async function modifyImg(node) {
-    let dst = node.attributes.src.value;
+    const dst = node.attributes.src.value;
     if (dst.startsWith('@attachment/')) {
         node.src = './attachments/' + dst.slice(12);
     }
 }
 function modifyLinks() {
-    let nodes = main_article.getElementsByTagName('a');
-    for (let node of nodes) {
+    for (const node of main_article.getElementsByTagName('a')) {
         modifyLink(node);
     }
-    nodes = document.getElementsByTagName('img');
-    for (let node of nodes) {
+    for (const node of document.getElementsByTagName('img')) {
         modifyImg(node);
     }
 }
 function generateOutline() {
-    let nodes = main_article.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    let outline = document.getElementsByClassName('outline')[0];
+    const nodes = main_article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const outline = document.getElementsByClassName('outline')[0];
     outline.innerHTML = '';
     if (nodes.length <= 1) {
-        let child = document.createElement('li');
+        const child = document.createElement('li');
         child.innerHTML = '<i>Nothing to show.</i>';
         outline.appendChild(child);
         return;
     }
     for (i = 0; i < nodes.length; i++) {
-        let outline_item = document.createElement('li');
-        let link = document.createElement('a');
+        const outline_item = document.createElement('li');
+        const link = document.createElement('a');
         link.className = 'outline-link';
         link.href = '#' + nodes[i].id;
         link.innerText = '  '.repeat(nodes[i].tagName.slice(1) - 1) + nodes[i].textContent;
@@ -218,11 +215,11 @@ function render(markdown) {
     renderMathInElement(main_article, katex_config);  // render formula
     Prism.highlightAllUnder(main_article, true);  // code highlight
     // source code link
-    let link_element = document.getElementById('source_code');
+    const link_element = $('#source_code');
     link_element.href = './notes/' + current_page + '.md';
     link_element.textContent = current_page + '.md';
-    let s = decodeURIComponent(window.location.hash.slice(1));
-    let target = document.getElementById(s);
+    const s = decodeURIComponent(window.location.hash.slice(1));
+    const target = document.getElementById(s);
     if (target) {
         target.scrollIntoView();
     } else if (s === "top") {
@@ -274,7 +271,7 @@ function load(name) {
     );
 }
 function onPopState(e) {
-    let target_page = getQueryString('page');
+    const target_page = getQueryString('page');
     if (current_page === target_page) return;
     current_page = target_page;
     load(current_page);
@@ -300,7 +297,7 @@ function refreshBookmark() {
         storage = JSON.stringify([]);
         window.localStorage.setItem("bookmarks", storage);
     }
-    let bookmarks = JSON.parse(storage);
+    const bookmarks = JSON.parse(storage);
     bookmark_element.innerHTML = "";
     for (let i = 0; i < bookmarks.length; i++) {
         var li = document.createElement("li");
@@ -338,14 +335,14 @@ function refreshBookmark() {
     bookmark_element.appendChild(li);
 }
 function addBookmark(name) {
-    let storage = window.localStorage.getItem("bookmarks");
+    const storage = window.localStorage.getItem("bookmarks");
     let bookmarks = JSON.parse(storage);
     bookmarks.push(name);
     window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     refreshBookmark();
 }
 function removeBookmark(index) {
-    let storage = window.localStorage.getItem("bookmarks");
+    const storage = window.localStorage.getItem("bookmarks");
     let bookmarks = JSON.parse(storage);
     bookmarks.splice(index, 1);
     window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
@@ -353,6 +350,14 @@ function removeBookmark(index) {
 }
 function clearCache(cache_name) {
     caches.delete(cache_name);
+}
+function clearContents() {
+    if (!sw_supported) {
+        window.sessionStorage.clear();
+    } else {
+        clearCache("note");
+        clearCache("other");
+    }
 }
 // Service worker
 const registerServiceWorker = async () => {
@@ -370,7 +375,7 @@ if (sw_supported) {
     console.log("Service workers are not supported in this environment.");
 }
 
-// initialize
+// Initialize
 let page = getQueryString('page');
 if (!page) {
     page = 'index';
@@ -381,29 +386,28 @@ overlay.style.opacity = '0';
 load(page);
 window.addEventListener('popstate', onPopState);
 window.addEventListener('load', NProgress.done);
-document.onkeydown = function (e) {
-    if ((e.key == "F5") && e.ctrlKey) {
-        if (window.event) {
-            try{e.keyCode = 0;}catch(e){}
-            e.returnValue = false;
-        } else {
-            e.preventDefault();
-        }
-        if (!sw_supported) {
-            window.sessionStorage.clear();
-        } else {
-            clearCache("note");
-            clearCache("other");
-        }
-        location.reload(true);
-    }
-}
 refreshBookmark();
 // Double click to get to top
-let div = document.getElementById("main-content");
-let button = document.querySelector("#float-buttons > a[href='#top']");
+const div = $("#main-content");
+const button = $("#float-buttons > a[href='#top']");
 div.addEventListener("dblclick", (e) => {
     if (e.target == div) {
         button.click();
+    }
+});
+// Double refresh or Ctrl+F5 to clear cache
+document.addEventListener("keydown", (e) => {
+    if (e.key != "F5") return;
+    if (e.ctrlKey) {
+        clearContents();
+        console.log("Cache cleared by Ctrl+F5");
+    } else {
+        const last = parseInt(window.sessionStorage.getItem("last-refresh") || "0");
+        const now = Date.now();
+        if (now - last < 5000) {
+            clearContents();
+            console.log("Cache cleared by double refresh");
+        }
+        window.sessionStorage.setItem("last-refresh", now);
     }
 });
