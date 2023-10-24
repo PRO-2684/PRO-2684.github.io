@@ -348,15 +348,15 @@ function removeBookmark(index) {
     window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     refreshBookmark();
 }
-function clearCache(cache_name) {
-    caches.delete(cache_name);
+async function clearCache(cache_name) {
+    await caches.delete(cache_name);
 }
-function clearContents() {
+async function clearContents() {
     if (!sw_supported) {
         window.sessionStorage.clear();
     } else {
-        clearCache("note");
-        clearCache("other");
+        await clearCache("note");
+        await clearCache("other");
     }
 }
 // Service worker
@@ -394,6 +394,14 @@ div.addEventListener("dblclick", (e) => {
     if (e.target == div) {
         button.click();
     }
+});
+// Click span to clear cache
+from_span.addEventListener("click", (e) => {
+    if (hasModifier(e)) return;
+    clearContents().then(() => {
+        console.log("Cache cleared by clicking span");
+        load(current_page);
+    });
 });
 // Double refresh or Ctrl+F5 to clear cache
 document.addEventListener("keydown", (e) => {

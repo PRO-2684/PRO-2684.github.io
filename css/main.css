@@ -176,6 +176,10 @@ div#main-content {
     padding: 0;
 }
 
+span#from {
+    cursor: pointer;
+}
+
 blockquote {
     border-radius: 0.25em;
     border-radius: var(--elem-radius);
