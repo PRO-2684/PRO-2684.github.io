@@ -28,6 +28,7 @@ async def test_url(session: ClientSession, cn_host: str, https: bool = True):
         if url.host.endswith(".edu.cn"):
             title = search(r"<title>(.*)</title>", text)
             title = title.group(1) if title else "无标题"
+            title = title.replace("|").replace("[", "").replace("]", "").replace("\n", "").replace("\r", "").strip()
             return {"status": 1, "cn_host": cn_host, "host": url.host, "location": location, "title": title, "info": f"网站正常重定向到 {location}", "https": https}
         elif url.host == cn_host:
             return {"status": 0, "cn_host": cn_host, "host": cn_host, "location": url, "title": "未知", "info": "网站可能被盗用，也可能使用了 js 实现重定向", "https": https}
