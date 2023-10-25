@@ -35,7 +35,7 @@
 # （曾）指向 www.hust.edu.cn
 隔壁.世界末流大学.com
 # （曾）指向 www.gcu.edu.cn
-原神大学.com
+www.原神大学.com
 # （曾）指向 www.cup.edu.cn
 中国原神大学.com
 # （曾）指向 jlu.edu.cn
