@@ -7,53 +7,65 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2023-10-24
+> 🕗 最近更新时间：2023-10-25
 
-| 学校 | 中文域名 | 状态 | 备注 |
-| --- | --- | --- | --- |
-| [中国石油大学(北京)](https://www.cup.edu.cn/) | [中国原神大学.com](http://中国原神大学.com) | 🟢 | 网站正常重定向到 https://www.cup.edu.cn/ |
-| [中国石油大学(北京)](https://www.cup.edu.cn/) | [光速退学.com](http://光速退学.com) | 🟢 | 网站正常重定向到 https://www.cup.edu.cn/ |
-| [中国石油大学(北京)](https://www.cup.edu.cn/) | [真.世界地沟油大学.com](http://真.世界地沟油大学.com) | 🟢 | 网站正常重定向到 https://www.cup.edu.cn/ |
-| [中国石油大学(北京)](https://www.cup.edu.cn/) | [隔壁.光速退学.com](http://隔壁.光速退学.com) | 🟢 | 网站正常重定向到 https://www.cup.edu.cn/ |
-| [中国石油大学](https://www.upc.edu.cn/) | [世界地沟油大学.com](http://世界地沟油大学.com) | 🟢 | 网站正常重定向到 https://www.upc.edu.cn/ |
-| [中国科学技术大学](https://www.ustc.edu.cn/) | [世界一流退学.com](https://世界一流退学.com) | 🟢 | 网站正常重定向到 https://www.ustc.edu.cn/ |
-| [中国科学技术大学](https://ustc.edu.cn/) | [玩原神玩的.com](http://玩原神玩的.com) | 🟢 | 网站正常重定向到 https://ustc.edu.cn/ |
-| [北京理工大学](https://bit.edu.cn/) | [北京原神大专.com](https://北京原神大专.com) | 🟢 | 网站正常重定向到 https://bit.edu.cn/ |
-| [南京邮电大学| Nanjing University of Posts and Telecommunications](https://www.njupt.edu.cn/) | [南京原神大学.cn](http://南京原神大学.cn) | 🟢 | 网站正常重定向到 https://www.njupt.edu.cn/ |
-| [哈尔滨工业大学](http://www.hit.edu.cn/) | [提瓦特工业大学.com](https://提瓦特工业大学.com) | 🟢 | 网站正常重定向到 http://www.hit.edu.cn/ |
-| [大连交通大学](http://www.djtu.edu.cn/) | [宇宙一流大学.com](http://宇宙一流大学.com) | 🟢 | 网站正常重定向到 http://www.djtu.edu.cn/ |
-| [太原理工大学](https://www.tyut.edu.cn/) | [原神理工大学.com](http://原神理工大学.com) | 🟢 | 网站正常重定向到 https://www.tyut.edu.cn/ |
-| [山东理工大学](https://www.sdut.edu.cn/) | [山东.拖拉机学院.com](https://山东.拖拉机学院.com) | 🟢 | 网站正常重定向到 https://www.sdut.edu.cn/ |
-| [广西大学](https://www.gxu.edu.cn/) | [世界原神大学.com](https://世界原神大学.com) | 🟢 | 网站正常重定向到 https://www.gxu.edu.cn/ |
-| [广西大学](https://www.gxu.edu.cn/) | [世界超一流大学.com](https://世界超一流大学.com) | 🟢 | 网站正常重定向到 https://www.gxu.edu.cn/ |
-| [无标题](https://www.sdu.edu.cn/) | [国立原神大学.com](https://国立原神大学.com) | 🟢 | 网站正常重定向到 https://www.sdu.edu.cn/ |
-| [浙江大学](https://www.zju.edu.cn/) | [世界末流网吧.com](http://世界末流网吧.com) | 🟢 | 网站正常重定向到 https://www.zju.edu.cn/ |
-| [清华大学](https://www.tsinghua.edu.cn/) | [世界三流大学.com](http://世界三流大学.com) | 🟢 | 网站正常重定向到 https://www.tsinghua.edu.cn/ |
-| [西北工业大学](https://www.nwpu.edu.cn/) | [世界顶流大学.com](https://世界顶流大学.com) | 🟢 | 网站正常重定向到 https://www.nwpu.edu.cn/ |
-| [郑州轻工业大学欢迎您](http://www.zzuli.edu.cn/) | [河南原神大学.com](https://河南原神大学.com) | 🟢 | 网站正常重定向到 http://www.zzuli.edu.cn/ |
-| [防灾科技学院](https://www.cidp.edu.cn/) | [原神管理大学.com](http://原神管理大学.com) | 🟢 | 网站正常重定向到 https://www.cidp.edu.cn/ |
-| [黄淮学院_官网](https://www.huanghuai.edu.cn/) | [原神学院.com](https://原神学院.com) | 🟢 | 网站正常重定向到 https://www.huanghuai.edu.cn/ |
-| 未知 | [世一大.com](http://世一大.com) | 🟡 | 网站可能被盗用，也可能使用了 js 实现重定向 |
-| 未知 | [世界一流高校.top](http://世界一流高校.top) | 🟡 | 网站可能被盗用，也可能使用了 js 实现重定向 |
-| 未知 | [双一流大学.com](https://双一流大学.com) | 🟡 | 网站可能被盗用，也可能使用了 js 实现重定向 |
-| 未知 | [世界末流大学.com](http://世界末流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [东北原神大学.com](http://东北原神大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [中国第一大学.com](http://中国第一大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [南京原神大学.com](http://南京原神大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [广东原神大学](http://广东原神大学) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
-| 未知 | [隔壁.世界末流大学.com](http://隔壁.世界末流大学.com) | 🔴 | 网站连接错误，可能是域名已过期 (ConnectionError) |
+| 学校 | 中文域名 | 状态 | HTTPS | 备注 |
+| --- | --- | --- | --- | --- |
+| [中国海洋大学](https://www.ouc.edu.cn/) | [中国op大学.com](http://中国op大学.com) | 🟢 | 🔴 | 网站正常重定向到 https://www.ouc.edu.cn/ |
+| [中国石油大学(北京)](https://www.cup.edu.cn/) | [中国原神大学.com](http://中国原神大学.com) | 🟢 | 🔴 | 网站正常重定向到 https://www.cup.edu.cn/ |
+| [中国石油大学(北京)](https://www.cup.edu.cn/) | [光速退学.com](http://光速退学.com) | 🟢 | 🔴 | 网站正常重定向到 https://www.cup.edu.cn/ |
+| [中国石油大学(北京)](https://www.cup.edu.cn/) | [真.世界地沟油大学.com](http://真.世界地沟油大学.com) | 🟢 | 🔴 | 网站正常重定向到 https://www.cup.edu.cn/ |
+| [中国石油大学(北京)](https://www.cup.edu.cn/) | [隔壁.光速退学.com](http://隔壁.光速退学.com) | 🟢 | 🔴 | 网站正常重定向到 https://www.cup.edu.cn/ |
+| [中国石油大学](https://www.upc.edu.cn/) | [世界地沟油大学.com](http://世界地沟油大学.com) | 🟢 | 🔴 | 网站正常重定向到 https://www.upc.edu.cn/ |
+| [中国科学技术大学](https://www.ustc.edu.cn/) | [世界一流退学.com](https://世界一流退学.com) | 🟢 | 🟢 | 网站正常重定向到 https://www.ustc.edu.cn/ |
+| [中国科学技术大学](https://ustc.edu.cn/) | [玩原神玩的.com](http://玩原神玩的.com) | 🟢 | 🔴 | 网站正常重定向到 https://ustc.edu.cn/ |
+| [北京理工大学](https://bit.edu.cn/) | [北京原神大专.com](https://北京原神大专.com) | 🟢 | 🟢 | 网站正常重定向到 https://bit.edu.cn/ |
+| [南京邮电大学 Nanjing University of Posts and Telecommunications](https://www.njupt.edu.cn/) | [南京原神大学.cn](http://南京原神大学.cn) | 🟢 | 🔴 | 网站正常重定向到 https://www.njupt.edu.cn/ |
+| [哈尔滨工业大学](http://www.hit.edu.cn/) | [提瓦特工业大学.com](https://提瓦特工业大学.com) | 🟢 | 🟢 | 网站正常重定向到 http://www.hit.edu.cn/ |
+| [哈尔滨工程大学](http://www.hrbeu.edu.cn/) | [黑龙江原神大学.com](https://黑龙江原神大学.com) | 🟢 | 🟢 | 网站正常重定向到 http://www.hrbeu.edu.cn/ |
+| [大连交通大学](http://www.djtu.edu.cn/) | [宇宙一流大学.com](http://宇宙一流大学.com) | 🟢 | 🔴 | 网站正常重定向到 http://www.djtu.edu.cn/ |
+| [太原理工大学](https://www.tyut.edu.cn/) | [原神理工大学.com](http://原神理工大学.com) | 🟢 | 🔴 | 网站正常重定向到 https://www.tyut.edu.cn/ |
+| [山东理工大学](https://www.sdut.edu.cn/) | [山东.拖拉机学院.com](https://山东.拖拉机学院.com) | 🟢 | 🟢 | 网站正常重定向到 https://www.sdut.edu.cn/ |
+| [广西大学](https://www.gxu.edu.cn/) | [世界原神大学.com](https://世界原神大学.com) | 🟢 | 🟢 | 网站正常重定向到 https://www.gxu.edu.cn/ |
+| [广西大学](https://www.gxu.edu.cn/) | [世界超一流大学.com](https://世界超一流大学.com) | 🟢 | 🟢 | 网站正常重定向到 https://www.gxu.edu.cn/ |
+| [无标题](http://www.zufedfc.edu.cn/) | [原神怎么你了.com](https://原神怎么你了.com) | 🟢 | 🟢 | 网站正常重定向到 http://www.zufedfc.edu.cn/ |
+| [无标题](https://www.sdu.edu.cn/) | [国立原神大学.com](https://国立原神大学.com) | 🟢 | 🟢 | 网站正常重定向到 https://www.sdu.edu.cn/ |
+| [无标题](https://www.nuc.edu.cn/) | [山西原神大学.com](https://山西原神大学.com) | 🟢 | 🟢 | 网站正常重定向到 https://www.nuc.edu.cn/ |
+| [浙江大学](https://www.zju.edu.cn/) | [世界末流网吧.com](http://世界末流网吧.com) | 🟢 | 🔴 | 网站正常重定向到 https://www.zju.edu.cn/ |
+| [清华大学](https://www.tsinghua.edu.cn/) | [世界三流大学.com](http://世界三流大学.com) | 🟢 | 🔴 | 网站正常重定向到 https://www.tsinghua.edu.cn/ |
+| [燕山大学](https://ysu.edu.cn/) | [原神大学.love](http://原神大学.love) | 🟢 | 🔴 | 网站正常重定向到 https://ysu.edu.cn/ |
+| [西北工业大学](https://www.nwpu.edu.cn/) | [世界顶流大学.com](https://世界顶流大学.com) | 🟢 | 🟢 | 网站正常重定向到 https://www.nwpu.edu.cn/ |
+| [郑州轻工业大学欢迎您](http://www.zzuli.edu.cn/) | [河南原神大学.com](https://河南原神大学.com) | 🟢 | 🟢 | 网站正常重定向到 http://www.zzuli.edu.cn/ |
+| [长春理工大学](https://www.cust.edu.cn/) | [长春原神大学.com](https://长春原神大学.com) | 🟢 | 🟢 | 网站正常重定向到 https://www.cust.edu.cn/ |
+| [防灾科技学院](https://www.cidp.edu.cn/) | [原神管理大学.com](http://原神管理大学.com) | 🟢 | 🔴 | 网站正常重定向到 https://www.cidp.edu.cn/ |
+| [黄淮学院_官网](https://www.huanghuai.edu.cn/) | [原神学院.com](https://原神学院.com) | 🟢 | 🟢 | 网站正常重定向到 https://www.huanghuai.edu.cn/ |
+| 未知 | [世一大.com](http://世一大.com) | 🟡 | 🔴 | 网站可能被盗用，也可能使用了 js 实现重定向 |
+| 未知 | [世界一流高校.top](http://世界一流高校.top) | 🟡 | 🔴 | 网站可能被盗用，也可能使用了 js 实现重定向 |
+| 未知 | [双一流大学.com](https://双一流大学.com) | 🟡 | 🟢 | 网站可能被盗用，也可能使用了 js 实现重定向 |
+| 未知 | [江西原神大学.com](http://江西原神大学.com) | 🟡 | 🔴 | 网站可能被盗用，也可能使用了 js 实现重定向 |
+| 未知 | [西安原神大学.com](https://西安原神大学.com) | 🟡 | 🟢 | 网站可能被盗用，也可能使用了 js 实现重定向 |
+| 未知 | [原神大学.com](https://原神大学.com) | 🔴 | / | 网站重定向到疑似垃圾网站 `https://www.原神大学.com/` |
+| 未知 | [世界末流大学.com](http://世界末流大学.com) | 🔴 | / | 网站连接错误，可能是域名已过期 (ConnectionError) |
+| 未知 | [东北原神大学.com](http://东北原神大学.com) | 🔴 | / | 网站连接错误，可能是域名已过期 (ConnectionError) |
+| 未知 | [中国第一大学.com](http://中国第一大学.com) | 🔴 | / | 网站连接错误，可能是域名已过期 (ConnectionError) |
+| 未知 | [南京原神大学.com](http://南京原神大学.com) | 🔴 | / | 网站连接错误，可能是域名已过期 (ConnectionError) |
+| 未知 | [广东原神大学](http://广东原神大学) | 🔴 | / | 网站连接错误，可能是域名已过期 (ConnectionError) |
+| 未知 | [隔壁.世界末流大学.com](http://隔壁.世界末流大学.com) | 🔴 | / | 网站连接错误，可能是域名已过期 (ConnectionError) |
 
 ## 补充
 
-以下是一些不指向大学的中文域名，但是也是好活。
+以下是一些不指向 `.edu.cn` 大学的中文域名，但是也是好活。
 
 - [中国科学技术大学.com](http://中国科学技术大学.com/) 指向[原神官网](https://ys.mihoyo.com/)（什么双向奔赴）
+- [原神启动.com](https://原神启动.com/) 指向[燕山大学 MC 社](https://ysumc.club/)
+- [原神科技大学.com](http://原神科技大学.com/) 指向[澳门科技大学](https://www.must.edu.mo/)
+- [美国原神大学.com](http://美国原神大学.com/) 指向[纽约大学 NYU](https://www.nyu.edu)
 
 ## 统计信息
 
-- 本页面共收录 $31$ 个中文域名，其中 $22$ 个域名确认存活，$3$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：91.9542367 s
-- 根据模板生成上述表格：15.6228 ms
+- 本页面共收录 $40$ 个中文域名，其中 $28$ 个域名确认存活，$5$ 个域名暂时无法确认。
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：87.0365683 s
+- 根据模板生成上述表格：11.502 ms
 
 ## 关于
 

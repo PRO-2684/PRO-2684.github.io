@@ -28,7 +28,7 @@ async def test_url(session: ClientSession, cn_host: str, https: bool = True):
         if url.host.endswith(".edu.cn"):
             title = search(r"<title>(.*)</title>", text)
             title = title.group(1) if title else "无标题"
-            title = title.replace("|").replace("[", "").replace("]", "").replace("\n", "").replace("\r", "").strip()
+            title = title.replace("|", "").replace("[", "").replace("]", "").replace("\n", "").replace("\r", "").strip()
             return {"status": 1, "cn_host": cn_host, "host": url.host, "location": location, "title": title, "info": f"网站正常重定向到 {location}", "https": https}
         elif url.host == cn_host:
             return {"status": 0, "cn_host": cn_host, "host": cn_host, "location": url, "title": "未知", "info": "网站可能被盗用，也可能使用了 js 实现重定向", "https": https}
@@ -105,16 +105,17 @@ async def main():
     total = len(results)
     alive = 0
     sus = 0
+    sel = {True: "🟢", False: "🔴"}
     for result in results:
-        # | 学校 | 中文域名 | 状态 | 备注 |
+        # | 学校 | 中文域名 | 状态 | HTTPS? | 备注 |
         if result["status"] == 1:
-            line = f"| [{result['title']}]({result['location']}) | {make_link(result['cn_host'], result['https'])} | 🟢 | {result['info']} |\n"
+            line = f"| [{result['title']}]({result['location']}) | {make_link(result['cn_host'], result['https'])} | 🟢 | {sel[result['https']]} | {result['info']} |\n"
             alive += 1
         elif result["status"] == 0:
-            line = f"| 未知 | {make_link(result['cn_host'], result['https'])} | 🟡 | {result['info']} |\n"
+            line = f"| 未知 | {make_link(result['cn_host'], result['https'])} | 🟡 | {sel[result['https']]} | {result['info']} |\n"
             sus += 1
         else:
-            line = f"| 未知 | {make_link(result['cn_host'], result['https'])} | 🔴 | {result['info']} |\n"
+            line = f"| 未知 | {make_link(result['cn_host'], result['https'])} | 🔴 | / | {result['info']} |\n"
         content += line
         print(line.strip())
     t3 = time()
