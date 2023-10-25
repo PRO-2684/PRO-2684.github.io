@@ -1,6 +1,6 @@
 from aiohttp import ClientSession, TCPConnector
 from aiohttp import client_exceptions
-from re import search
+from re import search, IGNORECASE
 from datetime import datetime
 from time import time_ns as time
 
@@ -26,7 +26,7 @@ async def test_url(session: ClientSession, cn_host: str, https: bool = True):
             location = url.human_repr()
             text = await r.text()
         if url.host.endswith(".edu.cn"):
-            title = search(r"<title>(.*)</title>", text)
+            title = search(r"<title>(.*)</title>", text, IGNORECASE)
             title = title.group(1) if title else "无标题"
             title = title.replace("|", "").replace("[", "").replace("]", "").replace("\n", "").replace("\r", "").strip()
             return {"status": 1, "cn_host": cn_host, "host": url.host, "location": location, "title": title, "info": f"网站正常重定向到 {location}", "https": https}
@@ -109,13 +109,13 @@ async def main():
     for result in results:
         # | 学校 | 中文域名 | 状态 | HTTPS? | 备注 |
         if result["status"] == 1:
-            line = f"| [{result['title']}]({result['location']}) | {make_link(result['cn_host'], result['https'])} | 🟢 | {sel[result['https']]} | {result['info']} |\n"
+            line = f"| [{result['title']}]({result['location']}) | {make_link(result['cn_host'], result['https'])} | <span title='{result['info']}'>🟢</span> | {sel[result['https']]} |\n"
             alive += 1
         elif result["status"] == 0:
-            line = f"| 未知 | {make_link(result['cn_host'], result['https'])} | 🟡 | {sel[result['https']]} | {result['info']} |\n"
+            line = f"| 未知 | {make_link(result['cn_host'], result['https'])} | <span title='{result['info']}'>🟡</span> | {sel[result['https']]} |\n"
             sus += 1
         else:
-            line = f"| 未知 | {make_link(result['cn_host'], result['https'])} | 🔴 | / | {result['info']} |\n"
+            line = f"| 未知 | {make_link(result['cn_host'], result['https'])} | <span title='{result['info']}'>🔴</span> | / |\n"
         content += line
         print(line.strip())
     t3 = time()
