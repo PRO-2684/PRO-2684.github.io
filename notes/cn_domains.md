@@ -8,6 +8,7 @@ description: 此文章收集了部分国内大学的中文域名
 # 部分国内大学的中文域名
 
 > 🕗 最近更新时间：2023-10-25
+> 🕗 最近更新时间：2023-10-25
 
 | 学校 | 中文域名 | 状态 | HTTPS | 备注 |
 | --- | --- | --- | --- | --- |
@@ -55,8 +56,12 @@ description: 此文章收集了部分国内大学的中文域名
 ## 补充
 
 以下是一些不指向 `.edu.cn` 大学的中文域名，但是也是好活。
+以下是一些不指向 `.edu.cn` 大学的中文域名，但是也是好活。
 
 - [中国科学技术大学.com](http://中国科学技术大学.com/) 指向[原神官网](https://ys.mihoyo.com/)（什么双向奔赴）
+- [原神启动.com](https://原神启动.com/) 指向[燕山大学 MC 社](https://ysumc.club/)
+- [原神科技大学.com](http://原神科技大学.com/) 指向[澳门科技大学](https://www.must.edu.mo/)
+- [美国原神大学.com](http://美国原神大学.com/) 指向[纽约大学 NYU](https://www.nyu.edu)
 - [原神启动.com](https://原神启动.com/) 指向[燕山大学 MC 社](https://ysumc.club/)
 - [原神科技大学.com](http://原神科技大学.com/) 指向[澳门科技大学](https://www.must.edu.mo/)
 - [美国原神大学.com](http://美国原神大学.com/) 指向[纽约大学 NYU](https://www.nyu.edu)
