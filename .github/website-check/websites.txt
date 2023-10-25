@@ -34,6 +34,8 @@
 中国第一大学.com
 # （曾）指向 www.hust.edu.cn
 隔壁.世界末流大学.com
+# （曾）指向 www.gcu.edu.cn
+原神大学.com
 # （曾）指向 www.cup.edu.cn
 中国原神大学.com
 # （曾）指向 jlu.edu.cn
@@ -60,7 +62,22 @@
 广东原神大学
 # （曾）指向 www.njupt.edu.cn
 南京原神大学.cn
-
+# （曾）指向 www.zufedfc.edu.cn
+原神怎么你了.com
+# （曾）指向 www.ouc.edu.cn
+中国op大学.com
+# （曾）指向 www.hrbeu.edu.cn
+黑龙江原神大学.com
+# （曾）指向 www.nuc.edu.cn
+山西原神大学.com
+# （曾）指向 www.xidian.edu.cn
+西安原神大学.com
+# （曾）指向 www.cust.edu.cn
+长春原神大学.com
+# （曾）指向 www.jxufe.edu.cn
+江西原神大学.com
+# （曾）指向 ysu.edu.cn
+原神大学.love
 
 
 # （曾）指向 cas.hdu.edu.cn
