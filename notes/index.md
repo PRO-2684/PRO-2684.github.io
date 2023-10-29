@@ -18,6 +18,8 @@ description: PRO 的个人博客索引
 
 [科大学号格式及说明](@note/student_id)
 
+[禁止 Discord 自动更新](@note/fuck_discord_update)
+
 ## 🛠️ 实用
 
 [USTC 网址导航](@note/useful_links)
@@ -27,6 +29,8 @@ description: PRO 的个人博客索引
 [如何查找老师邮箱](@note/email)
 
 ## 💻 技术
+
+[禁止 Discord 自动更新](@note/fuck_discord_update)
 
 [部分国内大学的中文域名收集](@note/cn_domains)
 

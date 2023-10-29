@@ -72,6 +72,8 @@ description: USTC 常用链接
 
 [Missing Semester](https://missing.csail.mit.edu/2020/)
 
+[Sci-Hub (1)](https://sci-hub.ru/) [Sci-Hub (2)](https://sci-hub.se/) [Sci-Hub (3)](https://sci-hub.st/)
+
 ## 🛠️ 工具
 [校园地图](https://www.ustc.edu.cn/__local/7/CA/83/51C921501F45CC7F22C3E32B9C3_85DD6C3B_196F20.jpg)
 
