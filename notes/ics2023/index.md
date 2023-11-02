@@ -28,7 +28,7 @@ description: ICS 2023 助教维护的课程主页
 | 序号 | 链接                                                         | DDL        | 答案                             |
 | ---- | ------------------------------------------------------------ | ---------- | -------------------------------- |
 | Hw1  | [hw1.pdf](@attachment/hw1.pdf) or [hw1.zip](@attachment/hw1.zip) | 2023.9.28  | [ans1.pdf](@attachment/ans1.pdf) |
-| Hw2  | [hw2.pdf](@attachment/hw2.pdf) or [hw2.zip](@attachment/hw2.zip) | 2023.10.20 | /                                |
+| Hw2  | [hw2.pdf](@attachment/hw2.pdf) or [hw2.zip](@attachment/hw2.zip) | 2023.10.20 | [ans2.pdf](@attachment/ans2.pdf) |
 | Hw3  | [hw3.pdf](@attachment/hw3.pdf) or [hw3.zip](@attachment/hw3.zip) | 2023.10.27 | /                                |
 
 ### Hw1 补充说明
@@ -38,6 +38,7 @@ description: ICS 2023 助教维护的课程主页
 ## 💻 实验
 
 - 实验总共 6 次
+- 助教做的实验自助评测系统：[LC-3 Simulator (ustc.edu.cn)](http://home.ustc.edu.cn/~sprout/lc3web/)
 
 | 序号 | 链接                             | DDL       |
 | ---- | -------------------------------- | --------- |
