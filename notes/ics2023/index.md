@@ -30,6 +30,7 @@ description: ICS 2023 助教维护的课程主页
 | Hw1  | [hw1.pdf](@attachment/hw1.pdf) or [hw1.zip](@attachment/hw1.zip) | 2023.9.28  | [ans1.pdf](@attachment/ans1.pdf) |
 | Hw2  | [hw2.pdf](@attachment/hw2.pdf) or [hw2.zip](@attachment/hw2.zip) | 2023.10.20 | [ans2.pdf](@attachment/ans2.pdf) |
 | Hw3  | [hw3.pdf](@attachment/hw3.pdf) or [hw3.zip](@attachment/hw3.zip) | 2023.10.27 | /                                |
+| Hw4  | [hw4.pdf](@attachment/hw4.pdf) or [hw4.zip](@attachment/hw4.zip) | 2023.11.10 | /                                |
 
 ### Hw1 补充说明
 
