@@ -1,6 +1,6 @@
 ---
 title: tampermonkey
-tags: [Technical, Web, Latest]
+tags: [Technical, Web]
 keywords: [Tampermonkey, 油猴, 篡改猴, USTC Helper, USTC 助手, Auto grading, 自动评教, FPGA-Online, FPGA-Plus]
 description: 一些我编写的油猴脚本
 ---
