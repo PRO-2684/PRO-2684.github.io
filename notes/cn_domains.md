@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2023-11-04
+> 🕗 最近更新时间：2023-11-06
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
@@ -23,11 +23,12 @@ description: 此文章收集了部分国内大学的中文域名
 | [南京邮电大学 Nanjing University of Posts and Telecommunications](https://www.njupt.edu.cn/) | [南京原神大学.cn](http://南京原神大学.cn) | <span title='网站正常重定向到 https://www.njupt.edu.cn/'>🟢</span> | 🔴 |
 | [哈尔滨工程大学](http://www.hrbeu.edu.cn/) | [黑龙江原神大学.com](https://黑龙江原神大学.com) | <span title='网站正常重定向到 http://www.hrbeu.edu.cn/'>🟢</span> | 🟢 |
 | [大连交通大学](http://www.djtu.edu.cn/) | [宇宙一流大学.com](http://宇宙一流大学.com) | <span title='网站正常重定向到 http://www.djtu.edu.cn/'>🟢</span> | 🔴 |
-| [太原理工大学](https://www.tyut.edu.cn/) | [原神理工大学.com](http://原神理工大学.com) | <span title='网站正常重定向到 https://www.tyut.edu.cn/'>🟢</span> | 🔴 |
+| [山东理工大学](https://www.sdut.edu.cn/) | [原神启动.com](https://原神启动.com) | <span title='网站正常重定向到 https://www.sdut.edu.cn/'>🟢</span> | 🟢 |
 | [山东理工大学](https://www.sdut.edu.cn/) | [山东.拖拉机学院.com](https://山东.拖拉机学院.com) | <span title='网站正常重定向到 https://www.sdut.edu.cn/'>🟢</span> | 🟢 |
 | [广西大学](https://www.gxu.edu.cn/) | [世界原神大学.com](https://世界原神大学.com) | <span title='网站正常重定向到 https://www.gxu.edu.cn/'>🟢</span> | 🟢 |
 | [广西大学](https://www.gxu.edu.cn/) | [世界超一流大学.com](https://世界超一流大学.com) | <span title='网站正常重定向到 https://www.gxu.edu.cn/'>🟢</span> | 🟢 |
 | [无标题](http://www.zufedfc.edu.cn/) | [原神怎么你了.com](https://原神怎么你了.com) | <span title='网站正常重定向到 http://www.zufedfc.edu.cn/'>🟢</span> | 🟢 |
+| [浙江大学](https://www.zju.edu.cn/) | [世界末流网吧.com](http://世界末流网吧.com) | <span title='网站正常重定向到 https://www.zju.edu.cn/'>🟢</span> | 🔴 |
 | [清华大学](https://www.tsinghua.edu.cn/) | [世界三流大学.com](http://世界三流大学.com) | <span title='网站正常重定向到 https://www.tsinghua.edu.cn/'>🟢</span> | 🔴 |
 | [西北工业大学](https://www.nwpu.edu.cn/) | [世界顶流大学.com](https://世界顶流大学.com) | <span title='网站正常重定向到 https://www.nwpu.edu.cn/'>🟢</span> | 🟢 |
 | [郑州轻工业大学欢迎您](http://www.zzuli.edu.cn/) | [河南原神大学.com](https://河南原神大学.com) | <span title='网站正常重定向到 http://www.zzuli.edu.cn/'>🟢</span> | 🟢 |
@@ -42,11 +43,11 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [世界末流大学.com](https://世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww38.世界末流大学.com/`'>🔴</span> | / |
 | 未知 | [中国第一大学.com](https://中国第一大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww25.中国第一大学.com/`'>🔴</span> | / |
 | 未知 | [隔壁.世界末流大学.com](https://隔壁.世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww38.隔壁.世界末流大学.com/`'>🔴</span> | / |
-| 未知 | [世界末流网吧.com](http://世界末流网吧.com) | <span title='网站无法正常访问，状态码为 502'>🔴</span> | / |
 | 未知 | [东北原神大学.com](http://东北原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [中国op大学.com](https://中国op大学.com) | <span title='未知异常 ()!!!'>🔴</span> | / |
 | 未知 | [南京原神大学.com](http://南京原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神大学.love](http://原神大学.love) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
+| 未知 | [原神理工大学.com](https://原神理工大学.com) | <span title='未知异常 ()!!!'>🔴</span> | / |
 | 未知 | [国立原神大学.com](http://国立原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [广东原神大学](http://广东原神大学) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [提瓦特工业大学.com](http://提瓦特工业大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
@@ -57,15 +58,15 @@ description: 此文章收集了部分国内大学的中文域名
 以下是一些不指向 `.edu.cn` 大学的中文域名，但是也是好活。
 
 - [中国科学技术大学.com](http://中国科学技术大学.com/) 指向 [原神官网](https://ys.mihoyo.com/)（什么双向奔赴）
-- [原神启动.com](https://原神启动.com/) 指向 [燕山大学 MC 社](https://ysumc.club/)
+- [www.原神启动.com](https://www.原神启动.com/) 指向 [燕山大学 MC 社](https://ysumc.club/)
 - [原神科技大学.com](http://原神科技大学.com/) 指向 [澳门科技大学](https://www.must.edu.mo/)
 - [美国原神大学.com](http://美国原神大学.com/) 指向 [纽约大学 NYU](https://www.nyu.edu)
 
 ## 统计信息
 
-- 本页面共收录 $40$ 个中文域名，其中 $23$ 个域名确认存活，$5$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：300.578963095 s
-- 根据模板生成上述表格：268.601 μs
+- 本页面共收录 $41$ 个中文域名，其中 $24$ 个域名确认存活，$5$ 个域名暂时无法确认。
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：300.932962254 s
+- 根据模板生成上述表格：294.629 μs
 
 ## 关于
 
