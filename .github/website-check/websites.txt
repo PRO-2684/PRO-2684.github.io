@@ -78,6 +78,8 @@ www.原神大学.com
 江西原神大学.com
 # （曾）指向 ysu.edu.cn
 原神大学.love
+# （曾）指向 www.sdut.edu.cn
+原神启动.com
 
 
 # （曾）指向 cas.hdu.edu.cn
@@ -210,5 +212,4 @@ www.原神大学.com
 # 世界一流大学.love
 # （曾）指向 www.cqjzc.edu.cn
 # 世界顶级大学.com
-# （曾）指向 www.sdut.edu.cn
-# 原神启动.com
+
