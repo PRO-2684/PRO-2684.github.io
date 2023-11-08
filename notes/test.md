@@ -3,6 +3,7 @@ title: test
 tags: [Test]
 keywords: [Test, 测试]
 description: test
+scripts: true
 ---
 
 # This is a test

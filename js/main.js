@@ -103,6 +103,13 @@ function parseMetadata() {
     }
     if (metadata['description']) $("meta[name='description']").setAttribute('content', metadata['description']);
     else $("meta[name='description']").setAttribute('content', 'PRO 的个人博客');
+    if (metadata['scripts'] === "true") {
+        const script = document.createElement('script');
+        script.id = 'note_js';
+        script.src = `./notes/note_js/${current_page}.js`;
+        document.head.appendChild(script);
+        console.info(`Added script ${current_page}.js`);
+    }
     if (metadata['tags']) {
         let tags = metadata['tags'].slice(1, -1).split(',');
         for (let i = 0; i < tags.length; i++) {
@@ -225,8 +232,15 @@ function render(markdown) {
     } else if (s === "top") {
         window.scrollTo({ top: 0 });
     }
+    window.dispatchEvent(new CustomEvent('note_loaded'));
 }
 function load(name) {
+    window.dispatchEvent(new CustomEvent('note_loading', {
+        detail: {
+            previous: current_page,
+            current: name
+        }
+    }));
     NProgress.start();
     current_page = name;
     setFrom("loading");
@@ -386,6 +400,13 @@ overlay.style.opacity = '0';
 load(page);
 window.addEventListener('popstate', onPopState);
 window.addEventListener('load', NProgress.done);
+window.addEventListener('note_loading', (e) => {
+    const script = $("#note_js");
+    if (script) {
+        script.remove();
+        console.info(`Removed script from note "${e.detail.previous}"`);
+    }
+});
 refreshBookmark();
 // Double click to get to top
 const div = $("#main-content");
