@@ -65,6 +65,7 @@ description: ICS 2023 助教维护的课程主页
     - [GitHub release](https://github.com/chiragsakhuja/lc3tools/releases)
     - [Mac 下的常见问题 (来自去年主页)](https://ics.liuly.moe/faq/lc3tools.html)
 - [LC-3 Web](https://wchargin.com/lc3web/)：网页版 LC-3 模拟器
+    - 助教做的实验自助评测系统：[LC-3 Simulator (ustc.edu.cn)](http://home.ustc.edu.cn/~sprout/lc3web/)
 - [LC-3 手册](http://acsa.ustc.edu.cn/ics/download/lc3/lc3-handbook.pdf) (英文，快速方便查找 LC-3 的汇编代码)
 - Patt 主页：[Yale N. Patt (utexas.edu)](https://users.ece.utexas.edu/~patt/)
     - 点击主页里的 `EE306` 链接可以获取往年 Patt 教授这门课的课程资源（作业，考试，实验等）
