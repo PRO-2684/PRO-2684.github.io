@@ -1,6 +1,7 @@
-const version = "1699443759";
+const version = "1699492452";
 const note = "note";
 const other = "other";
+const inVersion = ["js", "css", "fonts"];
 const base = location.origin + location.pathname.slice(0, -5); // remove last "sw.js"
 const note_url = base + "notes/";
 const expiration = 60 * 60 * 24; // 1 day
@@ -30,7 +31,7 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
         cache_name = version;
     } else if (parts[0] === "notes") {
         cache_name = note;
-    } else if (parts[0] === "js" || parts[0] === "css") {
+    } else if (inVersion.includes(parts[0])) {
         cache_name = version;
     }
     const responseFromCache = await caches.match(request, {
