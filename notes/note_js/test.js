@@ -5,5 +5,5 @@
     // Remember to clean up
     window.addEventListener("note_loading", () => {
         clearInterval(timer);
-    });
+    }, { once: true });
 })();

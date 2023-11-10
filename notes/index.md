@@ -8,7 +8,8 @@ description: PRO 的个人博客索引
 # 👋 欢迎!
 
 欢迎来到我的个人博客! 😊
-[About me](@note/about)
+
+[About me](@note/about) | [Blog manual](@note/blog_manual)
 
 ## 🔥 最近更新
 

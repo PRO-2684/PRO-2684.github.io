@@ -1,4 +1,5 @@
 const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 // Progress bar
 NProgress.configure({
     trickleSpeed: 100,
@@ -86,6 +87,13 @@ function addAnchors() {
 function hasModifier(e) { // Check if ctrl/alt/shift is pressed, in order to be none-intrusive
     return e.ctrlKey || e.altKey || e.shiftKey;
 }
+function insertNoteJS() {
+    const script = document.createElement('script');
+    script.id = 'note_js';
+    script.src = `./notes/note_js/${current_page}.js`;
+    document.head.appendChild(script);
+    console.info(`Added script ${current_page}.js`);
+}
 function parseMetadata() {
     const metadata = showdown_converter.getMetadata();
     if (metadata['title']) {
@@ -104,11 +112,7 @@ function parseMetadata() {
     if (metadata['description']) $("meta[name='description']").setAttribute('content', metadata['description']);
     else $("meta[name='description']").setAttribute('content', 'PRO 的个人博客');
     if (metadata['scripts'] === "true") {
-        const script = document.createElement('script');
-        script.id = 'note_js';
-        script.src = `./notes/note_js/${current_page}.js`;
-        document.head.appendChild(script);
-        console.info(`Added script ${current_page}.js`);
+        window.addEventListener("note_loaded", insertNoteJS, { once: true });
     }
     if (metadata['tags']) {
         let tags = metadata['tags'].slice(1, -1).split(',');

@@ -448,3 +448,10 @@ h6:hover>a.anchor {
         transition: none;
     }
 }
+
+/* Adapted from animate.css - https://animate.style/ */
+@keyframes flash {
+    from, 50%, to { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+.attention { animation-name: flash; animation-duration: 1s; animation-fill-mode: both; }
