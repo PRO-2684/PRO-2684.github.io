@@ -107,6 +107,8 @@ description: PRO 的个人博客索引
 
 ## 🧪 测试用
 
+[倒计时](@note/countdown)
+
 [katex 渲染测试](@note/katex)
 
 [Lorem](@note/lorem)
