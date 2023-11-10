@@ -145,6 +145,17 @@ function parseMetadata() {
     }
     $('#tags').innerHTML = 'none';
 }
+function focus(sel) {
+    const el = $(sel);
+    if (!el) return;
+    // Scroll to element
+    el.scrollIntoView({ block: "center" });
+    // Flash element
+    el.classList.add("attention");
+    el.addEventListener("animationend", () => {
+        el.classList.remove("attention");
+    }, { once: true });
+}
 async function modifyLink(node) {
     const dst = node.attributes.href.value;
     if (dst.startsWith('@note/')) {
@@ -164,6 +175,16 @@ async function modifyLink(node) {
         node.removeAttribute("target");
         node.removeAttribute("rel");
         node.classList.add('external-link');
+    } else if (dst.startsWith("@element/")) {
+        const href = node.getAttribute("href");
+        const sel = href.slice(9);
+        // node.href = "javascript:void(0)";
+        node.removeAttribute("href");
+        node.addEventListener("click", (e) => {
+            e.preventDefault();
+            focus(sel);
+        });
+        node.classList.add('element-link');
     } else if (!dst.startsWith("#")) {
         node.classList.add('external-link');
     }

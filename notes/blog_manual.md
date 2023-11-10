@@ -3,7 +3,6 @@ title: Blog manual
 tags: [Index]
 keywords: [blog, manual, 使用说明]
 description: 博客使用说明
-scripts: true
 ---
 
 # Blog manual
@@ -17,7 +16,7 @@ scripts: true
 
 - 清除本地的笔记缓存，使用网络重新加载笔记
     - `Ctrl+F5`
-    - 点击 [状态标识](@action:from)
-- 导航至书签：点击对应的 [书签名](@action:bookmark_name) 即可
-- 添加/删除书签：点击书签末尾的 [加号/减号](@action:bookmark_op)
+    - 点击 [状态标识](@element/span#from)
+- 导航至书签：点击对应的 [书签名](@element/#bookmarks>li>a) 即可
+- 添加/删除书签：点击书签末尾的 [加号/减号](@element/#bookmarks>li>a.bookmark-op)
 - 快速返回顶部：双击两侧空白区域，或点击 "↑" 按钮

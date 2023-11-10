@@ -41,6 +41,22 @@
     background-image: url(./attachment-light.svg);
 }
 
+.element-link {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.element-link::after {
+    background-size: 0.7em 0.7em;
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    content: "";
+    margin-inline-start: 0.2em;
+    margin-inline-end: 0.1em;
+    background-image: url(./element-light.svg);
+}
+
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
     :root {
@@ -75,6 +91,10 @@
 
     .external-link[href^="./attachments/"]::after {
         background-image: url(./attachment-dark.svg);
+    }
+
+    .element-link::after {
+        background-image: url(./element-dark.svg);
     }
 }
 
