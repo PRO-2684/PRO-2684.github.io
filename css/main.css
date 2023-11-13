@@ -7,8 +7,6 @@
     --link: #1870F0;
     --scrollbar-bg: transparant;
     --scrollbar-color: rgba(0, 0, 0, 0.25);
-    --input-bg: #dddddd;
-    --input-text: #5b5b66;
     --elem-radius: 0.25em;
     --quote-bg: #d6d6d6;
     --quote-text: #5B5B66;
@@ -57,6 +55,10 @@
     background-image: url(./element-light.svg);
 }
 
+html {
+    color-scheme: light;
+}
+
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
     :root {
@@ -67,8 +69,6 @@
         --formula: #FBFBFE;
         --scrollbar-bg: transparant;
         --scrollbar-color: rgba(255, 255, 255, 0.25);
-        --input-bg: #171a1f;
-        --input-text: #CFCFD8;
         --quote-bg: #1f242c;
         --quote-text: #CFCFD8;
         --quote-left: #d3d3d3;
@@ -95,6 +95,10 @@
 
     .element-link::after {
         background-image: url(./element-dark.svg);
+    }
+
+    html {
+        color-scheme: dark;
     }
 }
 
@@ -227,10 +231,17 @@ table th {
 }
 
 input {
-    color: var(--input-text);
-    background: var(--input-bg);
-    border: none;
-    border-bottom: 0.1em solid var(--border-dim);
+    outline: none;
+    transition: border 0.2s ease-in-out, color 0.2s ease-in-out;
+    border: 1px solid;
+    border-radius: 0.5em;
+    border-color: var(--border-dim);
+    color: var(--text-dim);
+}
+
+input:hover, input:focus {
+    border-color: var(--border);
+    color: var(--text);
 }
 
 a {
@@ -465,6 +476,10 @@ h6:hover>a.anchor {
     }
 
     article {
+        transition: none;
+    }
+
+    input {
         transition: none;
     }
 }

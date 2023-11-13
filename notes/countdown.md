@@ -22,7 +22,7 @@ scripts: true
         display: inline-block;
         height: 1em;
         overflow-y: hidden;
-        margin: 0 .2em;
+        margin: 0 0 0 .2em;
         cursor: pointer;
     }
     .countdown>span.countdown-digit::before {
