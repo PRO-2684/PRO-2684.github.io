@@ -106,6 +106,7 @@ self.addEventListener("install", (event) => {
             "/js/prism.js",
         ].map(i => i + `?v=${version}`), version),
     );
+    return self.skipWaiting();
 });
 
 self.addEventListener("fetch", (event) => {
@@ -137,8 +138,8 @@ const deleteOldCaches = async () => {
 };
 
 self.addEventListener("activate", (event) => {
-    event.waitUntil(Promise.all([
-        enableNavigationPreload(),
-        deleteOldCaches(),
-    ]));
+    event.waitUntil(enableNavigationPreload()
+        .then(deleteOldCaches)
+        .then(self.clients.claim)
+    );
 });
