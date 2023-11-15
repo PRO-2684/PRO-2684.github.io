@@ -1,6 +1,6 @@
 ---
 title: 禁止 Discord 自动更新
-tags: [Technical, Latest]
+tags: [Technical]
 keywords: [Discord, 自动更新, Auto update, Windows]
 description: 此文介绍了一种完全禁止 Discord 自动更新的方法
 ---
