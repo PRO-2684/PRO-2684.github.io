@@ -87,4 +87,8 @@
         }
     }
     query.addEventListener("input", process);
+    $$("span.example").forEach(eg => eg.addEventListener("click", () => {
+        query.value = eg.textContent;
+        process();
+    }));
 })();
