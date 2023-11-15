@@ -212,4 +212,6 @@ www.原神大学.com
 # 世界一流大学.love
 # （曾）指向 www.cqjzc.edu.cn
 # 世界顶级大学.com
+# （曾）指向 njust.edu.cn
+# 璃月皇家炮兵学院.online
 
