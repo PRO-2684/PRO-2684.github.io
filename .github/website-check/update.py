@@ -20,7 +20,7 @@ async def test_url(session: ClientSession, cn_host: str, https: bool = True):
     url = f"https://{cn_host}/" if https else f"http://{cn_host}/"
     try:
         async with session.get(url) as r:
-            if r.status != 200:
+            if not r.status in [200, 202]:
                 return {"status": -2, "cn_host": cn_host, "host": "error", "location": "", "title": "", "info": f"网站无法正常访问，状态码为 {r.status}", "https": https}
             url = r.url
             location = url.human_repr()

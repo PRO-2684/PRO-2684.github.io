@@ -80,7 +80,12 @@ www.原神大学.com
 原神大学.love
 # （曾）指向 www.sdut.edu.cn
 原神启动.com
+# （曾）指向 njust.edu.cn
+璃月皇家炮兵学院.online
 
+####################
+# 以下为确认不再存活的网址
+####################
 
 # （曾）指向 cas.hdu.edu.cn
 # 世界负二流大学.com
@@ -212,6 +217,4 @@ www.原神大学.com
 # 世界一流大学.love
 # （曾）指向 www.cqjzc.edu.cn
 # 世界顶级大学.com
-# （曾）指向 njust.edu.cn
-# 璃月皇家炮兵学院.online
 
