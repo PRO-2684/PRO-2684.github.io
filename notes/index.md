@@ -81,6 +81,8 @@ description: PRO 的个人博客索引
 
 [结绳记事](@note/knot)
 
+[寂静之城 (pdf)](@attachment/the_silence_city.pdf)
+
 ## 🎓 学业
 
 [Survive USTC](@note/survive_ustc)
