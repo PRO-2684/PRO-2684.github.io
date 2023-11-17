@@ -17,6 +17,7 @@ description: 此文章收集了部分国内大学的中文域名
 以下是一些不指向 `.edu.cn` 大学的中文域名，但是也是好活。
 
 - [中国科学技术大学.com](http://中国科学技术大学.com/) 指向 [原神官网](https://ys.mihoyo.com/)（什么双向奔赴）
+- [ustc.gay](https://ustc.gay) 指向 [中国科学技术大学](https://www.ustc.edu.cn/)
 - [www.原神启动.com](https://www.原神启动.com/) 指向 [燕山大学 MC 社](https://ysumc.club/)
 - [原神科技大学.com](http://原神科技大学.com/) 指向 [澳门科技大学](https://www.must.edu.mo/)
 - [美国原神大学.com](http://美国原神大学.com/) 指向 [纽约大学 NYU](https://www.nyu.edu)
