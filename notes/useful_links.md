@@ -85,6 +85,8 @@ description: USTC 常用链接
 
 [校园班车运行时刻表](https://www.ustc.edu.cn/ggfw/xxcx.htm)
 
+[校园班车查询系统](https://weixine.ustc.edu.cn/ustcqy/mobile/busTimetable)
+
 [一卡通](https://ecard.ustc.edu.cn/)
 
 [科大健康打卡](https://weixine.ustc.edu.cn/2020)
