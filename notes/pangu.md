@@ -25,4 +25,4 @@ scripts: true
 
 ## Text
 
-<textarea style="width: 49%; height: 15em;"></textarea><textarea style="width: 49%; height: 15em;"></textarea>
+<textarea autofocus style="width: 49%; height: 15em; resize: vertical; min-height: 5em;" placeholder="Input here..."></textarea><textarea readonly style="width: 49%; height: 15em; resize: vertical; min-height: 5em;" placeholder="Output here..."></textarea>

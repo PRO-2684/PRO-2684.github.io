@@ -213,6 +213,17 @@
     });
 
     textAreas[0].addEventListener("input", format);
+    // Simutanous resize
+    const resizeObserver1 = new ResizeObserver(e => {
+        textAreas[1].style.height = textAreas[0].style.height;
+        // console.log(`1 height set to: ${textAreas[0].style.height}`);
+    });
+    const resizeObserver2 = new ResizeObserver(e => {
+        textAreas[0].style.height = textAreas[1].style.height;
+        // console.log(`0 height set to: ${textAreas[1].style.height}`);
+    });
+    resizeObserver1.observe(textAreas[0]);
+    resizeObserver2.observe(textAreas[1]);
     // Remember to clean up
     window.addEventListener("note_loading", () => {
         textAreas[0].removeEventListener("input", format);

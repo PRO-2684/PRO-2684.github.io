@@ -39,7 +39,7 @@ scripts: true
 
 ## ✨ 工具
 
-<input id="query">
+<input autofocus id="query">
 
 <span id="primary" class="name">Human-friendly</span><span id="primary-result" class="value">0.0.0.0/0</span>
 
