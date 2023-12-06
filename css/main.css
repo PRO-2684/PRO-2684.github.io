@@ -331,7 +331,7 @@ a.bookmark-op {
 
 a.tag {
     display: block;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-dim);
     border-radius: 1em;
     padding: 0px 0.5em;
     margin: 0.2em 0.2em;
