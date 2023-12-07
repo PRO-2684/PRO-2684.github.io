@@ -39,7 +39,7 @@ description: ICS 2023 助教维护的课程主页
 
 ## 💻 实验
 
-- 实验总共 6 次
+- 实验总共 8 次
 - 助教做的实验自助评测系统：[LC-3 Simulator (ustc.edu.cn)](http://home.ustc.edu.cn/~sprout/lc3web/)
 
 | 序号 | 链接                             | DDL       |
@@ -47,6 +47,7 @@ description: ICS 2023 助教维护的课程主页
 | Lab1 | [lab1.pdf](@attachment/lab1.pdf) | 2023.11.08 |
 | Lab2 | [lab2.pdf](@attachment/lab2.pdf) | 2023.11.22 |
 | Lab3 | [lab3.pdf](@attachment/lab3.pdf) | 2023.12.07 04:00 |
+| Lab4 | [lab4.zip](@attachment/lab4.zip) | 2023.12.17 04:00 |
 
 ## 💯 成绩
 
