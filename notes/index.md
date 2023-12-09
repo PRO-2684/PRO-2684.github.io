@@ -29,6 +29,8 @@ description: PRO 的个人博客索引
 
 ## 💻 技术
 
+[Shell 与 Terminal 的联系与区别](@note/shell_vs_terminal)
+
 [禁止 Discord 自动更新](@note/fuck_discord_update)
 
 [部分国内大学的中文域名收集](@note/cn_domains)
