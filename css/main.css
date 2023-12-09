@@ -359,6 +359,17 @@ h6:hover>a.anchor {
     transition: all 0.25s ease-in-out;
 }
 
+details {
+    border: 1px solid var(--border-dim);
+    border-radius: 1em;
+    padding: 1em;
+    margin: 0.5em 0.2em;
+}
+
+details > summary {
+    cursor: pointer;
+}
+
 /* Webkit scrollbar hidden */
 ::-webkit-scrollbar-track {
     display: none;
