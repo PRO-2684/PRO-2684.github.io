@@ -13,7 +13,7 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
-[Shell 与 Terminal 的联系与区别](notes/shell_vs_terminal.md)
+[Shell 与 Terminal 的联系与区别](@notes/shell_vs_terminal.md)
 
 [子网小工具](@note/subnet)
 
