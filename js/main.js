@@ -330,6 +330,22 @@ function menu() {
         window.setTimeout(function() {overlay.style.opacity = ''; overlay.style.pointerEvents = ''; menu_button.style.pointerEvents = '';}, 50);
     }
 }
+function addEntry(text1, op, href2, title2) {
+    const li = document.createElement("li");
+    const link_1 = document.createElement("a");
+    const link_2 = document.createElement("a");
+    link_1.rel = "nofollow";
+    link_1.innerText = text1;
+    link_2.rel = "nofollow";
+    link_2.classList.add("bookmark-op");
+    link_2.innerHTML = `<b>${op}</b>`;
+    link_2.href = href2;
+    link_2.setAttribute("title", title2);
+    li.appendChild(link_1);
+    li.appendChild(link_2);
+    bookmark_element.appendChild(li);
+    return link_1;
+}
 function refreshBookmark() {
     let storage = window.localStorage.getItem("bookmarks");
     if (!storage) {
@@ -339,39 +355,16 @@ function refreshBookmark() {
     const bookmarks = JSON.parse(storage);
     bookmark_element.innerHTML = "";
     for (let i = 0; i < bookmarks.length; i++) {
-        var li = document.createElement("li");
-        var link_1 = document.createElement("a");
-        var link_2 = document.createElement("a");
+        const link_1 = addEntry(bookmarks[i], "-", `javascript:removeBookmark(${i});`, "Delete this bookmark.");
         link_1.href = "?page=" + bookmarks[i];
-        link_1.setAttribute("one-link-mark", "yes");
-        link_1.innerText = bookmarks[i];
         link_1.addEventListener("click", (e) => {
             if (hasModifier(e)) return;
             history.pushState(null, null, '?page=' + bookmarks[i]);
             load(bookmarks[i].split('#')[0]);
             e.preventDefault();
         });
-        link_2.href = `javascript:removeBookmark(${i});`;
-        link_2.classList.add("bookmark-op");
-        link_2.setAttribute("one-link-mark", "yes");
-        link_2.setAttribute("title", "Delete this bookmark.");
-        link_2.innerHTML = "<b>-</b>";
-        li.appendChild(link_1);
-        li.appendChild(link_2);
-        bookmark_element.appendChild(li);
     }
-    var li = document.createElement("li");
-    var link_1 = document.createElement("a");
-    var link_2 = document.createElement("a");
-    link_1.innerText = current_page;
-    link_2.href = `javascript:addBookmark("${current_page}");`;
-    link_2.classList.add("bookmark-op");
-    link_2.setAttribute("one-link-mark", "yes");
-    link_2.setAttribute("title", "Add current page to bookmarks.");
-    link_2.innerHTML = "<b>+</b>";
-    li.appendChild(link_1);
-    li.appendChild(link_2);
-    bookmark_element.appendChild(li);
+    addEntry(current_page, "+", `javascript:addBookmark("${current_page}");`, "Add current page to bookmarks.");
 }
 function addBookmark(name) {
     const storage = window.localStorage.getItem("bookmarks");
