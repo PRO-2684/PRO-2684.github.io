@@ -8,7 +8,8 @@ NProgress.configure({
 });
 NProgress.start();
 // md converter - showdown
-const enabled_features = ['tables', 'strikethrough', 'tasklists', 'openLinksInNewWindow', 'metadata', 'ghCompatibleHeaderId', 'simpleLineBreaks'];
+showdown.setFlavor('github');
+const enabled_features = ['openLinksInNewWindow', 'metadata'];
 for (i in enabled_features) {
     showdown.setOption(enabled_features[i], true);
 }

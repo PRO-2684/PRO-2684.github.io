@@ -23,7 +23,7 @@ scripts: true
 As xxx said:
 
 > Citing words.
-> 
+>
 > Lorem ipsum dolor sit amet consetetur et vero tempor amet no amet.
 
 A table here.
@@ -46,3 +46,12 @@ A table here.
 ###### Six
 
 <input>
+
+Nasty test cases:
+
+- `$1+1=2$`
+- $1+1=2$
+
+```python
+# $1+1=2$
+```
