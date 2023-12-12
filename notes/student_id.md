@@ -1,6 +1,6 @@
 ---
 title: 学号格式及说明
-tags: [Latest, Academic]
+tags: [Academic]
 keywords: [学号, 学号格式, USTC, 中国科学技术大学, 中科大, 本科生, 研究生, 正则表达式, PB, PL, BA, SA]
 description: 科大学号格式及说明
 ---

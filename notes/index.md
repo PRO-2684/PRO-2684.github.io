@@ -13,11 +13,11 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
+[Shell 与 Terminal 的联系与区别](notes/shell_vs_terminal.md)
+
 [子网小工具](@note/subnet)
 
 [部分国内大学的中文域名收集](@note/cn_domains)
-
-[科大学号格式及说明](@note/student_id)
 
 ## 🛠️ 实用
 
