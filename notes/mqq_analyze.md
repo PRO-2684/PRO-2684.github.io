@@ -2,13 +2,13 @@
 title: 手机 QQ 自动下载分析
 tags: [Technical, Latest]
 keywords: [QQ, Mobile, 自动下载, 分析]
-description: Test
+description: 通过分析 QQ 内置浏览器的行为以及网页源码，探究扫二维码后自动下载《元梦之星》的原理以及可能的漏洞。
 scripts: false
 ---
 
 # 手机 QQ 自动下载分析
 
-## 起因
+## 🤔 起因
 
 最近，QQ 群内开始流传一张二维码，据说用安卓 QQ 扫了它就会开始自动下载~~原神~~《元梦之星》这款游戏。~~这种乐子怎么能少得了我呢？~~
 
@@ -18,9 +18,9 @@ scripts: false
 
 ![复现](@attachment/replicating.jpg)
 
-## 分析
+## 🧐 分析
 
-### 自动下载
+### 📥 自动下载
 
 第一步当然是识别二维码了，随便找个软件扫一下，得到网址 `https://ymzx.qq.com/zlkdatasys/mct/d/play.shtml`，看来是官方推广。电脑上打开，就是游戏下载页面，大概是是做了判断，如果是手机 QQ 内置浏览器打开，就直接下载游戏。接下来我们查看 HTML 元素：
 
@@ -57,7 +57,7 @@ var uniformDownload = function (options) {
 
 至此我们的主要任务已经告一段落了（自动下载的逻辑就是打开下载直链，QQ 就会接管后开始下载），但是这个脚本里还有两个值得研究的方向：一是它有对 URL 参数的判断，二是它有用 `mqq` API 来实现软件是否安装的判断。
 
-### `mqq` API
+### 🌐 `mqq` API
 
 `play.v3.js` 中用了一些定义在 `qqapi.wk.js` 中的 `mqq` API，以下是使用的 API 列表以及我的推测：
 
@@ -97,7 +97,7 @@ api.isAppInstalled("com.tencent.mm", (result) => { alert("WeChat installed: " + 
 
 ![POC result](@attachment/poc_result.png =512x*)
 
-### URL 参数
+### 🔗 URL 参数
 
 `play.v3.js` 中有这样一段代码：
 
@@ -156,25 +156,25 @@ var source = function () {
 
 基本上不能通过 URL 参数来达成恶意攻击的目的。[^2]
 
-## 总结
+## 📃 总结
 
 - QQ 内置浏览器会接管所有它自家的 APK 下载，二维码给出的链接会自动打开下载直链导致了自动下载，这并非漏洞
 - QQ 内置浏览器会拦截非自家网址的 `mqq` API 调用
 - 可以通过 URL 参数来控制游戏启动参数，但是未发现通过 URL 参数来达成恶意攻击的方法
 
-## 花絮
+## 🌸 花絮
 
-### 梗图版本更新
+### 🖼️ 梗图版本更新
 
 ![Meme 1](@attachment/meme1.jpg =40%x*) ![Meme 2](@attachment/meme2.jpg =40%x*)
 
-### 存档
+### 📦 存档
 
 为了避免可能的页面删除或修改，准备将其在 [Wayback Machine](https://web.archive.org/) 上存档，没想到的是有人已经捷足先登了：
 
 ![存档](@attachment/web_archive.jpg)
 
-### 赛博商战
+### ⚔️ 赛博商战
 
 ![赛博商战](@attachment/shit_vs_shit.jpg =512x*)
 
