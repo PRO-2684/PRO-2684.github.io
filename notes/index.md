@@ -13,9 +13,9 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
-[Shell 与 Terminal 的联系与区别](@note/shell_vs_terminal)
+[手机 QQ 自动下载分析](@note/mqq_analyze)
 
-[子网小工具](@note/subnet)
+[Shell 与 Terminal 的联系与区别](@note/shell_vs_terminal)
 
 [部分国内大学的中文域名收集](@note/cn_domains)
 
@@ -28,6 +28,8 @@ description: PRO 的个人博客索引
 [如何查找老师邮箱](@note/email)
 
 ## 💻 技术
+
+[手机 QQ 自动下载分析](@note/mqq_analyze)
 
 [Shell 与 Terminal 的联系与区别](@note/shell_vs_terminal)
 

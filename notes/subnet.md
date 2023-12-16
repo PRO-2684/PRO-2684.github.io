@@ -1,6 +1,6 @@
 ---
 title: 子网小工具
-tags: [Useful, Latest]
+tags: [Useful]
 keywords: [Subnet, 子网, IP]
 description: 二进制子网掩码和人类可读的表示法（点十进制表示法加长度）之间互相转换
 scripts: true
