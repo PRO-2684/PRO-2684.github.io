@@ -61,7 +61,6 @@ description: ICS 2023 助教维护的课程主页
 ## 📦 资源
 
 - 教材与课件：[睿客网 - ICS2023](https://rec.ustc.edu.cn/share/57e3e4c0-4fb8-11ee-9f43-61828edc81c6) (你也可以在 群文件/教材 和 群文件/课件 内下载)
-
 - **LC-3 Tools**
     - [LC-3 Tools 使用教程](http://acsa.ustc.edu.cn/ics/download/lc3/GuideToUsingLC3Tools.pdf) (英文)
     - [Windows 版本下载](http://acsa.ustc.edu.cn/ics/download/lc3/LC3Tools-2.0.2.exe)
@@ -74,6 +73,15 @@ description: ICS 2023 助教维护的课程主页
 - [LC-3 手册](http://acsa.ustc.edu.cn/ics/download/lc3/lc3-handbook.pdf) (英文，快速方便查找 LC-3 的汇编代码)
 - Patt 主页：[Yale N. Patt (utexas.edu)](https://users.ece.utexas.edu/~patt/)
     - 点击主页里的 `EE306` 链接可以获取往年 Patt 教授这门课的课程资源（作业，考试，实验等）
+
+## 🪲 调试
+
+- Step over: 单步执行，但是遇到子过程**不进入**（在 LC3 内的表现为不会跟进去 JSR, JSRR）
+- Step in: 单步执行，但是遇到子过程**进入**（在 LC3 内的表现为会跟进去 JSR, JSRR）
+- Step out: 跳出当前子过程，继续执行父过程（在 LC3 内的表现为跳出 JSR, JSRR）
+- 总结: "Step over" 会跳过当前函数内的函数调用 (JSR, JSRR)，直接到当前函数的下一行，"Step in" 会跟进去，"Step out" 会跳出来
+- LC3 内你可以一直按 step in 调试代码，因为进不去的情况下它就是 step over 的效果
+- 但是高级语言里倒是一般不推荐一直 step in（你也不希望 step in "printf" 这种库函数吧
 
 ## 📜 其它补充
 
