@@ -74,10 +74,9 @@ function removeEmoji(s) {
 }
 async function addAnchor(node) {
     node.id = removeEmoji(node.id); // remove emojis in id to prevent weired hashes
-    const node_ = document.createElement('a');
+    const node_ = node.appendChild(document.createElement('a'));
     node_.className = 'anchor';
     node_.href = '#' + node.id;
-    node.appendChild(node_);
 }
 function addAnchors() {
     const nodes = main_article.querySelectorAll("h1, h2, h3, h4, h5, h6");
@@ -89,10 +88,9 @@ function hasModifier(e) { // Check if ctrl/alt/shift is pressed, in order to be 
     return e.ctrlKey || e.altKey || e.shiftKey;
 }
 function insertNoteJS() {
-    const script = document.createElement('script');
+    const script = document.head.appendChild(document.createElement('script'));
     script.id = 'note_js';
     script.src = `./notes/note_js/${current_page}.js`;
-    document.head.appendChild(script);
     console.info(`Added script ${current_page}.js`);
 }
 function parseMetadata() {
@@ -126,7 +124,7 @@ function parseMetadata() {
             if (tags.length >= 1) {
                 tag_container.innerHTML = '';
                 tags.forEach(tag_name => {
-                    let new_tag = document.createElement('a');
+                    const new_tag = tag_container.appendChild(document.createElement('a'));
                     new_tag.classList.add('tag');
                     new_tag.href = '?page=index#' + tag_trans[tag_name];
                     new_tag.addEventListener("click", (e) => {
@@ -136,7 +134,6 @@ function parseMetadata() {
                         e.preventDefault();
                     });
                     new_tag.innerText = tag_name;
-                    tag_container.appendChild(new_tag);
                 });
             } else {
                 tag_container.innerHTML = 'none';
@@ -209,19 +206,16 @@ function generateOutline() {
     const outline = document.getElementsByClassName('outline')[0];
     outline.innerHTML = '';
     if (nodes.length <= 1) {
-        const child = document.createElement('li');
+        const child = outline.appendChild(document.createElement('li'));
         child.innerHTML = '<i>Nothing to show.</i>';
-        outline.appendChild(child);
         return;
     }
     for (i = 0; i < nodes.length; i++) {
-        const outline_item = document.createElement('li');
-        const link = document.createElement('a');
+        const outline_item = outline.appendChild(document.createElement('li'));
+        const link = outline_item.appendChild(document.createElement('a'));
         link.className = 'outline-link';
         link.href = '#' + nodes[i].id;
         link.innerText = '  '.repeat(nodes[i].tagName.slice(1) - 1) + nodes[i].textContent;
-        outline_item.appendChild(link);
-        outline.appendChild(outline_item);
     }
 }
 let animate;
@@ -332,9 +326,9 @@ function menu() {
     }
 }
 function addEntry(text1, op, href2, title2) {
-    const li = document.createElement("li");
-    const link_1 = document.createElement("a");
-    const link_2 = document.createElement("a");
+    const li = bookmark_element.appendChild(document.createElement("li"));
+    const link_1 = li.appendChild(document.createElement("a"));
+    const link_2 = li.appendChild(document.createElement("a"));
     link_1.rel = "nofollow";
     link_1.innerText = text1;
     link_2.rel = "nofollow";
@@ -342,9 +336,6 @@ function addEntry(text1, op, href2, title2) {
     link_2.innerHTML = `<b>${op}</b>`;
     link_2.href = href2;
     link_2.setAttribute("title", title2);
-    li.appendChild(link_1);
-    li.appendChild(link_2);
-    bookmark_element.appendChild(li);
     return link_1;
 }
 function refreshBookmark() {
