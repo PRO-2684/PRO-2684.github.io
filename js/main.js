@@ -9,7 +9,7 @@ NProgress.configure({
 NProgress.start();
 // md converter - showdown
 showdown.setFlavor('github');
-const enabled_features = ['openLinksInNewWindow', 'metadata'];
+const enabled_features = ['openLinksInNewWindow', 'metadata', 'parseImgDimensions'];
 for (i in enabled_features) {
     showdown.setOption(enabled_features[i], true);
 }
