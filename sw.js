@@ -50,7 +50,7 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
     }
     const preloadResponse = await preloadResponsePromise;
     if (preloadResponse) {
-        putInCache(request, preloadResponse.clone(), cache_name);
+        await putInCache(request, preloadResponse.clone(), cache_name);
         console.debug(`Get ${request.url} from preload, saved in cache ${cache_name}`);
         return modHeader(preloadResponse, "network");
     }
@@ -59,7 +59,7 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
     }
     try {
         const responseFromNetwork = await fetch(request);
-        putInCache(request, responseFromNetwork.clone(), cache_name);
+        await putInCache(request, responseFromNetwork.clone(), cache_name);
         console.debug(`Get ${request.url} from network, saved in cache ${cache_name}`);
         return modHeader(responseFromNetwork, "network");
     } catch (error) {
