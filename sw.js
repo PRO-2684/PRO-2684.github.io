@@ -140,6 +140,6 @@ const deleteOldCaches = async () => {
 self.addEventListener("activate", (event) => {
     event.waitUntil(enableNavigationPreload()
         .then(deleteOldCaches)
-        .then(self.clients.claim)
+        .then(() => self.clients.claim())
     );
 });
