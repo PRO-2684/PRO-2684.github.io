@@ -14,7 +14,7 @@ for (i in enabled_features) {
     showdown.setOption(enabled_features[i], true);
 }
 const main_article = $("#markdown");
-const showdown_converter = new showdown.Converter({extensions: ["footnotes"]});
+const showdown_converter = new showdown.Converter({ extensions: ["footnotes"] });
 let current_page = 'index';
 const menu_element = $("#main-content > aside.panel.right-panel");
 const menu_button = $("#show-sidebar");
@@ -234,24 +234,11 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 }
 
 function render(markdown) {
-    main_article.innerHTML = showdown_converter.makeHtml(markdown);  // render markdown
-    modifyLinks();  // link modifying
-    addAnchors();  // add anchor to headers
-    parseMetadata();  // metadata parsing
-    generateOutline();  // outline
-    renderMathInElement(main_article, katex_config);  // render formula
-    Prism.highlightAllUnder(main_article, true);  // code highlight
-    // source code link
-    const link_element = $('#source_code');
-    link_element.href = './notes/' + current_page + '.md';
-    link_element.textContent = current_page + '.md';
-    const s = decodeURIComponent(window.location.hash.slice(1));
-    const target = document.getElementById(s);
-    if (target) {
-        target.scrollIntoView();
-    } else if (s === "top") {
-        window.scrollTo({ top: 0 });
-    }
+    main_article.innerHTML = showdown_converter.makeHtml(markdown);  // Render markdown
+    modifyLinks();  // Link modifying
+    parseMetadata();  // Metadata parsing
+    renderMathInElement(main_article, katex_config);  // Render formula
+    Prism.highlightAllUnder(main_article, true);  // Code highlight
     window.dispatchEvent(new CustomEvent('note_loaded'));
 }
 function load(name) {
@@ -316,13 +303,13 @@ function menu() {
         overlay.style.opacity = '0';
         overlay.style.pointerEvents = 'none';
         menu_button.style.pointerEvents = 'none';
-        window.setTimeout(function() {overlay.style.display = 'none'; overlay.style.pointerEvents = ''; menu_button.style.pointerEvents = '';}, 200);
+        window.setTimeout(function () { overlay.style.display = 'none'; overlay.style.pointerEvents = ''; menu_button.style.pointerEvents = ''; }, 200);
     } else {  // Menu is hidden.
         menu_element.style.top = '0';
         overlay.style.display = '';
         overlay.style.pointerEvents = 'none';
         menu_button.style.pointerEvents = 'none';
-        window.setTimeout(function() {overlay.style.opacity = ''; overlay.style.pointerEvents = ''; menu_button.style.pointerEvents = '';}, 50);
+        window.setTimeout(function () { overlay.style.opacity = ''; overlay.style.pointerEvents = ''; menu_button.style.pointerEvents = ''; }, 50);
     }
 }
 function addEntry(text1, op, href2, title2) {
@@ -422,7 +409,21 @@ window.addEventListener('note_loading', (e) => {
     }
 });
 window.addEventListener('note_loaded', (e) => {
-    $$("img").forEach((img) => img.addEventListener("click", handleImgClick));
+    addAnchors();  // Add anchor to headers
+    generateOutline();  // Outline
+    // Source code link
+    const link_element = $('#source_code');
+    link_element.href = './notes/' + current_page + '.md';
+    link_element.textContent = current_page + '.md';
+    // Jump to hash
+    const s = decodeURIComponent(window.location.hash.slice(1));
+    const target = document.getElementById(s);
+    if (target) {
+        target.scrollIntoView();
+    } else if (s === "top") {
+        window.scrollTo({ top: 0 });
+    }
+    $$("img").forEach((img) => img.addEventListener("click", handleImgClick)); // Click to open image in new tab
 });
 refreshBookmark();
 // Double click to get to top
