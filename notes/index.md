@@ -29,8 +29,6 @@ description: PRO 的个人博客索引
 
 ## 💻 技术
 
-[手机 QQ 自动下载分析](@note/mqq_analyze)
-
 [Shell 与 Terminal 的联系与区别](@note/shell_vs_terminal)
 
 [禁止 Discord 自动更新](@note/fuck_discord_update)
@@ -52,6 +50,8 @@ description: PRO 的个人博客索引
 [记一次电视剧批量下载](@note/meijuwo)
 
 ### 🌐 Web
+
+[手机 QQ 自动下载分析](@note/mqq_analyze)
 
 [一些我写的油猴脚本](@note/tampermonkey)
 

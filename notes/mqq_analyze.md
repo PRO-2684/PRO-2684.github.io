@@ -1,6 +1,6 @@
 ---
 title: 手机 QQ 自动下载分析
-tags: [Technical, Latest]
+tags: [Technical, Web, Latest]
 keywords: [QQ, Mobile, 自动下载, 分析]
 description: 通过分析 QQ 内置浏览器的行为以及网页源码，探究扫二维码后自动下载《元梦之星》的原理以及可能的漏洞。
 scripts: false
