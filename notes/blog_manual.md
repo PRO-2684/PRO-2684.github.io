@@ -20,3 +20,4 @@ description: 博客使用说明
 - 导航至书签：点击对应的 [书签名](@element/#bookmarks>li>a) 即可
 - 添加/删除书签：点击书签末尾的 [加号/减号](@element/#bookmarks>li>a.bookmark-op)
 - 快速返回顶部：双击两侧空白区域，或点击 "↑" 按钮
+- 点击图片即可在新标签页打开原图

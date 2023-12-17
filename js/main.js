@@ -372,6 +372,10 @@ function removeBookmark(index) {
     window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     refreshBookmark();
 }
+function handleImgClick(e) {
+    const url = this.src;
+    window.open(url, "_blank");
+}
 async function clearCache(cache_name) {
     await caches.delete(cache_name);
 }
@@ -416,6 +420,9 @@ window.addEventListener('note_loading', (e) => {
         script.remove();
         console.info(`Removed script from note "${e.detail.previous}"`);
     }
+});
+window.addEventListener('note_loaded', (e) => {
+    $$("img").forEach((img) => img.addEventListener("click", handleImgClick));
 });
 refreshBookmark();
 // Double click to get to top
