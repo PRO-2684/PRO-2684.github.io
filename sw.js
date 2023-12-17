@@ -25,7 +25,7 @@ const modHeader = (response, from) => {
 
 const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
     let cache_name = other;
-    let parts = request.url.slice(base.length).split("/");
+    const parts = request.url.slice(base.length).split("/");
     // Everything directly under base, `/js`, `/css` is in version cache; `/notes` is in note cache; else in other cache
     if (parts.length <= 1) {
         cache_name = version;
@@ -84,9 +84,7 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
 };
 
 const enableNavigationPreload = async () => {
-    if (self.registration.navigationPreload) {
-        await self.registration.navigationPreload.enable();
-    }
+    await self?.registration?.navigationPreload?.enable();
 };
 
 self.addEventListener("install", (event) => {
@@ -104,7 +102,7 @@ self.addEventListener("install", (event) => {
             "/js/katex-auto-render.min.js",
             "/js/nprogress.js",
             "/js/prism.js",
-        ].map(i => i + `?v=${version}`), version),
+        ].map(url => url + `?v=${version}`), version),
     );
     return self.skipWaiting();
 });
@@ -121,15 +119,11 @@ self.addEventListener("fetch", (event) => {
     }
 });
 
-const deleteCache = async (key) => {
-    await caches.delete(key);
-};
-
 const deleteOldCaches = async () => {
     const cacheKeepList = [version, other, note];
     const keyList = await caches.keys();
     const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
-    await Promise.all(cachesToDelete.map(deleteCache));
+    await Promise.all(cachesToDelete.map(caches.delete));
     // Delete caches from other that are not under base
     const cache = await caches.open(other);
     const requests = await cache.keys();
@@ -138,8 +132,9 @@ const deleteOldCaches = async () => {
 };
 
 self.addEventListener("activate", (event) => {
-    event.waitUntil(enableNavigationPreload()
-        .then(deleteOldCaches)
-        .then(() => self.clients.claim())
-    );
+    event.waitUntil(Promise.all([
+        enableNavigationPreload(),
+        deleteOldCaches(),
+        self.clients.claim(),
+    ]));
 });
