@@ -50,6 +50,7 @@ description: ICS 2023 助教维护的课程主页
 | Lab3 | [lab3.pdf](@attachment/lab3.pdf) | 2023.12.07 04:00 |
 | Lab4 | [lab4.zip](@attachment/lab4.zip) | 2023.12.17 04:00 |
 | Lab5 | [lab5.pdf](@attachment/lab5.pdf) | 2023.12.24 04:00 |
+| Lab6 | [lab6.pdf](@attachment/lab6.zip) | 2023.12.31 04:00 |
 
 ## 💯 成绩
 
