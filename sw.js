@@ -20,7 +20,7 @@ const putInCache = async (request, response, cache_name) => {
 const modHeader = (response, from) => {
     const headers = new Headers(response.headers);
     headers.set("x-sw-from", from);
-    return new Response(response.body, {headers});
+    return new Response(response.body, { headers });
 }
 
 const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
@@ -132,9 +132,8 @@ const deleteOldCaches = async () => {
 };
 
 self.addEventListener("activate", (event) => {
-    event.waitUntil(Promise.all([
-        enableNavigationPreload(),
-        deleteOldCaches(),
-        self.clients.claim(),
-    ]));
+    event.waitUntil(enableNavigationPreload()
+        .then(deleteOldCaches)
+        .then(() => self.clients.claim())
+    );
 });
