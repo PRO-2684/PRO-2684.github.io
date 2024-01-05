@@ -1,4 +1,4 @@
-const version = "1702776521";
+const version = "1704443533";
 const note = "note";
 const other = "other";
 const inVersion = ["js", "css", "fonts"];
@@ -123,7 +123,7 @@ const deleteOldCaches = async () => {
     const cacheKeepList = [version, other, note];
     const keyList = await caches.keys();
     const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
-    await Promise.all(cachesToDelete.map(caches.delete));
+    await Promise.all(cachesToDelete.map((key) => caches.delete(key)));
     // Delete caches from other that are not under base
     const cache = await caches.open(other);
     const requests = await cache.keys();
