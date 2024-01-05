@@ -13,6 +13,8 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
+[VSCode 内根据后缀名自动选择对应编译任务](@note/vscode_c_cpp)
+
 [手机 QQ 自动下载分析](@note/mqq_analyze)
 
 [Shell 与 Terminal 的联系与区别](@note/shell_vs_terminal)
@@ -28,6 +30,8 @@ description: PRO 的个人博客索引
 [如何查找老师邮箱](@note/email)
 
 ## 💻 技术
+
+[VSCode 内根据后缀名自动选择对应编译任务](@note/vscode_c_cpp)
 
 [Shell 与 Terminal 的联系与区别](@note/shell_vs_terminal)
 
