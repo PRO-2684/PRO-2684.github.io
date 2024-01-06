@@ -46,7 +46,7 @@ description: USTC 常用链接
 
 - [USTChat](https://chat.ustc.edu.cn/#/chat) ~~(纯纯人工智障)~~
 - [校共享应用平台](https://ustcnet.ustc.edu.cn/as/) (知识竞赛、签到、投票、抽奖、问卷调查等，需提前申请/审核)
-- [校园地图](https://www.ustc.edu.cn/__local/7/CA/83/51C921501F45CC7F22C3E32B9C3_85DD6C3B_196F20.jpg)
+- [校园地图](https://www.ustc.edu.cn/info/1009/1036.htm)
 - [校内 VPN](https://wvpn.ustc.edu.cn/)
 - [网络通](http://wlt.ustc.edu.cn/)
 - [大屏课表](http://bigscreen.cmet.ustc.edu.cn/)
