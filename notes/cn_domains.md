@@ -7,11 +7,12 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2024-01-09
+> 🕗 最近更新时间：2024-01-10
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
 | [中北大学](https://www.nuc.edu.cn/) | [山西原神大学.com](https://山西原神大学.com) | <span title='网站正常重定向到 https://www.nuc.edu.cn/'>🟢</span> | 🟢 |
+| [中国海洋大学](https://www.ouc.edu.cn/) | [中国op大学.com](http://中国op大学.com) | <span title='网站正常重定向到 https://www.ouc.edu.cn/'>🟢</span> | 🔴 |
 | [中国石油大学(北京)](https://www.cup.edu.cn/) | [中国原神大学.com](http://中国原神大学.com) | <span title='网站正常重定向到 https://www.cup.edu.cn/'>🟢</span> | 🔴 |
 | [中国石油大学(北京)](https://www.cup.edu.cn/) | [光速退学.com](http://光速退学.com) | <span title='网站正常重定向到 https://www.cup.edu.cn/'>🟢</span> | 🔴 |
 | [中国石油大学(北京)](https://www.cup.edu.cn/) | [真.世界地沟油大学.com](http://真.世界地沟油大学.com) | <span title='网站正常重定向到 https://www.cup.edu.cn/'>🟢</span> | 🔴 |
@@ -47,10 +48,9 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [原神启动.com](https://原神启动.com) | <span title='网站重定向到疑似垃圾网站 `https://ymzx.qq.com/`'>🔴</span> | / |
 | 未知 | [隔壁.世界末流大学.com](https://隔壁.世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww38.隔壁.世界末流大学.com/`'>🔴</span> | / |
 | 未知 | [东北原神大学.com](http://东北原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
-| 未知 | [中国op大学.com](https://中国op大学.com) | <span title='未知异常 ()!!!'>🔴</span> | / |
 | 未知 | [南京原神大学.com](http://南京原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神大学.love](http://原神大学.love) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
-| 未知 | [原神理工大学.com](http://原神理工大学.com) | <span title='未知异常 ('utf-8' codec can't decode byte 0xcc in position 431: invalid continuation byte)!!!'>🔴</span> | / |
+| 未知 | [原神理工大学.com](https://原神理工大学.com) | <span title='未知异常 ()!!!'>🔴</span> | / |
 | 未知 | [广东原神大学](http://广东原神大学) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [江西原神大学.com](http://江西原神大学.com) | <span title='未知异常 (Server disconnected)!!!'>🔴</span> | / |
 
@@ -66,9 +66,9 @@ description: 此文章收集了部分国内大学的中文域名
 
 ## 统计信息
 
-- 本页面共收录 $42$ 个中文域名，其中 $24$ 个域名确认存活，$7$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：300.329161675 s
-- 根据模板生成上述表格：362.958 μs
+- 本页面共收录 $42$ 个中文域名，其中 $25$ 个域名确认存活，$7$ 个域名暂时无法确认。
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：300.637752225 s
+- 根据模板生成上述表格：372.837 μs
 
 ## 关于
 
