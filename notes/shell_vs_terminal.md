@@ -1,6 +1,6 @@
 ---
 title: Shell 与 Terminal 的联系与区别
-tags: [Technical, Latest]
+tags: [Technical]
 keywords: [shell, terminal, cmd, powershell, conhost, windows terminal]
 description: 本文简单介绍了 Shell 与 Terminal 的联系与区别，并以 Windows 为例列举了常见的 Shell 与 Terminal。
 ---

@@ -13,11 +13,9 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
+[Warp 的首次配置](@note/warp)
+
 [VSCode 内根据后缀名自动选择对应编译任务](@note/vscode_c_cpp)
-
-[手机 QQ 自动下载分析](@note/mqq_analyze)
-
-[Shell 与 Terminal 的联系与区别](@note/shell_vs_terminal)
 
 [部分国内大学的中文域名收集](@note/cn_domains)
 
@@ -30,6 +28,8 @@ description: PRO 的个人博客索引
 [如何查找老师邮箱](@note/email)
 
 ## 💻 技术
+
+[Warp 的首次配置](@note/warp)
 
 [VSCode 内根据后缀名自动选择对应编译任务](@note/vscode_c_cpp)
 
