@@ -15,6 +15,8 @@ scripts: true
 
 # QQ 一笔画红包发送助手
 
+## ✨ 工具
+
 > 说明：在下方输入框内输入想要发送到的目标，选择类型，随后点击发送即可。
 
 <form>
@@ -32,3 +34,7 @@ scripts: true
     </fieldset>
     <button type="submit">发送</button>
 </form>
+
+## 🤔 原理
+
+打开链接 `https://h5.qianbao.qq.com/sendRedpack/index?_wv=67112960&_wvNt=0xFFFFFF&_wvSb=1&recv_uin=<qq>&recv_type=<type>`，其中 `<qq>` 为目标 QQ 号，`<type>` 为目标类型（`2` 为好友，`3` 为群聊）。
