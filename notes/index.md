@@ -13,6 +13,8 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
+[QQ 一笔画红包发送助手](@note/qq_redpack)
+
 [Warp 的首次配置](@note/warp)
 
 [VSCode 内根据后缀名自动选择对应编译任务](@note/vscode_c_cpp)
@@ -20,6 +22,8 @@ description: PRO 的个人博客索引
 [部分国内大学的中文域名收集](@note/cn_domains)
 
 ## 🛠️ 实用
+
+[QQ 一笔画红包发送助手](@note/qq_redpack)
 
 [USTC 网址导航](@note/useful_links)
 
