@@ -20,6 +20,7 @@ description: USTC 常用链接
 - [英语四六级考试报名](http://cet-bm.neea.edu.cn/Index)
 - [英语四六级考试成绩查询](https://cet.neea.edu.cn/cet/)
 - [成绩画像](http://sgas.ustc.edu.cn/auth/login)
+- [本科生境内外交流管理系统](https://jwjl.cmet.ustc.edu.cn/)
 - [评课社区](https://icourse.club/)
 - [学业指导中心](http://202.38.65.52/xyzd/)
 - [全球化学习平台](https://vista.ustc.edu.cn/)
