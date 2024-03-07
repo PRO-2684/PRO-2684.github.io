@@ -133,6 +133,8 @@ description: PRO 的个人博客索引
 
 [markdown 测试](@note/test)
 
+[Detect Page Leaving / 切屏检测](@note/detect_page_leaving)
+
 ## 🔗 友链
 
 [Jason Hall's blog](https://jasonhall.cn/)
