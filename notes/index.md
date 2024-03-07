@@ -117,6 +117,8 @@ description: PRO 的个人博客索引
 
 [有、意思的命令](@note/interesting_commands)
 
+[Githeism](@note/githeism)
+
 ## 🧪 测试用
 
 [Pangu](@note/pangu)
