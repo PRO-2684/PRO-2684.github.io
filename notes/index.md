@@ -107,6 +107,8 @@ description: PRO 的个人博客索引
 
 [电子技术基础 模拟部分 - 部分习题答案 (来源: 教材二维码)](@attachment/analog_ans.zip)
 
+[计网教材答案 (英文书 7th Edition)](<@attachment/Solutions Manual for Computer Networking A TopDown Approach 7th Edition.pdf>)
+
 [如何查找老师邮箱](@note/email)
 
 [科大学号格式及说明](@note/student_id)
