@@ -31,6 +31,8 @@ description: PRO 的个人博客索引
 
 [如何查找老师邮箱](@note/email)
 
+[Link Purify / 链接净化](@note/link_purify)
+
 ## 💻 技术
 
 [Warp 的首次配置](@note/warp)
