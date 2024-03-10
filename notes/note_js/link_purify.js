@@ -1,5 +1,5 @@
 (async function () {
-    // TODO: Support regex mode & redirect mode
+    // TODO: Pathname -> Paths[]; Support regex mode & redirect mode
     // === Import from Tarnhelm ===
     function b64decode(encoded) { // Decode base64 with support for unicode
         return decodeURIComponent(escape(atob(encoded)));
@@ -74,15 +74,13 @@
         const mode = rule.mode;
         const params = rule.params;
         if (mode === 0) { // Whitelist mode
-            const toDelete = [];
-            for (const param of urlObj.searchParams.keys()) {
-                if (!params.includes(param)) {
-                    toDelete.push(param);
+            const newParams = new URLSearchParams();
+            for (const param of params) {
+                if (urlObj.searchParams.has(param)) {
+                    newParams.set(param, urlObj.searchParams.get(param));
                 }
             }
-            for (const param of toDelete) {
-                urlObj.searchParams.delete(param);
-            }
+            urlObj.search = newParams.toString();
         } else if (mode === 1) { // Blacklist mode
             for (const param of params) {
                 urlObj.searchParams.delete(param);
