@@ -61,6 +61,8 @@ description: PRO 的个人博客索引
 
 ### 🌐 Web
 
+[Font Awesome 图标导出为 SVG](@note/font_awesome)
+
 [手机 QQ 自动下载分析](@note/mqq_analyze)
 
 [一些我写的油猴脚本](@note/tampermonkey)
