@@ -207,9 +207,17 @@
         }
     }
 
+    let cnt = 0;
+
     checkboxes.forEach((checkbox) => {
         checkbox.addEventListener("change", format);
         checkbox.disabled = false;
+        checkbox.id = `checkbox-${cnt}`;
+        const text = checkbox.nextSibling.textContent;
+        checkbox.nextSibling.replaceWith(document.createElement("label"));
+        checkbox.nextSibling.textContent = text;
+        checkbox.nextSibling.htmlFor = `checkbox-${cnt}`;
+        cnt++;
     });
 
     textAreas[0].addEventListener("input", format);
