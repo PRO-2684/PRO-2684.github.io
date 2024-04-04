@@ -1,6 +1,6 @@
 ---
 title: QQ 一笔画红包发送助手
-tags: [Latest, Useful]
+tags: [Useful]
 keywords: [QQ, 一笔画红包, 一笔画]
 description: 此工具可以帮助你发送 QQ 一笔画红包
 scripts: true

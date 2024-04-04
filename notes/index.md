@@ -13,7 +13,7 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
-[QQ 一笔画红包发送助手](@note/qq_redpack)
+[Android 扫一扫软件](@note/android_qrcode)
 
 [Warp 的首次配置](@note/warp)
 
