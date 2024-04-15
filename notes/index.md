@@ -13,15 +13,17 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
-[Android 扫一扫软件](@note/android_qrcode)
+[Edge Canary for Android install Tampermonkey scripts](@note/edge_canary_tm)
 
-[Warp 的首次配置](@note/warp)
+[Android 扫一扫软件](@note/android_qrcode)
 
 [VSCode 内根据后缀名自动选择对应编译任务](@note/vscode_c_cpp)
 
 [部分国内大学的中文域名收集](@note/cn_domains)
 
 ## 🛠️ 实用
+
+[Edge Canary for Android install Tampermonkey scripts](@note/edge_canary_tm)
 
 [QQ 一笔画红包发送助手](@note/qq_redpack)
 

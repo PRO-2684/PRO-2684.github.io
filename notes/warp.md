@@ -1,6 +1,6 @@
 ---
 title: Warp 的首次配置
-tags: [Technical, Latest]
+tags: [Technical]
 keywords: [VPN, Warp, Cloudflare, Warp+, 1.1.1.1, 首次配置, 配置, 配置问题, 连接问题, 连接, 问题]
 description: 此文介绍了 Warp 的首次配置中可能遇到的连接问题及其产生原因，同时给出了 Windows 以及 Android 下的解决方案
 ---
