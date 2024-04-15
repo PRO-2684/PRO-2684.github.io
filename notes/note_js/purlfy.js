@@ -18,7 +18,7 @@
             lambdaEnabled: true,
         });
         purifier.addEventListener("statisticschange", e => {
-            console.log("Statistics changed to:", e.detail || purifier.getStatistics());
+            console.log("Statistics increment:", e.detail);
         });
         const rules = await (await r).json();
         purifier.importRules(rules);
