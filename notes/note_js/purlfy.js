@@ -12,7 +12,7 @@
         document.head.appendChild(script);
     }
     async function main() {
-        const r = fetch("https://cdn.jsdelivr.net/gh/PRO-2684/pURLfy@latest/rules/cn.json");
+        const r = fetch("https://cdn.jsdelivr.net/gh/PRO-2684/pURLfy-rules/cn.json");
         const purifier = new Purlfy({
             redirectEnabled: false,
             lambdaEnabled: true,
