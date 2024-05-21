@@ -25,6 +25,7 @@ English:
 8. Open the js file in text mode, and copy all the code
 9. Go back to the management panel you just opened, click the plus sign to create a new script, delete the default code, and paste the copied code
 10. Click "File - Save", and the script is installed
+11. If you wish to update your scripts, you can do that by clicking "Useful Tools - Check for userscript updates" - you don't need to do this manually. If you're tired of clicking multiple times to open the management panel, you can add a shortcut on the browser new page with URL `chrome-extension://iikmkjmpaadaobahmlepeloendndfphd/options.html#nav=settings`.
 
 简体中文：
 
@@ -38,6 +39,7 @@ English:
 8. 文本方式打开这个 js 文件，全选复制代码
 9. 回到刚刚打开的管理面板，点击加号新建脚本，删掉默认提供的代码，粘贴刚刚复制的代码
 10. 点击“文件 - 保存”，脚本安装完成
+11. 如果想要更新脚本，可以点击“实用工具 - 检查用户脚本更新”来更新，不需要手动操作。如果觉得点多次打开管理面板太麻烦，可以在浏览器新标签页添加一个快捷方式，URL 为 `chrome-extension://iikmkjmpaadaobahmlepeloendndfphd/options.html#nav=settings`。
 
 <details>
     <summary>Screenshots 截图</summary>
