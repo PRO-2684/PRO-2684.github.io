@@ -127,6 +127,8 @@ description: PRO 的个人博客索引
 
 [Githeism](@note/githeism)
 
+[GitHub Images](@note/github_images)
+
 ## 🧪 测试用
 
 [Pangu](@note/pangu)
