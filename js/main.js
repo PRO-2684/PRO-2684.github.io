@@ -192,12 +192,15 @@ async function modifyImg(node) {
     if (dst.startsWith('@attachment/')) {
         node.src = './attachments/' + dst.slice(12);
     }
+    node.addEventListener("click", handleImgClick); // Click to open image in new tab
+    node.style.cursor = 'pointer';
+    node.title = 'Click to open in new tab';
 }
 function modifyLinks() {
     for (const node of main_article.getElementsByTagName('a')) {
         modifyLink(node);
     }
-    for (const node of document.getElementsByTagName('img')) {
+    for (const node of $$('img')) {
         modifyImg(node);
     }
 }
@@ -423,7 +426,6 @@ window.addEventListener('note_loaded', (e) => {
     } else if (s === "top") {
         window.scrollTo({ top: 0 });
     }
-    $$("img").forEach((img) => img.addEventListener("click", handleImgClick)); // Click to open image in new tab
 });
 refreshBookmark();
 // Double click to get to top
