@@ -254,6 +254,21 @@ fieldset>legend {
     padding: 0em 0.5em;
 }
 
+details {
+    border: 1px solid var(--border-dim);
+    border-radius: 1em;
+    padding: 1em;
+    transition: border-color 0.2s ease-in-out;
+}
+
+details:hover {
+    border-color: var(--border);
+}
+
+details > summary {
+    cursor: pointer;
+}
+
 a {
     color: var(--text-dim);
     transition: all 0.2s ease-in-out;
@@ -372,17 +387,6 @@ h6:hover>a.anchor {
     -o-transition: all 0.25s ease-in-out;
     -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
-}
-
-details {
-    border: 1px solid var(--border-dim);
-    border-radius: 1em;
-    padding: 1em;
-    margin: 0.5em 0.2em;
-}
-
-details > summary {
-    cursor: pointer;
 }
 
 /* Webkit scrollbar hidden */
