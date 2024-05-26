@@ -227,7 +227,7 @@ table th {
 
 input {
     outline: none;
-    transition: border 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
     border: 1px solid;
     border-radius: 0.5em;
     border-color: var(--border-dim);
@@ -237,6 +237,21 @@ input {
 input:hover, input:focus {
     border-color: var(--border);
     color: var(--text);
+}
+
+fieldset {
+    margin: 0.5em;
+    border: 1px solid var(--border-dim);
+    border-radius: 0.5em;
+    transition: border-color 0.2s ease-in-out;
+}
+
+fieldset:hover {
+    border-color: var(--border);
+}
+
+fieldset>legend {
+    padding: 0em 0.5em;
 }
 
 a {
