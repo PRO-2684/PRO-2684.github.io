@@ -13,7 +13,7 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
-[Edge Canary for Android install Tampermonkey scripts](@note/edge_canary_tm)
+[Edge Tips](@note/edge_tips)
 
 [Android 扫一扫软件](@note/android_qrcode)
 
@@ -23,7 +23,7 @@ description: PRO 的个人博客索引
 
 ## 🛠️ 实用
 
-[Edge Canary for Android install Tampermonkey scripts](@note/edge_canary_tm)
+[Edge Tips](@note/edge_tips)
 
 [QQ 一笔画红包发送助手](@note/qq_redpack)
 
