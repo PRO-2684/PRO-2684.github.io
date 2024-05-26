@@ -114,11 +114,6 @@ body {
     margin: 0;
 }
 
-::-moz-selection {
-    color: var(--selected-text);
-    background: var(--selected-bg);
-}
-
 ::selection {
     color: var(--selected-text);
     background: var(--selected-bg);
@@ -298,12 +293,12 @@ div#float-buttons {
     right: 0;
     display: flex;
     flex-direction: column;
+    gap: 1em;
     user-select: none;
     z-index: 5;
 }
 
 a.button {
-    margin: 0.5em 0 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -315,7 +310,12 @@ a.button {
     height: 2em;
     font-size: 1.5em;
     font-weight: bold;
+    opacity: 0.6;
+}
+
+a.button:hover {
     opacity: 0.8;
+    transform: scale(1.1);
 }
 
 a.bookmark-op {
@@ -455,6 +455,10 @@ details > summary {
 @media (any-hover: none) {
     a.anchor {
         opacity: 1;
+    }
+
+    a.button {
+        opacity: 0.8;
     }
 }
 
