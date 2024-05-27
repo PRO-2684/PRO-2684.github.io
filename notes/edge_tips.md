@@ -2,7 +2,7 @@
 title: Edge Tips
 tags: [Latest, Useful]
 keywords: [Microsoft Edge, Edge, Edge Canary, Tampermonkey, Android, Script, Install, Extension, UserScript, Greasyfork, 脚本, 扩展, 用户脚本, 安卓]
-description: This note provides some tips on improving your experience on using Microsoft Edge, including some flags you might want to enable/disable, modifying built-in search engines' URLs, and installing Tampermonkey scripts in Edge Canary for Android. 这篇笔记提供了一些改进 Microsoft Edge 体验的小提示，包括一些你可能想要启用/禁用的 flags，修改内置搜索引擎的网址，以及如何在 Edge Canary for Android 上安装 Tampermonkey 脚本。
+description: This note provides some tips on improving your experience on using Microsoft Edge, including some flags you might want to enable/disable, modifying built-in search engines' URLs, disabling "Rewrite with Copilot", and installing Tampermonkey scripts in Edge Canary for Android. 这篇笔记提供了一些改进 Microsoft Edge 体验的小提示，包括一些你可能想要启用/禁用的 flags，修改内置搜索引擎的网址，禁用“使用 Copilot 重写”，以及如何在 Edge Canary for Android 上安装 Tampermonkey 脚本。
 ---
 
 <style>
@@ -17,6 +17,7 @@ TOC:
 
 - [Some flags you might want to enable/disable](#edge-flags)
 - [Modifying built-in search engines' URLs](#search-engines)
+- [Disabling "Rewrite with Copilot"](#rewrite-with-copilot)
 - [Installing Tampermonkey scripts in Edge Canary for Android](#tampermonkey-scripts)
 
 ## Edge flags
@@ -64,6 +65,36 @@ Edge 内置搜索引擎的 URL 包含了一些跟踪参数。Edge 并没有提�
 Let's take Bing as an example.
 
 ![edge_search_1](@attachment/edge_search_1.jpg) ![edge_search_2](@attachment/edge_search_2.jpg) ![edge_search_3](@attachment/edge_search_3.jpg) ![edge_search_4](@attachment/edge_search_4.jpg)
+
+</details>
+
+## Rewrite with Copilot
+
+[Reference](https://answers.microsoft.com/en-us/microsoftedge/forum/all/how-do-i-disable-rewrite-with-copilot-in-edge/68152c06-2600-49c2-9a52-341f7f84b18a)
+
+<details><summary>English</summary>
+
+If you don't like the "Rewrite with Copilot" feature in Edge, you can disable it by following these steps:
+
+1. Navigate to `edge://settings/languages`
+2. Under "Writing assistance", disable "Use Compose (AI-writing) on the web"
+
+M\$ doesn't include the word "Copilot" in the setting, making it hard to find. I think [Siegfried Beitl](https://answers.microsoft.com/en-us/profile/85ca1879-35d8-4e16-9709-9e80718f5f36) had a point:
+
+![edge_copilot_comment](@attachment/edge_copilot_comment.jpg)
+
+</details>
+
+<details><summary>中文</summary>
+
+如果你不喜欢 Edge 中的“使用 Copilot 重写”功能，你可以通过以下步骤来禁用它：
+
+1. 打开 `edge://settings/languages`
+2. 在“写作帮助”下，禁用“在 Web上使用撰写(AI 书写)”
+
+微软在设置中没有包含“Copilot”这个词，使得这个设置项很难找。我认为 [Siegfried Beitl](https://answers.microsoft.com/en-us/profile/85ca1879-35d8-4e16-9709-9e80718f5f36) 说得很对：
+
+![edge_copilot_comment](@attachment/edge_copilot_comment.jpg)
 
 </details>
 
