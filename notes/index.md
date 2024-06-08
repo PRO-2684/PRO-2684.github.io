@@ -143,6 +143,8 @@ description: PRO 的个人博客索引
 
 [Detect Page Leaving / 切屏检测](@note/detect_page_leaving)
 
+[Selection Indicator](@note/selection_indicator)
+
 ## 🔗 友链
 
 [Jason Hall's blog](https://jasonhall.cn/)
