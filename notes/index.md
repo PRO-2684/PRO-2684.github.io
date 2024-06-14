@@ -129,7 +129,7 @@ description: PRO 的个人博客索引
 
 [GitHub Images](@note/github_images)
 
-## 🧪 测试用
+## 🧪 实验室
 
 [Pangu](@note/pangu)
 
@@ -144,6 +144,8 @@ description: PRO 的个人博客索引
 [Detect Page Leaving / 切屏检测](@note/detect_page_leaving)
 
 [Selection Indicator](@note/selection_indicator)
+
+[RTL Lab](@note/rtl_lab)
 
 ## 🔗 友链
 
