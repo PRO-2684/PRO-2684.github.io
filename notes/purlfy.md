@@ -10,9 +10,9 @@ scripts: true
 
 ## Introduction / 介绍
 
-This is a rule-based link purifier to remove tracking parameters from URLs. The GitHub repository can be found [here](https://github.com/PRO-2684/pURLfy).
+This is a rule-based link purifier to remove tracking parameters from URLs. The GitHub repository can be found [here](https://github.com/PRO-2684/pURLfy). Install the Tampermonkey script from [here](https://greasyfork.org/scripts/492480) to automatically purify on any website.
 
-这是一个基于规则的链接净化器，用于从 URL 中删除跟踪参数。GitHub 仓库可以在 [这里](https://github.com/PRO-2684/pURLfy) 访问。
+这是一个基于规则的链接净化器，用于从 URL 中删除跟踪参数。GitHub 仓库可以在 [这里](https://github.com/PRO-2684/pURLfy) 访问。在 [这里](https://greasyfork.org/scripts/492480) 安装 Tampermonkey 脚本以在任何网站上自动净化。
 
 ## Usage / 使用
 
