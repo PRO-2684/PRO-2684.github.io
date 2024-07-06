@@ -8,6 +8,7 @@ description: USTC 常用链接
 # 🔗 常用链接
 ## 🎓 学业
 
+- [USTC 不完全入学指南](https://ustcguide.gitbook.io/admission)
 - [教学日历](https://www.teach.ustc.edu.cn/category/calendar)
 - [教务系统](https://jw.ustc.edu.cn/)
 - [校图书馆](http://lib.ustc.edu.cn/)
