@@ -69,6 +69,8 @@ description: PRO 的个人博客索引
 
 [一些我写的油猴脚本](@note/tampermonkey)
 
+[Chromium 内置网址](@note/chromium_builtin_urls)
+
 ### 🚩 CTF
 
 [Hackergame 2022 个人题解（部分）](@note/hg2022)
