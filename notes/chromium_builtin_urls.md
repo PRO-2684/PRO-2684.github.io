@@ -26,3 +26,13 @@ description: 此文章列出了一些以 `chrome://`, `edge://` 开头的网址�
     - 用处不大，毕竟网站上无法直接通过 `<img src="edge://favicon/size/64@1x/https://github.com">` 展示其它网站的图标
 
 </details>
+
+<details><summary>window.chrome</summary>
+
+在 `chrome://` 或 `edge://` 页面下，可以在控制台中访问 `window.chrome` 对象，以 Edge 为例：
+
+![window.chrome](@attachment/window.chrome.png)
+
+参考链接：https://chromium.googlesource.com/chromium/src/+/main/docs/webui_explainer.md#chrome_send
+
+</details>
