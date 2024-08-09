@@ -14,7 +14,7 @@
     async function main() {
         const r = fetch("https://cdn.jsdelivr.net/gh/PRO-2684/pURLfy-rules/cn.json");
         const purifier = new Purlfy({
-            redirectEnabled: false,
+            fetchEnabled: false,
             lambdaEnabled: true,
         });
         purifier.addEventListener("statisticschange", e => {
