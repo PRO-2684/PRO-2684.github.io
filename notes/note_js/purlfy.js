@@ -12,7 +12,8 @@
         document.head.appendChild(script);
     }
     async function main() {
-        const r = fetch("https://cdn.jsdelivr.net/gh/PRO-2684/pURLfy-rules/cn.json");
+        const list = await (await fetch("https://cdn.jsdelivr.net/gh/PRO-2684/pURLfy-rules/list.json")).json();
+        const promises = list.map(name => fetch(`https://cdn.jsdelivr.net/gh/PRO-2684/pURLfy-rules/${name}.json`).then(r => r.json()));
         const purifier = new Purlfy({
             fetchEnabled: false,
             lambdaEnabled: true,
@@ -20,8 +21,8 @@
         purifier.addEventListener("statisticschange", e => {
             console.log("Statistics increment:", e.detail);
         });
-        const rules = await (await r).json();
-        purifier.importRules(rules);
+        const rulesets = await Promise.all(promises);
+        purifier.importRules(...rulesets);
         // === Display ===
         const inputEl = $("#input");
         const urlEl = $("#url");
