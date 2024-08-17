@@ -91,3 +91,4 @@ Argument #2: arg2
 2. [Support expanding input parameters into multiple arguments](https://github.com/microsoft/vscode/issues/83678)
 3. [Issue comment](https://github.com/microsoft/vscode/issues/83678#issuecomment-1236381454)
 4. 照葫芦画瓢，写出了上面的配置文件，测试通过。
+5. 欢迎大家围观我建议将 `"args": "${command:pickArgs}"` 作为默认配置的 Issue: [vscode#225834](https://github.com/microsoft/vscode/issues/225834)
