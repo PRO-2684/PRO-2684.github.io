@@ -15,7 +15,7 @@ description: PRO 的个人博客索引
 
 [Edge Tips](@note/edge_tips)
 
-[Android 扫一扫软件](@note/android_qrcode)
+[VSCode 调试时传递多个命令行参数](@note/vscode_debug_args)
 
 [VSCode 内根据后缀名自动选择对应编译任务](@note/vscode_c_cpp)
 
@@ -38,6 +38,8 @@ description: PRO 的个人博客索引
 ## 💻 技术
 
 [Warp 的首次配置](@note/warp)
+
+[VSCode 调试时传递多个命令行参数](@note/vscode_debug_args)
 
 [VSCode 内根据后缀名自动选择对应编译任务](@note/vscode_c_cpp)
 

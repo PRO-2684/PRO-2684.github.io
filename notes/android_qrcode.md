@@ -1,6 +1,6 @@
 ---
 title: Android 扫一扫软件
-tags: [Latest, Useful]
+tags: [Useful]
 keywords: [QRCode, Scanner, Android, App, 二维码扫描器, 二维码, 扫一扫]
 description: This note recommends some QRCode scanner apps for Android. 这篇笔记推荐了一些 Android 平台上的扫一扫软件。
 ---
