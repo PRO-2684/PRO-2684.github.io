@@ -90,6 +90,7 @@ function hasModifier(e) { // Check if ctrl/alt/shift is pressed, in order to be 
 function insertNoteJS() {
     const script = document.head.appendChild(document.createElement('script'));
     script.id = 'note_js';
+    script.type = 'module'; // ES module
     script.src = `./notes/note_js/${current_page}.js`;
     console.info(`Added script ${current_page}.js`);
 }
