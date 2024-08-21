@@ -51,8 +51,10 @@ scripts: true
 
 > 需要 Chrome/Edge 91+ 等支持 [dynamic import `options`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import#browser_compatibility) 的浏览器
 
-1. 使用结构方块将结构保存为 `.nbt` 文件 (通常位于存档目录下 `generated/<name-space>/structures/<structure-name>.nbt`)
-2. 将此文件上传至下方的输入框，等待生成结果
+1. 保存结构
+    - 使用结构方块将结构保存为 `.nbt` 文件 (通常位于存档目录下 `generated/<name-space>/structures/<structure-name>.nbt`)
+    - 使用机械动力的蓝图将结构保存为 `.nbt` 文件 (通常位于存档目录下 `schematics/<name>.nbt`)
+2. 将此 `.nbt` 文件上传至下方的输入框，等待生成结果
 
 ## 📦 上传 & 设置
 
