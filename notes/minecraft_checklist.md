@@ -68,8 +68,6 @@ scripts: true
 
 ## 📃 材料清单
 
-结构信息
-
 <table id="table-output">
     <thead>
         <tr>
@@ -86,6 +84,14 @@ scripts: true
 ## 🖼️ 材料图
 
 <div id="image-output" style="--scale: 1.5;">暂无</div>
+
+## ℹ️ 其它信息
+
+- 结构大小：<span id="structure-size">-</span>
+- 结构方块数：<span id="block-count">-</span>
+- 结构实体数：<span id="entity-count">-</span>
+- 游戏版本：<span id="game-version">-</span>
+- NBT 版本：<span id="nbt-version">-</span>
 
 ## 🎉 致谢
 

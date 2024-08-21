@@ -46,6 +46,7 @@
                 jsonOutput.value = JSON.stringify(data, null, 2);
                 renderTable(data);
                 renderImage(data);
+                renderMeta(nbt);
                 input.disabled = false;
             });
             reader.readAsArrayBuffer(file);
@@ -97,6 +98,23 @@
             i.classList.add("icon-minecraft", blockInfo.css);
             div.title = `${blockInfo.label} x${count}`;
         }
+    }
+    function renderMeta(nbt) {
+        const size = $("#structure-size");
+        const blocks = $("#block-count");
+        const entities = $("#entity-count");
+        const gameVersion = $("#game-version");
+        const nbtVersion = $("#nbt-version");
+        size.textContent = nbt.data.size.join("x");
+        blocks.textContent = nbt.data.blocks.length;
+        entities.textContent = nbt.data.entities.length;
+        if (nbt.endian === "big") {
+            gameVersion.textContent = "Java Edition";
+        } else {
+            gameVersion.textContent = "Bedrock Edition";
+        }
+        nbtVersion.textContent = nbt.data.DataVersion;
+
     }
     function getBlockInfo(blockId) {
         return blocksInfo[blockId] ?? {
