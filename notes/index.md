@@ -23,6 +23,8 @@ description: PRO 的个人博客索引
 
 ## 🛠️ 实用
 
+[Minecraft 材料清单生成器](@note/minecraft_checklist)
+
 [Edge Tips](@note/edge_tips)
 
 [QQ 一笔画红包发送助手](@note/qq_redpack)
