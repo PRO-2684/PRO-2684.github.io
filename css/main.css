@@ -232,11 +232,35 @@ input {
     border-radius: 0.5em;
     border-color: var(--border-dim);
     color: var(--text-dim);
-}
 
-input:hover, input:focus {
-    border-color: var(--border);
-    color: var(--text);
+    &[type="file"] {
+        border-color: var(--border-dim);
+        border-style: dashed;
+        border-radius: 0.5em;
+        padding: 0.5em;
+        transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        &:focus, &:hover {
+            border-color: var(--border);
+        }
+        &::file-selector-button {
+            background-color: transparent;
+            border-radius: 8px;
+            color: var(--text);
+            border: 1px solid;
+            border-color: var(--border-dim);
+            height: 2em;
+            transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+        &::file-selector-button:hover {
+            border-color: var(--border);
+            background-color: var(--panel-bg);
+        }
+    }
+
+    &:hover, &:focus {
+        border-color: var(--border);
+        color: var(--text);
+    }
 }
 
 fieldset {
@@ -272,15 +296,10 @@ details > summary {
 a {
     color: var(--text-dim);
     transition: all 0.2s ease-in-out;
-}
 
-a:hover {
-    color: var(--link);
-    transition: all 0.2s ease-in-out;
-}
-
-a.anchor::before {
-    content: "#";
+    &:hover {
+        color: var(--link);
+    }
 }
 
 a.anchor {
@@ -292,6 +311,10 @@ a.anchor {
     -o-transition: all 0.25s ease-in-out;
     -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
+
+    &::before {
+        content: "#";
+    }
 }
 
 ul.outline {
@@ -341,11 +364,11 @@ a.button {
     font-size: 1.5em;
     font-weight: bold;
     opacity: 0.6;
-}
 
-a.button:hover {
-    opacity: 0.8;
-    transform: scale(1.1);
+    &:hover {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
 }
 
 a.bookmark-op {
