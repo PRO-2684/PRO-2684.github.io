@@ -261,6 +261,11 @@ input {
         border-color: var(--border);
         color: var(--text);
     }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: progress;
+    }
 }
 
 fieldset {
