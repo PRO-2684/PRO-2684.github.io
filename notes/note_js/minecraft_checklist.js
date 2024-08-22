@@ -5,6 +5,8 @@
     const $ = document.querySelector.bind(document);
     const $$ = document.querySelectorAll.bind(document);
     const input = $("#nbt-upload");
+    const scaleSlider = $("#scale-slider");
+    const scaleInput = $("#scale-input");
     const checkboxes = $$("#markdown input[type=checkbox]");
     const jsonOutput = $("#json-output");
     const tableOutput = $("#table-output > tbody");
@@ -20,10 +22,26 @@
         checkbox.addEventListener("change", main);
         checkbox.disabled = false;
     });
+    scaleSlider.addEventListener("input", sync(scaleInput));
+    scaleInput.addEventListener("input", sync(scaleSlider));
     const [readNBT, { default: itemsInfo}] = await Promise.all([readNBTPromise, blocksInfoPromise]);
     input.disabled = false;
     input.addEventListener("input", main);
 
+    /**
+     * Sync the data with slider/input, and set the scale.
+     * @param {HTMLElement} other The other element to sync with.
+     * @returns {Function} The sync function.
+     */
+    function sync(other) {
+        return function () {
+            if (!this.reportValidity()) {
+                return;
+            }
+            other.value = this.value;
+            imageOutput.style.setProperty("--scale", this.value);
+        };
+    }
     /**
      * Main function to handle the file input.
      */

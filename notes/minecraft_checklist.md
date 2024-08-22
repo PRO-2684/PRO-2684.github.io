@@ -19,6 +19,7 @@ scripts: true
         flex-wrap: wrap;
         justify-content: center;
         gap: calc(1em * var(--scale));
+        margin-top: calc(1em* var(--scale));
 
         > div {
             padding: 0;
@@ -38,6 +39,9 @@ scripts: true
                 scale: var(--scale);
             }
         }
+    }
+    #scale-slider, #scale-input {
+        vertical-align: middle;
     }
     @font-face {
         font-family: "Minecraft";
@@ -84,6 +88,8 @@ scripts: true
 </table>
 
 ## 🖼️ 材料图
+
+缩放: <input type="range" id="scale-slider" min="1" max="5" step="0.1" value="1.5"> <input type="number" id="scale-input" min="1" max="5" step="0.1" value="1.5" required>
 
 <div id="image-output" style="--scale: 1.5;">暂无</div>
 
