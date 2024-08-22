@@ -24,6 +24,9 @@
     input.disabled = false;
     input.addEventListener("input", main);
 
+    /**
+     * Main function to handle the file input.
+     */
     function main() {
         const file = input.files[0];
         const [includeAir, includeEntities, includeItems] = Array.from(checkboxes).map((checkbox) => checkbox.checked);
@@ -48,25 +51,29 @@
             log("No file selected.");
         }
     }
+    /**
+     * Extract the data from the NBT data.
+     * @param {Object} nbt The NBT data.
+     * @param {Object} config The configuration.
+     * @param {boolean} config.air Include air blocks.
+     * @param {boolean} config.entities Include entities.
+     * @param {boolean} config.items Include items.
+     * @returns {Object} The extracted data.
+     */
     function extractFromNBT(nbt, config) {
         const mapping = nbt.data.palette.map((item) => item.Name);
         const result = {};
+        function incrementResult(key, count = 1) {
+            result[key] = (result[key] ?? 0) + count;
+        }
         for (const block of nbt.data.blocks) {
             const [namespace, name] = mapping[block.state].split(":");
-            if (namespace !== "minecraft") {
-                result[mapping[block.state]] = (result[mapping[block.state]] ?? 0) + 1;
-            } else {
-                result[name] = (result[name] ?? 0) + 1;
-            }
+            incrementResult(namespace === "minecraft" ? name : mapping[block.state]);
             if (config.items) {
                 const items = block.nbt?.Items ?? [];
                 for (const item of items) {
                     const [namespace, name] = item.id.split(":");
-                    if (namespace !== "minecraft") {
-                        result[item.id] = (result[item.id] ?? 0) + item.count ?? item.Count ?? 1;
-                    } else {
-                        result[name] = (result[name] ?? 0) + item.count ?? item.Count ?? 1;
-                    }
+                    incrementResult(namespace === "minecraft" ? name : item.id, item.count ?? item.Count ?? 1);
                 }
             }
         }
@@ -78,25 +85,34 @@
         if (config.entities) {
             for (const entity of nbt.data.entities) {
                 const [namespace, name] = entity.nbt.id.split(":");
-                if (namespace !== "minecraft") {
-                    result[entity.nbt.id] = (result[entity.nbt.id] ?? 0) + 1;
-                } else {
-                    const representName = entityRepresentName(name);
-                    result[representName] = (result[representName] ?? 0) + 1;
-                }
+                incrementResult(namespace === "minecraft" ? `entity-${name}` : entity.nbt.id);
             }
         }
         return result;
     }
-    function entityRepresentName(entityName) {
+    /**
+     * Get the lookup name of the entity (Used to lookup info).
+     * @param {string} entityName The entity name.
+     * @returns {string} The represent name.
+     */
+    function entityLookupName(entityName) {
+        if (!entityName.startsWith("entity-")) {
+            throw new Error("Invalid entity name.");
+        } else {
+            entityName = entityName.slice(7);
+        }
         const possibles = ["mob-{}-face", "{}"];
         for (const possible of possibles) {
-            const representName = possible.replace("{}", entityName);
-            if (itemsInfo[representName]) {
-                return representName;
+            const lookupName = possible.replace("{}", entityName);
+            if (itemsInfo[lookupName]) {
+                return lookupName;
             }
         }
     }
+    /**
+     * Render the checklist table.
+     * @param {Object} data The processed data to render.
+     */
     function renderTable(data) {
         tableOutput.innerHTML = "";
         for (const [id, count] of Object.entries(data)) {
@@ -109,12 +125,16 @@
             const i = td_icon.appendChild(document.createElement("i"));
             i.classList.add("icon-minecraft", itemInfo.css);
             td_name.textContent = itemInfo.label;
-            td_id.textContent = id;
+            td_id.textContent = itemInfo.name;
             td_cnt.textContent = count;
             tr.append(td_icon, td_cnt, td_name, td_id);
             tableOutput.append(tr);
         }
     }
+    /**
+     * Render the checklist image.
+     * @param {Object} data The processed data to render.
+     */
     function renderImage(data) {
         imageOutput.innerHTML = "";
         for (const [id, count] of Object.entries(data)) {
@@ -126,6 +146,10 @@
             div.title = `${itemInfo.label} x${count}`;
         }
     }
+    /**
+     * Render metadata/other info of the NBT data.
+     * @param {Object} nbt The NBT data.
+     */
     function renderMeta(nbt) {
         const size = $("#structure-size");
         const blocks = $("#block-count");
@@ -143,12 +167,24 @@
         nbtVersion.textContent = nbt.data.DataVersion;
 
     }
+    /**
+     * Get item info given the item id, fallback to air if not found. Will handle entity id specially.
+     * @param {string} itemId The item id.
+     * @returns {Object} The item info.
+     */
     function getItemInfo(itemId) {
-        return itemsInfo[itemId] ?? {
-            label: itemId,
-            name: itemId,
+        const lookupId = itemId.startsWith("entity-") ? entityLookupName(itemId) : itemId;
+        const res = itemsInfo[lookupId] ?? {
+            label: lookupId,
+            name: lookupId,
             css: "icon-minecraft-air",
         };
+        if (itemId.startsWith("entity-")) {
+            res.name = itemId.slice(7);
+        } else {
+            res.name = itemId;
+        }
+        return res;
     }
     log("Loaded.");
 })();
