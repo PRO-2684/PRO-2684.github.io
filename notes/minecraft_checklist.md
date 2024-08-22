@@ -99,7 +99,7 @@ scripts: true
 - 结构方块数：<span id="block-count">-</span>
 - 结构实体数：<span id="entity-count">-</span>
 - 游戏版本：<span id="game-version">-</span>
-- NBT 版本：<span id="nbt-version">-</span>
+- [数据版本 (Java)](https://minecraft.wiki/w/Data_version#Java_Edition)：<span id="nbt-version">-</span>
 
 ## 🎉 致谢
 

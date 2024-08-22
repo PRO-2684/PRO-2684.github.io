@@ -182,7 +182,7 @@
         } else {
             gameVersion.textContent = "Bedrock Edition";
         }
-        nbtVersion.textContent = nbt.data.DataVersion;
+        nbtVersion.textContent = nbt.data.DataVersion ?? "Unknown";
 
     }
     /**
