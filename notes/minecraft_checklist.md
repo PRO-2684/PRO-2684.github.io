@@ -58,9 +58,11 @@ scripts: true
 
 ## 📦 上传 & 设置
 
-- [x] 隐藏空气 (Air)
+<input type="file" id="nbt-upload" accept=".nbt" disabled style="float: right;">
 
-<input type="file" id="nbt-upload" accept=".nbt" disabled>
+- [ ] 包括空气 (`air`, `cave_air`, `void_air`)
+- [ ] 包括实体 (实验性)
+- [ ] 包括容器内的物品 (实验性)
 
 ## 🧑‍💻 Raw JSON
 
