@@ -8,18 +8,18 @@ NProgress.configure({
 });
 NProgress.start();
 // md converter - showdown
-showdown.setFlavor('github');
-const enabled_features = ['openLinksInNewWindow', 'metadata', 'parseImgDimensions'];
+showdown.setFlavor("github");
+const enabled_features = ["openLinksInNewWindow", "metadata", "parseImgDimensions"];
 for (i in enabled_features) {
     showdown.setOption(enabled_features[i], true);
 }
 const main_article = $("#markdown");
-const showdown_converter = new showdown.Converter({ extensions: ["footnotes"] });
-let current_page = 'index';
+const showdown_converter = new showdown.Converter({ extensions: ["footnotes", "tasklistEnhance"] });
+let current_page = "index";
 const menu_element = $("#main-content > aside.panel.right-panel");
 const menu_button = $("#show-sidebar");
 const from_span = $("#from");
-const overlay = $('#overlay');
+const overlay = $("#overlay");
 const bookmark_element = $("#bookmarks");
 const tag_trans = {
     Index: "top",
@@ -41,7 +41,7 @@ const from_trans = {
     "fallback": { color: "red", text: "Fallback" },
     "failed": { color: "red", text: "Failed" },
 };
-const sw_supported = 'serviceWorker' in navigator;
+const sw_supported = "serviceWorker" in navigator;
 // formula renderer - katex
 const katex_config = {
     delimiters:
