@@ -4,6 +4,7 @@ tags: [Test]
 keywords: [Javascript, RLO, LRO, RTL, LTR, Unicode]
 description: Some explanations and utils on Right-To-Left Override and Left-To-Right Override.
 scripts: true
+checkboxes: true
 ---
 
 <style>

@@ -4,6 +4,7 @@ tags: [Useful]
 keywords: [Minecraft, Checklist, Bill of Materials, NBT, JSON, nbtify]
 description: Minecraft 材料清单生成器 - 根据给定的结构生成一份好看的材料清单; Minecraft checklist generator - Generates a nice bill of materials given a Minecraft structure.
 scripts: true
+checkboxes: true
 ---
 
 <style>

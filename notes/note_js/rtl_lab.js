@@ -182,14 +182,6 @@
     for (let i = 0; i < checkboxes.length; i++) {
         const checkbox = checkboxes[i];
         const style = styles[i + 1];
-        // Wrap the checkbox with a label
-        const label = document.createElement("label");
-        const li = checkbox.parentNode;
-        const children = [...li.childNodes];
-        for (const child of children) {
-            label.appendChild(child);
-        }
-        li.appendChild(label);
         // Enable the checkbox
         checkbox.addEventListener("change", () => {
             style.disabled = !checkbox.checked;
@@ -201,13 +193,5 @@
     window.addEventListener("note_loading", () => {
         document.removeEventListener("click", onClick);
         document.removeEventListener("keydown", onKeydown);
-        // for (const div of divs) {
-        //     const visualizer = div.visualizer;
-        //     if (visualizer.control) {
-        //         const control = visualizer.control;
-        //         control.querySelector("input").removeEventListener("input", visualizer.setText);
-        //         div.removeEventListener("dblclick", onDblClick);
-        //     }
-        // }
     }, { once: true });
 })();

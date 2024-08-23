@@ -20,7 +20,6 @@
     }, { once: true });
     checkboxes.forEach((checkbox) => {
         checkbox.addEventListener("change", main);
-        checkbox.disabled = false;
     });
     scaleSlider.addEventListener("input", sync(scaleInput));
     scaleInput.addEventListener("input", sync(scaleSlider));

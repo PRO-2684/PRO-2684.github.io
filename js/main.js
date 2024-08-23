@@ -14,7 +14,7 @@ for (i in enabled_features) {
     showdown.setOption(enabled_features[i], true);
 }
 const main_article = $("#markdown");
-const showdown_converter = new showdown.Converter({ extensions: ["footnotes", "tasklistEnhance"] });
+const showdown_converter = new showdown.Converter({ extensions: ["footnotes"] });
 let current_page = "index";
 const menu_element = $("#main-content > aside.panel.right-panel");
 const menu_button = $("#show-sidebar");
@@ -112,6 +112,20 @@ function parseMetadata() {
     else $("meta[name='description']").setAttribute('content', 'PRO 的个人博客');
     if (metadata['scripts'] === "true") {
         window.addEventListener("note_loaded", insertNoteJS, { once: true });
+    }
+    if (metadata['checkboxes'] === "true") { // Enable and wrap checkboxes
+        const checkboxes = $$("li.task-list-item > input[type=checkbox]");
+        checkboxes.forEach((checkbox) => {
+            // Wrap the checkbox with a label
+            const label = document.createElement("label");
+            const li = checkbox.parentNode;
+            const children = [...li.childNodes];
+            for (const child of children) {
+                label.appendChild(child);
+            }
+            li.appendChild(label);
+            checkbox.disabled = false;
+        });
     }
     if (metadata['tags']) {
         let tags = metadata['tags'].slice(1, -1).split(',');
