@@ -84,14 +84,17 @@
         function incrementResult(key, count = 1) {
             result[key] = (result[key] ?? 0) + count;
         }
+        function incrementResultByItem(item) {
+            const [namespace, name] = item.id.split(":");
+            incrementResult(namespace === "minecraft" ? name : item.id, item.count ?? item.Count ?? 1);
+        }
         for (const block of nbt.data.blocks) {
             const [namespace, name] = mapping[block.state].split(":");
             incrementResult(namespace === "minecraft" ? name : mapping[block.state]);
             if (config.items) {
                 const items = block.nbt?.Items ?? [];
                 for (const item of items) {
-                    const [namespace, name] = item.id.split(":");
-                    incrementResult(namespace === "minecraft" ? name : item.id, item.count ?? item.Count ?? 1);
+                    incrementResultByItem(item);
                 }
             }
         }
@@ -103,7 +106,15 @@
         if (config.entities) {
             for (const entity of nbt.data.entities) {
                 const [namespace, name] = entity.nbt.id.split(":");
-                incrementResult(namespace === "minecraft" ? `entity-${name}` : entity.nbt.id);
+                if (namespace === "minecraft") {
+                    if (name !== "item") {
+                        incrementResult(`entity-${name}`);
+                    } else {
+                        incrementResultByItem(entity.nbt.Item);
+                    }
+                } else {
+                    incrementResult(entity.nbt.id);
+                }
             }
         }
         return result;
