@@ -47,8 +47,8 @@
      */
     function main() {
         const file = input.files[0];
-        const [includeAir, includeEntities, includeItems] = Array.from(checkboxes).map((checkbox) => checkbox.checked);
-        const config = { air: includeAir, entities: includeEntities, items: includeItems };
+        const [includeAir, includeEntities, includeDrops, includeEntityItems, includeBlockItems] = Array.from(checkboxes).map((checkbox) => checkbox.checked);
+        const config = { air: includeAir, entities: includeEntities, drops: includeDrops, entityItems: includeEntityItems, blockItems: includeBlockItems };
         if (file) {
             const reader = new FileReader();
             reader.addEventListener("load", async function () {
@@ -75,7 +75,9 @@
      * @param {Object} config The configuration.
      * @param {boolean} config.air Include air blocks.
      * @param {boolean} config.entities Include entities.
-     * @param {boolean} config.items Include items.
+     * @param {boolean} config.drops Include drop items.
+     * @param {boolean} config.entityItems Include items from entity (inventory & armor).
+     * @param {boolean} config.blockItems Include items inside block containers.
      * @returns {Object} The extracted data.
      */
     function extractFromNBT(nbt, config) {
@@ -85,14 +87,18 @@
             result[key] = (result[key] ?? 0) + count;
         }
         function incrementResultByItem(item) {
+            if (!item || !item.id) {
+                return;
+            }
             const [namespace, name] = item.id.split(":");
             incrementResult(namespace === "minecraft" ? name : item.id, item.count ?? item.Count ?? 1);
         }
         for (const block of nbt.data.blocks) {
             const [namespace, name] = mapping[block.state].split(":");
             incrementResult(namespace === "minecraft" ? name : mapping[block.state]);
-            if (config.items) {
+            if (config.blockItems) {
                 const items = block.nbt?.Items ?? [];
+                items.push(block.nbt?.RecordItem); // Jukebox record
                 for (const item of items) {
                     incrementResultByItem(item);
                 }
@@ -106,13 +112,21 @@
         if (config.entities) {
             for (const entity of nbt.data.entities) {
                 const [namespace, name] = entity.nbt.id.split(":");
-                if (namespace === "minecraft") {
-                    if (name !== "item") {
+                if (namespace === "minecraft") { // Vanilla entities
+                    if (name !== "item") { // Other entities
                         incrementResult(`entity-${name}`);
-                    } else {
+                        if (config.entityItems) {
+                            const items = [
+                                ...entity.nbt?.Items ?? [], // Inventory items
+                                ...entity.nbt?.ArmorItems ?? [], // Armor items
+                                ...entity.nbt?.HandItems ?? [], // Hand-held items
+                            ];
+                            items.forEach(incrementResultByItem);
+                        }
+                    } else if (config.drops) { // `minecraft:item` entity
                         incrementResultByItem(entity.nbt.Item);
                     }
-                } else {
+                } else { // Mod entities
                     incrementResult(entity.nbt.id);
                 }
             }
@@ -204,15 +218,11 @@
     function getItemInfo(itemId) {
         const lookupId = itemId.startsWith("entity-") ? entityLookupName(itemId) : itemId;
         const res = itemsInfo[lookupId] ?? {
-            label: lookupId,
-            name: lookupId,
+            label: lookupId ?? "Unknown",
+            name: lookupId ?? "Unknown",
             css: "icon-minecraft-air",
         };
-        if (itemId.startsWith("entity-")) {
-            res.name = itemId.slice(7);
-        } else {
-            res.name = itemId;
-        }
+        res.name = itemId.startsWith("entity-") ? itemId.slice(7) : itemId;
         return res;
     }
     log("Loaded.");

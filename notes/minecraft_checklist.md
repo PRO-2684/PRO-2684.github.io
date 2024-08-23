@@ -62,11 +62,15 @@ scripts: true
 
 ## 📦 上传 & 设置
 
+> 用 `*` 标记的选项为实验性功能，可能存在问题
+
 <input type="file" id="nbt-upload" accept=".nbt" disabled style="float: right;">
 
 - [ ] 包括空气 (`air`, `cave_air`, `void_air`)
-- [ ] 包括实体与掉落物 (实验性)
-- [ ] 包括容器内的物品 (实验性)
+- [ ] * 包括实体
+    - [x] 包括掉落物
+    - [x] 包括实体的物品 (`Items`, `ArmorItems`, `HandItems`)
+- [ ] * 包括方块容器内的物品 (`Items`, `RecordItem`)
 
 ## 🧑‍💻 Raw JSON
 
