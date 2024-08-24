@@ -4,29 +4,71 @@
     const log = console.log.bind(console, "[Minecraft Checklist]");
     const $ = document.querySelector.bind(document);
     const $$ = document.querySelectorAll.bind(document);
-    const input = $("#nbt-upload");
-    const scaleSlider = $("#scale-slider");
-    const scaleInput = $("#scale-input");
-    const checkboxes = $$("#markdown input[type=checkbox]");
-    const jsonOutput = $("#json-output");
-    const tableOutput = $("#table-output > tbody");
-    const imageOutput = $("#image-output");
     const style = document.head.appendChild(document.createElement("link"));
     style.rel = "stylesheet";
     style.type = "text/css";
     style.href = "./attachments/icons-minecraft-187.css";
+
+    const input = $("#nbt-upload");
+    const checkboxes = $$("#markdown input[type=checkbox]");
+    const bgColorPicker = $("#bg-color");
+    const fgColorPicker = $("#fg-color");
+    const scaleSlider = $("#scale-slider");
+    const scaleInput = $("#scale-input");
+    const resetButton = $("#reset-button");
+
+    const jsonOutput = $("#json-output");
+    const tableOutput = $("#table-output > tbody");
+    const imageOutput = $("#image-output");
+
     window.addEventListener("note_loading", () => {
         document.head.removeChild(style);
     }, { once: true });
     checkboxes.forEach((checkbox) => {
         checkbox.addEventListener("change", main);
     });
+    bgColorPicker.addEventListener("input", function () {
+        imageOutput.style.backgroundColor = this.value;
+    });
+    fgColorPicker.addEventListener("input", function () {
+        imageOutput.style.color = this.value;
+    });
     scaleSlider.addEventListener("input", sync(scaleInput));
     scaleInput.addEventListener("input", sync(scaleSlider));
+    [bgColorPicker, fgColorPicker, scaleSlider, scaleInput].forEach(inputPatch);
+    resetButton.addEventListener("click", reset);
+    reset();
     const [readNBT, { default: itemsInfo}] = await Promise.all([readNBTPromise, blocksInfoPromise]);
     input.disabled = false;
     input.addEventListener("input", main);
 
+    /**
+     * Patch the input element to dispatch `input` event when the value is set.
+     * @param {HTMLInputElement} input The input element to patch.
+     */
+    function inputPatch(input) {
+        const { get, set } = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+        Object.defineProperty(input, "value", {
+            get() {
+                return get.call(this);
+            },
+            set(newVal) {
+                const ret = set.call(this, newVal);
+                this.dispatchEvent(new InputEvent("input", { bubbles: true }));
+                return ret;
+            }
+        });
+    }
+    /**
+     * Reset `bgColorPicker`, `fgColorPicker`, `scaleSlider` and `scaleInput`.
+     */
+    function reset() {
+        const computedStyle = getComputedStyle(document.body);
+        bgColorPicker.value = computedStyle.getPropertyValue("--background");
+        fgColorPicker.value = computedStyle.getPropertyValue("--text");
+        scaleSlider.value = 1.5;
+        scaleInput.value = 1.5;
+    }
     /**
      * Sync the data with slider/input, and set the scale.
      * @param {HTMLElement} other The other element to sync with.
@@ -37,7 +79,9 @@
             if (!this.reportValidity()) {
                 return;
             }
-            other.value = this.value;
+            if (other.value !== this.value) { // Prevent infinite loop
+                other.value = this.value;
+            }
             imageOutput.style.setProperty("--scale", this.value);
         };
     }

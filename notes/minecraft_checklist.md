@@ -15,12 +15,12 @@ checkboxes: true
         margin: auto;
     }
     #image-output {
-        padding: 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: calc(1em * var(--scale));
-        margin-top: calc(1em* var(--scale));
+        justify-content: space-evenly;
+        padding: calc(1em* var(--scale));
 
         > div {
             padding: 0;
@@ -94,7 +94,7 @@ checkboxes: true
 
 ## 🖼️ 材料图
 
-缩放: <input type="range" id="scale-slider" min="1" max="5" step="0.1" value="1.5"> <input type="number" id="scale-input" min="1" max="5" step="0.1" value="1.5" required>
+背景色: <input type="color" id="bg-color"> 前景色: <input type="color" id="fg-color"> 缩放: <input type="range" id="scale-slider" min="1" max="5" step="0.1" value="1.5"> <input type="number" id="scale-input" min="1" max="5" step="0.1" value="1.5" required> 重置: <button id="reset-button">🔄</button>
 
 <div id="image-output" style="--scale: 1.5;">暂无</div>
 
