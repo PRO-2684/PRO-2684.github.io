@@ -20,39 +20,39 @@
     --panel-bg: #d2f3ffbd;
 }
 
-.external-link::after {
-    background-image: url(./web-light.svg);
-    background-size: 0.7em 0.7em;
-    display: inline-block;
-    width: 0.7em;
-    height: 0.7em;
-    content: "";
-    margin-inline-start: 0.2em;
-    margin-inline-end: 0.1em;
-}
-
-.external-link[href^="mailto:"]::after {
-    background-image: url(./email-light.svg);
-}
-
-.external-link[href^="./attachments/"]::after {
-    background-image: url(./attachment-light.svg);
+.external-link {
+    &::after {
+        background-image: url(./web-light.svg);
+        background-size: 0.7em 0.7em;
+        display: inline-block;
+        width: 0.7em;
+        height: 0.7em;
+        content: "";
+        margin-inline-start: 0.2em;
+        margin-inline-end: 0.1em;
+    }
+    &[href^="mailto:"]::after {
+        background-image: url(./email-light.svg);
+    }
+    &[href^="./attachments/"]::after {
+        background-image: url(./attachment-light.svg);
+    }
 }
 
 .element-link {
     cursor: pointer;
     text-decoration: none;
-}
 
-.element-link::after {
-    background-size: 0.7em 0.7em;
-    display: inline-block;
-    width: 0.7em;
-    height: 0.7em;
-    content: "";
-    margin-inline-start: 0.2em;
-    margin-inline-end: 0.1em;
-    background-image: url(./element-light.svg);
+    &::after {
+        background-size: 0.7em 0.7em;
+        display: inline-block;
+        width: 0.7em;
+        height: 0.7em;
+        content: "";
+        margin-inline-start: 0.2em;
+        margin-inline-end: 0.1em;
+        background-image: url(./element-light.svg);
+    }
 }
 
 html {
@@ -81,16 +81,16 @@ html {
         --panel-bg: #1d263cbd;
     }
 
-    .external-link::after {
-        background-image: url(./web-dark.svg);
-    }
-
-    .external-link[href^="mailto:"]::after {
-        background-image: url(./email-dark.svg);
-    }
-
-    .external-link[href^="./attachments/"]::after {
-        background-image: url(./attachment-dark.svg);
+    .external-link {
+        &::after {
+            background-image: url(./web-dark.svg);
+        }
+        &[href^="mailto:"]::after {
+            background-image: url(./email-dark.svg);
+        }
+        &[href^="./attachments/"]::after {
+            background-image: url(./attachment-dark.svg);
+        }
     }
 
     .element-link::after {
@@ -123,26 +123,6 @@ ul {
     padding-inline-start: 1em;
 }
 
-div {
-    padding: 1em;
-}
-
-div#overlay {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    z-index: 3;
-    display: block;
-    filter: alpha(opacity=60);
-    background-color: #323232;
-    opacity: 0.5;
-    -moz-opacity: 0.5;
-    transition: opacity 0.2s ease-in-out;
-}
-
 body>div>h1 {
     display: inline;
 }
@@ -157,42 +137,61 @@ article {
     line-height: 1.5;
     word-break: break-word;
     transition: opacity 0.2s ease-in-out;
+
+    img {
+        max-width: 100%;
+    }
 }
 
-article img {
-    max-width: 100%;
+aside {
+    &.panel {
+        transition: all 0.2s ease-in-out;
+        line-height: 1.5;
+        padding: 0;
+        overflow-y: scroll;
+    }
+    &.right-panel {
+        position: fixed;
+        top: -100%;
+        background-color: var(--panel-bg);
+        backdrop-filter: blur(2px);
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        border-radius: 0 0 1em 1em;
+        max-height: 70%;
+        z-index: 4;
+    }
 }
 
-aside.panel {
-    transition: all 0.2s ease-in-out;
-    line-height: 1.5;
-    padding: 0;
-    overflow-y: scroll;
-}
+div {
+    padding: 1em;
 
-aside.right-panel {
-    position: fixed;
-    top: -100%;
-    background-color: var(--panel-bg);
-    backdrop-filter: blur(2px);
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    border-radius: 0 0 1em 1em;
-    max-height: 70%;
-    z-index: 4;
-}
-
-div#tags {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-div#main-content {
-    margin: 0;
-    padding: 0;
+    &#overlay {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        z-index: 3;
+        display: block;
+        filter: alpha(opacity=60);
+        background-color: #323232;
+        opacity: 0.5;
+        -moz-opacity: 0.5;
+        transition: opacity 0.2s ease-in-out;
+    }
+    &#tags {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &#main-content {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 span#from {
@@ -216,13 +215,12 @@ table {
     margin: 0.5rem 0;
     width: auto;
     font-size: .875em;
-}
 
-table td,
-table th {
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--border-dim);
-    vertical-align: middle;
+    td, th {
+        padding: 0.5rem 0.75rem;
+        border: 1px solid var(--border-dim);
+        vertical-align: middle;
+    }
 }
 
 input {
@@ -273,14 +271,13 @@ fieldset {
     border: 1px solid var(--border-dim);
     border-radius: 0.5em;
     transition: border-color 0.2s ease-in-out;
-}
 
-fieldset:hover {
-    border-color: var(--border);
-}
-
-fieldset>legend {
-    padding: 0em 0.5em;
+    &:hover, &:focus {
+        border-color: var(--border);
+    }
+    > legend {
+        padding: 0em 0.5em;
+    }
 }
 
 details {
@@ -288,61 +285,32 @@ details {
     border-radius: 1em;
     padding: 1em;
     transition: border-color 0.2s ease-in-out;
-}
 
-details:hover {
-    border-color: var(--border);
-}
-
-details > summary {
-    cursor: pointer;
-}
-
-a {
-    color: var(--text-dim);
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-        color: var(--link);
+    &:hover, &:focus {
+        border-color: var(--border);
+    }
+    > summary {
+        cursor: pointer;
     }
 }
 
-a.anchor {
-    opacity: 0;
-    color: var(--link);
-    text-decoration: none;
-    padding: 0px 0.5em;
-    -moz-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
-
-    &::before {
-        content: "#";
+ul {
+    &.outline {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        color: var(--quote-text);
     }
-}
+    &#bookmarks {
+        list-style-type: none;
+        padding-inline-start: 1em;
+        margin: 0.5em 0 0 0;
 
-ul.outline {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    color: var(--quote-text);
-}
-
-ul#bookmarks {
-    list-style-type: none;
-    padding-inline-start: 1em;
-    margin: 0.5em 0 0 0;
-}
-
-ul#bookmarks > li {
-    display: flex;
-    justify-content: space-between;
-}
-
-a.outline-link {
-    text-decoration: none;
-    white-space: pre;
+        > li {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }
 
 div#float-buttons {
@@ -356,46 +324,66 @@ div#float-buttons {
     z-index: 5;
 }
 
-a.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--quote-text);
-    background-color: var(--quote-bg);
-    border-radius: 50%;
-    width: 2em;
-    height: 2em;
-    font-size: 1.5em;
-    font-weight: bold;
-    opacity: 0.6;
+a {
+    color: var(--text-dim);
+    transition: color 0.2s ease-in-out;
 
     &:hover {
-        opacity: 0.8;
-        transform: scale(1.1);
+        color: var(--link);
     }
-}
+    &.anchor {
+        opacity: 0;
+        color: var(--link);
+        text-decoration: none;
+        padding: 0px 0.5em;
 
-a.bookmark-op {
-    text-decoration: none;
-    text-align: center;
-    width: 1em;
+        &::before {
+            content: "#";
+        }
+    }
+    &.outline-link {
+        text-decoration: none;
+        white-space: pre;
+    }
+    &.button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--quote-text);
+        background-color: var(--quote-bg);
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;
+        font-size: 1.5em;
+        font-weight: bold;
+        opacity: 0.6;
+
+        &:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+    }
+    &.bookmark-op {
+        text-decoration: none;
+        text-align: center;
+        width: 1em;
+    }
+    &.tag {
+        display: block;
+        border: 1px solid var(--border-dim);
+        border-radius: 1em;
+        padding: 0px 0.5em;
+        margin: 0.2em 0.2em;
+        width: fit-content;
+        height: fit-content;
+        text-decoration: none;
+    }
 }
 
 .katex {
     font-size: 1em;
     color: var(--formula);
-}
-
-a.tag {
-    display: block;
-    border: 1px solid var(--border-dim);
-    border-radius: 1em;
-    padding: 0px 0.5em;
-    margin: 0.2em 0.2em;
-    width: fit-content;
-    height: fit-content;
-    text-decoration: none;
 }
 
 #main-content > aside.panel.left-panel > div:nth-child(2) {
@@ -411,10 +399,7 @@ h4:hover>a.anchor,
 h5:hover>a.anchor,
 h6:hover>a.anchor {
     opacity: 1;
-    -moz-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 
 footer {
@@ -427,17 +412,23 @@ footer {
     }
 }
 
-/* Webkit scrollbar hidden */
-::-webkit-scrollbar-track {
-    display: none;
-}
+.github-corner {
+    opacity: 0.4;
+    transition: opacity 0.2s ease-in-out;
 
-::-webkit-scrollbar {
-    display: none;
-}
+    &:hover, &:focus {
+        opacity: 1;
 
-::-webkit-scrollbar-thumb {
-    display: none;
+        .octo-arm {
+            animation: 560ms octocat-wave 0.2s ease-in-out;
+        }
+    }
+    > svg {
+        width: 4em;
+        height: 4em;
+        fill: var(--text);
+        color: var(--background);
+    }
 }
 
 /* Widescreen */
@@ -562,3 +553,16 @@ footer {
     25%, 75% { opacity: 0; }
 }
 .attention { animation-name: flash; animation-duration: 1s; animation-fill-mode: both; }
+
+/* https://tholman.com/github-corners/ */
+@keyframes octocat-wave {
+    0%, 100% {
+        transform: rotate(0)
+    }
+    20%, 60% {
+        transform: rotate(-25deg)
+    }
+    40%, 80% {
+        transform: rotate(10deg)
+    }
+}
