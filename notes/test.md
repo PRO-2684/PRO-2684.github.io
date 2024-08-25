@@ -55,3 +55,5 @@ Nasty test cases:
 ```python
 # $1+1=2$
 ```
+
+<button id="vibrate">Vibrate</button> (Only on supported devices)
