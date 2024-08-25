@@ -22,20 +22,18 @@
 
 .external-link {
     &::after {
-        background-image: url(./web-light.svg);
-        background-size: 0.7em 0.7em;
+        content: url(./web-light.svg);
         display: inline-block;
         width: 0.7em;
         height: 0.7em;
-        content: "";
         margin-inline-start: 0.2em;
         margin-inline-end: 0.1em;
     }
     &[href^="mailto:"]::after {
-        background-image: url(./email-light.svg);
+        content: url(./email-light.svg);
     }
     &[href^="./attachments/"]::after {
-        background-image: url(./attachment-light.svg);
+        content: url(./attachment-light.svg);
     }
 }
 
@@ -44,14 +42,12 @@
     text-decoration: none;
 
     &::after {
-        background-size: 0.7em 0.7em;
+        content: url(./element-light.svg);
         display: inline-block;
         width: 0.7em;
         height: 0.7em;
-        content: "";
         margin-inline-start: 0.2em;
         margin-inline-end: 0.1em;
-        background-image: url(./element-light.svg);
     }
 }
 
@@ -83,13 +79,13 @@ html {
 
     .external-link {
         &::after {
-            background-image: url(./web-dark.svg);
+            content: url(./web-dark.svg);
         }
         &[href^="mailto:"]::after {
-            background-image: url(./email-dark.svg);
+            content: url(./email-dark.svg);
         }
         &[href^="./attachments/"]::after {
-            background-image: url(./attachment-dark.svg);
+            content: url(./attachment-dark.svg);
         }
     }
 
@@ -332,6 +328,7 @@ a {
         color: var(--link);
     }
     &.anchor {
+        transition-property: opacity;
         opacity: 0;
         color: var(--link);
         text-decoration: none;
@@ -346,6 +343,7 @@ a {
         white-space: pre;
     }
     &.button {
+        transition-property: opacity, transform;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -392,21 +390,29 @@ a {
 }
 
 /* Anchor display on hover */
-h1:hover>a.anchor,
-h2:hover>a.anchor,
-h3:hover>a.anchor,
-h4:hover>a.anchor,
-h5:hover>a.anchor,
-h6:hover>a.anchor {
-    opacity: 1;
-    transition: opacity 0.2s ease-in-out;
-}
+ h1, h2, h3, h4, h5, h6 {
+    &:hover > a.anchor {
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+    }
+ }
 
 footer {
     font-size: small;
     text-align: center;
     opacity: 0.5;
+    margin-bottom: 1em;
+    transition: opacity 0.2s ease-in-out;
 
+    &:hover, &:focus {
+        opacity: 0.8;
+    }
+    > svg {
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        fill: var(--text);
+    }
     > a {
         text-decoration: none;
     }
@@ -418,12 +424,12 @@ footer {
 
     &:hover, &:focus {
         opacity: 1;
-
-        .octo-arm {
-            animation: 560ms octocat-wave 0.2s ease-in-out;
-        }
     }
     > svg {
+        position: absolute;
+        top: 0;
+        border: 0;
+        right: 0;
         width: 4em;
         height: 4em;
         fill: var(--text);
@@ -553,16 +559,3 @@ footer {
     25%, 75% { opacity: 0; }
 }
 .attention { animation-name: flash; animation-duration: 1s; animation-fill-mode: both; }
-
-/* https://tholman.com/github-corners/ */
-@keyframes octocat-wave {
-    0%, 100% {
-        transform: rotate(0)
-    }
-    20%, 60% {
-        transform: rotate(-25deg)
-    }
-    40%, 80% {
-        transform: rotate(10deg)
-    }
-}
