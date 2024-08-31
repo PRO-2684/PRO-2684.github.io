@@ -46,6 +46,7 @@ description: USTC 常用链接
 
 ## 🛠️ 工具
 
+- [委托他人代打印成绩单等证明](https://verify-transcript.cmet.ustc.edu.cn/manager.action)
 - [USTChat](https://chat.ustc.edu.cn/#/chat) ~~(纯纯人工智障)~~
 - [校共享应用平台](https://ustcnet.ustc.edu.cn/as/) (知识竞赛、签到、投票、抽奖、问卷调查等，需提前申请/审核)
 - [校园地图](https://www.ustc.edu.cn/info/1009/1036.htm)
