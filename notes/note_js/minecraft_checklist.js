@@ -1,5 +1,5 @@
 (async function () {
-    const readNBTPromise = import("https://cdn.jsdelivr.net/npm/nbtify@1.90.1/dist/index.min.js").then((module) => module.read);
+    const readNBTPromise = import("https://cdn.jsdelivr.net/npm/nbtify/+esm").then((module) => module.read);
     const blocksInfoPromise = import("../../attachments/icons-minecraft-transformed-187.json", { with: {type: "json"} });
     const log = console.log.bind(console, "[Minecraft Checklist]");
     const $ = document.querySelector.bind(document);
