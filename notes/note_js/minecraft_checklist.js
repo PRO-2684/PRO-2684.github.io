@@ -1,5 +1,5 @@
 (async function () {
-    const readNBTPromise = import("https://cdn.jsdelivr.net/npm/nbtify/dist/index.min.js").then((module) => module.read);
+    const readNBTPromise = import("https://cdn.jsdelivr.net/npm/nbtify@1.90.1/dist/index.min.js").then((module) => module.read);
     const blocksInfoPromise = import("../../attachments/icons-minecraft-transformed-187.json", { with: {type: "json"} });
     const log = console.log.bind(console, "[Minecraft Checklist]");
     const $ = document.querySelector.bind(document);
@@ -10,6 +10,7 @@
     style.href = "./attachments/icons-minecraft-187.css";
 
     const input = $("#nbt-upload");
+    const status = $("#status");
     const checkboxes = $$("#markdown input[type=checkbox]");
     const bgColorPicker = $("#bg-color");
     const fgColorPicker = $("#fg-color");
@@ -38,7 +39,18 @@
     [bgColorPicker, fgColorPicker, scaleSlider, scaleInput].forEach(inputPatch);
     resetButton.addEventListener("click", reset);
     reset();
-    const [readNBT, { default: itemsInfo}] = await Promise.all([readNBTPromise, blocksInfoPromise]);
+    const [readNBT, { default: itemsInfo }] = await Promise.all([readNBTPromise, blocksInfoPromise]).catch((err) => {
+        status.textContent = "加载失败，请刷新重试";
+        status.style.color = "red";
+        status.title = err;
+        log("Failed to load:", err);
+        return [null, {}];
+    });
+    if (!readNBT || !itemsInfo) {
+        return;
+    }
+    status.textContent = "等待上传文件";
+    status.style.color = "green";
     input.disabled = false;
     input.addEventListener("input", main);
 
@@ -93,6 +105,8 @@
         const [includeAir, includeEntities, includeDrops, includeEntityItems, includeBlockItems] = Array.from(checkboxes).map((checkbox) => checkbox.checked);
         const config = { air: includeAir, entities: includeEntities, drops: includeDrops, entityItems: includeEntityItems, blockItems: includeBlockItems };
         if (file) {
+            status.textContent = "处理中";
+            status.style.color = "orange";
             const reader = new FileReader();
             reader.addEventListener("load", async function () {
                 const buffer = reader.result;
@@ -106,9 +120,13 @@
                 renderImage(data);
                 renderMeta(nbt);
                 input.disabled = false;
+                status.textContent = "等待上传文件";
+                status.style.color = "green";
             });
             reader.readAsArrayBuffer(file);
         } else {
+            status.textContent = "未选择文件";
+            status.style.color = "grey";
             log("No file selected.");
         }
     }

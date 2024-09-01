@@ -44,6 +44,12 @@ checkboxes: true
     #scale-slider, #scale-input {
         vertical-align: middle;
     }
+    #status {
+        font-weight: bold;
+        &::after {
+            content: "...";
+        }
+    }
     @font-face {
         font-family: "Minecraft";
         src: local("Minecraft"), local("Minecraft AE Pixel"), local("Monocraft"), url("../fonts/Monocraft.ttf");
@@ -66,6 +72,8 @@ checkboxes: true
 > 用 `*` 标记的选项为实验性功能，可能存在问题
 
 <input type="file" id="nbt-upload" accept=".nbt" disabled style="float: right;">
+
+状态: <span id="status">数据加载中</span>
 
 - [ ] 包括空气 (`air`, `cave_air`, `void_air`)
 - [ ] * 包括实体
