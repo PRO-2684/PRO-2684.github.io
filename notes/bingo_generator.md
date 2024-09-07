@@ -7,12 +7,17 @@ scripts: true
 ---
 
 <style>
-    #grid-title {
+    #bingo-title {
+        margin: 0;
         text-align: center;
         font-weight: bold;
         font-size: larger;
     }
-    #grid-content {
+    #bingo-subtitle {
+        margin: 0;
+        text-align: center;
+    }
+    #bingo-content {
         display: grid;
         grid-template-columns: repeat(var(--size), 1fr);
         padding: 0;
@@ -28,6 +33,13 @@ scripts: true
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
+        }
+    }
+    #bingo-saves {
+        .bingo-saves-option {
+            cursor: pointer;
+            margin-inline-start: 0.5em;
         }
     }
 </style>
@@ -42,12 +54,18 @@ Size: <input type="range" id="size-slider" min="1" max="8" step="1" value="3"> <
 
 ## 📄 Grid
 
-*\* Use `Enter` to break lines manually. Press `Esc` to lose focus.*
+*\* Use `Enter` to break lines manually. Press `Esc` to lose focus, and `Ctrl+S` to save current bingo.*
 
-<p id="grid-title" contenteditable="plaintext-only">Title</p>
-<div id="grid-content" style="--size: 3">
+<p id="bingo-title" contenteditable="plaintext-only">Title</p>
+<p id="bingo-subtitle" contenteditable="plaintext-only">Subtitle</p>
+<div id="bingo-content" style="--size: 3">
 </div>
 
-## 📦 Import & Export
+## 📦 Load & Save
 
-TODO
+- **Save** current bingo: <button id="bingo-save">Save</button>
+- **Import** a bingo from a `.json` file: <input type="file" id="bingo-import" accept=".json" title="Import">
+
+Your saves:
+
+<ul id="bingo-saves"></ul>
