@@ -13,7 +13,7 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
-[Edge Tips](@note/edge_tips)
+[Bingo Generator](@note/bingo_generator)
 
 [VSCode 调试时传递多个命令行参数](@note/vscode_debug_args)
 
@@ -136,6 +136,8 @@ description: PRO 的个人博客索引
 [GitHub Images](@note/github_images)
 
 ## 🧪 实验室
+
+[Bingo Generator](@note/bingo_generator)
 
 [Pangu](@note/pangu)
 

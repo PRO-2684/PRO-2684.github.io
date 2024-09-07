@@ -31,7 +31,7 @@ const tag_trans = {
     Ebook: "电子书",
     Academic: "学业",
     Other: "其他",
-    Test: "测试用"
+    Test: "实验室"
 };
 const from_trans = {
     "loading": { color: "gray", text: "Loading..." },

@@ -1,6 +1,6 @@
 ---
 title: Edge Tips
-tags: [Latest, Useful]
+tags: [Useful]
 keywords: [Microsoft Edge, Edge, Edge Canary, Tampermonkey, Android, Script, Install, Extension, UserScript, Greasyfork, 脚本, 扩展, 用户脚本, 安卓]
 description: This note provides some tips on improving your experience on using Microsoft Edge, including some flags you might want to enable/disable, modifying built-in search engines' URLs, disabling "Rewrite with Copilot", and installing Tampermonkey scripts in Edge Canary for Android. 这篇笔记提供了一些改进 Microsoft Edge 体验的小提示，包括一些你可能想要启用/禁用的 flags，修改内置搜索引擎的网址，禁用“使用 Copilot 重写”，以及如何在 Edge Canary for Android 上安装 Tampermonkey 脚本。
 ---
