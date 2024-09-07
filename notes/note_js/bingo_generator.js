@@ -16,11 +16,8 @@
     sizeInput.addEventListener("input", sync(sizeSlider));
     updateGrid();
     bingoTitle.addEventListener("keydown", handleKey);
+    bingoSubtitle.addEventListener("keydown", handleKey);
     bingoContent.addEventListener("keydown", handleKey);
-    window.addEventListener("note_loading", () => {
-        bingoTitle.removeEventListener("keydown", handleKey);
-        bingoContent.removeEventListener("keydown", handleKey);
-    }, { once: true });
 
     bingoSave.addEventListener("click", () => {
         save();
