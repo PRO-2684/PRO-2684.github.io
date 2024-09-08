@@ -50,7 +50,14 @@ scripts: true
 
 *\* Note that your content might be lost if you change the size of the grid.*
 
-Size: <input type="range" id="size-slider" min="1" max="8" step="1" value="3"> <input type="number" id="size-input" min="1" max="8" step="1" value="3" required>
+- Size: <input type="range" id="size-slider" min="1" max="8" step="1" value="3"> <input type="number" id="size-input" min="1" max="8" step="1" value="3" required>
+- **Reset** current bingo: <button id="bingo-reset">↩️</button>
+- **Save** current bingo: <button id="bingo-save">💾</button>
+- **Import** a bingo from a `.json` file: <input type="file" id="bingo-import" accept=".json" title="Import">
+
+Your saves:
+
+<ul id="bingo-saves"></ul>
 
 ## 📄 Grid
 
@@ -58,14 +65,4 @@ Size: <input type="range" id="size-slider" min="1" max="8" step="1" value="3"> <
 
 <p id="bingo-title" contenteditable="plaintext-only">Title</p>
 <p id="bingo-subtitle" contenteditable="plaintext-only">Subtitle</p>
-<div id="bingo-content" style="--size: 3">
-</div>
-
-## 📦 Load & Save
-
-- **Save** current bingo: <button id="bingo-save">Save</button>
-- **Import** a bingo from a `.json` file: <input type="file" id="bingo-import" accept=".json" title="Import">
-
-Your saves:
-
-<ul id="bingo-saves"></ul>
+<div id="bingo-content" style="--size: 3"></div>

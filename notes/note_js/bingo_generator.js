@@ -8,6 +8,7 @@
     const bingoTitle = $("#bingo-title");
     const bingoSubtitle = $("#bingo-subtitle");
     const bingoContent = $("#bingo-content");
+    const bingoReset = $("#bingo-reset");
     const bingoSave = $("#bingo-save");
     const bingoImport = $("#bingo-import");
     const bingoSaves = $("#bingo-saves");
@@ -19,6 +20,17 @@
     bingoSubtitle.addEventListener("keydown", handleKey);
     bingoContent.addEventListener("keydown", handleKey);
 
+    bingoReset.addEventListener("click", () => {
+        bingoTitle.textContent = "Title";
+        bingoSubtitle.textContent = "Subtitle";
+        sizeSlider.value = 3;
+        sizeInput.value = 3;
+        updateGrid();
+        let i = 1;
+        for (const cell of bingoContent.children) {
+            cell.textContent = `Item ${i++}`;
+        }
+    });
     bingoSave.addEventListener("click", () => {
         save();
         renderSaves();
