@@ -1,4 +1,4 @@
-const version = "1725673848";
+const version = "1725850895";
 const note = "note";
 const other = "other";
 const inVersion = ["js", "css", "fonts"];
@@ -109,6 +109,11 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("fetch", (event) => {
     if (event.request.url.startsWith(base)) { // Only cache resources under my website
+        // Skip non-GET requests
+        if (event.request.method !== "GET") {
+            console.debug(`Skip processing ${event.request.method} request to ${event.request.url}`);
+            return;
+        }
         event.respondWith(
             cacheFirst({
                 request: event.request,
