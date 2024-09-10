@@ -1,4 +1,4 @@
-const version = "1725850895";
+const version = "1725971747";
 const note = "note";
 const other = "other";
 const inVersion = ["js", "css", "fonts"];
@@ -6,24 +6,24 @@ const base = location.origin + location.pathname.slice(0, -5); // remove last "s
 const note_url = base + "notes/";
 const expiration = 60 * 60 * 24; // 1 day
 
-const addResourcesToCache = async (resources, cahce_name) => {
+async function addResourcesToCache(resources, cahce_name) {
     const cache = await caches.open(cahce_name);
     await cache.addAll(resources);
 };
 
-const putInCache = async (request, response, cache_name) => {
+async function putInCache(request, response, cache_name) {
     const cache = await caches.open(cache_name);
     console.debug(`Put ${request.url} in ${cache_name}`);
     await cache.put(request, response);
 };
 
-const modHeader = (response, from) => {
+function modHeader(response, from) {
     const headers = new Headers(response.headers);
     headers.set("x-sw-from", from);
     return new Response(response.body, { headers });
 }
 
-const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
+async function cacheFirst({ request, preloadResponsePromise, fallbackUrl }) {
     let cache_name = other;
     const parts = request.url.slice(base.length).split("/");
     // Everything directly under base, `/js`, `/css` is in version cache; `/notes` is in note cache; else in other cache
@@ -83,7 +83,7 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
     }
 };
 
-const enableNavigationPreload = async () => {
+async function enableNavigationPreload() {
     await self?.registration?.navigationPreload?.enable();
 };
 
@@ -124,7 +124,7 @@ self.addEventListener("fetch", (event) => {
     }
 });
 
-const deleteOldCaches = async () => {
+async function deleteOldCaches() {
     const cacheKeepList = [version, other, note];
     const keyList = await caches.keys();
     const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));

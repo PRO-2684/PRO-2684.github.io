@@ -29,6 +29,19 @@
         margin-inline-start: 0.2em;
         margin-inline-end: 0.1em;
     }
+    &.preview {
+        --delay: 0.5s;
+        --height: 1em;
+        background: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+        /* background: linear-gradient(to right, var(--border-dim), var(--border-dim)); */
+        background-size: 0 var(--height);
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        transition: color var(--delay), background-size var(--delay);
+        &.preview-waiting:hover, &.preview-fetching {
+            background-size: 100% var(--height);
+        }
+    }
     &[href^="mailto:"]::after {
         content: url(./email-light.svg);
     }
