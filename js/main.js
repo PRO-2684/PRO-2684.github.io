@@ -167,23 +167,22 @@ const $$ = document.querySelectorAll.bind(document);
             el.classList.remove("attention");
         }, { once: true });
     }
-    function humanFileSize(bytes, si=false, dp=1) { // https://stackoverflow.com/a/14919494
+    function humanFileSize(bytes, si = false, dp = 1) { // https://stackoverflow.com/a/14919494
         const thresh = si ? 1000 : 1024;
         if (Math.abs(bytes) < thresh) {
-          return bytes + ' B';
+            return bytes + ' B';
         }
         const units = si
-          ? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
-          : ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
+            ? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+            : ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
         let u = -1;
-        const r = 10**dp;
+        const r = 10 ** dp;
         do {
-          bytes /= thresh;
-          ++u;
+            bytes /= thresh;
+            ++u;
         } while (Math.round(Math.abs(bytes) * r) / r >= thresh && u < units.length - 1);
         return bytes.toFixed(dp) + ' ' + units[u];
-      }
-
+    }
     async function onPreview(e) { // Show attachment size on transition end
         const el = e.target;
         const style = window.getComputedStyle(el);
@@ -279,7 +278,6 @@ const $$ = document.querySelectorAll.bind(document);
             link.innerText = '  '.repeat(nodes[i].tagName.slice(1) - 1) + nodes[i].textContent;
         }
     }
-
     function render(markdown) {
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
             _render(markdown);
