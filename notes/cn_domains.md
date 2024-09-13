@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2024-09-12
+> 🕗 最近更新时间：2024-09-13
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
@@ -15,7 +15,6 @@ description: 此文章收集了部分国内大学的中文域名
 | [中国石油大学(北京)](https://www.cup.edu.cn/) | [光速退学.com](http://光速退学.com) | <span title='网站正常重定向到 https://www.cup.edu.cn/'>🟢</span> | 🔴 |
 | [中国石油大学(北京)](https://www.cup.edu.cn/) | [真.世界地沟油大学.com](http://真.世界地沟油大学.com) | <span title='网站正常重定向到 https://www.cup.edu.cn/'>🟢</span> | 🔴 |
 | [中国石油大学(北京)](https://www.cup.edu.cn/) | [隔壁.光速退学.com](http://隔壁.光速退学.com) | <span title='网站正常重定向到 https://www.cup.edu.cn/'>🟢</span> | 🔴 |
-| [中国石油大学](https://www.upc.edu.cn/) | [世界地沟油大学.com](http://世界地沟油大学.com) | <span title='网站正常重定向到 https://www.upc.edu.cn/'>🟢</span> | 🔴 |
 | [中国科学技术大学](https://ustc.edu.cn/) | [玩原神玩的.com](https://玩原神玩的.com) | <span title='网站正常重定向到 https://ustc.edu.cn/'>🟢</span> | 🟢 |
 | [合肥工业大学](https://www.hfut.edu.cn/) | [世一大.com](https://世一大.com) | <span title='网站正常重定向到 https://www.hfut.edu.cn/'>🟢</span> | 🟢 |
 | [哈尔滨工业大学](http://www.hit.edu.cn/) | [提瓦特工业大学.com](http://提瓦特工业大学.com) | <span title='网站正常重定向到 http://www.hit.edu.cn/'>🟢</span> | 🔴 |
@@ -29,6 +28,7 @@ description: 此文章收集了部分国内大学的中文域名
 | [清华大学](https://www.tsinghua.edu.cn/) | [世界三流大学.com](https://世界三流大学.com) | <span title='网站正常重定向到 https://www.tsinghua.edu.cn/'>🟢</span> | 🟢 |
 | [西北工业大学](https://www.nwpu.edu.cn/) | [世界顶流大学.com](https://世界顶流大学.com) | <span title='网站正常重定向到 https://www.nwpu.edu.cn/'>🟢</span> | 🟢 |
 | [郑州轻工业大学欢迎您](https://www.zzuli.edu.cn/) | [河南原神大学.com](https://河南原神大学.com) | <span title='网站正常重定向到 https://www.zzuli.edu.cn/'>🟢</span> | 🟢 |
+| [长春理工大学](https://www.cust.edu.cn/) | [长春原神大学.com](https://长春原神大学.com) | <span title='网站正常重定向到 https://www.cust.edu.cn/'>🟢</span> | 🟢 |
 | [黄淮学院_官网](http://cms.huanghuai.edu.cn/) | [原神学院.com](https://原神学院.com) | <span title='网站正常重定向到 http://cms.huanghuai.edu.cn/'>🟢</span> | 🟢 |
 | 未知 | [www.原神大学.com](https://www.原神大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [世界一流高校.top](http://世界一流高校.top) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🔴 |
@@ -36,11 +36,12 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [双一流大学.com](https://双一流大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [宇宙一流大学.com](https://宇宙一流大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [西安原神大学.com](https://西安原神大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
-| 未知 | [世界末流大学.com](https://世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww38.世界末流大学.com/`'>🔴</span> | / |
+| 未知 | [世界末流大学.com](https://世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww25.世界末流大学.com/`'>🔴</span> | / |
 | 未知 | [中国第一大学.com](https://中国第一大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww25.中国第一大学.com/`'>🔴</span> | / |
 | 未知 | [原神启动.com](https://原神启动.com) | <span title='网站重定向到疑似垃圾网站 `https://zzz.mihoyo.com/`'>🔴</span> | / |
-| 未知 | [隔壁.世界末流大学.com](https://隔壁.世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww25.隔壁.世界末流大学.com/`'>🔴</span> | / |
+| 未知 | [隔壁.世界末流大学.com](https://隔壁.世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww38.隔壁.世界末流大学.com/`'>🔴</span> | / |
 | 未知 | [世界一流退学.com](http://世界一流退学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
+| 未知 | [世界地沟油大学.com](http://世界地沟油大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [东北原神大学.com](http://东北原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [中国原神大学.com](http://中国原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [北京原神大专.com](https://北京原神大专.com) | <span title='网站无法正常访问，状态码为 404'>🔴</span> | / |
@@ -51,7 +52,6 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [山西原神大学.com](http://山西原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [广东原神大学](http://广东原神大学) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [江西原神大学.com](http://江西原神大学.com) | <span title='未知异常 (Server disconnected)!!!'>🔴</span> | / |
-| 未知 | [长春原神大学.com](http://长春原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [黑龙江原神大学.com](https://黑龙江原神大学.com) | <span title='网站无法正常访问，状态码为 404'>🔴</span> | / |
 
 ## 补充
@@ -67,8 +67,8 @@ description: 此文章收集了部分国内大学的中文域名
 ## 统计信息
 
 - 本页面共收录 $42$ 个中文域名，其中 $19$ 个域名确认存活，$6$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：551.627134697 s
-- 根据模板生成上述表格：295.744 μs
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：271.366183321 s
+- 根据模板生成上述表格：408.825 μs
 
 ## 关于
 
