@@ -9,7 +9,7 @@ description: USTC 常用链接
 ## 🎓 学业
 
 - [USTC 不完全入学指南](https://ustcguide.gitbook.io/admission)
-- [教学日历](https://www.teach.ustc.edu.cn/category/calendar)
+- [教学日历](https://www.teach.ustc.edu.cn/calendar/?latest)
 - [教务系统](https://jw.ustc.edu.cn/)
 - [校图书馆](http://lib.ustc.edu.cn/)
 - [校图书馆检索系统](http://opac.lib.ustc.edu.cn/opac/search_adv.php#/index)
@@ -55,6 +55,7 @@ description: USTC 常用链接
 - [大屏课表](http://bigscreen.cmet.ustc.edu.cn/)
 - [校园班车运行时刻表](https://www.ustc.edu.cn/ggfw/xxcx.htm)
 - [校园班车查询系统](https://weixine.ustc.edu.cn/ustcqy/mobile/busTimetable)
+- [高新区班车查询系统](https://weixine.ustc.edu.cn/ustcqy/mobile/busTimetable/xyy)
 - [一卡通](https://ecard.ustc.edu.cn/)
 - [科大健康打卡](https://weixine.ustc.edu.cn/2020)
 - [统一身份认证系统](https://passport.ustc.edu.cn/login)
