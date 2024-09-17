@@ -32,11 +32,14 @@
         const inputEl = $("#input");
         const urlEl = $("#url");
         const ruleEl = $("#rule");
-        const corsEn = $("#cors-en");
-        const corsCn = $("#cors-cn");
         inputEl.removeAttribute("disabled");
         inputEl.removeAttribute("title");
         if (fetchEnabled) {
+            inputEl.placeholder = "https://b23.tv/SI6OEcv";
+            urlEl.placeholder = "https://www.bilibili.com/video/BV1GJ411x7h7/?p=1";
+            ruleEl.placeholder = "哔哩哔哩短链 by PRO-2684";
+            const corsEn = $("#cors-en");
+            const corsCn = $("#cors-cn");
             corsEn.textContent = "Enabled";
             corsEn.style.color = "green";
             corsCn.textContent = "已启用";
