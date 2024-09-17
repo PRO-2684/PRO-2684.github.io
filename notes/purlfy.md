@@ -16,9 +16,9 @@ This is a rule-based link purifier to remove tracking parameters from URLs. The 
 
 ## Usage / 使用
 
-Just paste the URL into the input box and hit enter. The cleaned URL will be displayed in the output box. Note that `redirect` mode rules has been disabled due to the limitation of the browser.
+Just paste the URL into the input box and hit enter. The cleaned URL will be displayed in the output box. Note that rules that require network requests has been disabled due to the limitation of the browser. You can install [CORS Helper](https://greasyfork.org/scripts/508769) and enable it on `https://pro-2684.github.io/*` to bypass this limit. CORS Helper status: <span id="cors-en">Not enabled</span>
 
-只需将 URL 粘贴到输入框中并按回车，清理后的 URL 将显示在输出框中。请注意，由于浏览器的限制，`redirect` 类型的规则被禁用。
+只需将 URL 粘贴到输入框中并按回车，清理后的 URL 将显示在输出框中。请注意，由于浏览器的限制，需要网络请求的规则被禁用。您可以安装 [跨域助手](https://greasyfork.org/scripts/508769) 并在 `https://pro-2684.github.io/*` 下启用来绕过此限制。跨域助手状态：<span id="cors-cn">未启用</span>
 
 - Input / 输入: <input autofocus placeholder="https://example.com/?utm_source=qq" id="input" disabled title="Loading rules..."></input>
 - Result / 结果: <input readonly placeholder="https://example.com/" id="url"></input>

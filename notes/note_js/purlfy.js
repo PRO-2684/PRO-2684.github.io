@@ -12,12 +12,17 @@
         document.head.appendChild(script);
     }
     async function main() {
+        const fetchEnabled = typeof GM_fetch === "function";
         const list = await (await fetch("https://cdn.jsdelivr.net/gh/PRO-2684/pURLfy-rules/list.json")).json();
         const promises = list.map(name => fetch(`https://cdn.jsdelivr.net/gh/PRO-2684/pURLfy-rules/${name}.json`).then(r => r.json()));
-        const purifier = new Purlfy({
-            fetchEnabled: false,
+        const config = {
+            fetchEnabled: fetchEnabled,
             lambdaEnabled: true,
-        });
+        };
+        if (fetchEnabled) {
+            config.fetch = GM_fetch;
+        }
+        const purifier = new Purlfy(config);
         purifier.addEventListener("statisticschange", e => {
             console.log("Statistics increment:", e.detail);
         });
@@ -27,8 +32,16 @@
         const inputEl = $("#input");
         const urlEl = $("#url");
         const ruleEl = $("#rule");
+        const corsEn = $("#cors-en");
+        const corsCn = $("#cors-cn");
         inputEl.removeAttribute("disabled");
         inputEl.removeAttribute("title");
+        if (fetchEnabled) {
+            corsEn.textContent = "Enabled";
+            corsEn.style.color = "green";
+            corsCn.textContent = "已启用";
+            corsCn.style.color = "green";
+        }
         // Trigger on enter
         inputEl.addEventListener("keydown", async (e) => {
             if (e.key === "Enter") {
