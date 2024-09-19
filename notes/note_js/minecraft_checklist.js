@@ -110,10 +110,28 @@
             const reader = new FileReader();
             reader.addEventListener("load", async function () {
                 const buffer = reader.result;
-                const nbt = await readNBT(buffer);
+                let nbt;
+                try {
+                    nbt = await readNBT(buffer);
+                } catch (err) {
+                    status.textContent = "NBT 解析失败";
+                    status.style.color = "red";
+                    log("Failed to parse NBT:", err);
+                    input.disabled = false;
+                    return;
+                }
                 input.disabled = true;
                 log("Raw NBT:", nbt);
-                const data = extractFromNBT(nbt, config);
+                let data;
+                try {
+                    data = extractFromNBT(nbt, config);
+                } catch (err) {
+                    status.textContent = "不支持的 NBT 格式";
+                    status.style.color = "red";
+                    log("Unsupported NBT format:", err);
+                    input.disabled = false;
+                    return;
+                }
                 log("Extracted data:", data);
                 jsonOutput.value = JSON.stringify(data, null, 2);
                 renderTable(data);
@@ -131,7 +149,7 @@
         }
     }
     /**
-     * Extract the data from the NBT data.
+     * Extract checklist data from the NBT data.
      * @param {Object} nbt The NBT data.
      * @param {Object} config The configuration.
      * @param {boolean} config.air Include air blocks.
@@ -139,7 +157,7 @@
      * @param {boolean} config.drops Include drop items.
      * @param {boolean} config.entityItems Include items from entity (inventory & armor).
      * @param {boolean} config.blockItems Include items inside block containers.
-     * @returns {Object} The extracted data.
+     * @returns {Object} The extracted checklist data.
      */
     function extractFromNBT(nbt, config) {
         const mapping = nbt.data.palette.map((item) => item.Name);
