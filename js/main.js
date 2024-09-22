@@ -59,7 +59,7 @@ const $$ = document.querySelectorAll.bind(document);
     };
     // Custom functions
     function getCurrentPage() {
-        const params = new URL(window.location.href).searchParams;
+        const params = new URLSearchParams(window.location.search);
         const result = params.get("page") ?? "index";
         return decodeURIComponent(result);
     }
@@ -436,7 +436,7 @@ const $$ = document.querySelectorAll.bind(document);
         }
     }
     // Service worker
-    const registerServiceWorker = async () => {
+    async function registerServiceWorker() {
         try {
             await navigator.serviceWorker.register("/sw.js", {
                 scope: "/",
@@ -451,6 +451,12 @@ const $$ = document.querySelectorAll.bind(document);
         console.log("Service workers are not supported in this environment.");
     }
 
+    const egg = String.fromCharCode(99, 105, 97, 108, 108, 111);
+    const eggFile = "./css/" + egg + String.fromCharCode(46, 112, 110, 103);
+    if (window.location.search.slice(1) === egg) {
+        console.log("Test egg");
+        $("link[rel='icon']").href = eggFile;
+    }
     // Initialize
     overlay.style.display = "none";
     overlay.style.opacity = "0";

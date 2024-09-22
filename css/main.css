@@ -33,7 +33,6 @@
         --delay: 0.5s;
         --height: 1em;
         background: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
-        /* background: linear-gradient(to right, var(--border-dim), var(--border-dim)); */
         background-size: 0 var(--height);
         background-position: 0 100%;
         background-repeat: no-repeat;
@@ -103,7 +102,7 @@ html {
     }
 
     .element-link::after {
-        background-image: url(./element-dark.svg);
+        content: url(./element-dark.svg);
     }
 
     html {
