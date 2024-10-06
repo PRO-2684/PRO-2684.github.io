@@ -1,6 +1,6 @@
 ---
 title: VSCode 内根据后缀名自动选择对应编译任务
-tags: [Technical, Latest]
+tags: [Technical]
 keywords: [VSC, VSCode, C, C++, gcc, g++, tasks.json]
 description: 通过配置 tasks.json，实现 VSCode 内根据后缀名自动选择对应编译任务。例如根据是 C 还是 C++ 文件，自动选择 gcc 还是 g++ 编译。
 ---

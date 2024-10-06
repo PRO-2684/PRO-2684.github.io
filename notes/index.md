@@ -13,11 +13,11 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
+[Visited Puzzle](@note/visited_puzzle)
+
 [Bingo Generator](@note/bingo_generator)
 
 [VSCode 调试时传递多个命令行参数](@note/vscode_debug_args)
-
-[VSCode 内根据后缀名自动选择对应编译任务](@note/vscode_c_cpp)
 
 [部分国内大学的中文域名收集](@note/cn_domains)
 
@@ -136,6 +136,8 @@ description: PRO 的个人博客索引
 [GitHub Images](@note/github_images)
 
 ## 🧪 实验室
+
+[Visited Puzzle](@note/visited_puzzle)
 
 [Bingo Generator](@note/bingo_generator)
 
