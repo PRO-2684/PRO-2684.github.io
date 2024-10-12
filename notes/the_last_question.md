@@ -9,7 +9,7 @@ description: 阿西莫夫的短篇小说《The Last Question》
 **Author**: Isaac Asimov
 
 ## Resources
-[Read the full version](@note/the_last_question_full)
+[Read the full version](/notes/the_last_question_full)
 [Interactive reading](https://tvararu.github.io/the-last-question/)
 
 ## Section
@@ -63,5 +63,5 @@ Then, just as the frightened technicians felt they could hold their breath no lo
 "No bet," whispered Lupov. They left hurriedly.  
 By next morning, the two, plagued with throbbing head and cottony mouth, had forgotten the incident.  
 
-[Continue reading...](@note/the_last_question_full#2)
+[Continue reading...](/notes/the_last_question_full#2)
 

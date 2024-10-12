@@ -8,7 +8,7 @@ description: USTC QQ / QQ 群汇总
 # USTC qqs
 > 信息来源于 [科大各类群汇总](https://docs.qq.com/sheet/DZHZ0b2lVZmFMenFw?tab=ntfitr), 更新可能不及时。
 > 最近更新: **2022.9.1**
-> 你可能也感兴趣: [USTC QQ 机器人](@note/USTC_qqbot)
+> 你可能也感兴趣: [USTC QQ 机器人](/notes/USTC_qqbot)
 
 ## 💵 交易
 | 群名               | 群号        | 群人数 |

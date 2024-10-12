@@ -9,7 +9,7 @@ description: 刘慈欣编写的《朝闻道》
 **作者**: 刘慈欣
 
 ## 下载
-[txt (49k)](@attachment/hearing%20the%20truth.txt)
+[txt (49k)](/attachments/hearing%20the%20truth.txt)
 
 ## 第1章 爱因斯坦赤道
 “有一句话我早就想对你们说，”丁仪对妻子和女儿说，“我心中的位置大部分都被物理学占据了，只是努力挤出了一个小角落给你们，对此我心里很痛苦，但也实在是没办法。”

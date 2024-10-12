@@ -16,7 +16,7 @@ Not documented.
 ### 3.24
 1. Switch from hash `#` navigation to pjax like navigation, which takes advantage of url query strings and `pushState` method.
 2. Display metadata.
-3. Convert Notable `@note/xxx` link to `?page=xxx`, remove their `target` and `rel` attributes, and add `onclick` function as below. In this way, if the user clicks the note link directly, `load` will be invoked instead of refreshing or openning a new tab, while right click and middle click works just as fine.
+3. Convert Notable `/notes/xxx` link to `?page=xxx`, remove their `target` and `rel` attributes, and add `onclick` function as below. In this way, if the user clicks the note link directly, `load` will be invoked instead of refreshing or openning a new tab, while right click and middle click works just as fine.
 
     ```javascript
     nodes[i].onclick = function (e) {

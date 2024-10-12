@@ -11,7 +11,7 @@ description: 刘慈欣编写的《诗云》
 
 ## 下载
 
-[txt (56k)](@attachment/cloud%20of%20poems.txt)
+[txt (56k)](/attachments/cloud%20of%20poems.txt)
 
 ## 引子
 

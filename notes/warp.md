@@ -13,7 +13,7 @@ Cloudflare 推出的 [Warp](https://blog.cloudflare.com/1111-warp-better-vpn-zh-
 
 首次连接 Warp+ 时，可能会遇到连接失败/一直连接的情况，如下图所示：
 
-![Connecting](@attachment/warp_connecting.png)
+![Connecting](/attachments/warp_connecting.png)
 
 这种情况很可能是由于网络环境，导致 Warp 无法连接到 Cloudflare 的服务器下载必要的配置文件，从而无法正常连接。那么我们可以考虑让 Warp 通过代理连接到 Cloudflare 的服务器下载配置文件，从而解决这个问题。
 
@@ -28,7 +28,7 @@ Cloudflare 推出的 [Warp](https://blog.cloudflare.com/1111-warp-better-vpn-zh-
 ### 方案一 - 电脑共享代理
 
 1. 电脑端 Clash 设置内打开 `局域网连接` / `Allow LAN` 或相同含义的选项，同时记下显示的端口号 `PORT`。此过程中 Windows 可能会弹出防火墙提示，选择允许即可。
-    ![图示](@attachment/warp_android_1_1.png)
+    ![图示](/attachments/warp_android_1_1.png)
 2. 在电脑上开启热点，手机连接热点；或者手机开启热点，电脑连接热点；或者手机电脑都连接同一个路由器。（使手机电脑在同一个局域网中，后用 WLAN_A 指代）
 3. 获取电脑在 WLAN_A 的 IP 地址 `IP`
 4. 手机设置 WLAN_A 的代理为手动，主机名填写 `IP`，端口填写 `PORT`，保存。

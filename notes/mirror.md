@@ -9,7 +9,7 @@ description: 刘慈欣编写的《镜子》
 **作者**: 刘慈欣
 
 ## 下载
-[txt (94k)](@attachment/mirror.txt)
+[txt (94k)](/attachments/mirror.txt)
 
 ## 第1章  追捕
 办公室中竖立着国旗和党旗，宽大的办公桌两旁有两个人。

@@ -7,6 +7,6 @@ description: 相同 md5 值的图片
 
 # Same hash
 下面两张图有相同的 md5 值。
-![a](@attachment/plane.jpg)
-![b](@attachment/ship.jpg)
+![a](/attachments/plane.jpg)
+![b](/attachments/ship.jpg)
 

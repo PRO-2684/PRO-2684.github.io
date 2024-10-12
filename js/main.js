@@ -212,8 +212,8 @@ const $$ = document.querySelectorAll.bind(document);
     }
     async function modifyLink(el) {
         const dst = el.attributes.href.value;
-        if (dst.startsWith("@note/")) {
-            const filename = dst.slice(6);
+        if (dst.startsWith("/notes/")) {
+            const filename = dst.slice(7);
             el.href = "?page=" + filename;
             el.removeAttribute("target");
             el.removeAttribute("rel");
@@ -223,9 +223,7 @@ const $$ = document.querySelectorAll.bind(document);
                 load(filename.split("#")[0]);
                 e.preventDefault();
             });
-        } else if (dst.startsWith("@attachment/")) {
-            const filename = dst.slice(12);
-            el.href = "./attachments/" + filename;
+        } else if (dst.startsWith("/attachments/")) {
             el.removeAttribute("target");
             el.removeAttribute("rel");
             el.classList.add("external-link", "preview", "preview-waiting");
@@ -233,7 +231,6 @@ const $$ = document.querySelectorAll.bind(document);
         } else if (dst.startsWith("@element/")) {
             const href = el.getAttribute("href");
             const sel = href.slice(9);
-            // node.href = "javascript:void(0)";
             el.removeAttribute("href");
             el.addEventListener("click", (e) => {
                 e.preventDefault();
@@ -246,9 +243,6 @@ const $$ = document.querySelectorAll.bind(document);
     }
     async function modifyImg(el) {
         const dst = el.attributes.src.value;
-        if (dst.startsWith('@attachment/')) {
-            el.src = './attachments/' + dst.slice(12);
-        }
         el.addEventListener("click", handleImgClick); // Click to open image in new tab
         el.style.cursor = 'pointer';
         el.title = 'Click to open in new tab';
@@ -333,7 +327,7 @@ const $$ = document.querySelectorAll.bind(document);
                     document.title = r.status.toString() + ' ' + r.statusText + " - PRO's blog";
                     main_article.innerHTML = '<p><font color="red">Failed to load "'
                         + name + '.md": <b>'
-                        + r.status.toString() + ' ' + r.statusText + '</b>.</font><br/>Maybe you want to <a href="@note/index">return to the main page</a>?</p><img src="./cat/'
+                        + r.status.toString() + ' ' + r.statusText + '</b>.</font><br/>Maybe you want to <a href="/notes/index">return to the main page</a>?</p><img src="./cat/'
                         + r.status.toString() + '.jpg"></img>';
                     modifyLinks();
                     NProgress.done();

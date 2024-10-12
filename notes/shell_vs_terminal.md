@@ -21,8 +21,8 @@ description: 本文简单介绍了 Shell 与 Terminal 的联系与区别，并�
 
 |      | conhost | wt |
 | ---- | ------- | -- |
-| cmd  | ![conhost.exe + cmd](@attachment/conhost_cmd.jpg) | ![Windows Terminal + cmd](@attachment/wt_cmd.jpg) |
-| pwsh | ![conhost.exe + PowerShell](@attachment/conhost_pwsh.jpg) | ![Windows Terminal + PowerShell](@attachment/wt_pwsh.jpg) |
+| cmd  | ![conhost.exe + cmd](/attachments/conhost_cmd.jpg) | ![Windows Terminal + cmd](/attachments/wt_cmd.jpg) |
+| pwsh | ![conhost.exe + PowerShell](/attachments/conhost_pwsh.jpg) | ![Windows Terminal + PowerShell](/attachments/wt_pwsh.jpg) |
 
 </details>
 

@@ -25,4 +25,4 @@ description: 如何查找科大老师邮箱 USTC
 
 ## 🐧 群聊询问
 
-可参照[USTC QQ号/群聊汇总](@note/USTC_qqs)。
+可参照[USTC QQ号/群聊汇总](/notes/USTC_qqs)。

@@ -6,4 +6,4 @@ description: Test
 scripts: true
 ---
 
-[手机 QQ 自动下载分析](@note/mqq_analyze) 的测试页面。
+[手机 QQ 自动下载分析](/notes/mqq_analyze) 的测试页面。

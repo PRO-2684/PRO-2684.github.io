@@ -14,49 +14,49 @@ scripts: false
 
 在 [Font Awesome](https://fontawesome.com/search) 中寻找想要的图标，并点开，例如 [这个图标](https://fontawesome.com/icons/image?f=classic&s=light)：
 
-![fa-1](@attachment/fa-1.jpg)
+![fa-1](/attachments/fa-1.jpg)
 
 ## 2. 下载字体
 
 打开开发者工具 - 网络，勾选“禁用缓存”，刷新界面，然后筛选出所有字体文件：
 
-![fa-2](@attachment/fa-2.jpg)
+![fa-2](/attachments/fa-2.jpg)
 
 根据代码框中的内容 `<i class="fa-light fa-image"></i>`，可以确定我们想要的是 `light` 变种，那么我们就可以搜索到所要的字体文件：
 
-![fa-3](@attachment/fa-3.jpg)
+![fa-3](/attachments/fa-3.jpg)
 
 右键 - 新标签页中打开即可下载到一个 `.woff2` 字体文件。同时，复制此图标对应的 Unicode 码 (`f03e`)：
 
-![fa-4](@attachment/fa-4.jpg)
+![fa-4](/attachments/fa-4.jpg)
 
 ## 3. 转换为 SVG 字体
 
 打开 [Woff2 to SVG 字体转换器](https://www.fontconverter.io/en/woff2-to-svg)，将刚才下载的 `.woff2` 字体导入，然后点击 "Convert to svg"，待其完成后点击 "Download converted font"：
 
-![fa-5](@attachment/fa-5.jpg)
+![fa-5](/attachments/fa-5.jpg)
 
 得到一个 `.zip` 压缩包，提取出压缩包内的 `.svg` 文件：
 
-![fa-6](@attachment/fa-6.jpg)
+![fa-6](/attachments/fa-6.jpg)
 
 ## 4. 导出单独的 SVG
 
 打开 [IcoMoon](https://icomoon.io/app) 网站，点击导航栏左侧 "Import Icons"，选择刚才提取的 `.svg` 文件，等待处理完成。可能会跳出提示框，选择 "No" 即可。处理完成后如图所示：
 
-![fa-7](@attachment/fa-7.jpg)
+![fa-7](/attachments/fa-7.jpg)
 
 在导航栏的搜索处输入 [第二步](#2-下载字体) 复制的 Unicode 码，稍等片刻即可看到想要的图标出现：
 
-![fa-8](@attachment/fa-8.jpg)
+![fa-8](/attachments/fa-8.jpg)
 
 点击以选中想要的图标，然后点击左下侧的 "Generate SVG & More"，将鼠标悬浮在想要的图标上：
 
-![fa-9](@attachment/fa-9.jpg)
+![fa-9](/attachments/fa-9.jpg)
 
 点击 "Get Code"，即可获得 SVG path：
 
-![fa-10](@attachment/fa-10.jpg)
+![fa-10](/attachments/fa-10.jpg)
 
 若想要导出一个单独的 SVG，将 "Symbol Definition(s)" 内的 `<symbol>` 标签替换成 `<svg>` 标签，移除 `<svg>` 的 `id` 属性，随后向 `<svg>` 添加属性 `xmlns="http://www.w3.org/2000/svg"` 即可。例如这个图标的 "Symbol Definition(s)" 为：
 
@@ -76,4 +76,4 @@ scripts: false
 
 效果图：
 
-![fa-11](@attachment/fa-11.jpg)
+![fa-11](/attachments/fa-11.jpg)

@@ -6,7 +6,7 @@ description: 此文介绍了如何阻止 Windows 11 Emoji 选择器中的 Tenor 
 ---
 # 阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索
 
-## 方案 1 - 阻止 `ТехtІnрutНоѕt.ехе` 联网
+## 方案 1 - 阻止程序联网
 
 > 🟢 已测试，有效。[Reference](https://l.opnxng.com/r/Windows11/comments/v5q1v6/how_to_disable_tenor_gif_search_in_emoji_picker/)
 
@@ -34,6 +34,8 @@ description: 此文介绍了如何阻止 Windows 11 Emoji 选择器中的 Tenor 
 
 ## 🖼️ 效果
 
-![1](@attachment/tenor_1.jpg)
+![1](/attachments/tenor_1.jpg)
 
-![2](@attachment/tenor_2.jpg)
+![2](/attachments/tenor_2.jpg)
+
+虽然说 Gif 是给干掉了，但是那个图标还在那里就很蛋疼。不知道有没有好办法把图标也干掉。

@@ -64,7 +64,7 @@ Edge 内置搜索引擎的 URL 包含了一些跟踪参数。Edge 并没有提�
 
 Let's take Bing as an example.
 
-![edge_search_1](@attachment/edge_search_1.jpg) ![edge_search_2](@attachment/edge_search_2.jpg) ![edge_search_3](@attachment/edge_search_3.jpg) ![edge_search_4](@attachment/edge_search_4.jpg)
+![edge_search_1](/attachments/edge_search_1.jpg) ![edge_search_2](/attachments/edge_search_2.jpg) ![edge_search_3](/attachments/edge_search_3.jpg) ![edge_search_4](/attachments/edge_search_4.jpg)
 
 </details>
 
@@ -81,7 +81,7 @@ If you don't like the "Rewrite with Copilot" feature in Edge, you can disable it
 
 M\$ doesn't include the word "Copilot" in the setting, making it hard to find. I think [Siegfried Beitl](https://answers.microsoft.com/en-us/profile/85ca1879-35d8-4e16-9709-9e80718f5f36) had a point:
 
-![edge_copilot_comment](@attachment/edge_copilot_comment.jpg)
+![edge_copilot_comment](/attachments/edge_copilot_comment.jpg)
 
 </details>
 
@@ -94,7 +94,7 @@ M\$ doesn't include the word "Copilot" in the setting, making it hard to find. I
 
 微软在设置中没有包含“Copilot”这个词，使得这个设置项很难找。我认为 [Siegfried Beitl](https://answers.microsoft.com/en-us/profile/85ca1879-35d8-4e16-9709-9e80718f5f36) 说得很对：
 
-![edge_copilot_comment](@attachment/edge_copilot_comment.jpg)
+![edge_copilot_comment](/attachments/edge_copilot_comment.jpg)
 
 </details>
 
@@ -124,7 +124,7 @@ M\$ doesn't include the word "Copilot" in the setting, making it hard to find. I
 
 <details><summary>Screenshots/截图</summary>
 
-![edge_canary_tm_1](@attachment/edge_canary_tm_1.jpg) ![edge_canary_tm_2](@attachment/edge_canary_tm_2.jpg) ![edge_canary_tm_3](@attachment/edge_canary_tm_3.png) ![edge_canary_tm_4](@attachment/edge_canary_tm_4.jpg)
+![edge_canary_tm_1](/attachments/edge_canary_tm_1.jpg) ![edge_canary_tm_2](/attachments/edge_canary_tm_2.jpg) ![edge_canary_tm_3](/attachments/edge_canary_tm_3.png) ![edge_canary_tm_4](/attachments/edge_canary_tm_4.jpg)
 
 </details>
 

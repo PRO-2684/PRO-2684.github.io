@@ -54,9 +54,9 @@ USTC 相关的脚本集：[USTC collection (greasyfork.org)](https://greasyfork.
 
 ### 截图
 
-![BB 作业状态检查](@attachment/bb.png)
+![BB 作业状态检查](/attachments/bb.png)
 
-![自定义收藏夹](@attachment/wvpn.jpg)
+![自定义收藏夹](/attachments/wvpn.jpg)
 
 ## FPGA-Plus
 

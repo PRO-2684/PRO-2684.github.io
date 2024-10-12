@@ -9,7 +9,7 @@ description: 阿西莫夫的银河帝国系列小说：基地、基地与帝国�
 **作者**: 阿西莫夫
 
 ## 资源
-[epub (20.2MB)](@attachment/Galactic_Empire.epub)
+[epub (20.2MB)](/attachments/Galactic_Empire.epub)
 
 ## 目录
 ### 银河帝国：基地（Foundation）

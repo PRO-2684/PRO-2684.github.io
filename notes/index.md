@@ -9,155 +9,155 @@ description: PRO 的个人博客索引
 
 欢迎来到我的个人博客! 😊
 
-[About me](@note/about) | [Blog manual](@note/blog_manual)
+[About me](/notes/about) | [Blog manual](/notes/blog_manual)
 
 ## 🔥 最近更新
 
-[阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索](windows_block_tenor.md)
+[阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索](/notes/windows_block_tenor)
 
-[Visited Puzzle](@note/visited_puzzle)
+[Visited Puzzle](/notes/visited_puzzle)
 
-[VSCode 调试时传递多个命令行参数](@note/vscode_debug_args)
+[VSCode 调试时传递多个命令行参数](/notes/vscode_debug_args)
 
-[部分国内大学的中文域名收集](@note/cn_domains)
+[部分国内大学的中文域名收集](/notes/cn_domains)
 
 ## 🛠️ 实用
 
-[Minecraft 材料清单生成器](@note/minecraft_checklist)
+[Minecraft 材料清单生成器](/notes/minecraft_checklist)
 
-[Edge Tips](@note/edge_tips)
+[Edge Tips](/notes/edge_tips)
 
-[QQ 一笔画红包发送助手](@note/qq_redpack)
+[QQ 一笔画红包发送助手](/notes/qq_redpack)
 
-[USTC 网址导航](@note/useful_links)
+[USTC 网址导航](/notes/useful_links)
 
-[USTC QQ号/群聊汇总](@note/USTC_qqs)
+[USTC QQ号/群聊汇总](/notes/USTC_qqs)
 
-[如何查找老师邮箱](@note/email)
+[如何查找老师邮箱](/notes/email)
 
-[pURLfy / 链接净化](@note/purlfy)
+[pURLfy / 链接净化](/notes/purlfy)
 
 ## 💻 技术
 
-[阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索](windows_block_tenor.md)
+[阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索](/notes/windows_block_tenor)
 
-[Warp 的首次配置](@note/warp)
+[Warp 的首次配置](/notes/warp)
 
-[VSCode 调试时传递多个命令行参数](@note/vscode_debug_args)
+[VSCode 调试时传递多个命令行参数](/notes/vscode_debug_args)
 
-[VSCode 内根据后缀名自动选择对应编译任务](@note/vscode_c_cpp)
+[VSCode 内根据后缀名自动选择对应编译任务](/notes/vscode_c_cpp)
 
-[Shell 与 Terminal 的联系与区别](@note/shell_vs_terminal)
+[Shell 与 Terminal 的联系与区别](/notes/shell_vs_terminal)
 
-[禁止 Discord 自动更新](@note/fuck_discord_update)
+[禁止 Discord 自动更新](/notes/fuck_discord_update)
 
-[部分国内大学的中文域名收集](@note/cn_domains)
+[部分国内大学的中文域名收集](/notes/cn_domains)
 
-[相同 hash 的图片](@note/same_hash)
+[相同 hash 的图片](/notes/same_hash)
 
-[Android 使用体验提升](@note/android)
+[Android 使用体验提升](/notes/android)
 
-[常用快捷键](@note/shortcuts)
+[常用快捷键](/notes/shortcuts)
 
 ### 🐍 Python
 
-[自搭建 qq 定时推送](@note/qq_push)
+[自搭建 qq 定时推送](/notes/qq_push)
 
-[USB QQ 机器人](@note/USTC_qqbot)
+[USB QQ 机器人](/notes/USTC_qqbot)
 
-[记一次电视剧批量下载](@note/meijuwo)
+[记一次电视剧批量下载](/notes/meijuwo)
 
 ### 🌐 Web
 
-[Font Awesome 图标导出为 SVG](@note/font_awesome)
+[Font Awesome 图标导出为 SVG](/notes/font_awesome)
 
-[手机 QQ 自动下载分析](@note/mqq_analyze)
+[手机 QQ 自动下载分析](/notes/mqq_analyze)
 
-[一些我写的油猴脚本](@note/tampermonkey)
+[一些我写的油猴脚本](/notes/tampermonkey)
 
-[Chromium 内置网址](@note/chromium_builtin_urls)
+[Chromium 内置网址](/notes/chromium_builtin_urls)
 
 ### 🚩 CTF
 
-[Hackergame 2022 个人题解（部分）](@note/hg2022)
+[Hackergame 2022 个人题解（部分）](/notes/hg2022)
 
-[Hackergame 2023 个人题解（部分）](@note/hg2023)
+[Hackergame 2023 个人题解（部分）](/notes/hg2023)
 
 ## 📖 电子书
 
-[The last question](@note/the_last_question)
+[The last question](/notes/the_last_question)
 
-[Harry Potter (全集, .epub)](@attachment/Harry_Potter_The_Complete_Collection.epub)
+[Harry Potter (全集, .epub)](/attachments/Harry_Potter_The_Complete_Collection.epub)
 
-[诗云](@note/cloud_of_poems)
+[诗云](/notes/cloud_of_poems)
 
-[朝闻道](@note/hearing_the_truth)
+[朝闻道](/notes/hearing_the_truth)
 
-[魔鬼积木](@note/juggles_of_the_devil)
+[魔鬼积木](/notes/juggles_of_the_devil)
 
-[镜子](@note/mirror)
+[镜子](/notes/mirror)
 
-[梦之海](@note/sea_of_dreams)
+[梦之海](/notes/sea_of_dreams)
 
-[欢乐颂](@note/the_ode_to_joy)
+[欢乐颂](/notes/the_ode_to_joy)
 
-[思想者](@note/the_thinker)
+[思想者](/notes/the_thinker)
 
-[银河帝国全套(15册)](@note/Galactic_Empire)
+[银河帝国全套(15册)](/notes/Galactic_Empire)
 
-[结绳记事](@note/knot)
+[结绳记事](/notes/knot)
 
-[寂静之城 (pdf)](@attachment/the_silence_city.pdf)
+[寂静之城 (pdf)](/attachments/the_silence_city.pdf)
 
 ## 🎓 学业
 
-[Survive USTC](@note/survive_ustc)
+[Survive USTC](/notes/survive_ustc)
 
-[百分制、五等级制、GPA 转换表](@note/score_to_gpa)
+[百分制、五等级制、GPA 转换表](/notes/score_to_gpa)
 
-[推免相关信息](@note/graduate_admisson)
+[推免相关信息](/notes/graduate_admisson)
 
 [课后习题答案汇总](https://mp.weixin.qq.com/s?__biz=MzI4MzQzNDE4Mw==&mid=2247548256&idx=1&sn=6977fdb586b040eb216068a4b04832d3)
 
-[电子技术基础 模拟部分 - 部分习题答案 (来源: 教材二维码)](@attachment/analog_ans.zip)
+[电子技术基础 模拟部分 - 部分习题答案 (来源: 教材二维码)](/attachments/analog_ans.zip)
 
-[计网教材答案 (英文书 7th Edition)](<@attachment/Solutions Manual for Computer Networking A TopDown Approach 7th Edition.pdf>)
+[计网教材答案 (英文书 7th Edition)](</attachments/Solutions Manual for Computer Networking A TopDown Approach 7th Edition.pdf>)
 
-[如何查找老师邮箱](@note/email)
+[如何查找老师邮箱](/notes/email)
 
-[科大学号格式及说明](@note/student_id)
+[科大学号格式及说明](/notes/student_id)
 
 ## 🧶 其他
 
-[博客时间线](@note/timeline)
+[博客时间线](/notes/timeline)
 
-[有、意思的命令](@note/interesting_commands)
+[有、意思的命令](/notes/interesting_commands)
 
-[Githeism](@note/githeism)
+[Githeism](/notes/githeism)
 
-[GitHub Images](@note/github_images)
+[GitHub Images](/notes/github_images)
 
 ## 🧪 实验室
 
-[Visited Puzzle](@note/visited_puzzle)
+[Visited Puzzle](/notes/visited_puzzle)
 
-[Bingo Generator](@note/bingo_generator)
+[Bingo Generator](/notes/bingo_generator)
 
-[Pangu](@note/pangu)
+[Pangu](/notes/pangu)
 
-[倒计时](@note/countdown)
+[倒计时](/notes/countdown)
 
-[katex 渲染测试](@note/katex)
+[katex 渲染测试](/notes/katex)
 
-[Lorem](@note/lorem)
+[Lorem](/notes/lorem)
 
-[markdown 测试](@note/test)
+[markdown 测试](/notes/test)
 
-[Detect Page Leaving / 切屏检测](@note/detect_page_leaving)
+[Detect Page Leaving / 切屏检测](/notes/detect_page_leaving)
 
-[Selection Indicator](@note/selection_indicator)
+[Selection Indicator](/notes/selection_indicator)
 
-[RTL Lab](@note/rtl_lab)
+[RTL Lab](/notes/rtl_lab)
 
 ## 🔗 友链
 

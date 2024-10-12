@@ -27,12 +27,12 @@ description: ICS 2023 助教维护的课程主页
 
 | 序号 | 链接                                                         | DDL        | 答案                             |
 | ---- | ------------------------------------------------------------ | ---------- | -------------------------------- |
-| Hw1  | [hw1.pdf](@attachment/hw1.pdf) or [hw1.zip](@attachment/hw1.zip) | 2023.9.28  | [ans1.pdf](@attachment/ans1.pdf) |
-| Hw2  | [hw2.pdf](@attachment/hw2.pdf) or [hw2.zip](@attachment/hw2.zip) | 2023.10.20 | [ans2.pdf](@attachment/ans2.pdf) |
-| Hw3  | [hw3.pdf](@attachment/hw3.pdf) or [hw3.zip](@attachment/hw3.zip) | 2023.10.27 | [ans3.pdf](@attachment/ans3.pdf) |
-| Hw4  | [hw4.pdf](@attachment/hw4.pdf) or [hw4.zip](@attachment/hw4.zip) | 2023.11.10 | [ans4.pdf](@attachment/ans4.pdf) |
-| Hw5  | [hw5.pdf](@attachment/hw5.pdf) or [hw5.zip](@attachment/hw5.zip) | 2023.12.04 | [ans5.pdf](@attachment/ans5.pdf) |
-| Hw6  | [hw6.pdf](@attachment/hw6.pdf) or [hw6.zip](@attachment/hw6.zip) | 2023.12.23 | [ans6.pdf](@attachment/ans6.pdf) |
+| Hw1  | [hw1.pdf](/attachments/hw1.pdf) or [hw1.zip](/attachments/hw1.zip) | 2023.9.28  | [ans1.pdf](/attachments/ans1.pdf) |
+| Hw2  | [hw2.pdf](/attachments/hw2.pdf) or [hw2.zip](/attachments/hw2.zip) | 2023.10.20 | [ans2.pdf](/attachments/ans2.pdf) |
+| Hw3  | [hw3.pdf](/attachments/hw3.pdf) or [hw3.zip](/attachments/hw3.zip) | 2023.10.27 | [ans3.pdf](/attachments/ans3.pdf) |
+| Hw4  | [hw4.pdf](/attachments/hw4.pdf) or [hw4.zip](/attachments/hw4.zip) | 2023.11.10 | [ans4.pdf](/attachments/ans4.pdf) |
+| Hw5  | [hw5.pdf](/attachments/hw5.pdf) or [hw5.zip](/attachments/hw5.zip) | 2023.12.04 | [ans5.pdf](/attachments/ans5.pdf) |
+| Hw6  | [hw6.pdf](/attachments/hw6.pdf) or [hw6.zip](/attachments/hw6.zip) | 2023.12.23 | [ans6.pdf](/attachments/ans6.pdf) |
 
 ### Hw1 补充说明
 
@@ -45,14 +45,14 @@ description: ICS 2023 助教维护的课程主页
 
 | 序号 | 链接                             | DDL       |
 | ---- | -------------------------------- | --------- |
-| Lab1 | [lab1.pdf](@attachment/lab1.pdf) | 2023.11.08 |
-| Lab2 | [lab2.pdf](@attachment/lab2.pdf) | 2023.11.22 |
-| Lab3 | [lab3.pdf](@attachment/lab3.pdf) | 2023.12.07 04:00 |
-| Lab4 | [lab4.zip](@attachment/lab4.zip) | 2023.12.17 04:00 |
-| Lab5 | [lab5.pdf](@attachment/lab5.pdf) | 2023.12.24 04:00 |
-| Lab6 | [lab6.pdf](@attachment/lab6.zip) | 2023.12.31 04:00 |
-| Lab7 | [lab7.pdf](@attachment/lab7.pdf) | 2024.01.13 04:00 |
-| Lab8 | [lab8.pdf](@attachment/lab8.zip) | 2024.01.13 04:00 |
+| Lab1 | [lab1.pdf](/attachments/lab1.pdf) | 2023.11.08 |
+| Lab2 | [lab2.pdf](/attachments/lab2.pdf) | 2023.11.22 |
+| Lab3 | [lab3.pdf](/attachments/lab3.pdf) | 2023.12.07 04:00 |
+| Lab4 | [lab4.zip](/attachments/lab4.zip) | 2023.12.17 04:00 |
+| Lab5 | [lab5.pdf](/attachments/lab5.pdf) | 2023.12.24 04:00 |
+| Lab6 | [lab6.pdf](/attachments/lab6.zip) | 2023.12.31 04:00 |
+| Lab7 | [lab7.pdf](/attachments/lab7.pdf) | 2024.01.13 04:00 |
+| Lab8 | [lab8.pdf](/attachments/lab8.zip) | 2024.01.13 04:00 |
 
 ### Lab7 修正
 

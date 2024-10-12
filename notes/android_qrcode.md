@@ -18,7 +18,7 @@ description: This note recommends some QRCode scanner apps for Android. 这篇�
 <details>
     <summary>参赛者一览</summary>
 
-![qrcode_all](@attachment/qrcode_all.png)
+![qrcode_all](/attachments/qrcode_all.png)
 
 </details>
 
@@ -39,7 +39,7 @@ description: This note recommends some QRCode scanner apps for Android. 这篇�
 <details>
     <summary>查看截图</summary>
 
-![qrcode_1_1](@attachment/qrcode_1_1.jpg) ![qrcode_1_2](@attachment/qrcode_1_2.jpg) ![qrcode_1_3](@attachment/qrcode_1_3.jpg)
+![qrcode_1_1](/attachments/qrcode_1_1.jpg) ![qrcode_1_2](/attachments/qrcode_1_2.jpg) ![qrcode_1_3](/attachments/qrcode_1_3.jpg)
 
 </details>
 
@@ -53,7 +53,7 @@ description: This note recommends some QRCode scanner apps for Android. 这篇�
 <details>
     <summary>查看截图</summary>
 
-![qrcode_2_1](@attachment/qrcode_2_1.jpg) ![qrcode_2_2](@attachment/qrcode_2_2.jpg) ![qrcode_2_3](@attachment/qrcode_2_3.jpg)
+![qrcode_2_1](/attachments/qrcode_2_1.jpg) ![qrcode_2_2](/attachments/qrcode_2_2.jpg) ![qrcode_2_3](/attachments/qrcode_2_3.jpg)
 
 </details>
 
@@ -67,7 +67,7 @@ description: This note recommends some QRCode scanner apps for Android. 这篇�
 <details>
     <summary>查看截图</summary>
 
-![qrcode_3_1](@attachment/qrcode_3_1.jpg) ![qrcode_3_2](@attachment/qrcode_3_2.jpg) ![qrcode_3_3](@attachment/qrcode_3_3.jpg)
+![qrcode_3_1](/attachments/qrcode_3_1.jpg) ![qrcode_3_2](/attachments/qrcode_3_2.jpg) ![qrcode_3_3](/attachments/qrcode_3_3.jpg)
 
 </details>
 
@@ -81,7 +81,7 @@ description: This note recommends some QRCode scanner apps for Android. 这篇�
 <details>
     <summary>查看截图</summary>
 
-![qrcode_4_1](@attachment/qrcode_4_1.jpg) ![qrcode_4_2](@attachment/qrcode_4_2.jpg) ![qrcode_4_3](@attachment/qrcode_4_3.jpg) ![qrcode_4_4](@attachment/qrcode_4_4.jpg) ![qrcode_4_5](@attachment/qrcode_4_5.jpg)
+![qrcode_4_1](/attachments/qrcode_4_1.jpg) ![qrcode_4_2](/attachments/qrcode_4_2.jpg) ![qrcode_4_3](/attachments/qrcode_4_3.jpg) ![qrcode_4_4](/attachments/qrcode_4_4.jpg) ![qrcode_4_5](/attachments/qrcode_4_5.jpg)
 
 </details>
 

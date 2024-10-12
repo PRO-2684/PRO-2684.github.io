@@ -7,7 +7,7 @@ description: USTC 生存指南
 
 # Survive USTC
 
-> 若有人愿意与我一起更新此文档，我将不胜感激。[联系方式 📞](@note/about)
+> 若有人愿意与我一起更新此文档，我将不胜感激。[联系方式 📞](/notes/about)
 
 ## 容易忽视的硬性要求
 

@@ -8,7 +8,7 @@ description: 一些有趣的命令
 # Interesting commands
 ## 🦜 Parrot dancing
 (bash/cmd) `curl parrot.live`
-![Parrot](@attachment/parrot.png)
+![Parrot](/attachments/parrot.png)
 
 ## 🐍 Zen of Python
 (any shell with python) `python -c "import this"`

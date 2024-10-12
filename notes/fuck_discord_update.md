@@ -100,6 +100,6 @@ description: 此文介绍了一种完全禁止 Discord 自动更新的方法
           });
         ```
 
-    - 样例文件可参考 [splashScreen_original.js](@attachment/splashScreen_original.js), [splashScreen_patched.js](@attachment/splashScreen_patched.js)
+    - 样例文件可参考 [splashScreen_original.js](/attachments/splashScreen_original.js), [splashScreen_patched.js](/attachments/splashScreen_patched.js)
 - 重新打包 `app.asar`，参考命令 `.\asar.exe p .\discord\ app.asar`
 - 新得到的 `app.asar` 覆盖 `Discord/app-<version>/resources/app.asar`

@@ -9,7 +9,7 @@ description: 刘慈欣编写的《欢乐颂》：音乐会、镜子、音乐家�
 **作者**: 刘慈欣
 
 ## 下载
-[txt (48k)](@attachment/the%20ode%20to%20joy.txt)
+[txt (48k)](/attachments/the%20ode%20to%20joy.txt)
 
 ## 第1章  音乐会
 为最后一届GA（GlobalAssociation）大会闭幕举行的音乐会是一场阴郁的音乐会。

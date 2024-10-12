@@ -16,7 +16,7 @@ scripts: true
 1. ordered 1
 2. ordered 2
 
-[note link](@note/timeline)
+[note link](/notes/timeline)
 [external link](https://developer.mozilla.org/)
 [secret note](./secret.html?message=test&password=test)
 
