@@ -1,6 +1,6 @@
 ---
 title: Bingo Generator
-tags: [Latest, Test]
+tags: [Test]
 keywords: [grid, generator, matrix, table, bingo, 九宫格, 宫格, 表格, 生成器, 宾果]
 description: Generate a bingo with custom size and content. 生成一个自定义大小和内容的宾果游戏。
 scripts: true

@@ -13,9 +13,9 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
-[Visited Puzzle](@note/visited_puzzle)
+[阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索](windows_block_tenor.md)
 
-[Bingo Generator](@note/bingo_generator)
+[Visited Puzzle](@note/visited_puzzle)
 
 [VSCode 调试时传递多个命令行参数](@note/vscode_debug_args)
 
@@ -38,6 +38,8 @@ description: PRO 的个人博客索引
 [pURLfy / 链接净化](@note/purlfy)
 
 ## 💻 技术
+
+[阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索](windows_block_tenor.md)
 
 [Warp 的首次配置](@note/warp)
 
