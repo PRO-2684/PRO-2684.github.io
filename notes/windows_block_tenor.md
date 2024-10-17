@@ -29,8 +29,37 @@ description: 此文介绍了如何阻止 Windows 11 Emoji 选择器中的 Tenor 
 
 - `g.tenor.com`
 - `media.tenor.com`
+- `inputsuggestions.msdxcdn.microsoft.com` (阻止搜索建议)
 
-*可能会在开代理时失效。*
+## 代理软件设置
+
+上述规则可能会在开代理时失效。若您正在使用 [Clash Nyanpasu](https://nyanpasu.elaina.moe/) 作为代理软件，则可以通过全局链在打开代理的情况下继续阻止相关域名。作者的示例配置文件如下：
+
+```yaml
+# Clash Nyanpasu Merge Template (YAML)
+# Documentation on https://nyanpasu.elaina.moe/
+# Set the default merge strategy to recursive merge.
+# Enable the old mode with the override__ prefix.
+# Use the filter__ prefix to filter lists (removing unwanted content).
+# All prefixes should support accessing maps or lists with a.b.c syntax.
+
+rule-providers:
+  reject:
+    type: http
+    behavior: classical
+    url: "https://github.com/ignaciocastro/a-dove-is-dumb/raw/refs/heads/main/clash.yaml"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+prepend__rules:
+- 'DOMAIN,g.tenor.com,REJECT'
+- 'DOMAIN,media.tenor.com,REJECT'
+- 'DOMAIN,inputsuggestions.msdxcdn.microsoft.com,REJECT'
+- 'DOMAIN,otheve.beacon.qq.com,REJECT'
+- 'DOMAIN,tpstelemetry.tencent.com,REJECT'
+- 'DOMAIN,h.trace.qq.com,REJECT'
+- 'DOMAIN,report.gamecenter.qq.com,REJECT'
+- 'RULE-SET,reject,REJECT'
+```
 
 ## 🖼️ 效果
 
