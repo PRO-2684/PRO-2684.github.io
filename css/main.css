@@ -308,6 +308,9 @@ ul {
         margin: 0;
         list-style: none;
         color: var(--quote-text);
+        > li {
+            height: 1.5em;
+        }
     }
     &#bookmarks {
         list-style-type: none;
@@ -353,6 +356,10 @@ a {
     &.outline-link {
         text-decoration: none;
         white-space: pre;
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &.button {
         transition-property: opacity, transform;
