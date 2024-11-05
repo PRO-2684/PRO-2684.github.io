@@ -157,6 +157,8 @@ description: PRO 的个人博客索引
 
 [Selection Indicator](/notes/selection_indicator)
 
+[CSS Test](/notes/css_test)
+
 [RTL Lab](/notes/rtl_lab)
 
 ## 🔗 友链
