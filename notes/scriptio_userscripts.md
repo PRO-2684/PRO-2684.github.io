@@ -1,5 +1,5 @@
 ---
-title: 🪄 Scriptio 用户脚本列表
+title: 📄 Scriptio 用户脚本列表
 tags: [Unlisted]
 keywords: [Scriptio, UserScripts, UserScript, JavaScript, JS, Tampermonkey, QQNT, 用户脚本]
 description: This page shows a collection of userscripts for Scriptio.
