@@ -1,6 +1,6 @@
 ---
 title: Visited Puzzle
-tags: [Test, Latest]
+tags: [Test]
 keywords: [game, test, visited]
 description: Making use of a little game to test if you have visited certain pages.
 scripts: true

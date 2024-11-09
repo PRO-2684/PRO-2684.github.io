@@ -15,7 +15,7 @@ description: PRO 的个人博客索引
 
 [阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索](/notes/windows_block_tenor)
 
-[Visited Puzzle](/notes/visited_puzzle)
+[Hackergame 2024 个人题解（部分）](/notes/hg2024)
 
 [VSCode 调试时传递多个命令行参数](/notes/vscode_debug_args)
 
@@ -82,6 +82,8 @@ description: PRO 的个人博客索引
 [Hackergame 2022 个人题解（部分）](/notes/hg2022)
 
 [Hackergame 2023 个人题解（部分）](/notes/hg2023)
+
+[Hackergame 2024 个人题解（部分）](/notes/hg2024)
 
 ## 📖 电子书
 
