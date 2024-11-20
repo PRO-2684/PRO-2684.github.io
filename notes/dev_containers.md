@@ -39,6 +39,11 @@ Now, you can make a directory named `tools` and create a script named `rebuild.s
 nohup ./tools/rebuild.sh &
 ```
 
+However, do note that:
+
+- The command above is environment-specific, and only used for demonstration purpose.
+- Previously generated images of dev containers won't be removed automatically, so you may want to remove them manually to save disk space.
+
 ### Inspect Build Process
 
 Simply run:
