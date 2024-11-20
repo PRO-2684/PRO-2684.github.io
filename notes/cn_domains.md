@@ -1,6 +1,6 @@
 ---
 title: 部分国内大学的中文域名
-tags: [Technical, Latest]
+tags: [Technical]
 keywords: [中文域名, 大学, 中科大, USTC, 中国科学技术大学, 世界一流退学, 世界一流大学]
 description: 此文章收集了部分国内大学的中文域名
 ---

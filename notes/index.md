@@ -13,13 +13,13 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
+[Dev Containers](/notes/dev_containers)
+
 [阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索](/notes/windows_block_tenor)
 
 [Hackergame 2024 个人题解（部分）](/notes/hg2024)
 
 [VSCode 调试时传递多个命令行参数](/notes/vscode_debug_args)
-
-[部分国内大学的中文域名收集](/notes/cn_domains)
 
 ## 🛠️ 实用
 
@@ -38,6 +38,8 @@ description: PRO 的个人博客索引
 [pURLfy / 链接净化](/notes/purlfy)
 
 ## 💻 技术
+
+[Dev Containers](/notes/dev_containers)
 
 [阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索](/notes/windows_block_tenor)
 
