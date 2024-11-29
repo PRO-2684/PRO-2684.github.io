@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2024-11-28
+> 🕗 最近更新时间：2024-11-29
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
@@ -26,7 +26,6 @@ description: 此文章收集了部分国内大学的中文域名
 | [郑州轻工业大学欢迎您](https://www.zzuli.edu.cn/) | [河南原神大学.com](https://河南原神大学.com) | <span title='网站正常重定向到 https://www.zzuli.edu.cn/'>🟢</span> | 🟢 |
 | [黄淮学院_官网](http://cms.huanghuai.edu.cn/) | [原神学院.com](https://原神学院.com) | <span title='网站正常重定向到 http://cms.huanghuai.edu.cn/'>🟢</span> | 🟢 |
 | 未知 | [www.原神大学.com](https://www.原神大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
-| 未知 | [世界一流高校.top](https://世界一流高校.top) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [双一流大学.com](https://双一流大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [宇宙一流大学.com](http://宇宙一流大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🔴 |
 | 未知 | [璃月皇家炮兵学院.online](https://璃月皇家炮兵学院.online) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
@@ -35,6 +34,7 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [原神启动.com](https://原神启动.com) | <span title='网站重定向到疑似垃圾网站 `https://zzz.mihoyo.com/`'>🔴</span> | / |
 | 未知 | [隔壁.世界末流大学.com](https://隔壁.世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww38.隔壁.世界末流大学.com/`'>🔴</span> | / |
 | 未知 | [世界一流退学.com](http://世界一流退学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
+| 未知 | [世界一流高校.top](http://世界一流高校.top) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [世界地沟油大学.com](https://世界地沟油大学.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
 | 未知 | [东北原神大学.com](http://东北原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [光速退学.com](https://光速退学.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
@@ -66,9 +66,9 @@ description: 此文章收集了部分国内大学的中文域名
 
 ## 统计信息
 
-- 本页面共收录 $42$ 个中文域名，其中 $14$ 个域名确认存活，$5$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：70.641803091 s
-- 根据模板生成上述表格：401.575 μs
+- 本页面共收录 $42$ 个中文域名，其中 $14$ 个域名确认存活，$4$ 个域名暂时无法确认。
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：62.648127611 s
+- 根据模板生成上述表格：443.33 μs
 
 ## 关于
 
