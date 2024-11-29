@@ -49,6 +49,8 @@ description: PRO 的个人博客索引
 
 [VSCode 内根据后缀名自动选择对应编译任务](/notes/vscode_c_cpp)
 
+[VSCode URI Schemes](/notes/vscode_uri_schemes)
+
 [Shell 与 Terminal 的联系与区别](/notes/shell_vs_terminal)
 
 [禁止 Discord 自动更新](/notes/fuck_discord_update)
