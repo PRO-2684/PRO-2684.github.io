@@ -57,3 +57,5 @@ Nasty test cases:
 ```
 
 <button id="vibrate">Vibrate</button> (Only on supported devices)
+
+<p id="secret" hidden="until-found">You won't see this until explicitly found it using search.</p>
