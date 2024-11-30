@@ -63,6 +63,13 @@ const $$ = document.querySelectorAll.bind(document);
         const result = params.get("page") ?? "index";
         return decodeURIComponent(result);
     }
+    function searchParamsForPage(page) {
+        // Keep other params, but remove hash
+        const params = new URLSearchParams(window.location.search);
+        params.set("page", page);
+        // history.pushState(null, null, "?" + params.toString());
+        return "?" + params.toString();
+    }
     function setFrom(from) {
         const attr = from_trans[from];
         from_span.style.color = attr.color;
@@ -139,10 +146,10 @@ const $$ = document.querySelectorAll.bind(document);
                     tags.forEach(tag_name => {
                         const new_tag = tag_container.appendChild(document.createElement('a'));
                         new_tag.classList.add('tag');
-                        new_tag.href = '?page=index#' + tag_trans[tag_name];
+                        new_tag.href = `${searchParamsForPage("index")}#${tag_trans[tag_name]}`;
                         new_tag.addEventListener("click", (e) => {
                             if (hasModifier(e)) return;
-                            history.pushState(null, null, '?page=index#' + tag_trans[tag_name]);
+                            history.pushState(null, null, `${searchParamsForPage("index")}#${tag_trans[tag_name]}`);
                             load('index');
                             e.preventDefault();
                         });
@@ -214,12 +221,12 @@ const $$ = document.querySelectorAll.bind(document);
         const dst = el.attributes.href.value;
         if (dst.startsWith("/notes/")) {
             const filename = dst.slice(7);
-            el.href = "?page=" + filename;
+            el.href = searchParamsForPage(filename);
             el.removeAttribute("target");
             el.removeAttribute("rel");
             el.addEventListener("click", (e) => {
                 if (hasModifier(e)) return;
-                history.pushState(null, null, "?page=" + filename);
+                history.pushState(null, null, searchParamsForPage(filename));
                 load(filename.split("#")[0]);
                 e.preventDefault();
             });
@@ -384,10 +391,10 @@ const $$ = document.querySelectorAll.bind(document);
         bookmark_element.innerHTML = "";
         for (let i = 0; i < bookmarks.length; i++) {
             const [link_1, link_2] = addEntry(bookmarks[i], "-", "Delete this bookmark.");
-            link_1.href = "?page=" + bookmarks[i];
+            link_1.href = searchParamsForPage(bookmarks[i]);
             link_1.addEventListener("click", (e) => {
                 if (hasModifier(e)) return;
-                history.pushState(null, null, '?page=' + bookmarks[i]);
+                history.pushState(null, null, searchParamsForPage(bookmarks[i]));
                 load(bookmarks[i].split('#')[0]);
                 e.preventDefault();
             });
@@ -447,14 +454,14 @@ const $$ = document.querySelectorAll.bind(document);
 
     const egg = String.fromCharCode(99, 105, 97, 108, 108, 111);
     const eggFile = "./css/" + egg + String.fromCharCode(46, 112, 110, 103);
-    if (window.location.search.slice(1) === egg) {
+    if (window.location.search.includes(egg)) {
         console.log("Test egg");
         $("link[rel='icon']").href = eggFile;
     }
     // Initialize
     overlay.style.display = "none";
     overlay.style.opacity = "0";
-    history.replaceState(null, null, "?page=" + current_page);
+    history.replaceState(null, null, searchParamsForPage(current_page));
     load(current_page);
     window.addEventListener("popstate", onPopState);
     window.addEventListener("load", NProgress.done);
