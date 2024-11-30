@@ -12,7 +12,7 @@ You're being redirected to [`None`](#). If nothing happens, click the link.
 
 ## About
 
-This is a page that allows you to redirect to another URL, useful for scenarios where only `http://` or `https://` URLs are allowed. Simply pass the URL-encoded `url` parameter to this page, and you will be redirected to the specified URL. Or you can use the form below to quickly make your redirect link (will be copied to your clipboard and displayed below).
+This is a page that allows you to redirect to another URL, useful for scenarios where only `http://` or `https://` URLs are allowed. Simply pass the URL-encoded `url` parameter to this page, and you will be redirected to the specified URL. Or, you can use the form below to quickly make your redirect link (which will be copied to your clipboard and displayed below).
 
 ## Redirect Form
 
