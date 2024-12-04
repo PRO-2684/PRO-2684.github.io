@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2024-12-03
+> 🕗 最近更新时间：2024-12-04
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
@@ -28,8 +28,9 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [www.原神大学.com](https://www.原神大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [双一流大学.com](https://双一流大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [宇宙一流大学.com](http://宇宙一流大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🔴 |
+| 未知 | [璃月皇家炮兵学院.online](https://璃月皇家炮兵学院.online) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [世界末流大学.com](https://世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww38.世界末流大学.com/`'>🔴</span> | / |
-| 未知 | [中国第一大学.com](http://中国第一大学.com) | <span title='网站重定向到疑似垃圾网站 `http://www.qfind.net/`'>🔴</span> | / |
+| 未知 | [中国第一大学.com](http://中国第一大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww25.中国第一大学.com/`'>🔴</span> | / |
 | 未知 | [原神启动.com](https://原神启动.com) | <span title='网站重定向到疑似垃圾网站 `https://zzz.mihoyo.com/`'>🔴</span> | / |
 | 未知 | [隔壁.世界末流大学.com](https://隔壁.世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww38.隔壁.世界末流大学.com/`'>🔴</span> | / |
 | 未知 | [世界一流退学.com](http://世界一流退学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
@@ -47,7 +48,6 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [山西原神大学.com](http://山西原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [广东原神大学](http://广东原神大学) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [江西原神大学.com](http://江西原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
-| 未知 | [璃月皇家炮兵学院.online](http://璃月皇家炮兵学院.online) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [真.世界地沟油大学.com](https://真.世界地沟油大学.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
 | 未知 | [西安原神大学.com](http://西安原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [长春原神大学.com](http://长春原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
@@ -66,9 +66,9 @@ description: 此文章收集了部分国内大学的中文域名
 
 ## 统计信息
 
-- 本页面共收录 $42$ 个中文域名，其中 $14$ 个域名确认存活，$3$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：67.987526555 s
-- 根据模板生成上述表格：322.921 μs
+- 本页面共收录 $42$ 个中文域名，其中 $14$ 个域名确认存活，$4$ 个域名暂时无法确认。
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：68.517911369 s
+- 根据模板生成上述表格：340.048 μs
 
 ## 关于
 
