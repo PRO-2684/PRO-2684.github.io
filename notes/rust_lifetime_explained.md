@@ -43,17 +43,11 @@ The function signature now tells Rust that **for all** lifetime `'a`, the functi
 
 Let's denote the return value of the function as $r$. Then, it can be formalized as:
 
-$$
-\forall a \in \text{Lifetime}, \\
-\text{lifetime}(x) \supseteq a \land \text{lifetime}(y) \supseteq a \\
-\Rightarrow \text{lifetime}(r) \supseteq a
-$$
+$$\forall a \in \text{Lifetime}, \\\\ \text{lifetime}(x) \supseteq a \land \text{lifetime}(y) \supseteq a \\\\ \Rightarrow \text{lifetime}(r) \supseteq a$$
 
 Which translates to:
 
-$$
-\text{lifetime}(r) \supseteq \min(\text{lifetime}(x), \text{lifetime}(y))
-$$
+$$\text{lifetime}(r) \supseteq \min(\text{lifetime}(x), \text{lifetime}(y))$$
 
 In plain English, the lifetime of the return value $r$ is at least as long as the smaller of the lifetimes of the values referred to by the function arguments. Whoa! We've reached the same conclusion as the Rust Book, but with a more formal explanation! We'll see how this formal explanation helps us understand [Lifetime Annotations in Struct Definitions](https://doc.rust-lang.org/stable/book/ch10-03-lifetime-syntax.html#lifetime-annotations-in-struct-definitions) more clearly.
 
@@ -69,17 +63,11 @@ struct ImportantExcerpt<'a> {
 
 Here, the Rust Book doesn't care to explain why "This annotation means" blah blah. However, I think not. For simplicity, let's denote an instance of `ImportantExcerpt` as $i$, and its field `part` as $p$. Then, it can be formalized as:
 
-$$
-\forall a \in \text{Lifetime}, \\
-\text{lifetime}(i) \supseteq a \\
-\Rightarrow \text{lifetime}(p) \supseteq a
-$$
+$$\forall a \in \text{Lifetime}, \\\\ \text{lifetime}(i) \supseteq a \\\\ \Rightarrow \text{lifetime}(p) \supseteq a$$
 
 Note that here, we placed $\text{lifetime}(i)$ in the condition. You can think of it as a "return value" returned by a call to `ImportantExcerpt`. In JavaScript terms, the instance $i$ is returned by a call to the constructor function `ImportantExcerpt`, with argument `part` set to $p$. In this way, this example also follows the same pattern as the previous one. We can simplify the above equation as:
 
-$$
-\text{lifetime}(p) \supseteq \text{lifetime}(i)
-$$
+$$\text{lifetime}(p) \supseteq \text{lifetime}(i)$$
 
 In plain English, the lifetime of the field `part` is at least as long as the lifetime of the instance of `ImportantExcerpt`. Again, we've reached the same conclusion as the Rust Book.
 
