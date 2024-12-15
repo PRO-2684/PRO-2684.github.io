@@ -29,6 +29,7 @@ const $$ = document.querySelectorAll.bind(document);
         Useful: "实用",
         Technical: "技术",
         Python: "python",
+        Rust: "rust",
         Web: "web",
         Ebook: "电子书",
         Academic: "学业",
