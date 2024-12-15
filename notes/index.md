@@ -71,6 +71,10 @@ description: PRO 的个人博客索引
 
 [记一次电视剧批量下载](/notes/meijuwo)
 
+### 🦀 Rust
+
+[Rust Lifetime Explained](/notes/rust_lifetime_explained)
+
 ### 🌐 Web
 
 [Font Awesome 图标导出为 SVG](/notes/font_awesome)
