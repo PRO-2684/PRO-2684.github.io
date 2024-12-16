@@ -13,9 +13,9 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
-[Dev Containers](/notes/dev_containers)
+[Rust Lifetime Explained](/notes/rust_lifetime_explained)
 
-[阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索](/notes/windows_block_tenor)
+[感觉不如汇编](/notes/not_as_good_as_asm)
 
 [Hackergame 2024 个人题解（部分）](/notes/hg2024)
 
@@ -138,6 +138,8 @@ description: PRO 的个人博客索引
 [科大学号格式及说明](/notes/student_id)
 
 ## 🧶 其他
+
+[感觉不如汇编](/notes/not_as_good_as_asm)
 
 [博客时间线](/notes/timeline)
 
