@@ -52,7 +52,7 @@ checkboxes: true
     }
     @font-face {
         font-family: "Minecraft";
-        src: local("Minecraft"), local("Minecraft AE Pixel"), local("Monocraft"), url("../fonts/Monocraft.ttf");
+        src: local("Minecraft"), local("Minecraft AE Pixel"), local("Monocraft"), url("../css/fonts/Monocraft.ttf");
     }
 </style>
 
