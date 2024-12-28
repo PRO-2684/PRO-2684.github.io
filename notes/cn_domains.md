@@ -7,13 +7,12 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2024-12-27
+> 🕗 最近更新时间：2024-12-28
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
 | [中国海洋大学](https://www.ouc.edu.cn/) | [中国op大学.com](https://中国op大学.com) | <span title='网站正常重定向到 https://www.ouc.edu.cn/'>🟢</span> | 🟢 |
 | [中国科学技术大学](https://ustc.edu.cn/) | [玩原神玩的.com](https://玩原神玩的.com) | <span title='网站正常重定向到 https://ustc.edu.cn/'>🟢</span> | 🟢 |
-| [南通大学](https://www.ntu.edu.cn/) | [中国原神大学.com](https://中国原神大学.com) | <span title='网站正常重定向到 https://www.ntu.edu.cn/'>🟢</span> | 🟢 |
 | [合肥工业大学](https://www.hfut.edu.cn/) | [世一大.com](https://世一大.com) | <span title='网站正常重定向到 https://www.hfut.edu.cn/'>🟢</span> | 🟢 |
 | [哈尔滨工业大学](http://www.hit.edu.cn/) | [提瓦特工业大学.com](http://提瓦特工业大学.com) | <span title='网站正常重定向到 http://www.hit.edu.cn/'>🟢</span> | 🔴 |
 | [山东大学 SHANDONG UNIVERSITY](https://www.sdu.edu.cn/) | [国立原神大学.com](http://国立原神大学.com) | <span title='网站正常重定向到 https://www.sdu.edu.cn/'>🟢</span> | 🔴 |
@@ -22,6 +21,7 @@ description: 此文章收集了部分国内大学的中文域名
 | [广西大学](https://www.gxu.edu.cn/) | [世界超一流大学.com](https://世界超一流大学.com) | <span title='网站正常重定向到 https://www.gxu.edu.cn/'>🟢</span> | 🟢 |
 | [浙江大学](https://www.zju.edu.cn/) | [世界末流网吧.com](http://世界末流网吧.com) | <span title='网站正常重定向到 https://www.zju.edu.cn/'>🟢</span> | 🔴 |
 | [清华大学](https://www.tsinghua.edu.cn/) | [世界三流大学.com](https://世界三流大学.com) | <span title='网站正常重定向到 https://www.tsinghua.edu.cn/'>🟢</span> | 🟢 |
+| [清华大学](https://www.tsinghua.edu.cn/) | [中国原神大学.com](https://中国原神大学.com) | <span title='网站正常重定向到 https://www.tsinghua.edu.cn/'>🟢</span> | 🟢 |
 | [西北工业大学](https://www.nwpu.edu.cn/) | [世界顶流大学.com](https://世界顶流大学.com) | <span title='网站正常重定向到 https://www.nwpu.edu.cn/'>🟢</span> | 🟢 |
 | [郑州轻工业大学欢迎您](https://www.zzuli.edu.cn/) | [河南原神大学.com](https://河南原神大学.com) | <span title='网站正常重定向到 https://www.zzuli.edu.cn/'>🟢</span> | 🟢 |
 | [黄淮学院_官网](http://cms.huanghuai.edu.cn/) | [原神学院.com](https://原神学院.com) | <span title='网站正常重定向到 http://cms.huanghuai.edu.cn/'>🟢</span> | 🟢 |
@@ -67,8 +67,8 @@ description: 此文章收集了部分国内大学的中文域名
 ## 统计信息
 
 - 本页面共收录 $42$ 个中文域名，其中 $14$ 个域名确认存活，$3$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：31.04592402 s
-- 根据模板生成上述表格：258.672 μs
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：30.942651789 s
+- 根据模板生成上述表格：241.271 μs
 
 ## 关于
 
