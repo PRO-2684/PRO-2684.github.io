@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2025-01-14
+> 🕗 最近更新时间：2025-01-15
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
@@ -33,7 +33,7 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [隔壁.世界末流大学.com](https://隔壁.世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww38.隔壁.世界末流大学.com/`'>🔴</span> | / |
 | 未知 | [世界一流退学.com](http://世界一流退学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [世界一流高校.top](http://世界一流高校.top) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
-| 未知 | [世界三流大学.com](http://世界三流大学.com) | <span title='网站无法正常访问，状态码为 502'>🔴</span> | / |
+| 未知 | [世界三流大学.com](http://世界三流大学.com) | <span title='未知异常 (Server disconnected)!!!'>🔴</span> | / |
 | 未知 | [世界地沟油大学.com](https://世界地沟油大学.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
 | 未知 | [东北原神大学.com](http://东北原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [光速退学.com](https://光速退学.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
@@ -67,8 +67,8 @@ description: 此文章收集了部分国内大学的中文域名
 ## 统计信息
 
 - 本页面共收录 $42$ 个中文域名，其中 $13$ 个域名确认存活，$3$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：30.798896758 s
-- 根据模板生成上述表格：269.07 μs
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：30.448501398 s
+- 根据模板生成上述表格：263.634 μs
 
 ## 关于
 
