@@ -9,7 +9,7 @@ description: 关于 PRO
 
 [![](https://img.shields.io/badge/Crazy%20Thur.-V%20me%2050-red?logo=kfc)](http://home.ustc.edu.cn/~pro/images/out/appreciate_wechat.jpg)
 
-一只普普通通的大三🐶。
+一只普普通通的大四🐶。
 <img align="right" src="http://q2.qlogo.cn/headimg_dl?dst_uin=364105900&spec=100" alt="头像" style="width: 20%;">
 
 ## 😊 喜欢的事
