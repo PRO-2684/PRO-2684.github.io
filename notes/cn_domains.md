@@ -7,11 +7,10 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2025-01-23
+> 🕗 最近更新时间：2025-01-24
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
-| [中国海洋大学](https://www.ouc.edu.cn/) | [中国op大学.com](https://中国op大学.com) | <span title='网站正常重定向到 https://www.ouc.edu.cn/'>🟢</span> | 🟢 |
 | [中国科学技术大学](https://ustc.edu.cn/) | [玩原神玩的.com](https://玩原神玩的.com) | <span title='网站正常重定向到 https://ustc.edu.cn/'>🟢</span> | 🟢 |
 | [合肥工业大学](https://www.hfut.edu.cn/) | [世一大.com](https://世一大.com) | <span title='网站正常重定向到 https://www.hfut.edu.cn/'>🟢</span> | 🟢 |
 | [哈尔滨工业大学](http://www.hit.edu.cn/) | [提瓦特工业大学.com](http://提瓦特工业大学.com) | <span title='网站正常重定向到 http://www.hit.edu.cn/'>🟢</span> | 🔴 |
@@ -37,6 +36,7 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [世界三流大学.com](http://世界三流大学.com) | <span title='未知异常 (Server disconnected)!!!'>🔴</span> | / |
 | 未知 | [世界地沟油大学.com](https://世界地沟油大学.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
 | 未知 | [东北原神大学.com](http://东北原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
+| 未知 | [中国op大学.com](https://中国op大学.com) | <span title='网站无法正常访问，状态码为 403'>🔴</span> | / |
 | 未知 | [光速退学.com](https://光速退学.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
 | 未知 | [北京原神大专.com](http://北京原神大专.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [南京原神大学.cn](http://南京原神大学.cn) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
@@ -66,9 +66,9 @@ description: 此文章收集了部分国内大学的中文域名
 
 ## 统计信息
 
-- 本页面共收录 $42$ 个中文域名，其中 $14$ 个域名确认存活，$3$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：30.428614026 s
-- 根据模板生成上述表格：233.098 μs
+- 本页面共收录 $42$ 个中文域名，其中 $13$ 个域名确认存活，$3$ 个域名暂时无法确认。
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：31.025579568 s
+- 根据模板生成上述表格：249.858 μs
 
 ## 关于
 
