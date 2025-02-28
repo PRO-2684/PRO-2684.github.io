@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2025-02-27
+> 🕗 最近更新时间：2025-02-28
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
@@ -23,7 +23,6 @@ description: 此文章收集了部分国内大学的中文域名
 | [浙江大学](https://www.zju.edu.cn/) | [中国原神大学.com](https://中国原神大学.com) | <span title='网站正常重定向到 https://www.zju.edu.cn/'>🟢</span> | 🟢 |
 | [西北工业大学](https://www.nwpu.edu.cn/) | [世界顶流大学.com](https://世界顶流大学.com) | <span title='网站正常重定向到 https://www.nwpu.edu.cn/'>🟢</span> | 🟢 |
 | [郑州轻工业大学欢迎您](https://www.zzuli.edu.cn/) | [河南原神大学.com](https://河南原神大学.com) | <span title='网站正常重定向到 https://www.zzuli.edu.cn/'>🟢</span> | 🟢 |
-| [黄淮学院_官网](http://cms.huanghuai.edu.cn/) | [原神学院.com](https://原神学院.com) | <span title='网站正常重定向到 http://cms.huanghuai.edu.cn/'>🟢</span> | 🟢 |
 | 未知 | [www.原神大学.com](https://www.原神大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [双一流大学.com](https://双一流大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [宇宙一流大学.com](http://宇宙一流大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🔴 |
@@ -41,6 +40,7 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [南京原神大学.cn](http://南京原神大学.cn) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [南京原神大学.com](http://南京原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神大学.love](http://原神大学.love) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
+| 未知 | [原神学院.com](https://原神学院.com) | <span title='网站无法正常访问，状态码为 502'>🔴</span> | / |
 | 未知 | [原神怎么你了.com](http://原神怎么你了.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神理工大学.com](http://原神理工大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神管理大学.com](http://原神管理大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
@@ -66,9 +66,9 @@ description: 此文章收集了部分国内大学的中文域名
 
 ## 统计信息
 
-- 本页面共收录 $42$ 个中文域名，其中 $13$ 个域名确认存活，$3$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：72.311828792 s
-- 根据模板生成上述表格：346.555 μs
+- 本页面共收录 $42$ 个中文域名，其中 $12$ 个域名确认存活，$3$ 个域名暂时无法确认。
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：62.422528044 s
+- 根据模板生成上述表格：318.208 μs
 
 ## 关于
 
