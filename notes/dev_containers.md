@@ -35,10 +35,12 @@ description: 此文章提供了一些技巧来提升 Visual Studio Code 中开�
 /home/[user]/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/node /home/[user]/.vscode-remote-containers/dist/dev-containers-cli-0.388.0/dist/spec-node/devContainersSpecCLI.js up --container-session-data-folder /tmp/devcontainers-71e153df-e6c9-4bed-bf46-1d62da4b591c1732006861874 --workspace-folder /home/[user]/[folder] --workspace-mount-consistency cached --gpu-availability detect --id-label devcontainer.local_folder=/home/[user]/[folder] --id-label devcontainer.config_file=/home/[user]/[folder]/.devcontainer/devcontainer.json --log-level debug --log-format json --config /home/[user]/[folder]/.devcontainer/devcontainer.json --default-user-env-probe loginInteractiveShell --mount type=volume,source=vscode,target=/vscode,external=true --skip-post-create --update-remote-user-uid-default on --mount-workspace-git-root --include-configuration --include-merged-configuration
 ```
 
-现在，你可以创建一个名为 `tools` 的目录，并将上述命令保存在它下面的 `rebuild.sh`。然后，你可以像这样在后台运行这个脚本，这将保持构建工作的运行，直到它完成或失败：
+主要结构为 `.../node .../devContainersSpecCLI.js up ...`。为了便于查看日志，我们将 `--log-format json` 替换为 `--log-format text`。若 `postCreateCommand` 耗时较长，可以移除 `--skip-post-create` 参数。
+
+现在，你可以将修改后的命令保存在 `rebuild.sh`。然后，你可以像这样在后台运行这个脚本，这将保持构建工作的运行，直到它完成或失败：
 
 ```bash
-nohup ./tools/rebuild.sh &
+nohup ./rebuild.sh &
 ```
 
 然而，需要注意的是：
@@ -56,23 +58,7 @@ ps -x | grep rebuild.sh
 
 ### 检查构建日志
 
-要检查构建日志，你只需在终端中运行 `tail nohup.out`。然而，由于输出主要包含 JSON，你可能想使用 `jq` 来提取文本字段 `text`：
-
-```bash
-tail nohup.out -n 1 | jq '.text'
-```
-
-如果你没有安装 `jq`，可以尝试使用我简单的实现。只需下载 [`jq.js`](https://github.com/PRO-2684/gadgets/blob/main/naive_jq/jq.js) 放在 `tools` 目录下，然后运行以下命令来检查最新的输出：
-
-```bash
-tail nohup.out -n 1 | node tools/jq.js -p ".text"
-```
-
-如果 `node` 不可用，你可以用 VSCode 服务器的 node 二进制替换它，正如之前在 `rebuild.sh` 脚本中所涉及。对我而言，命令是：
-
-```bash
-tail nohup.out -n 1 | /home/[user]/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/node tools/jq.js -p ".text"
-```
+要检查构建日志，你只需在终端中运行 `tail nohup.out`。
 
 ## Introduction
 
@@ -100,10 +86,12 @@ In my case, the command is:
 /home/[user]/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/node /home/[user]/.vscode-remote-containers/dist/dev-containers-cli-0.388.0/dist/spec-node/devContainersSpecCLI.js up --container-session-data-folder /tmp/devcontainers-71e153df-e6c9-4bed-bf46-1d62da4b591c1732006861874 --workspace-folder /home/[user]/[folder] --workspace-mount-consistency cached --gpu-availability detect --id-label devcontainer.local_folder=/home/[user]/[folder] --id-label devcontainer.config_file=/home/[user]/[folder]/.devcontainer/devcontainer.json --log-level debug --log-format json --config /home/[user]/[folder]/.devcontainer/devcontainer.json --default-user-env-probe loginInteractiveShell --mount type=volume,source=vscode,target=/vscode,external=true --skip-post-create --update-remote-user-uid-default on --mount-workspace-git-root --include-configuration --include-merged-configuration
 ```
 
-Now, you can make a directory named `tools` and create a script named `rebuild.sh` with above command in it. Then, you can run this script in the background, which will keep the build running until it either finishes or fails:
+The main structure is `.../node .../devContainersSpecCLI.js up ...`. To make logs easier to read, we replace `--log-format json` with `--log-format text`. If `postCreateCommand` takes a long time, you can remove `--skip-post-create` parameter.
+
+Now, you can create a script named `rebuild.sh` with our modified command in it. Then, you can run this script in the background, which will keep the build running until it either finishes or fails:
 
 ```bash
-nohup ./tools/rebuild.sh &
+nohup ./rebuild.sh &
 ```
 
 However, do note that:
@@ -121,20 +109,4 @@ ps -x | grep rebuild.sh
 
 ### Inspect Build Logs
 
-To inspect the build logs, you can simply run `tail nohup.out` in the terminal. However, as the output mostly contains JSON, you may want to use `jq` to extract only the text:
-
-```bash
-tail nohup.out -n 1 | jq '.text'
-```
-
-If you don't have `jq` installed, try out my naive implementation by downloading [`jq.js`](https://github.com/PRO-2684/gadgets/blob/main/naive_jq/jq.js) under `tools` directory. Then, you can run the following command to inspect latest output:
-
-```bash
-tail nohup.out -n 1 | node tools/jq.js -p ".text"
-```
-
-If `node` is not available, you can replace it with VSCode server's node binary, as mentioned in our `rebuild.sh` script. In my case, the command is:
-
-```bash
-tail nohup.out -n 1 | /home/[user]/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/node tools/jq.js -p ".text"
-```
+To inspect the build logs, you can simply run `tail nohup.out` in the terminal.
