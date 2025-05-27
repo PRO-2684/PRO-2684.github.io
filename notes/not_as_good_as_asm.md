@@ -1,6 +1,6 @@
 ---
 title: 感觉不如汇编
-tags: [Latest, Other]
+tags: [Other]
 keywords: [汇编, 抽象, 编程语言, 数学证明, 形式化证明, asm, assembly, programming language, mathematical proof, formal proof]
 description: 在“如果一个语言的编译器是用另一种语言写的，那么这个语言就不如后者”的假设下，证明所有语言都不如汇编。
 ---

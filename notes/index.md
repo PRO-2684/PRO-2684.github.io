@@ -13,9 +13,9 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
-[Rust Lifetime Explained](/notes/rust_lifetime_explained)
+[DLNA 捕获](/notes/dlna_capture)
 
-[感觉不如汇编](/notes/not_as_good_as_asm)
+[Rust Lifetime Explained](/notes/rust_lifetime_explained)
 
 [Hackergame 2024 个人题解（部分）](/notes/hg2024)
 
@@ -38,6 +38,8 @@ description: PRO 的个人博客索引
 [pURLfy / 链接净化](/notes/purlfy)
 
 ## 💻 技术
+
+[DLNA 捕获](/notes/dlna_capture)
 
 [Dev Containers](/notes/dev_containers)
 
