@@ -77,6 +77,8 @@ description: PRO 的个人博客索引
 
 [Rust Lifetime Explained](/notes/rust_lifetime_explained)
 
+[DLNA 捕获](/notes/dlna_capture)
+
 ### 🌐 Web
 
 [Font Awesome 图标导出为 SVG](/notes/font_awesome)
