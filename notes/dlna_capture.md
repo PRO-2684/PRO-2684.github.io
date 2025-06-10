@@ -7,13 +7,13 @@ description: 此文介绍了如何在 Windows 下利用系统自带的 Windows M
 
 # DLNA 捕获
 
-## 前言
+## 💬 前言
 
 众所周知，众多流媒体平台不再提供网页端的服务，只能在 APP 内看视频，而这就在一定程度上妨碍了我们抓包、获取网址、下载视频的工作流。为了让用户能够在智能电视上看视频，这些平台又往往会提供一个投屏到电视的选项。
 
 虽然大家都约定俗成地说是“投屏”，但实际上这个称呼是有歧义的，既可以指“将屏幕镜像到另一个设备”，也可以指“将某媒体流投送到另一个设备”。前者需要在局域网内实时传输画面，而后者往往只需要将一个网址传输给目标设备。这里我们仅针对第二种情况展开讨论。
 
-## Windows Media Player
+## 🪟 Windows Media Player
 
 既然电视上能够播放投屏的媒体流，那么理论上我们可以用电脑模拟成一个电视，让电脑接收媒体流的网址。如果我们能够得到这个网址，那么下载媒体也就不在话下了。经过一番搜索，我发现 Windows Media Player 可以接受媒体流推送，那么让我们尝试利用它来获取媒体流网址。
 
@@ -102,7 +102,7 @@ Windows 无法启用 Windows Media Player Network Sharing Service 服务 (位于
 
 随后可以将此 URL 粘贴到浏览器或下载工具中进行下载。
 
-## DLNA 协议
+## DLNA
 
 显然，上面的方法还是太吃操作了，那么有没有更自动化的方式呢？答案是有的，但需要编写一个程序扮演 DLNA DMR (Digital Media Renderer) 的角色，自动接收媒体流并提取 URL。首先，我们简单介绍一下 DLNA 协议：
 
@@ -221,7 +221,7 @@ Date: Wed, 28 May 2025 03:51:18 GMT
 
 ## 代码实现
 
-### Python POC
+### 🐍 Python POC
 
 最后，将上述内容结合起来，我们可以用 Python 做一个最小的 dummy DMR，用于验证我们的猜想：
 
@@ -252,7 +252,7 @@ SSDP_IP = "239.255.255.250"
 SSDP_HOST = "239.255.255.250:1900"
 SERVER_NAME = "DummyRenderer/1.0 UPnP/1.0 UPnP-Device-Host/1.0"
 
-# XMLs
+# XMLs - Get them from https://github.com/PRO-2684/dlna-dmr/blob/c0f8c6f2b8c13c270fa7f12e8199b3a86459df68/src/template/
 with open("./xml/DeviceSpec.tmpl.xml", "r") as f:
     DEVICE_SPEC_XML = f.read() \
         .replace("{{friendlyName}}", FRIENDLY_NAME) \
@@ -298,7 +298,7 @@ class SSDPServer(threading.Thread):
             f"NT: {nt}\r\n"
             f"NTS: {nts}\r\n"
             f"USN: {usn}\r\n"
-            f"Location: http://{IP}:{HTTP_PORT}/dummy-renderer/DeviceSpec\r\n"
+            f"Location: http://{IP}:{HTTP_PORT}/DeviceSpec\r\n"
             "Cache-Control: max-age=1800\r\n"
             f"Server: {SERVER_NAME}\r\n"
             'OPT:"http://schemas.upnp.org/upnp/1/0/"; ns=01\r\n'
@@ -374,7 +374,7 @@ class SSDPServer(threading.Thread):
             "HTTP/1.1 200 OK\r\n"
             f"ST: upnp:rootdevice\r\n"
             f"USN: uuid:{UUID}::upnp:rootdevice\r\n"
-            f"Location: http://{IP}:{HTTP_PORT}/dummy-renderer/DeviceSpec\r\n"
+            f"Location: http://{IP}:{HTTP_PORT}/DeviceSpec\r\n"
             'OPT:"http://schemas.upnp.org/upnp/1/0/"; ns=01\r\n'
             "Cache-Control: max-age=900\r\n"
             f"Server: {SERVER_NAME}\r\n"
@@ -398,30 +398,30 @@ class SSDPServer(threading.Thread):
 class HTTPRequestHandler(BaseHTTPRequestHandler):
     """HTTP request handler for the dummy UPnP renderer. Endpoints:
 
-    - /dummy-renderer/RenderingControl
-    - /dummy-renderer/DeviceSpec
-    - /dummy-renderer/AVTransport
-    - /dummy-renderer/Ignore
+    - /RenderingControl
+    - /DeviceSpec
+    - /AVTransport
+    - /Ignore
     """
     def do_GET(self):
         print(f"GET request from {self.client_address[0]}:{self.client_address[1]} to {self.path}")
         print(f"Headers: {self.headers}")
-        if self.path == "/dummy-renderer/DeviceSpec":
+        if self.path == "/DeviceSpec":
             self.send_response(200)
             self.send_header("Content-Type", "text/xml; charset=utf-8")
             self.end_headers()
             self.wfile.write(DEVICE_SPEC_XML)
-        elif self.path == "/dummy-renderer/RenderingControl":
+        elif self.path == "/RenderingControl":
             self.send_response(200)
             self.send_header("Content-Type", "text/xml; charset=utf-8")
             self.end_headers()
             self.wfile.write(RENDERING_CONTROL_XML)
-        elif self.path == "/dummy-renderer/AVTransport":
+        elif self.path == "/AVTransport":
             self.send_response(200)
             self.send_header("Content-Type", "text/xml; charset=utf-8")
             self.end_headers()
             self.wfile.write(AV_TRANSPORT_XML)
-        elif self.path == "/dummy-renderer/Ignore":
+        elif self.path == "/Ignore":
             self.send_response(204)  # No Content
             self.end_headers()
         else:
@@ -432,15 +432,15 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
         print(f"POST request from {self.client_address[0]}:{self.client_address[1]} to {self.path}")
         print(f"Headers: {self.headers}")
         print(f"Body: {self.rfile.read(int(self.headers.get('Content-Length', 0))).decode('utf-8')}")
-        if self.path == "/dummy-renderer/DeviceSpec":
+        if self.path == "/DeviceSpec":
             # Errors for now
             self.send_error(718, "Invalid InstanceID") # UPnP error code for "Invalid InstanceID"
             # See 5.4.32 Common Error Codes of AVTransport-v3-Service
-        elif self.path == "/dummy-renderer/RenderingControl":
+        elif self.path == "/RenderingControl":
             self.send_error(718, "Invalid InstanceID")
-        elif self.path == "/dummy-renderer/AVTransport":
+        elif self.path == "/AVTransport":
             self.send_error(718, "Invalid InstanceID")
-        elif self.path == "/dummy-renderer/Ignore":
+        elif self.path == "/Ignore":
             self.send_error(718, "Invalid InstanceID")
         else:
             self.send_error(404, "Not Found")
@@ -464,9 +464,9 @@ if __name__ == "__main__":
         print("Server stopped.")
 ```
 
-它打印了所有 `GET` 和 `POST` 请求，但是仍然需要自己在一大堆日志内找到网址然后自行解码。无论如何，对于局域网内的其它设备，它确实是一个货真价实的 DMR。
+其中所需的 XML 文件可以从 [此处](https://github.com/PRO-2684/dlna-dmr/blob/c0f8c6f2b8c13c270fa7f12e8199b3a86459df68/src/template/) 下载。它打印了所有 `GET` 和 `POST` 请求，但是仍然需要自己在一大堆日志内找到网址然后自行解码。无论如何，对于局域网内的其它设备，它确实是一个货真价实的 DMR。
 
-### Rust
+### 🦀 Rust
 
 最终我将这份代码迁移到了 Rust，日志输出如下：
 
