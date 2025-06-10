@@ -61,6 +61,50 @@ prepend__rules:
 - 'RULE-SET,reject,REJECT'
 ```
 
+若您正在使用 [Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)，则需要分开配置。首先配置 Global Merge：
+
+```yaml
+# Profile Enhancement Merge Template for Clash Verge
+
+rule-providers:
+  adove:
+    type: http
+    behavior: classical
+    url: "https://github.com/ignaciocastro/a-dove-is-dumb/raw/refs/heads/main/clash.yaml"
+    path: ./ruleset/a-dove-is-dumb.yaml
+    interval: 86400
+  AWAvenue:
+    type: http
+    behavior: domain
+    format: yaml
+    path: ./ruleset/AWAvenue-Ads-Rule-Clash.yaml
+    url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash.yaml"
+    interval: 86400
+```
+
+然后配置 Global Script：
+
+```javascript
+// Define main function (script entry)
+function main(config, profileName) {
+  // return config;
+  const newRules = [
+    "RULE-SET,adove,REJECT",
+    "RULE-SET,AWAvenue,REJECT",
+    "DOMAIN,g.tenor.com,REJECT",
+    "DOMAIN,media.tenor.com,REJECT",
+    "DOMAIN,inputsuggestions.msdxcdn.microsoft.com,REJECT",
+    "DOMAIN,otheve.beacon.qq.com,REJECT",
+    "DOMAIN,tpstelemetry.tencent.com,REJECT",
+    "DOMAIN,h.trace.qq.com,REJECT",
+    "DOMAIN,report.gamecenter.qq.com,REJECT",
+    "DOMAIN,userstyles.world,DIRECT",
+  ];
+  config.rules.unshift(...newRules);
+  return config;
+}
+```
+
 ## 🖼️ 效果
 
 ![1](/attachments/tenor_1.jpg)
