@@ -124,7 +124,7 @@ Windows 无法启用 Windows Media Player Network Sharing Service 服务 (位于
 
 DMR 实际上由两个服务器构成：一个是 SSDP 服务器，负责通过 [SSDP 协议](https://www.wikiwand.com/en/articles/Simple_Service_Discovery_Protocol) 控制设备的发现、更改与离开；一个是 HTTP 服务器，负责托管各种描述文件，以及指令的接收和结果的返回。
 
-## SSDP
+### SSDP
 
 **Simple Service Discovery Protocol** (**SSDP**) 是基于文本的协议。除了它使用 UDP 外，其它方面，例如报文结构，和 HTTP 不能说十分相似，只能说一模一样。例如，一个经典的广播消息可以长这样：
 
@@ -146,7 +146,7 @@ Server: Microsoft-Windows/10.0 UPnP/1.0 UPnP-Device-Host/1.0
 | 广播  | `NOTIFY`         | 主动   | 向所有设备广播自己的状态 (`ssdp:alive`) |
 | 应答  | 对 `M-SEARCH` 的应答 | 被动   | 当有设备寻找 DMR 时，向其发送应答         |
 
-### 广播
+#### 广播
 
 简单来说，广播的主要是下面这些信息：
 
@@ -157,7 +157,7 @@ Server: Microsoft-Windows/10.0 UPnP/1.0 UPnP-Device-Host/1.0
 
 DMR 实际上注册了多个服务，同时还需要告知自己的角色等信息，而这些都是分开广播的，因此需要广播多次。对于设备描述所在地址 (`Location`)，你猜的没错，这个文件就是需要 HTTP 服务器 host 的。
 
-### 应答
+#### 应答
 
 一个典型的 `M-SEARCH` 消息可以长这样：
 
@@ -184,19 +184,19 @@ Ext:
 Date: Wed, 28 May 2025 03:51:18 GMT
 ```
 
-## HTTP
+### HTTP
 
-因为 Windows Media Player 的网址路由难以理解，接下来我将使用我定义的路由进行讲解。最关键的主要有以下三个路由：
+因为 Windows Media Player 的网址路由难以理解，接下来我将使用我重映射的路由进行讲解。最关键的主要有以下三个路由：
 
 - `/DeviceSpec`: 设备描述路由
 - `/AVTransport`: `AVTransport` 服务路由
 - `/RenderingControl`: `RenderingControl` 服务路由
 
-### DeviceSpec
+#### DeviceSpec
 
 这个路由只接受 `GET` 方法，返回设备描述文件。设备描述文件用 XML 定义，主要包含设备类型、名称、制造商、序列号、UUID 以及包含的服务等信息。下面的两个路由都是从这里定义的。[示例设备描述文件模板](https://github.com/PRO-2684/dlna-dmr/blob/c0f8c6f2b8c13c270fa7f12e8199b3a86459df68/src/template/DeviceSpec.tmpl.xml)。
 
-### AVTransport
+#### AVTransport
 
 这个路由在 `GET` 方法下返回 `AVTransport` 服务的服务描述文件，在 `POST` 方法下调用此服务的某个动作。主要包括查询更改播放内容、播放进度、循环模式，开始、暂停、停止播放等动作。[示例 AVTransport 服务描述文件](https://github.com/PRO-2684/dlna-dmr/blob/c0f8c6f2b8c13c270fa7f12e8199b3a86459df68/src/template/AVTransport.xml)。一个示例 POST 请求体如下：
 
@@ -215,7 +215,7 @@ Date: Wed, 28 May 2025 03:51:18 GMT
 
 它就是调用了 `AVTransport` 的 `SetAVTransportURI`，其中参数 `InstanceID` 为 `0`，参数 `CurrentURI` 为 `http://example.com/sample.mp4?param1=a&param2=b` (注意解码)，参数 `CurrentURIMetaData` 为空。意思就是设置播放的网址为 `http://example.com/sample.mp4?param1=a&param2=b`。
 
-### RenderingControl
+#### RenderingControl
 
 与 `AVTransport` 类似，这个路由在 `GET` 方法下返回 `RenderingControl` 服务的服务描述文件，在 `POST` 方法下调用此服务的某个动作。主要包括查询更改静音、音量等动作。[示例 RenderingControl 服务描述文件](https://github.com/PRO-2684/dlna-dmr/blob/c0f8c6f2b8c13c270fa7f12e8199b3a86459df68/src/template/RenderingControl.xml)。
 
@@ -464,11 +464,335 @@ if __name__ == "__main__":
         print("Server stopped.")
 ```
 
-其中所需的 XML 文件可以从 [此处](https://github.com/PRO-2684/dlna-dmr/blob/c0f8c6f2b8c13c270fa7f12e8199b3a86459df68/src/template/) 下载。它打印了所有 `GET` 和 `POST` 请求，但是仍然需要自己在一大堆日志内找到网址然后自行解码。无论如何，对于局域网内的其它设备，它确实是一个货真价实的 DMR。
+其中所需的 XML 模板文件可以从 [此处](https://github.com/PRO-2684/dlna-dmr/blob/c0f8c6f2b8c13c270fa7f12e8199b3a86459df68/src/template/) 下载。它打印了所有 `GET` 和 `POST` 请求，但是仍然需要自己在一大堆日志内找到网址然后自行解码。无论如何，对于局域网内的其它设备，它确实是一个货真价实的 DMR。
 
 ### 🦀 Rust
 
-最终我将这份代码迁移到了 Rust，日志输出如下：
+最终我将这份代码迁移到了 Rust，核心代码如下：
+
+```rust
+// ssdp.rs
+#[derive(Debug)]
+pub struct SSDPServer {
+    socket: UdpSocket,
+    address: SocketAddrV4,
+    uuid: String,
+    http_port: u16,
+}
+
+impl SSDPServer {
+    /// The multicast address used for SSDP discovery.
+    const SSDP_MULTICAST_ADDR: SocketAddrV4 =
+        SocketAddrV4::new(Ipv4Addr::new(239, 255, 255, 250), 1900);
+    /// The SSDP server's name.
+    const SSDP_SERVER_NAME: &'static str = "CustomSSDP/1.0";
+    /// Interval for sending keep-alive messages.
+    const KEEP_ALIVE_INTERVAL: Duration = Duration::from_secs(60);
+
+    /// Creates a new SSDP server bound to the specified address with the given UUID and HTTP port.
+    pub async fn new(address: SocketAddrV4, uuid: String, http_port: u16) -> Result<Self> {
+        let socket = Socket::new(Domain::IPV4, Type::DGRAM, Some(Protocol::UDP))?;
+        socket.set_nonblocking(true)?;
+        socket.set_reuse_address(true)?;
+        socket.bind(&SockAddr::from(SocketAddrV4::new(
+            Ipv4Addr::UNSPECIFIED,
+            address.port(),
+        )))?;
+        // Set the socket to allow broadcast.
+        socket.set_broadcast(true)?;
+        // Join the SSDP multicast group.
+        socket.join_multicast_v4(
+            Self::SSDP_MULTICAST_ADDR.ip(), // Multicast address
+            address.ip(),                   // Use the unspecified address for the local interface
+        )?;
+        // Convert the socket to a Tokio UdpSocket.
+        let socket = UdpSocket::from_std(socket.into())?;
+
+        Ok(Self {
+            socket,
+            address,
+            uuid,
+            http_port,
+        })
+    }
+
+    /// Send a SSDP notify message with given Notification Type, Notification Sub Type and Unique Service Name.
+    async fn notify(&self, nt: &str, nts: &str, usn: &str) -> Result<()> {
+        let message = format!(
+            "NOTIFY * HTTP/1.1\r\n\
+             HOST: {}\r\n\
+             NT: {}\r\n\
+             NTS: {}\r\n\
+             USN: {}\r\n\
+             LOCATION: http://{}/description.xml\r\n\
+             CACHE-CONTROL: max-age=1800\r\n\
+             SERVER: {}\r\n\
+             \r\n",
+            Self::SSDP_MULTICAST_ADDR,
+            nt,
+            nts,
+            usn,
+            self.address,
+            Self::SSDP_SERVER_NAME
+        );
+        self.socket
+            .send_to(message.as_bytes(), &Self::SSDP_MULTICAST_ADDR)
+            .await?;
+        Ok(())
+    }
+
+    /// Broadcast a notify message for given `service` with given Notification Sub Type.
+    async fn notify_service(&self, service: &str, nts: &str) -> Result<()> {
+        self.notify(
+            &format!("urn:schemas-upnp-org:service:{service}:1"),
+            nts,
+            &format!(
+                "uuid:{uuid}::urn:schemas-upnp-org:service:{service}:1",
+                uuid = self.uuid
+            ),
+        )
+        .await
+    }
+
+    /// Broadcast multiple relevant notify messages with given Notification Sub Type.
+    async fn notify_all(&self, nts: &str) -> Result<()> {
+        let uuid_with_prefix = format!("uuid:{}", self.uuid);
+
+        self.notify(
+            "upnp:rootdevice",
+            nts,
+            &format!("{uuid_with_prefix}::upnp:rootdevice"),
+        )
+        .await?;
+        self.notify(&uuid_with_prefix, nts, &uuid_with_prefix)
+            .await?;
+        for service in ["RenderingControl", "AVTransport", "ConnectionManager"] {
+            self.notify_service(service, nts).await?;
+        }
+
+        Ok(())
+    }
+
+    /// Broadcast multiple relevant `ssdp:alive` messages.
+    async fn alive(&self) -> Result<()> {
+        self.notify_all("ssdp:alive").await
+    }
+
+    /// Broadcast multiple relevant `ssdp:alive` messages periodically. (Keep-alive / Heartbeat)
+    pub async fn keep_alive(&self) {
+        info!("Starting SSDP keep-alive thread");
+        loop {
+            if let Err(e) = self.alive().await {
+                error!("Failed to send SSDP alive message: {e}");
+            } else {
+                trace!("SSDP alive message sent");
+            }
+            sleep(Self::KEEP_ALIVE_INTERVAL).await;
+        }
+    }
+
+    /// Broadcast multiple relevant `ssdp:byebye` messages.
+    async fn byebye(&self) -> Result<()> {
+        self.notify_all("ssdp:byebye").await
+    }
+
+    /// Answer a SSDP message from given address.
+    async fn answer(&self, address: SocketAddrV4, message: &str) -> Result<()> {
+        if message.starts_with("M-SEARCH") {
+            self.answer_search(address, message).await
+        } else if message.starts_with("NOTIFY") {
+            Ok(())
+        } else {
+            Err(Error::new(
+                ErrorKind::InvalidData,
+                format!("Received unknown SSDP message: {message}"),
+            ))
+        }
+    }
+
+    /// Answer a M-SEARCH request.
+    async fn answer_search(&self, address: SocketAddrV4, _message: &str) -> Result<()> {
+        let response = format!(
+            "HTTP/1.1 200 OK\r\n\
+             ST: upnp:rootdevice\r\n\
+             USN: uuid:{}::upnp:rootdevice\r\n\
+             Location: http://{}:{}/DeviceSpec\r\n\
+             OPT: \"http://schemas.upnp.org/upnp/1/0/\"; ns=01\r\n\
+             Cache-Control: max-age=900\r\n\
+             Server: {}\r\n\
+             EXT:\r\n\
+             Date: {}\r\n\
+            \r\n",
+            self.uuid,
+            self.address.ip(),
+            self.http_port,
+            Self::SSDP_SERVER_NAME,
+            chrono::Utc::now().format("%a, %d %b %Y %H:%M:%S GMT")
+        );
+        trace!("Sending SSDP response to {address}: {response}");
+        self.socket.send_to(response.as_bytes(), address).await?;
+
+        Ok(())
+    }
+
+    /// Starts the SSDP server.
+    pub async fn run(&self) {
+        info!("SSDP server running on {}", self.address);
+
+        let mut buf = [0u8; 4096];
+        loop {
+            match self.socket.recv_from(&mut buf).await {
+                Ok((size, addr)) => {
+                    let message = String::from_utf8_lossy(&buf[..size]);
+                    let SocketAddr::V4(ipv4) = addr else {
+                        error!("Received non-IPv4 address: {addr:?}");
+                        continue;
+                    };
+                    trace!("Received SSDP message from {ipv4}: {message}");
+                    if let Err(e) = self.answer(ipv4, &message).await {
+                        error!("Error answering SSDP message: {e}");
+                    }
+                }
+                Err(e) if e.kind() == ErrorKind::WouldBlock => {} // Non-blocking mode, just do nothing.
+                Err(e) => {
+                    error!("Error receiving SSDP message: {e}");
+                }
+            }
+        }
+    }
+
+    /// Stops the SSDP server.
+    pub async fn stop(&self) {
+        if let Err(e) = self.byebye().await {
+            error!("Failed to send SSDP byebye message: {e}");
+        } else {
+            info!("SSDP server stopped");
+        }
+    }
+}
+// http.rs
+pub trait HTTPServer: Sync {
+    /// Create and run a HTTP server with the given options.
+    fn run_http(&'static self, options: Arc<DMROptions>) -> impl Future<Output = IoResult<()>> + Send {async {
+        let ip = options.ip;
+        let http_port = options.http_port;
+        let listener = tokio::net::TcpListener::bind(SocketAddrV4::new(ip, http_port)).await?;
+        info!("HTTP server listening on {ip}:{http_port}");
+
+        let app = Router::new()
+            .route(
+                "/DeviceSpec",
+                get(async || Self::get_device_spec(options).await).post(Self::post_device_spec),
+            )
+            .route(
+                "/RenderingControl",
+                get(Self::get_rendering_control).post(async |s: String| {
+                    self.post_rendering_control(RenderingControl::from_str(&s))
+                        .await
+                }),
+            )
+            .route(
+                "/AVTransport",
+                get(Self::get_av_transport).post(async |s: String| {
+                    self.post_av_transport(AVTransport::from_str(&s)).await
+                }),
+            )
+            .route(
+                "/Ignore",
+                get(Self::get_ignore).post(async || self.post_ignore().await),
+            );
+
+        axum::serve(listener, app).await
+    } }
+
+    // POST Request handlers for specific endpoints.
+
+    /// Handles POST requests for `/DeviceSpec`.
+    fn post_device_spec() -> impl Future<Output = impl IntoResponse> + Send {
+        async { StatusCode::METHOD_NOT_ALLOWED }
+    }
+
+    /// Handles POST requests for `/RenderingControl`.
+    fn post_rendering_control(
+        &self,
+        rendering_control: Result<RenderingControl, DeError>,
+    ) -> impl Future<Output = impl IntoResponse> + Send {
+        async { StatusCode::METHOD_NOT_ALLOWED }
+    }
+
+    /// Handles POST requests for `/AVTransport`.
+    fn post_av_transport(
+        &self,
+        av_transport: Result<AVTransport, DeError>,
+    ) -> impl Future<Output = impl IntoResponse> + Send {
+        async { StatusCode::METHOD_NOT_ALLOWED }
+    }
+
+    /// Handles POST requests for `/Ignore`.
+    fn post_ignore(&self) -> impl Future<Output = impl IntoResponse> + Send {
+        async { StatusCode::NO_CONTENT }
+    }
+
+    // GET Request handlers for specific endpoints.
+
+    /// Handles GET requests for `/DeviceSpec`.
+    fn get_device_spec(options: Arc<DMROptions>) -> impl Future<Output = impl IntoResponse> + Send {
+        async move {
+            /// Escapes given field under `options`.
+            macro_rules! e {
+                ($i:ident) => {
+                    escape(&options.$i)
+                };
+            }
+            let xml = format!(
+                include_str!("./template/DeviceSpec.tmpl.xml"),
+                friendlyName = e!(friendly_name),
+                modelName = e!(model_name),
+                modelDescription = e!(model_description),
+                modelURL = e!(model_url),
+                manufacturer = e!(manufacturer),
+                manufacturerURL = e!(manufacturer_url),
+                serialNumber = e!(serial_number),
+                uuid = e!(uuid),
+            );
+            (
+                StatusCode::OK,
+                [("Content-Type", r#"text/xml; charset="utf-8""#)],
+                xml,
+            )
+        }
+    }
+
+    /// Handles GET requests for `/RenderingControl`.
+    fn get_rendering_control() -> impl Future<Output = impl IntoResponse> + Send {
+        async {
+            (
+                StatusCode::OK,
+                [("Content-Type", r#"text/xml; charset="utf-8""#)],
+                include_str!("./template/RenderingControl.xml"),
+            )
+        }
+    }
+
+    /// Handles GET requests for `/AVTransport`.
+    fn get_av_transport() -> impl Future<Output = impl IntoResponse> + Send {
+        async {
+            (
+                StatusCode::OK,
+                [("Content-Type", r#"text/xml; charset="utf-8""#)],
+                include_str!("./template/AVTransport.xml"),
+            )
+        }
+    }
+
+    /// Handles GET requests for `/Ignore`.
+    fn get_ignore() -> impl Future<Output = impl IntoResponse> + Send {
+        async { StatusCode::NO_CONTENT }
+    }
+}
+```
+
+示例日志输出如下：
 
 ```shell
 $ dlna-dmr
@@ -483,7 +807,7 @@ $ dlna-dmr
 [2025-05-30T14:50:46Z INFO  dlna_dmr] DMR stopped
 ```
 
-这就已经很明晰了。为了减少输出，我只输出了设置状态的指令，而忽略查询状态的指令。代码仓库就在 [PRO-2684/dlna-dmr](https://github.com/PRO-2684/dlna-dmr/)，欢迎大家尝试。
+这就已经很明晰了。为了减少输出，我只输出了设置状态的指令，而忽略查询状态的指令。代码仓库和预编译的可执行文件就在 [PRO-2684/dlna-dmr](https://github.com/PRO-2684/dlna-dmr/)，欢迎大家尝试。
 
 ## 参考资料
 
