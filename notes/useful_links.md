@@ -6,6 +6,7 @@ description: USTC 常用链接
 ---
 
 # 🔗 常用链接
+
 ## 🎓 学业
 
 - [USTC 不完全入学指南](https://ustcguide.gitbook.io/admission)
@@ -57,8 +58,8 @@ description: USTC 常用链接
 - [校园班车查询系统](https://weixine.ustc.edu.cn/ustcqy/mobile/busTimetable)
 - [高新区班车查询系统](https://weixine.ustc.edu.cn/ustcqy/mobile/busTimetable/xyy)
 - [一卡通](https://ecard.ustc.edu.cn/)
-- [科大健康打卡](https://weixine.ustc.edu.cn/2020)
-- [统一身份认证系统](https://passport.ustc.edu.cn/login)
+- [统一身份认证系统](https://id.ustc.edu.cn/)
+- [亲友入校申请](https://id.ustc.edu.cn/cas/login?service=http:%2F%2Fbwcqyrx.ustc.edu.cn%2Fweixin%2Fvalidate)
 - [邮箱](https://mail.ustc.edu.cn/)
 - [校内导航](http://map.ustc.edu.cn)
 - [正版软件](https://ms.ustc.edu.cn/zbh.php)
@@ -67,6 +68,8 @@ description: USTC 常用链接
 - [USTC 全景](https://720yun.com/t/96vkbw7q77w?scene_id=91152512)
 - [打字练习](https://www.typingtom.com/lessons)
 - [ADB 工具下载](https://developer.android.google.cn/studio/releases/platform-tools#downloads)
+- [~~科大健康打卡~~](https://weixine.ustc.edu.cn/2020)
+- [~~统一身份认证系统 (旧)~~](https://passport.ustc.edu.cn/login)
 
 ## 🌐 国际视野
 
