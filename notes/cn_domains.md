@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2025-06-16
+> 🕗 最近更新时间：2025-06-17
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
@@ -40,7 +40,7 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [南京原神大学.com](http://南京原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神启动.com](https://原神启动.com) | <span title='网站无法正常访问，状态码为 418'>🔴</span> | / |
 | 未知 | [原神大学.love](http://原神大学.love) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
-| 未知 | [原神学院.com](https://原神学院.com) | <span title='网站无法正常访问，状态码为 524'>🔴</span> | / |
+| 未知 | [原神学院.com](https://原神学院.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
 | 未知 | [原神怎么你了.com](http://原神怎么你了.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神理工大学.com](http://原神理工大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神管理大学.com](http://原神管理大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
@@ -67,8 +67,8 @@ description: 此文章收集了部分国内大学的中文域名
 ## 统计信息
 
 - 本页面共收录 $42$ 个中文域名，其中 $12$ 个域名确认存活，$3$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：103.885718589 s
-- 根据模板生成上述表格：265.888 μs
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：36.780092778 s
+- 根据模板生成上述表格：365.381 μs
 
 ## 关于
 
