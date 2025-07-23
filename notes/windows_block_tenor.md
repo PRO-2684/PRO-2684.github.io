@@ -1,6 +1,6 @@
 ---
 title: 阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索
-tags: [Technical, Latest]
+tags: [Technical]
 keywords: [Windows 11, Emoji, GIF, Tenor, 搜索, 阻止, 禁用]
 description: 此文介绍了如何阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索
 ---

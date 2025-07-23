@@ -13,11 +13,11 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
+[Windows 11 Country Flag Emojis](/notes/windows_country_flag_emoji)
+
 [DLNA 捕获](/notes/dlna_capture)
 
 [Rust Lifetime Explained](/notes/rust_lifetime_explained)
-
-[Hackergame 2024 个人题解（部分）](/notes/hg2024)
 
 [VSCode 调试时传递多个命令行参数](/notes/vscode_debug_args)
 
@@ -38,6 +38,8 @@ description: PRO 的个人博客索引
 [pURLfy / 链接净化](/notes/purlfy)
 
 ## 💻 技术
+
+[Windows 11 Country Flag Emojis](/notes/windows_country_flag_emoji)
 
 [DLNA 捕获](/notes/dlna_capture)
 
