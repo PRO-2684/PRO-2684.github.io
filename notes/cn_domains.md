@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2025-07-23
+> 🕗 最近更新时间：2025-07-24
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
@@ -27,6 +27,7 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [双一流大学.com](https://双一流大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [宇宙一流大学.com](http://宇宙一流大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🔴 |
 | 未知 | [世界末流大学.com](https://世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww38.世界末流大学.com/`'>🔴</span> | / |
+| 未知 | [原神启动.com](https://原神启动.com) | <span title='网站重定向到疑似垃圾网站 `http://ysumc.net/`'>🔴</span> | / |
 | 未知 | [隔壁.世界末流大学.com](https://隔壁.世界末流大学.com) | <span title='网站重定向到疑似垃圾网站 `http://ww38.隔壁.世界末流大学.com/`'>🔴</span> | / |
 | 未知 | [世界一流退学.com](http://世界一流退学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [世界一流高校.top](http://世界一流高校.top) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
@@ -39,7 +40,6 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [北京原神大专.com](http://北京原神大专.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [南京原神大学.cn](http://南京原神大学.cn) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [南京原神大学.com](http://南京原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
-| 未知 | [原神启动.com](https://原神启动.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
 | 未知 | [原神大学.love](http://原神大学.love) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神学院.com](https://原神学院.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
 | 未知 | [原神怎么你了.com](http://原神怎么你了.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
@@ -67,8 +67,8 @@ description: 此文章收集了部分国内大学的中文域名
 ## 统计信息
 
 - 本页面共收录 $42$ 个中文域名，其中 $12$ 个域名确认存活，$3$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：38.297064746 s
-- 根据模板生成上述表格：332.342 μs
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：32.662797515 s
+- 根据模板生成上述表格：294.248 μs
 
 ## 关于
 
