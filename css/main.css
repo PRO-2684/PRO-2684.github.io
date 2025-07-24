@@ -291,13 +291,13 @@ fieldset {
 details {
     border: 1px solid var(--border-dim);
     border-radius: 1em;
-    padding: 1em;
     transition: border-color 0.2s ease-in-out;
 
     &:hover, &:focus {
         border-color: var(--border);
     }
     > summary {
+        padding: 1em;
         cursor: pointer;
     }
 }
