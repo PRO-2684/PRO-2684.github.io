@@ -28,9 +28,7 @@ description: 一加 13 新版系统 Root 并刷入 KernelSU 的教程。
 6. 重启之后进入 `开发者选项`，可以看到 `OEM 解锁` 这一项已经灰了，下面有行小字写着“引导加载程序已解锁”。
 
 <details><summary>
-
 第 4 步卡在 `waiting for device`?
-
 </summary>
 
 1. 右键 Windows Logo - `设备管理器`，展开 `其它设备`。
