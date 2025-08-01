@@ -1,6 +1,6 @@
 ---
 title: VSCode 调试时传递多个命令行参数
-tags: [Technical, Latest]
+tags: [Technical]
 keywords: [VSC, VSCode, Python, launch.json, Commandline Arguments]
 description: 通过配置 launch.json，实现 VSCode 内调试时传递多个命令行参数，而非仅传入一个字符串参数。
 ---

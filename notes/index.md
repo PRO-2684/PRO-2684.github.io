@@ -13,13 +13,13 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
+[一加 13 Root 教程 (以 KSU 为例)](/notes/oneplus_13_root)
+
 [Windows 11 Country Flag Emojis](/notes/windows_country_flag_emoji)
 
 [DLNA 捕获](/notes/dlna_capture)
 
 [Rust Lifetime Explained](/notes/rust_lifetime_explained)
-
-[VSCode 调试时传递多个命令行参数](/notes/vscode_debug_args)
 
 ## 🛠️ 实用
 
@@ -38,6 +38,8 @@ description: PRO 的个人博客索引
 [pURLfy / 链接净化](/notes/purlfy)
 
 ## 💻 技术
+
+[一加 13 Root 教程 (以 KSU 为例)](/notes/oneplus_13_root)
 
 [Windows 11 Country Flag Emojis](/notes/windows_country_flag_emoji)
 
