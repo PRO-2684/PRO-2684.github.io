@@ -38,7 +38,11 @@ description: 一加 13 新版系统 Root 并刷入 KernelSU 的教程。
 
 </details>
 
-### 📥 寻找合适的 OTA 包
+### 📦 提取 `init_boot`
+
+#### 方法一：自行提取
+
+##### 寻找合适的 OTA 包
 
 打开 [XDA Forums](https://xdaforums.com/t/rom-ota-repository-of-oxygenos-coloros-full-otas-oxygenos-15-0-0-840-coloros-15-0-0-840.4718692/)，找到合适的 OTA 包：
 
@@ -52,11 +56,7 @@ description: 一加 13 新版系统 Root 并刷入 KernelSU 的教程。
 
 ![xda_copy_link.png](/attachments/xda_copy_link.png)
 
-### 📦 提取 `init_boot`
-
-#### Pay10ad Dumper
-
-> 推荐：无需下载完整文件，仅需几秒钟即可提取出 `init_boot`。
+##### Pay10ad Dumper
 
 1. 打开 [Releases](https://github.com/PRO-2684/pay10ad-dumper/releases)，下载名字里带 `windows` 的压缩包并解压至趁手的地方。
 2. 执行 `./pay10ad-dumper.exe -u curl -p init_boot <OTA_ZIP_URL>`
@@ -64,13 +64,22 @@ description: 一加 13 新版系统 Root 并刷入 KernelSU 的教程。
 
 ![sample-remote-zip.png](https://raw.githubusercontent.com/PRO-2684/pay10ad-dumper/refs/heads/main/images/sample-remote-zip.png)
 
-#### 传统方法
+> 使用此方法无需下载完整文件，仅需几秒钟即可提取出 `init_boot`。传统方法需要下载完整文件并解压，有的还不支持仅提取特定分区。若您更喜欢传统方法，可以参考下面的工具说明：
+>
+> - [`vm03/payload_dumper`](https://github.com/vm03/payload_dumper)
+> - [`5ec1cff/payload-dumper`](https://github.com/5ec1cff/payload-dumper)
+> - [`payload-dumper-go`](https://github.com/ssut/payload-dumper-go)
 
-传统方法需要下载完整文件并解压，有的还不支持仅提取特定分区。
+#### 方法二：下载预提取的 `init_boot`
 
-- [`vm03/payload_dumper`](https://github.com/vm03/payload_dumper)
-- [`5ec1cff/payload-dumper`](https://github.com/5ec1cff/payload-dumper)
-- [`payload-dumper-go`](https://github.com/ssut/payload-dumper-go)
+1. 前往 [OnePlus13-Boots](https://github.com/PRO-2684/OnePlus13-Boots)，点击您的设备型号
+    1. 例如前面记下来的版本号 `PJZ110_15.0.0.840(CN01)`，以下划线和括号为界分为三部分：
+        1. `PJZ110`
+        2. `15.0.0.840`
+        3. `CN01`
+    2. 将第三部分和第一部分拼接，则选择 `CN PJZ110`
+2. 在展示的 Releases 界面找到版本号 `15.0.0.840`
+3. 展开 Assets，点击下载 `init_boot.img`
 
 ### 🩹 修补
 
