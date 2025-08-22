@@ -44,7 +44,7 @@
     &[href^="mailto:"]::after {
         content: url(./email-light.svg);
     }
-    &[href^="./attachments/"]::after {
+    &[href^="/attachments/"]::after {
         content: url(./attachment-light.svg);
     }
 }
