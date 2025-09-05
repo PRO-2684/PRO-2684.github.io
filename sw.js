@@ -1,4 +1,4 @@
-const version = "1755836282";
+const version = "1757079239";
 const note = "note";
 const other = "other";
 const inVersion = ["js", "css", "fonts"];
