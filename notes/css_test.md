@@ -32,6 +32,9 @@ scripts: false
 ### Classical animation using `::placeholder`
 
 <style class="show">
+    #input1 {
+        padding-top: 1em;
+    }
     #input1::placeholder {
         transition: all 0.2s;
     }
@@ -47,7 +50,7 @@ scripts: false
 
 Problems:
 
-- Overflowed part of the placeholder is not shown.
+- ~~Overflowed part of the placeholder is not shown.~~
 - Placeholder will not be shown if user types something.
 
 ### Classical animation using `::before`
