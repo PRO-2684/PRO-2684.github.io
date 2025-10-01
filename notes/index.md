@@ -9,7 +9,7 @@ description: PRO 的个人博客索引
 
 欢迎来到我的个人博客! 😊
 
-[About me](/notes/about) | [Blog manual](/notes/blog_manual)
+[About me](/notes/about) | [Blog manual](/notes/blog_manual) | [GitHub Pages](https://pro-2684.github.io/) | [Cloudflare Pages](https://pro-2684.pages.dev/)
 
 ## 🔥 最近更新
 
