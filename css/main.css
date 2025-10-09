@@ -289,18 +289,22 @@ fieldset {
 }
 
 details {
-    margin: -1em;
-    padding: 1em;
     border: 1px solid var(--border-dim);
     border-radius: 1em;
     transition: border-color 0.2s ease-in-out;
 
-    &:hover, &:focus {
-        border-color: var(--border);
-    }
     > summary {
         padding: 1em;
         cursor: pointer;
+    }
+
+    &:hover, &:focus {
+        border-color: var(--border);
+    }
+    &:open {
+        > summary {
+            border-bottom: 1px dashed var(--border-dim);
+        }
     }
 }
 
