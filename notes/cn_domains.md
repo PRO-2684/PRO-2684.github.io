@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2025-11-09
+> 🕗 最近更新时间：2025-11-10
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
@@ -50,7 +50,7 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [璃月皇家炮兵学院.online](http://璃月皇家炮兵学院.online) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [真.世界地沟油大学.com](https://真.世界地沟油大学.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
 | 未知 | [西安原神大学.com](http://西安原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
-| 未知 | [长春原神大学.com](https://长春原神大学.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
+| 未知 | [长春原神大学.com](https://长春原神大学.com) | <span title='网站无法正常访问，状态码为 403'>🔴</span> | / |
 | 未知 | [隔壁.光速退学.com](https://隔壁.光速退学.com) | <span title='网站连接超时 (ConnectTimeout)'>🔴</span> | / |
 | 未知 | [黑龙江原神大学.com](http://黑龙江原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 
@@ -67,8 +67,8 @@ description: 此文章收集了部分国内大学的中文域名
 ## 统计信息
 
 - 本页面共收录 $42$ 个中文域名，其中 $11$ 个域名确认存活，$3$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：64.798499641 s
-- 根据模板生成上述表格：318.264 μs
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：30.948209167 s
+- 根据模板生成上述表格：268.41 μs
 
 ## 关于
 
