@@ -7,6 +7,8 @@ description: 通过配置 launch.json，实现 VSCode 内调试时传递多个�
 
 # VSCode 调试时传递多个命令行参数
 
+> Edit: 新版 VSCode 中已经将 `"args": "${command:pickArgs}"` 作为默认配置了。([vscode-python-debugger#548](https://github.com/microsoft/vscode-python-debugger/pull/548))
+
 ## 问题
 
 在 VSCode 中使用默认的“带有参数的 Python 文件”调试时，所输入的空格分隔的参数会被视为一个字符串，而非多个参数。例如，输入 `arg1 arg2` 时，实际传入的参数是 `"arg1 arg2"`，而非 `["arg1", "arg2"]`，这样就无法传递多个命令行参数。我们可以通过如下 Python 代码来验证这一点：
