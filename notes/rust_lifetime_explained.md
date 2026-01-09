@@ -1,6 +1,6 @@
 ---
 title: Rust Lifetime Explained (Mathematically)
-tags: [Latest, Technical, Rust]
+tags: [Technical, Rust]
 keywords: [rust, lifetime, mathematical, formal, explanation]
 description: Explaining Rust lifetime formally from a mathematical perspective.
 ---
