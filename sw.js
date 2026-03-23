@@ -1,7 +1,8 @@
-const version = "1759975574";
+const version = "1774247223";
 const note = "note";
 const other = "other";
-const inVersion = ["js", "css", "fonts"];
+const inVersion = ["js", "css"];
+const inOther = ["attachments", "cat"];
 const base = location.origin + location.pathname.slice(0, -5); // remove last "sw.js"
 const note_url = base + "notes/";
 const expiration = 60 * 60 * 24; // 1 day
@@ -9,13 +10,13 @@ const expiration = 60 * 60 * 24; // 1 day
 async function addResourcesToCache(resources, cahce_name) {
     const cache = await caches.open(cahce_name);
     await cache.addAll(resources);
-};
+}
 
 async function putInCache(request, response, cache_name) {
     const cache = await caches.open(cache_name);
     console.debug(`Put ${request.url} in ${cache_name}`);
     await cache.put(request, response);
-};
+}
 
 function modHeader(response, from) {
     const headers = new Headers(response.headers);
@@ -24,7 +25,7 @@ function modHeader(response, from) {
 }
 
 async function cacheFirst({ request, preloadResponsePromise, fallbackUrl }) {
-    let cache_name = other;
+    let cache_name = null;
     const parts = request.url.slice(base.length).split("/");
     // Everything directly under base, `/js`, `/css` is in version cache; `/notes` is in note cache; else in other cache
     if (parts.length <= 1) {
@@ -33,14 +34,22 @@ async function cacheFirst({ request, preloadResponsePromise, fallbackUrl }) {
         cache_name = note;
     } else if (inVersion.includes(parts[0])) {
         cache_name = version;
+    } else if (inOther.includes(parts[0])) {
+        cache_name = other;
+    } else {
+        // Do not interfere with non-recognized paths. They might be used for other project websites.
+        return await fetch(request);
     }
     const responseFromCache = await caches.match(request, {
         // If same origin, ignore search params
         ignoreSearch: request.url.startsWith(base),
     });
     if (responseFromCache) {
-        const time_span = Date.now() - new Date(responseFromCache.headers.get("date")).getTime();
-        const is_expired = (time_span > expiration * 1000) && (cache_name !== version);
+        const time_span =
+            Date.now() -
+            new Date(responseFromCache.headers.get("date")).getTime();
+        const is_expired =
+            time_span > expiration * 1000 && cache_name !== version;
         if (is_expired) {
             console.debug(`Get ${request.url} from cache, but expired`);
         } else {
@@ -51,7 +60,9 @@ async function cacheFirst({ request, preloadResponsePromise, fallbackUrl }) {
     const preloadResponse = await preloadResponsePromise;
     if (preloadResponse) {
         await putInCache(request, preloadResponse.clone(), cache_name);
-        console.debug(`Get ${request.url} from preload, saved in cache ${cache_name}`);
+        console.debug(
+            `Get ${request.url} from preload, saved in cache ${cache_name}`,
+        );
         return modHeader(preloadResponse, "network");
     }
     if (cache_name !== other) {
@@ -60,7 +71,9 @@ async function cacheFirst({ request, preloadResponsePromise, fallbackUrl }) {
     try {
         const responseFromNetwork = await fetch(request);
         await putInCache(request, responseFromNetwork.clone(), cache_name);
-        console.debug(`Get ${request.url} from network, saved in cache ${cache_name}`);
+        console.debug(
+            `Get ${request.url} from network, saved in cache ${cache_name}`,
+        );
         return modHeader(responseFromNetwork, "network");
     } catch (error) {
         if (responseFromCache) {
@@ -69,7 +82,9 @@ async function cacheFirst({ request, preloadResponsePromise, fallbackUrl }) {
         }
         const fallbackResponse = await caches.match(fallbackUrl);
         if (fallbackResponse) {
-            console.debug(`Get fallback for ${request.url} from url ${fallbackUrl} in cache`);
+            console.debug(
+                `Get fallback for ${request.url} from url ${fallbackUrl} in cache`,
+            );
             return modHeader(fallbackResponse, "fallback");
         }
         console.debug(`Constructed fallback response for ${request.url}`);
@@ -81,37 +96,44 @@ async function cacheFirst({ request, preloadResponsePromise, fallbackUrl }) {
             },
         });
     }
-};
+}
 
 async function enableNavigationPreload() {
     await self?.registration?.navigationPreload?.enable();
-};
+}
 
 self.addEventListener("install", (event) => {
     event.waitUntil(
-        addResourcesToCache([
-            "/",
-            "/index.html",
-            "/favicon.ico",
-            "/css/main.css",
-            "/css/nprogress.css",
-            "/js/main.js",
-            "/js/showdown.js",
-            "/js/showdown-footnotes.js",
-            "/js/katex.min.js",
-            "/js/katex-auto-render.min.js",
-            "/js/nprogress.js",
-            "/js/prism.js",
-        ].map(url => url + `?v=${version}`), version),
+        addResourcesToCache(
+            [
+                "/",
+                "/index.html",
+                "/favicon.ico",
+                "/icons.svg",
+                "/css/main.css",
+                "/css/nprogress.css",
+                "/js/main.js",
+                "/js/showdown.js",
+                "/js/showdown-footnotes.js",
+                "/js/katex.min.js",
+                "/js/katex-auto-render.min.js",
+                "/js/nprogress.js",
+                "/js/prism.js",
+            ].map((url) => url + `?v=${version}`),
+            version,
+        ),
     );
     return self.skipWaiting();
 });
 
 self.addEventListener("fetch", (event) => {
-    if (event.request.url.startsWith(base)) { // Only cache resources under my website
+    if (event.request.url.startsWith(base)) {
+        // Only cache resources under my website
         // Skip non-GET requests
         if (event.request.method !== "GET") {
-            console.debug(`Skip processing ${event.request.method} request to ${event.request.url}`);
+            console.debug(
+                `Skip processing ${event.request.method} request to ${event.request.url}`,
+            );
             return;
         }
         event.respondWith(
@@ -127,18 +149,23 @@ self.addEventListener("fetch", (event) => {
 async function deleteOldCaches() {
     const cacheKeepList = [version, other, note];
     const keyList = await caches.keys();
-    const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
+    const cachesToDelete = keyList.filter(
+        (key) => !cacheKeepList.includes(key),
+    );
     await Promise.all(cachesToDelete.map((key) => caches.delete(key)));
     // Delete caches from other that are not under base
     const cache = await caches.open(other);
     const requests = await cache.keys();
-    const requestsToDelete = requests.filter((request) => !request.url.startsWith(base));
+    const requestsToDelete = requests.filter(
+        (request) => !request.url.startsWith(base),
+    );
     await Promise.all(requestsToDelete.map((request) => cache.delete(request)));
-};
+}
 
 self.addEventListener("activate", (event) => {
-    event.waitUntil(enableNavigationPreload()
-        .then(deleteOldCaches)
-        .then(() => self.clients.claim())
+    event.waitUntil(
+        enableNavigationPreload()
+            .then(deleteOldCaches)
+            .then(() => self.clients.claim()),
     );
 });
