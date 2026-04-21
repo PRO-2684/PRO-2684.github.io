@@ -289,12 +289,14 @@ fieldset {
 }
 
 details {
+    padding: 0 1em;
     border: 1px solid var(--border-dim);
     border-radius: 1em;
     transition: border-color 0.2s ease-in-out;
 
     > summary {
         padding: 1em;
+        margin: 0 -1em;
         cursor: pointer;
     }
 
