@@ -1,6 +1,6 @@
 ---
 title: DLNA 捕获
-tags: [Technical, Latest, Rust]
+tags: [Technical, Rust]
 keywords: [DLNA, capture, 捕获, Windows, Media, DMR]
 description: 此文介绍了如何在 Windows 下利用系统自带的 Windows Media Player 捕获 DLNA 投屏的媒体流网址，DLNA 的基本原理，以及如何编写一个程序实现捕获的自动化
 ---

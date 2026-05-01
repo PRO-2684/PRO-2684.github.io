@@ -13,13 +13,13 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
+[Agent Browser](/notes/agent_browser)
+
 [命令行控制 OneDrive 文件随选](/notes/onedrive_on_demand)
 
 [一加 13 Root 教程 (以 KSU 为例)](/notes/oneplus_13_root)
 
 [Windows 11 Country Flag Emojis](/notes/windows_country_flag_emoji)
-
-[DLNA 捕获](/notes/dlna_capture)
 
 ## 🛠️ 实用
 
@@ -38,6 +38,8 @@ description: PRO 的个人博客索引
 [pURLfy / 链接净化](/notes/purlfy)
 
 ## 💻 技术
+
+[Agent Browser](/notes/agent_browser)
 
 [命令行控制 OneDrive 文件随选](/notes/onedrive_on_demand)
 
