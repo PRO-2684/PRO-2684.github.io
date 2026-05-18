@@ -7,7 +7,7 @@ description: 此文章收集了部分国内大学的中文域名
 
 # 部分国内大学的中文域名
 
-> 🕗 最近更新时间：2026-05-17
+> 🕗 最近更新时间：2026-05-18
 
 | 学校 | 中文域名 | 状态 | HTTPS |
 | --- | --- | --- | --- |
@@ -24,7 +24,6 @@ description: 此文章收集了部分国内大学的中文域名
 | [长春理工大学](https://www.cust.edu.cn/) | [长春原神大学.com](https://长春原神大学.com) | <span title='网站正常重定向到 https://www.cust.edu.cn/'>🟢</span> | 🟢 |
 | 未知 | [www.原神大学.com](https://www.原神大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [世界末流大学.com](https://世界末流大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
-| 未知 | [原神学院.com](https://原神学院.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🟢 |
 | 未知 | [宇宙一流大学.com](http://宇宙一流大学.com) | <span title='网站可能被盗用，也可能使用了 js 实现重定向'>🟡</span> | 🔴 |
 | 未知 | [中国原神大学.com](https://中国原神大学.com) | <span title='网站重定向到疑似垃圾网站 `https://www.中国原神大学.com/`'>🔴</span> | / |
 | 未知 | [世一大.com](https://世一大.com) | <span title='网站无法正常访问，状态码为 412'>🔴</span> | / |
@@ -40,6 +39,7 @@ description: 此文章收集了部分国内大学的中文域名
 | 未知 | [南京原神大学.com](http://南京原神大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神启动.com](http://原神启动.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神大学.love](http://原神大学.love) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
+| 未知 | [原神学院.com](https://原神学院.com) | <span title='网站无法正常访问，状态码为 504'>🔴</span> | / |
 | 未知 | [原神怎么你了.com](http://原神怎么你了.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神理工大学.com](http://原神理工大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
 | 未知 | [原神管理大学.com](http://原神管理大学.com) | <span title='网站连接错误，可能是域名已过期 (ConnectionError)'>🔴</span> | / |
@@ -66,9 +66,9 @@ description: 此文章收集了部分国内大学的中文域名
 
 ## 统计信息
 
-- 本页面共收录 $42$ 个中文域名，其中 $11$ 个域名确认存活，$4$ 个域名暂时无法确认。
-- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：34.036698805 s
-- 根据模板生成上述表格：352.203 μs
+- 本页面共收录 $42$ 个中文域名，其中 $11$ 个域名确认存活，$3$ 个域名暂时无法确认。
+- 对所有网站发送 HTTP 请求，并得到响应/超时/报错：62.001766944 s
+- 根据模板生成上述表格：283.818 μs
 
 ## 关于
 
