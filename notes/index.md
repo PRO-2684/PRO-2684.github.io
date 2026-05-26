@@ -65,6 +65,8 @@ description: PRO 的个人博客索引
 
 [禁止 Discord 自动更新](/notes/fuck_discord_update)
 
+[禁止腾讯会议自动更新](/notes/fuck_wemeet_update)
+
 [部分国内大学的中文域名收集](/notes/cn_domains)
 
 [相同 hash 的图片](/notes/same_hash)
