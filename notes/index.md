@@ -51,7 +51,7 @@ description: PRO 的个人博客索引
 
 [Dev Containers](/notes/dev_containers)
 
-[阻止 Windows 11 Emoji 选择器中的 Tenor GIF 搜索](/notes/windows_block_tenor)
+[阻止 Windows 11 Emoji 选择器中的 GIF 搜索](/notes/windows_block_gif)
 
 [Warp 的首次配置](/notes/warp)
 
