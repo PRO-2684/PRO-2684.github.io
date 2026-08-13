@@ -1,32 +1,34 @@
 ---
-title: The Hidden Metadata Inside Jianying/CapCut GIF Exports
+title: 剪映/CapCut 导出的 GIF 中隐藏的元数据
 tags: [Technical]
-keywords: [CapCut, Jianying, GIF, metadata, privacy, douyin_beauty_me, UID, DID]
-description: A preliminary investigation into opaque UID and DID fields embedded in GIFs exported by Jianying/CapCut.
+keywords: [CapCut, 剪映, GIF, 元数据, 隐私, douyin_beauty_me, UID, DID]
+description: 对剪映/CapCut 导出 GIF 中不透明 UID 和 DID 字段的初步调查。
 ---
 
-# The Hidden Metadata Inside Jianying/CapCut GIF Exports
+# 剪映/CapCut 导出的 GIF 中隐藏的元数据
 
-I was converting a GIF into a VP9/WebM sticker for Telegram when FFmpeg printed something I did not expect:
+[English version](/notes/douyin_beauty_me_en)
+
+我在将一个 GIF 转换成 Telegram 使用的 VP9/WebM 贴纸时，FFmpeg 输出了一段意料之外的信息：
 
 ```text
 Metadata:
   comment : {"source_type":"douyin_beauty_me","data":{...}}
 ```
 
-The comment was JSON containing editor details, a project-like UUID, and two fields named `uid` and `did`. This post documents two GIFs; it does **not** establish that the values identify their creators or remain stable between exports.
+这段注释是一份 JSON，其中包含编辑器信息、一个类似项目 ID 的 UUID，以及名为 `uid` 和 `did` 的两个字段。本文记录了对两个 GIF 的分析；它**不能**证明这些值可以识别文件作者，也不能证明它们在多次导出间保持不变。
 
-## Reproduce it yourself
+## 自行复现
 
-The two GIFs published with this post have had their UID and DID values sanitized (click to open in new tab and download):
+本文附带的两个 GIF 已对 UID 和 DID 进行脱敏（点击图片可在新标签页中打开并下载）：
 
-![Sanitized sample 1](/attachments/douyin_beauty_me/1.gif) ![Sanitized sample 2](/attachments/douyin_beauty_me/2.gif)
+![脱敏样本 1](/attachments/douyin_beauty_me/1.gif) ![脱敏样本 2](/attachments/douyin_beauty_me/2.gif)
 
 ```shell
 ffprobe -v quiet -show_entries format_tags=comment -of default=nw=1:nk=1 1.gif
 ```
 
-<details><summary>Inspect with ExifTool</summary>
+<details><summary>使用 ExifTool 检查</summary>
 
 ```shell
 exiftool -a -u -g1 -Comment 1.gif
@@ -34,7 +36,7 @@ exiftool -a -u -g1 -Comment 1.gif
 
 </details>
 
-The result begins:
+结果开头如下：
 
 ```json
 {
@@ -54,121 +56,121 @@ The result begins:
 }
 ```
 
-<details><summary>A note about the sanitized samples</summary>
+<details><summary>关于脱敏样本</summary>
 
-The original `uid` and `did` values may be sensitive, so I replaced each one with the Base64 representation of 256 zero bytes. I added `sample_sanitized:true` at the top level and changed nothing else in the JSON.
+原始 `uid` 和 `did` 可能属于敏感标识符，因此我将它们分别替换为 256 个零字节的 Base64 表示，并在 JSON 顶层添加了 `sample_sanitized:true`。除此之外，JSON 内容没有改变。
 
-This preserves the metadata structure and lets you confirm that both placeholders decode to 256 bytes:
+这样既能保留元数据结构，也能验证两个占位值解码后均为 256 字节：
 
 ```console
 $ ffprobe -v quiet -show_entries format_tags=comment -of default=nw=1:nk=1 1.gif | python -c "import base64,json,sys; m=json.loads(sys.stdin.buffer.read().decode('utf-8-sig')); print(len(base64.b64decode(m['uid'])), len(base64.b64decode(m['did'])))"
 256 256
 ```
 
-The public samples cannot reproduce the originals' high-entropy appearance; zeros make the substitution obvious.
+公开样本无法复现原始值呈现出的高熵特征；使用全零值正是为了让替换一目了然。
 
 </details>
 
-## What is stored in the files?
+## 文件中存储了什么？
 
-The JSON is stored in a standard GIF Comment Extension, beginning at byte offset 800 in both samples—not an FFmpeg interpretation of unrelated bytes.
+这份 JSON 位于标准 GIF Comment Extension 中，两个样本的扩展块都始于文件偏移 800。这并不是 FFmpeg 对无关字节的特殊解释。
 
-| Field        | Sample 1                                 | Sample 2                                 |
-| ------------ | ---------------------------------------- | ---------------------------------------- |
-| `appVersion` | `17.5.0`                                 | `18.8.0`                                 |
-| `os`         | `ios`                                    | `ios`                                    |
-| `product`    | `lv`                                     | `lv`                                     |
-| `videoId`    | distinct UUID                            | distinct UUID                            |
-| `uid`        | 344 Base64 characters, 256 decoded bytes | 344 Base64 characters, 256 decoded bytes |
-| `did`        | 344 Base64 characters, 256 decoded bytes | 344 Base64 characters, 256 decoded bytes |
+| 字段 | 样本 1 | 样本 2 |
+| --- | --- | --- |
+| `appVersion` | `17.5.0` | `18.8.0` |
+| `os` | `ios` | `ios` |
+| `product` | `lv` | `lv` |
+| `videoId` | 不同的 UUID | 不同的 UUID |
+| `uid` | 344 个 Base64 字符，解码后 256 字节 | 344 个 Base64 字符，解码后 256 字节 |
+| `did` | 344 个 Base64 字符，解码后 256 字节 | 344 个 Base64 字符，解码后 256 字节 |
 
-The original UID/DID values decoded to unreadable, high-entropy-looking bytes. Their 256-byte size is compatible with RSA-2048 output, but does not identify the encoding or prove cryptography.
+原始 UID/DID 解码后不是可读文本，其字节分布看起来具有高熵。256 字节与 RSA-2048 的输出大小相符，但这既不能确定编码方式，也不能证明其中使用了密码学机制。
 
-<details><summary>A timestamp-like field</summary>
+<details><summary>一个类似时间戳的字段</summary>
 
-Both files contain an `autoPublishTemplatePreId` consisting of a UUID and a 13-digit integer. Interpreted as Unix milliseconds, the suffixes produce plausible dates. The field is undocumented, so they cannot yet be called export times.
-
-</details>
-
-## Why call them user and device identifiers?
-
-CapCut defines **UID** as “User ID” and **DID** as “Device ID”, used by support to locate and troubleshoot accounts.[^capcut_uid] Its privacy policy also says it collects unique device identifiers and related technical data.[^capcut_privacy]
-
-This establishes CapCut's terminology—not that the exported blobs equal the IDs shown in settings. They might be encrypted values, signed envelopes, temporary tokens, or something else.
-
-## Beyond GIF
-
-The namespace predates these samples and is not GIF-specific. A 2021 report found it in Jianying-exported video, including `product:"lv"`, resource IDs, and an export-varying `videoId`.[^xiaozhongpai] Wikimedia Commons exposes it in a JPEG from an image-editing workflow.[^wikimedia]
-
-The behavior therefore spans formats, and websites can expose it to search engines. But those examples do not contain the newer opaque UID/DID blobs; this investigation only confirms those in two GIFs.
-
-## Speculation: what might the opaque blobs enable?
-
-> **Warning:** Everything in this section is speculative. The supplied files cannot distinguish among these possibilities.
-
-Three plausible models:
-
-1. **Vendor-resolvable identity envelopes.** Each blob could contain an account or installation identifier encrypted for ByteDance. Randomized encryption would make the bytes differ on every export while still allowing the holder of the private key to recover the same underlying identity.
-2. **Public correlation tokens.** If either value is deterministic for an account or device, anyone could search for equality across files without decrypting it. A value need not reveal a person's name to become a useful tracking handle.
-3. **Diagnostic or obsolete data.** The values could be export-scoped support tokens, misleading legacy fields, or non-resolvable data—with much smaller privacy impact.
-
-Unequal ciphertexts do not disprove stable underlying data when randomized encryption is involved; field names and length do not prove that model either. The defensible question is:
-
-> Can the party that created these blobs resolve independently distributed exports to the same account or device—and, if so, why are those blobs included in user-distributed files?
-
-<details><summary>The experiment that would answer it</summary>
-
-1. Export the same project several times from one account and device.
-2. Export several unrelated projects from that same account and device.
-3. Repeat while logged out.
-4. Compare exports from the same account on two devices.
-5. Compare two accounts on the same device.
-6. Repeat before and after reinstalling the app.
-
-Compare `uid`, `did`, `videoId`, the timestamp-like suffix, and the IDs displayed in the app. Equal blobs show public linkability; unequal blobs rule out equality matching, not vendor-side resolution.
+两个文件都含有 `autoPublishTemplatePreId`：一个 UUID 后跟一个 13 位整数。将其解释为 Unix 毫秒时间戳会得到合理的日期。但该字段没有公开文档，因此目前不能称其为导出时间。
 
 </details>
 
-## Inspecting and removing the metadata
+## 为什么称其为用户和设备标识符？
 
-ExifTool can remove the comment without re-encoding the animation:
+CapCut 将 **UID** 定义为“用户 ID”（User ID），将 **DID** 定义为“设备 ID”（Device ID），并称客服会用它们定位账号和排查问题。[^capcut_uid] 其隐私政策也说明会收集唯一设备标识符及相关技术信息。[^capcut_privacy]
+
+这些资料只能确定 CapCut 对术语的定义，不能证明导出文件中的二进制数据等同于设置界面显示的 ID。它们可能是加密值、签名封装、临时令牌，也可能是其他数据。
+
+## 不止 GIF
+
+这个命名空间早于本文样本出现，也不局限于 GIF。2021 年的一篇文章曾在剪映导出的视频中发现它，其中包括 `product:"lv"`、资源 ID 和一个每次导出都会变化的 `videoId`。[^xiaozhongpai] Wikimedia Commons 还公开展示了一张经图像编辑流程处理的 JPEG 中的同名元数据。[^wikimedia]
+
+因此，这种写入行为横跨多种格式，网站也可能将其暴露给搜索引擎。但上述案例没有较新的不透明 UID/DID 数据；本文只在两个 GIF 中确认了这些字段。
+
+## 推测：这些不透明数据可能有什么作用？
+
+> **警告：** 本节完全属于推测。现有样本无法区分以下可能性。
+
+三种可能模型：
+
+1. **厂商可解析的身份封装。** 数据中可能包含为字节跳动加密的账号或安装标识符。随机化加密会让每次导出的密文不同，但私钥持有者仍可还原相同的底层身份。
+2. **公开的关联令牌。** 如果某个值对账号或设备而言是确定的，任何人都能在不解密的情况下匹配不同文件。一个值即使不能揭示姓名，也可以成为追踪标识。
+3. **诊断或废弃数据。** 它们也可能只是针对单次导出的客服令牌、含义已变的旧字段，或者无法解析的数据；此时隐私影响会小得多。
+
+使用随机化加密时，密文不同不能排除底层数据相同；但字段名和长度同样无法证明采用了这种模型。更严谨的问题是：
+
+> 创建这些数据的一方能否将独立传播的导出文件关联到同一账号或设备？如果可以，为什么要把它们写入用户会分发的文件？
+
+<details><summary>如何通过实验回答</summary>
+
+1. 使用同一账号和设备多次导出同一项目。
+2. 使用同一账号和设备导出多个不同项目。
+3. 退出登录后重复实验。
+4. 比较同一账号在两台设备上的导出结果。
+5. 比较同一设备上两个账号的导出结果。
+6. 在重新安装应用前后重复实验。
+
+比较每个文件的 `uid`、`did`、`videoId`、类似时间戳的后缀，以及应用界面显示的 ID。相同的数据可以证明公开关联能力；不同的数据只能排除简单的相等匹配，不能排除厂商解析能力。
+
+</details>
+
+## 检查和移除元数据
+
+ExifTool 可以在不重新编码动画的情况下移除注释：
 
 ```shell
 exiftool -Comment= -o clean.gif input.gif
 ```
 
-Alternatively, FFmpeg removes it while decoding and re-encoding:
+FFmpeg 也可以在解码并重新编码时移除它：
 
 ```shell
 ffmpeg -i input.gif -map_metadata -1 clean.gif
 ```
 
-Verify removal:
+验证结果：
 
 ```shell
 ffprobe -v quiet -show_entries format_tags=comment -of default=nw=1:nk=1 clean.gif
 ```
 
-No output means no comment was found. In my tests, adding `-c copy` preserved the extension despite `-map_metadata -1`; use ExifTool for lossless removal or let FFmpeg re-encode.
+没有输出即表示未发现注释。在我的测试中，即使指定 `-map_metadata -1`，添加 `-c copy` 仍会保留该扩展块。因此，如需无损移除，应使用 ExifTool；否则让 FFmpeg 重新编码。
 
-## Preliminary conclusion
+## 初步结论
 
-Two recent Jianying/CapCut GIFs contained opaque 256-byte fields named UID and DID. Until controlled exports establish whether they are stable or resolvable, they are best described as a **potential correlation channel**—not proof of deanonymization.
+近期的两个剪映/CapCut GIF 中包含名为 UID 和 DID 的不透明字段，分别编码了 256 字节数据。在受控导出实验确定它们是否稳定或可解析之前，更准确的描述是：它们是一个**潜在的关联渠道**，而不是去匿名化的证据。
 
-<details><summary>What it does not establish</summary>
+<details><summary>本文没有证明什么</summary>
 
-- The blobs have not been decoded or matched to the IDs shown in CapCut.
-- Stability across exports, accounts, devices, or installations remains untested.
-- Creator identification, deliberate tracking, and legal or security conclusions are not demonstrated.
+- 这些数据尚未被解码，也没有与 CapCut 中显示的 ID 匹配。
+- 它们在不同导出、账号、设备或应用安装间是否稳定，尚未测试。
+- 本文没有证明可以识别文件作者、存在故意追踪，或可据此得出法律和安全结论。
 
 </details>
 
 ---
 
-[^capcut_uid]: [How to Find My UID / DID in CapCut?](https://www.capcut.com/help/uid-and-did-in-capcut), CapCut Help Center.
+[^capcut_uid]: [如何在 CapCut 中找到 UID/DID？](https://www.capcut.com/help/uid-and-did-in-capcut)，CapCut 帮助中心。
 
-[^capcut_privacy]: [CapCut Privacy Policy](https://www.capcut.com/clause/privacy-policy?lang=en), section “Technical Information.”
+[^capcut_privacy]: [CapCut 隐私政策](https://www.capcut.com/clause/privacy-policy?lang=en)，“Technical Information”一节。
 
-[^xiaozhongpai]: [剪映APP导出的视频文件会携带识别符信息](https://www.xiaozhongpai.com/p/2472), 小众派.
+[^xiaozhongpai]: [剪映 APP 导出的视频文件会携带识别符信息](https://www.xiaozhongpai.com/p/2472)，小众派。
 
-[^wikimedia]: [File:Ryan Kopel in Dear Evan Hansen UK Tour 04.jpg](https://commons.wikimedia.org/wiki/File:Ryan_Kopel_in_Dear_Evan_Hansen_UK_Tour_04.jpg), Wikimedia Commons metadata.
+[^wikimedia]: [File:Ryan Kopel in Dear Evan Hansen UK Tour 04.jpg](https://commons.wikimedia.org/wiki/File:Ryan_Kopel_in_Dear_Evan_Hansen_UK_Tour_04.jpg)，Wikimedia Commons 元数据。
