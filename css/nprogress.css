@@ -15,6 +15,7 @@
 }
 
 #nprogress .bar {
+  margin: 0;
   padding: 0;
   background: var(--bar-color);
   position: fixed;
@@ -28,6 +29,7 @@
 
 /* Fancy blur effect */
 #nprogress .peg {
+  margin: 0;
   padding: 0;
   display: block;
   position: absolute;
@@ -44,6 +46,7 @@
 
 /* Remove these to get rid of the spinner */
 #nprogress .spinner {
+  margin: 0;
   padding: 0;
   display: block;
   position: fixed;
