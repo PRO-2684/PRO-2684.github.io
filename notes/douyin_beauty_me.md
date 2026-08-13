@@ -14,9 +14,7 @@ Metadata:
   comment : {"source_type":"douyin_beauty_me","data":{...}}
 ```
 
-The comment was not a harmless encoder name. It was a JSON object containing the editor version, operating system, workflow information, a project-like UUID, and two fields named `uid` and `did`.
-
-This post documents what I could reproduce from two GIFs. It does **not** establish that an arbitrary recipient can identify their creator, or even that the identifiers remain stable between exports. Those are the questions that make the finding interesting—and the experiments still missing.
+The comment was JSON containing editor details, a project-like UUID, and two fields named `uid` and `did`. This post documents two GIFs; it does **not** establish that the values identify their creators or remain stable between exports.
 
 ## Reproduce it yourself
 
@@ -24,19 +22,19 @@ The two GIFs published with this post have had their UID and DID values sanitize
 
 ![Sanitized sample 1](/attachments/douyin_beauty_me/1.gif) ![Sanitized sample 2](/attachments/douyin_beauty_me/2.gif)
 
-Run:
-
 ```shell
 ffprobe -v quiet -show_entries format_tags=comment -of default=nw=1:nk=1 1.gif
 ```
 
-ExifTool finds the same value:
+<details><summary>Inspect with ExifTool</summary>
 
 ```shell
 exiftool -a -u -g1 -Comment 1.gif
 ```
 
-The result begins like this:
+</details>
+
+The result begins:
 
 ```json
 {
@@ -56,33 +54,24 @@ The result begins like this:
 }
 ```
 
-The downloadable files contain the complete JSON rather than the abbreviated example above.
-
 <details><summary>A note about the sanitized samples</summary>
 
 The original `uid` and `did` values may be sensitive, so I replaced each one with the Base64 representation of 256 zero bytes. I added `sample_sanitized:true` at the top level and changed nothing else in the JSON.
 
-This lets you reproduce the location of the metadata, parse its structure, and confirm that both placeholder values decode to 256 bytes:
+This preserves the metadata structure and lets you confirm that both placeholders decode to 256 bytes:
 
-```shell
-ffprobe -v quiet -show_entries format_tags=comment -of default=nw=1:nk=1 1.gif | python -c "import base64,json,sys; m=json.loads(sys.stdin.buffer.read().decode('utf-8-sig')); print(len(base64.b64decode(m['uid'])), len(base64.b64decode(m['did'])))"
-```
-
-Expected output:
-
-```text
+```console
+$ ffprobe -v quiet -show_entries format_tags=comment -of default=nw=1:nk=1 1.gif | python -c "import base64,json,sys; m=json.loads(sys.stdin.buffer.read().decode('utf-8-sig')); print(len(base64.b64decode(m['uid'])), len(base64.b64decode(m['did'])))"
 256 256
 ```
 
-You cannot use the public samples to reproduce my observation that the original decoded values looked high-entropy: zeros were chosen precisely so nobody could mistake the replacements for real identifiers.
+The public samples cannot reproduce the originals' high-entropy appearance; zeros make the substitution obvious.
 
 </details>
 
 ## What is stored in the files?
 
-The JSON is stored in a standard GIF Comment Extension. In both samples the extension begins at byte offset 800, so this is not an FFmpeg-only interpretation of unrelated bytes.
-
-The most relevant fields were:
+The JSON is stored in a standard GIF Comment Extension, beginning at byte offset 800 in both samples—not an FFmpeg interpretation of unrelated bytes.
 
 | Field        | Sample 1                                 | Sample 2                                 |
 | ------------ | ---------------------------------------- | ---------------------------------------- |
@@ -93,50 +82,41 @@ The most relevant fields were:
 | `uid`        | 344 Base64 characters, 256 decoded bytes | 344 Base64 characters, 256 decoded bytes |
 | `did`        | 344 Base64 characters, 256 decoded bytes | 344 Base64 characters, 256 decoded bytes |
 
-The original decoded UID/DID values were not readable text. Their bytes looked high-entropy, consistent with an encrypted or otherwise opaque binary envelope.
+The original UID/DID values decoded to unreadable, high-entropy-looking bytes. Their 256-byte size is compatible with RSA-2048 output, but does not identify the encoding or prove cryptography.
 
-Exactly 256 bytes is compatible with the output size of a 2048-bit RSA operation. That is only a clue, not identification of the scheme: many unrelated formats can have the same length, and blob size alone proves no cryptography.
+<details><summary>A timestamp-like field</summary>
 
-Both files also contain an `autoPublishTemplatePreId` with a UUID followed by a 13-digit integer. Interpreted as Unix milliseconds, the suffixes correspond to plausible dates. The field is undocumented, however, so it would be premature to call either value the exact export time.
+Both files contain an `autoPublishTemplatePreId` consisting of a UUID and a 13-digit integer. Interpreted as Unix milliseconds, the suffixes produce plausible dates. The field is undocumented, so they cannot yet be called export times.
+
+</details>
 
 ## Why call them user and device identifiers?
 
-CapCut's own help page defines **UID** as “User ID” and **DID** as “Device ID.” It describes both as unique identifiers used by support to locate and troubleshoot an account.[^capcut_uid]
+CapCut defines **UID** as “User ID” and **DID** as “Device ID”, used by support to locate and troubleshoot accounts.[^capcut_uid] Its privacy policy also says it collects unique device identifiers and related technical data.[^capcut_privacy]
 
-CapCut's privacy policy separately says that it automatically collects unique device identifiers, application versions, operating-system information, and other technical data.[^capcut_privacy]
-
-Those sources establish that UID and DID have official meanings in CapCut. They do **not** prove that the opaque values exported in these GIFs are byte-for-byte the identifiers displayed in CapCut's settings. The exported values might instead be encrypted versions, signed envelopes, temporary tokens, or something else entirely.
+This establishes CapCut's terminology—not that the exported blobs equal the IDs shown in settings. They might be encrypted values, signed envelopes, temporary tokens, or something else.
 
 ## Beyond GIF
 
-The `douyin_beauty_me` namespace predates these samples. A Chinese-language report updated in 2021 documented it in videos exported from Jianying, including `product:"lv"`, the operating system, resource IDs, and a `videoId` that reportedly changed on every export.[^xiaozhongpai]
+The namespace predates these samples and is not GIF-specific. A 2021 report found it in Jianying-exported video, including `product:"lv"`, resource IDs, and an export-varying `videoId`.[^xiaozhongpai] Wikimedia Commons exposes it in a JPEG from an image-editing workflow.[^wikimedia]
 
-The `douyin_beauty_me` namespace is not specific to GIF. The 2021 report documented it in Jianying-exported video files, while Wikimedia Commons exposes the same namespace in the metadata of a JPEG produced by an image-editing workflow.[^wikimedia] This suggests that the metadata-writing behavior spans multiple export formats and applications in ByteDance's editing ecosystem.
-
-Those examples do not establish that every format contains the newer opaque UID/DID fields. This investigation confirms those fields only in the two GIF samples examined here.
-
-This demonstrates that websites can preserve the metadata and expose it in HTML that search engines can index. It does not yet demonstrate that genuine modern UID/DID ciphertexts are commonly indexed.
+The behavior therefore spans formats, and websites can expose it to search engines. But those examples do not contain the newer opaque UID/DID blobs; this investigation only confirms those in two GIFs.
 
 ## Speculation: what might the opaque blobs enable?
 
 > **Warning:** Everything in this section is speculative. The supplied files cannot distinguish among these possibilities.
 
-Here are four models, ordered roughly from more concerning to less concerning:
+Three plausible models:
 
 1. **Vendor-resolvable identity envelopes.** Each blob could contain an account or installation identifier encrypted for ByteDance. Randomized encryption would make the bytes differ on every export while still allowing the holder of the private key to recover the same underlying identity.
 2. **Public correlation tokens.** If either value is deterministic for an account or device, anyone could search for equality across files without decrypting it. A value need not reveal a person's name to become a useful tracking handle.
-3. **Export-scoped diagnostic tokens.** The values could identify one export or support event, with any account association stored only on the vendor's servers. This might still permit vendor-side attribution but not third-party correlation.
-4. **Non-resolvable opaque data.** The names may be misleading, obsolete, or filled with values that no longer support any meaningful lookup. In that case the privacy impact would be much smaller.
+3. **Diagnostic or obsolete data.** The values could be export-scoped support tokens, misleading legacy fields, or non-resolvable data—with much smaller privacy impact.
 
-The first model is particularly easy to miss: unequal ciphertexts do not disprove stable underlying data when randomized encryption is involved. Conversely, the field names and 256-byte length do not prove that model either.
-
-The provocative question is therefore not “Can anyone identify the author?” The defensible question is:
+Unequal ciphertexts do not disprove stable underlying data when randomized encryption is involved; field names and length do not prove that model either. The defensible question is:
 
 > Can the party that created these blobs resolve independently distributed exports to the same account or device—and, if so, why are those blobs included in user-distributed files?
 
 <details><summary>The experiment that would answer it</summary>
-
-The next step is a controlled export matrix:
 
 1. Export the same project several times from one account and device.
 2. Export several unrelated projects from that same account and device.
@@ -145,19 +125,11 @@ The next step is a controlled export matrix:
 5. Compare two accounts on the same device.
 6. Repeat before and after reinstalling the app.
 
-For each file, compare `uid`, `did`, `videoId`, and the timestamp-like suffix. Also record the UID and DID displayed in the application's interface, without publishing them.
-
-Equal exported blobs would directly show third-party linkability. Unequal blobs would rule out simple equality matching, but not vendor-side resolution. Answering the latter likely requires reverse engineering or cooperation from ByteDance.
+Compare `uid`, `did`, `videoId`, the timestamp-like suffix, and the IDs displayed in the app. Equal blobs show public linkability; unequal blobs rule out equality matching, not vendor-side resolution.
 
 </details>
 
 ## Inspecting and removing the metadata
-
-To inspect a GIF:
-
-```shell
-ffprobe -v quiet -show_entries format_tags=comment -of default=nw=1:nk=1 input.gif
-```
 
 ExifTool can remove the comment without re-encoding the animation:
 
@@ -171,43 +143,23 @@ Alternatively, FFmpeg removes it while decoding and re-encoding:
 ffmpeg -i input.gif -map_metadata -1 clean.gif
 ```
 
-Verify the result rather than assuming it worked:
+Verify removal:
 
 ```shell
 ffprobe -v quiet -show_entries format_tags=comment -of default=nw=1:nk=1 clean.gif
 ```
 
-No output means no comment was found.
-
-One trap: in my tests, adding `-c copy` to the FFmpeg command preserved the GIF Comment Extension despite `-map_metadata -1`. Use ExifTool for lossless targeted removal, or let FFmpeg re-encode and verify the result.
+No output means no comment was found. In my tests, adding `-c copy` preserved the extension despite `-map_metadata -1`; use ExifTool for lossless removal or let FFmpeg re-encode.
 
 ## Preliminary conclusion
 
-Jianying/CapCut's editing stack has embedded `douyin_beauty_me` provenance metadata in exported media for years. The two recent GIFs examined here go further: they contain opaque fields explicitly named UID and DID, each encoded as a 256-byte binary value.
-
-That is enough to justify investigation, not enough to declare deanonymization. Until controlled exports reveal whether the values are stable or vendor-resolvable, the accurate description is a **potential correlation channel** embedded in files users are likely to distribute.
-
-<details><summary>What this investigation establishes</summary>
-
-- Both supplied GIFs contain valid `douyin_beauty_me` JSON in a GIF Comment Extension.
-- Both contain top-level fields explicitly named `uid` and `did`.
-- All four original values are valid Base64 and decode to opaque 256-byte blobs.
-- The files identify an iOS editing workflow, `product:"lv"`, and application versions 17.5.0 and 18.8.0.
-- The two `videoId`, UID, and DID values differ.
-
-The last observation does not show that UID or DID rotates between exports. These are two uncontrolled files of different provenance, not repeated exports from one account and device.
-
-</details>
+Two recent Jianying/CapCut GIFs contained opaque 256-byte fields named UID and DID. Until controlled exports establish whether they are stable or resolvable, they are best described as a **potential correlation channel**—not proof of deanonymization.
 
 <details><summary>What it does not establish</summary>
 
-- That Base64 decoding reveals an account or device ID.
-- That two exports from the same user contain equal UID/DID blobs.
-- That `did` refers to immutable physical hardware.
-- That a third party can identify the creator of a GIF.
-- That ByteDance actively searches the web for these values.
-- That including the metadata was intended for tracking.
-- That this behavior violates a particular law or constitutes a security vulnerability.
+- The blobs have not been decoded or matched to the IDs shown in CapCut.
+- Stability across exports, accounts, devices, or installations remains untested.
+- Creator identification, deliberate tracking, and legal or security conclusions are not demonstrated.
 
 </details>
 
