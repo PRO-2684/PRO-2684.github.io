@@ -1,22 +1,22 @@
 ---
-title: 剪映/CapCut 导出的 GIF 中隐藏的元数据
+title: 疑似由剪映/CapCut 导出的 GIF 中隐藏的元数据
 tags: [Technical]
 keywords: [CapCut, 剪映, GIF, 元数据, 隐私, douyin_beauty_me, UID, DID]
-description: 对剪映/CapCut 导出 GIF 中不透明 UID 和 DID 字段的初步调查。
+description: 对疑似由剪映/CapCut 导出的 GIF 中不透明 UID 和 DID 字段的初步调查。
 ---
 
-# 剪映/CapCut 导出的 GIF 中隐藏的元数据
+# 疑似由剪映/CapCut 导出的 GIF 中隐藏的元数据
 
 [English version](/notes/douyin_beauty_me_en)
 
-我在将一个 GIF 转换成 Telegram 使用的 VP9/WebM 贴纸时，FFmpeg 输出了一段意料之外的信息：
+我在将两个来自 QQ 群的 GIF 转换成 Telegram 使用的 VP9/WebM 贴纸时，FFmpeg 输出了一段意料之外的信息：
 
 ```text
 Metadata:
   comment : {"source_type":"douyin_beauty_me","data":{...}}
 ```
 
-这段注释是一份 JSON，其中包含编辑器信息、一个类似项目 ID 的 UUID，以及名为 `uid` 和 `did` 的两个字段。本文记录了对两个 GIF 的分析；它**不能**证明这些值可以识别文件作者，也不能证明它们在多次导出间保持不变。
+这段注释是一份 JSON，其中包含编辑器信息、一个类似项目 ID 的 UUID，以及名为 `uid` 和 `did` 的两个字段。我无法验证这两个 GIF 的来源或完整处理历史；文件中的元数据表明它们可能经过剪映/CapCut，但不足以证明它们由该应用直接导出。本文记录了对这两个 GIF 的分析；它**不能**证明这些值可以识别文件作者，也不能证明它们在多次导出间保持不变。
 
 ## 自行复现
 
@@ -75,14 +75,14 @@ $ ffprobe -v quiet -show_entries format_tags=comment -of default=nw=1:nk=1 1.gif
 
 这份 JSON 位于标准 GIF Comment Extension 中，两个样本的扩展块都始于文件偏移 800。这并不是 FFmpeg 对无关字节的特殊解释。
 
-| 字段 | 样本 1 | 样本 2 |
-| --- | --- | --- |
-| `appVersion` | `17.5.0` | `18.8.0` |
-| `os` | `ios` | `ios` |
-| `product` | `lv` | `lv` |
-| `videoId` | 不同的 UUID | 不同的 UUID |
-| `uid` | 344 个 Base64 字符，解码后 256 字节 | 344 个 Base64 字符，解码后 256 字节 |
-| `did` | 344 个 Base64 字符，解码后 256 字节 | 344 个 Base64 字符，解码后 256 字节 |
+| 字段         | 样本 1                              | 样本 2                              |
+| ------------ | ----------------------------------- | ----------------------------------- |
+| `appVersion` | `17.5.0`                            | `18.8.0`                            |
+| `os`         | `ios`                               | `ios`                               |
+| `product`    | `lv`                                | `lv`                                |
+| `videoId`    | 不同的 UUID                         | 不同的 UUID                         |
+| `uid`        | 344 个 Base64 字符，解码后 256 字节 | 344 个 Base64 字符，解码后 256 字节 |
+| `did`        | 344 个 Base64 字符，解码后 256 字节 | 344 个 Base64 字符，解码后 256 字节 |
 
 原始 UID/DID 解码后不是可读文本，其字节分布看起来具有高熵。256 字节与 RSA-2048 的输出大小相符，但这既不能确定编码方式，也不能证明其中使用了密码学机制。
 
@@ -155,11 +155,12 @@ ffprobe -v quiet -show_entries format_tags=comment -of default=nw=1:nk=1 clean.g
 
 ## 初步结论
 
-近期的两个剪映/CapCut GIF 中包含名为 UID 和 DID 的不透明字段，分别编码了 256 字节数据。在受控导出实验确定它们是否稳定或可解析之前，更准确的描述是：它们是一个**潜在的关联渠道**，而不是去匿名化的证据。
+两个疑似经过剪映/CapCut 处理的 GIF 中包含名为 UID 和 DID 的不透明字段，分别编码了 256 字节数据。在受控导出实验确定它们是否稳定或可解析之前，更准确的描述是：它们是一个**潜在的关联渠道**，而不是去匿名化的证据。
 
 <details><summary>本文没有证明什么</summary>
 
 - 这些数据尚未被解码，也没有与 CapCut 中显示的 ID 匹配。
+- 这两个 GIF 的来源和完整处理历史无法验证。
 - 它们在不同导出、账号、设备或应用安装间是否稳定，尚未测试。
 - 本文没有证明可以识别文件作者、存在故意追踪，或可据此得出法律和安全结论。
 

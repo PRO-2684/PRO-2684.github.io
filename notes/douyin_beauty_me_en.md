@@ -1,22 +1,22 @@
 ---
-title: The Hidden Metadata Inside Jianying/CapCut GIF Exports
+title: Hidden Metadata in GIFs Apparently Exported by Jianying/CapCut
 tags: [Technical]
 keywords: [CapCut, Jianying, GIF, metadata, privacy, douyin_beauty_me, UID, DID]
-description: A preliminary investigation into opaque UID and DID fields embedded in GIFs exported by Jianying/CapCut.
+description: A preliminary investigation into opaque UID and DID fields embedded in GIFs apparently exported by Jianying/CapCut.
 ---
 
-# The Hidden Metadata Inside Jianying/CapCut GIF Exports
+# Hidden Metadata in GIFs Apparently Exported by Jianying/CapCut
 
 [中文版本](/notes/douyin_beauty_me)
 
-I was converting a GIF into a VP9/WebM sticker for Telegram when FFmpeg printed something I did not expect:
+I was converting two GIFs obtained from a QQ group into VP9/WebM stickers for Telegram when FFmpeg printed something I did not expect:
 
 ```text
 Metadata:
   comment : {"source_type":"douyin_beauty_me","data":{...}}
 ```
 
-The comment was JSON containing editor details, a project-like UUID, and two fields named `uid` and `did`. This post documents two GIFs; it does **not** establish that the values identify their creators or remain stable between exports.
+The comment was JSON containing editor details, a project-like UUID, and two fields named `uid` and `did`. I cannot verify the provenance or complete processing history of the two GIFs; their metadata suggests that they may have passed through Jianying/CapCut, but does not prove that the app directly exported them. This post documents the two files; it does **not** establish that the values identify their creators or remain stable between exports.
 
 ## Reproduce it yourself
 
@@ -155,11 +155,12 @@ No output means no comment was found. In my tests, adding `-c copy` preserved th
 
 ## Preliminary conclusion
 
-Two recent Jianying/CapCut GIFs contained opaque 256-byte fields named UID and DID. Until controlled exports establish whether they are stable or resolvable, they are best described as a **potential correlation channel**—not proof of deanonymization.
+Two GIFs apparently processed by Jianying/CapCut contained opaque 256-byte fields named UID and DID. Until controlled exports establish whether they are stable or resolvable, they are best described as a **potential correlation channel**—not proof of deanonymization.
 
 <details><summary>What it does not establish</summary>
 
 - The blobs have not been decoded or matched to the IDs shown in CapCut.
+- The provenance and complete processing history of the two GIFs cannot be verified.
 - Stability across exports, accounts, devices, or installations remains untested.
 - Creator identification, deliberate tracking, and legal or security conclusions are not demonstrated.
 
