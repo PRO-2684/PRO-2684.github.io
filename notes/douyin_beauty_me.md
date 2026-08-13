@@ -101,9 +101,9 @@ Both files also contain an `autoPublishTemplatePreId` with a UUID followed by a 
 
 ## Why call them user and device identifiers?
 
-CapCut's own help page defines **UID** as “User ID” and **DID** as “Device ID.” It describes both as unique identifiers used by support to locate and troubleshoot an account.[^capcut-uid]
+CapCut's own help page defines **UID** as “User ID” and **DID** as “Device ID.” It describes both as unique identifiers used by support to locate and troubleshoot an account.[^capcut_uid]
 
-CapCut's privacy policy separately says that it automatically collects unique device identifiers, application versions, operating-system information, and other technical data.[^capcut-privacy]
+CapCut's privacy policy separately says that it automatically collects unique device identifiers, application versions, operating-system information, and other technical data.[^capcut_privacy]
 
 Those sources establish that UID and DID have official meanings in CapCut. They do **not** prove that the opaque values exported in these GIFs are byte-for-byte the identifiers displayed in CapCut's settings. The exported values might instead be encrypted versions, signed envelopes, temporary tokens, or something else entirely.
 
@@ -205,9 +205,11 @@ Jianying/CapCut's editing stack has embedded `douyin_beauty_me` provenance metad
 
 That is enough to justify investigation, not enough to declare deanonymization. Until controlled exports reveal whether the values are stable or vendor-resolvable, the accurate description is a **potential correlation channel** embedded in files users are likely to distribute.
 
-[^capcut-uid]: [How to Find My UID / DID in CapCut?](https://www.capcut.com/help/uid-and-did-in-capcut), CapCut Help Center.
+---
 
-[^capcut-privacy]: [CapCut Privacy Policy](https://www.capcut.com/clause/privacy-policy?lang=en), section “Technical Information.”
+[^capcut_uid]: [How to Find My UID / DID in CapCut?](https://www.capcut.com/help/uid-and-did-in-capcut), CapCut Help Center.
+
+[^capcut_privacy]: [CapCut Privacy Policy](https://www.capcut.com/clause/privacy-policy?lang=en), section “Technical Information.”
 
 [^xiaozhongpai]: [剪映APP导出的视频文件会携带识别符信息](https://www.xiaozhongpai.com/p/2472), 小众派.
 
