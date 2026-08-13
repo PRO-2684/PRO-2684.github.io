@@ -1,6 +1,6 @@
 ---
 title: 命令行控制 OneDrive 文件随选
-tags: [Technical, Latest]
+tags: [Technical]
 keywords: [OneDrive, Attributes, attrib.exe, OneDrive Personal, Sync, Files On-Demand, 文件随选, 同步]
 description: 此文章介绍了如何通过命令行控制 OneDrive 的文件随选功能
 ---

@@ -13,9 +13,9 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
-[Agent Browser](/notes/agent_browser)
+[The Hidden Metadata Inside Jianying/CapCut GIF Exports](/notes/douyin_beauty_me.md)
 
-[命令行控制 OneDrive 文件随选](/notes/onedrive_on_demand)
+[Agent Browser](/notes/agent_browser)
 
 [一加 13 Root 教程 (以 KSU 为例)](/notes/oneplus_13_root)
 
@@ -38,6 +38,8 @@ description: PRO 的个人博客索引
 [pURLfy / 链接净化](/notes/purlfy)
 
 ## 💻 技术
+
+[The Hidden Metadata Inside Jianying/CapCut GIF Exports](/notes/douyin_beauty_me.md)
 
 [Agent Browser](/notes/agent_browser)
 
