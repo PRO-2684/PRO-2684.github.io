@@ -13,7 +13,7 @@ description: PRO 的个人博客索引
 
 ## 🔥 最近更新
 
-[The Hidden Metadata Inside Jianying/CapCut GIF Exports](/notes/douyin_beauty_me.md)
+[The Hidden Metadata Inside Jianying/CapCut GIF Exports](/notes/douyin_beauty_me)
 
 [Agent Browser](/notes/agent_browser)
 
@@ -39,7 +39,7 @@ description: PRO 的个人博客索引
 
 ## 💻 技术
 
-[The Hidden Metadata Inside Jianying/CapCut GIF Exports](/notes/douyin_beauty_me.md)
+[The Hidden Metadata Inside Jianying/CapCut GIF Exports](/notes/douyin_beauty_me)
 
 [Agent Browser](/notes/agent_browser)
 
