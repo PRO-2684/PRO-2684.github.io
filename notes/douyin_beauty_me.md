@@ -22,9 +22,7 @@ This post documents what I could reproduce from two GIFs. It does **not** establ
 
 The two GIFs published with this post have had their UID and DID values sanitized (click to open in new tab and download):
 
-![Sanitized sample 1](/attachments/douyin_beauty_me/1.gif)
-
-![Sanitized sample 2](/attachments/douyin_beauty_me/2.gif)
+![Sanitized sample 1](/attachments/douyin_beauty_me/1.gif) ![Sanitized sample 2](/attachments/douyin_beauty_me/2.gif)
 
 Run:
 
@@ -60,7 +58,7 @@ The result begins like this:
 
 The downloadable files contain the complete JSON rather than the abbreviated example above.
 
-### A note about the sanitized samples
+<details><summary>A note about the sanitized samples</summary>
 
 The original `uid` and `did` values may be sensitive, so I replaced each one with the Base64 representation of 256 zero bytes. I added `sample_sanitized:true` at the top level and changed nothing else in the JSON.
 
@@ -77,6 +75,8 @@ Expected output:
 ```
 
 You cannot use the public samples to reproduce my observation that the original decoded values looked high-entropy: zeros were chosen precisely so nobody could mistake the replacements for real identifiers.
+
+</details>
 
 ## What is stored in the files?
 
@@ -117,26 +117,6 @@ Those examples do not establish that every format contains the newer opaque UID/
 
 This demonstrates that websites can preserve the metadata and expose it in HTML that search engines can index. It does not yet demonstrate that genuine modern UID/DID ciphertexts are commonly indexed.
 
-## What this investigation establishes
-
-- Both supplied GIFs contain valid `douyin_beauty_me` JSON in a GIF Comment Extension.
-- Both contain top-level fields explicitly named `uid` and `did`.
-- All four original values are valid Base64 and decode to opaque 256-byte blobs.
-- The files identify an iOS editing workflow, `product:"lv"`, and application versions 17.5.0 and 18.8.0.
-- The two `videoId`, UID, and DID values differ.
-
-The last observation does not show that UID or DID rotates between exports. These are two uncontrolled files of different provenance, not repeated exports from one account and device.
-
-## What it does not establish
-
-- That Base64 decoding reveals an account or device ID.
-- That two exports from the same user contain equal UID/DID blobs.
-- That `did` refers to immutable physical hardware.
-- That a third party can identify the creator of a GIF.
-- That ByteDance actively searches the web for these values.
-- That including the metadata was intended for tracking.
-- That this behavior violates a particular law or constitutes a security vulnerability.
-
 ## Speculation: what might the opaque blobs enable?
 
 > **Warning:** Everything in this section is speculative. The supplied files cannot distinguish among these possibilities.
@@ -154,7 +134,7 @@ The provocative question is therefore not “Can anyone identify the author?” 
 
 > Can the party that created these blobs resolve independently distributed exports to the same account or device—and, if so, why are those blobs included in user-distributed files?
 
-## The experiment that would answer it
+<details><summary>The experiment that would answer it</summary>
 
 The next step is a controlled export matrix:
 
@@ -168,6 +148,8 @@ The next step is a controlled export matrix:
 For each file, compare `uid`, `did`, `videoId`, and the timestamp-like suffix. Also record the UID and DID displayed in the application's interface, without publishing them.
 
 Equal exported blobs would directly show third-party linkability. Unequal blobs would rule out simple equality matching, but not vendor-side resolution. Answering the latter likely requires reverse engineering or cooperation from ByteDance.
+
+</details>
 
 ## Inspecting and removing the metadata
 
@@ -204,6 +186,30 @@ One trap: in my tests, adding `-c copy` to the FFmpeg command preserved the GIF 
 Jianying/CapCut's editing stack has embedded `douyin_beauty_me` provenance metadata in exported media for years. The two recent GIFs examined here go further: they contain opaque fields explicitly named UID and DID, each encoded as a 256-byte binary value.
 
 That is enough to justify investigation, not enough to declare deanonymization. Until controlled exports reveal whether the values are stable or vendor-resolvable, the accurate description is a **potential correlation channel** embedded in files users are likely to distribute.
+
+<details><summary>What this investigation establishes</summary>
+
+- Both supplied GIFs contain valid `douyin_beauty_me` JSON in a GIF Comment Extension.
+- Both contain top-level fields explicitly named `uid` and `did`.
+- All four original values are valid Base64 and decode to opaque 256-byte blobs.
+- The files identify an iOS editing workflow, `product:"lv"`, and application versions 17.5.0 and 18.8.0.
+- The two `videoId`, UID, and DID values differ.
+
+The last observation does not show that UID or DID rotates between exports. These are two uncontrolled files of different provenance, not repeated exports from one account and device.
+
+</details>
+
+<details><summary>What it does not establish</summary>
+
+- That Base64 decoding reveals an account or device ID.
+- That two exports from the same user contain equal UID/DID blobs.
+- That `did` refers to immutable physical hardware.
+- That a third party can identify the creator of a GIF.
+- That ByteDance actively searches the web for these values.
+- That including the metadata was intended for tracking.
+- That this behavior violates a particular law or constitutes a security vulnerability.
+
+</details>
 
 ---
 
