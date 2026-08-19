@@ -7,7 +7,7 @@ description: 关于 PRO
 
 # About me
 
-[![](https://img.shields.io/badge/Crazy%20Thur.-V%20me%2050-red?logo=kfc)](http://home.ustc.edu.cn/~pro/images/out/appreciate_wechat.jpg)
+[![Support on Afdian](https://img.shields.io/badge/Support-Afdian-%23946CE6?style=flat&logo=afdian)](https://afdian.com/a/PRO-2684)
 
 🎓赌博 ing...
 <img align="right" src="https://avatars.githubusercontent.com/u/54608551" alt="头像" style="width: 20%;">
