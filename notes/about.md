@@ -9,7 +9,7 @@ description: 关于 PRO
 
 [![](https://img.shields.io/badge/Crazy%20Thur.-V%20me%2050-red?logo=kfc)](http://home.ustc.edu.cn/~pro/images/out/appreciate_wechat.jpg)
 
-一只普普通通的大四🐶。
+🎓赌博 ing...
 <img align="right" src="https://avatars.githubusercontent.com/u/54608551" alt="头像" style="width: 20%;">
 
 ## 😊 喜欢的事
@@ -35,4 +35,3 @@ description: 关于 PRO
 ## 📞 联系方式
 
 参见 [GitHub profile](https://github.com/PRO-2684)。
-
