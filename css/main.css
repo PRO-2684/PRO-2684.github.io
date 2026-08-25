@@ -119,7 +119,6 @@ body {
     color: var(--text);
     background: var(--background);
     scrollbar-color: var(--scrollbar-color) var(--scrollbar-bg);
-    margin: 0;
 }
 
 ::selection {
@@ -155,7 +154,7 @@ aside {
     &.panel {
         transition: all 0.2s ease-in-out;
         line-height: 1.5;
-        padding: 0;
+        padding: 1em;
         overflow-y: scroll;
     }
     &.right-panel {
@@ -173,15 +172,12 @@ aside {
 }
 
 div {
-    margin: 1em;
-
     &#overlay {
         position: fixed;
         top: 0px;
         left: 0px;
         width: 100%;
         height: 100%;
-        padding: 0;
         z-index: 3;
         display: block;
         filter: alpha(opacity=60);
@@ -191,14 +187,8 @@ div {
         transition: opacity 0.2s ease-in-out;
     }
     &#tags {
-        margin: 0;
-        padding: 0;
         display: flex;
         flex-wrap: wrap;
-    }
-    &#main-content {
-        margin: 0;
-        padding: 0;
     }
 }
 
@@ -312,7 +302,6 @@ details {
 
 ul {
     &.outline {
-        padding: 0;
         margin: 0;
         list-style: none;
         color: var(--quote-text);
@@ -334,8 +323,8 @@ ul {
 
 div#float-buttons {
     position: fixed;
-    bottom: 0;
-    right: 0;
+    bottom: 1em;
+    right: 1em;
     display: flex;
     flex-direction: column;
     gap: 1em;
