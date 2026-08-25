@@ -21,6 +21,10 @@ description: 通过 Agent Browser 实现 AI 控制浏览器并辅助用户脚本
 npm install -g agent-browser
 ```
 
+### 自动安装 - `install.sh`
+
+前往 [Gist](https://gist.github.com/PRO-2684/e809741c064c8f892b115198a9db8ee7)。Windows 下需要 Git Bash。
+
 ### 手动安装 - 可执行文件 + Skill
 
 1. 访问 [NPM Registry](https://registry.npmjs.org/agent-browser)
@@ -54,7 +58,7 @@ agent-browser install
 
 ```json
 {
-  "executablePath": "C://Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+    "executablePath": "C://Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
 }
 ```
 
@@ -68,17 +72,17 @@ Agent Browser 配置文件位于 `~/.agent-browser/config.json`。下面是一�
 
 ```json
 {
-  "headed": true
+    "headed": true
 }
 ```
 
 ### `autoConnect`
 
 自动连接到现有的浏览器。默认值为 `false`，意思是会打开新的浏览器实例。如果设置为 `true`，则会自动连接打开了远程调试端口 (`chrome://inspect/#remote-debugging`) 的浏览器实例。
- 
+
 ```json
 {
-  "autoConnect": true
+    "autoConnect": true
 }
 ```
 
@@ -90,9 +94,9 @@ Agent Browser 配置文件位于 `~/.agent-browser/config.json`。下面是一�
 
 ```json
 {
-  "headed": true,
-  "autoConnect": true,
-  "executablePath": "C://Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+    "headed": true,
+    "autoConnect": true,
+    "executablePath": "C://Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
 }
 ```
 
